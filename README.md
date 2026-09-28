@@ -20,3 +20,10 @@ mkdocs gh-deploy --force
 ```
 
 生成内容会发布到 `gh-pages` 分支。
+
+
+## CS DIY learning snapshot
+
+The upstream `PKUFlyingPig/cs-self-learning` documentation is synchronized into
+`docs/csdiy/` for learning and open-source redistribution under the upstream
+MIT license. See `third_party/csdiy/` for the retained license and provenance.
