@@ -1,4 +1,4 @@
-name: sync-csdiy-content
+name: mirror-csdiy
 
 on:
   workflow_dispatch:
@@ -12,11 +12,11 @@ permissions:
   contents: write
 
 concurrency:
-  group: sync-csdiy-content
+  group: mirror-csdiy
   cancel-in-progress: true
 
 jobs:
-  sync:
+  mirror:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,46 +26,91 @@ jobs:
 
       - name: Clone upstream CS DIY
         run: |
-          rm -rf .upstream-csdiy
-          git clone --depth 1 https://github.com/PKUFlyingPig/cs-self-learning.git .upstream-csdiy
+          rm -rf /tmp/csdiy-upstream
+          git clone --depth 1 https://github.com/PKUFlyingPig/cs-self-learning.git /tmp/csdiy-upstream
 
-      - name: Sync upstream docs and license
+      - name: Replace repository with upstream content
         run: |
-          rm -rf docs/csdiy
-          mkdir -p docs/csdiy
-          cp -a .upstream-csdiy/docs/. docs/csdiy/
+          rsync -a --delete             --exclude '.git'             --exclude '.github/workflows/sync-csdiy.yml'             /tmp/csdiy-upstream/ ./
 
-          mkdir -p third_party/csdiy
-          cp .upstream-csdiy/LICENSE third_party/csdiy/LICENSE
-          cp .upstream-csdiy/mkdocs.yml third_party/csdiy/mkdocs-upstream.yml
+          # Do not bind the upstream custom domain.
+          rm -f docs/CNAME
 
-          UPSTREAM_SHA="$(git -C .upstream-csdiy rev-parse HEAD)"
-          cat > third_party/csdiy/README.md <<EOF
-          # CS DIY upstream snapshot
-
-          Source: https://github.com/PKUFlyingPig/cs-self-learning
-
-          Upstream commit: ${UPSTREAM_SHA}
-
-          License: MIT. See `LICENSE` in this directory.
-
-          This snapshot is included for learning and redistribution under the
-          upstream repository's MIT license. External resources linked from the
-          upstream documentation remain subject to their own licenses/terms.
+          # Do not reuse the upstream Giscus repository/category identifiers.
+          mkdir -p overrides/partials
+          cat > overrides/partials/comments.html <<'EOF'
+          <!-- Giscus disabled in this mirror. Configure this site's own repo/category IDs if needed. -->
           EOF
 
-          rm -rf .upstream-csdiy
+          # Keep the upstream site/content/theme, but use this repository's Pages URL and repo links.
+          python - <<'PY'
+          from pathlib import Path
+          import re
 
-      - name: Commit synchronized snapshot
+          p = Path("mkdocs.yml")
+          s = p.read_text(encoding="utf-8")
+
+          s = re.sub(r'^site_url:.*$', 'site_url: https://mop74720-commits.github.io/cs-notes/', s, flags=re.M)
+          s = re.sub(r'^repo_name:.*$', 'repo_name: cs-notes', s, flags=re.M)
+          s = re.sub(r'^repo_url:.*$', 'repo_url: https://github.com/mop74720-commits/cs-notes/', s, flags=re.M)
+          s = s.replace(
+              'link: https://github.com/pkuflyingpig/cs-self-learning/',
+              'link: https://github.com/mop74720-commits/cs-notes/'
+          )
+
+          # Remove upstream Google Analytics only; this does not affect site appearance.
+          s = re.sub(
+              r'\n  analytics:\n    provider: google\n    property: G-KJB4RXSKZG\n',
+              '\n',
+              s
+          )
+
+          p.write_text(s, encoding="utf-8")
+          PY
+
+          # Upstream currently pins old dependencies. Python 3.12 keeps them installable in 2026.
+          cat > .github/workflows/ci.yml <<'EOF'
+          name: ci
+
+          on:
+            push:
+              branches:
+                - master
+                - main
+
+          permissions:
+            contents: write
+
+          concurrency:
+            group: mkdocs-pages
+            cancel-in-progress: true
+
+          jobs:
+            deploy:
+              runs-on: ubuntu-latest
+              steps:
+                - uses: actions/checkout@v4
+                  with:
+                    fetch-depth: 0
+
+                - uses: actions/setup-python@v5
+                  with:
+                    python-version: "3.12"
+
+                - run: pip3 install -U -r requirements.txt
+                - run: mkdocs gh-deploy --force
+          EOF
+
+      - name: Commit mirror
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/csdiy third_party/csdiy
+          git add -A
 
           if git diff --cached --quiet; then
-            echo "No upstream changes to sync."
+            echo "Already matches upstream."
             exit 0
           fi
 
-          git commit -m "Sync CS DIY learning content"
+          git commit -m "Mirror CS DIY Wiki"
           git push
