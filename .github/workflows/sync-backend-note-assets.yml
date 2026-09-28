@@ -1,108 +1,64 @@
-name: sync-backend-note-assets
+name: import-backend-note-assets
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
     paths:
-      - ".github/trigger-sync-backend-assets"
+      - ".transfer/backend-assets/**"
 
 permissions:
   contents: write
 
 concurrency:
-  group: sync-backend-note-assets
-  cancel-in-progress: true
+  group: import-backend-note-assets
+  cancel-in-progress: false
 
 jobs:
-  sync:
+  import:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout cs-notes
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Clone backend-study-notes
-        run: |
-          set -euo pipefail
-          git clone --depth 1 https://github.com/mop74720-commits/backend-study-notes.git /tmp/backend-study-notes
-
-      - name: Copy note image assets
+      - name: Reassemble and verify asset payload
         shell: bash
         run: |
           set -euo pipefail
-          SRC=/tmp/backend-study-notes
+          parts=(.transfer/backend-assets/backend-assets.tar.gz.part-*)
+          if [ "${#parts[@]}" -eq 0 ]; then
+            echo "No transfer chunks found."
+            exit 1
+          fi
+          cat "${parts[@]}" > /tmp/backend-assets.tar.gz
+          expected="$(awk '{print $1}' .transfer/backend-assets/backend-assets.tar.gz.sha256)"
+          actual="$(sha256sum /tmp/backend-assets.tar.gz | awk '{print $1}')"
+          test "$expected" = "$actual"
+          echo "payload sha256 verified: $actual"
 
-          copy_assets() {
-            src_md="$1"
-            dst_md="$2"
-            src_dir="$(dirname "$src_md")"
-            dst_dir="$(dirname "$dst_md")"
-            stem="$(basename "$src_md" .md)"
-            src_assets="$SRC/$src_dir/.assets/$stem"
-            dst_assets="$dst_dir/.assets/$stem"
-
-            if [ ! -d "$src_assets" ]; then
-              echo "No assets: $src_md"
-              return 0
-            fi
-
-            rm -rf "$dst_assets"
-            mkdir -p "$(dirname "$dst_assets")"
-            cp -a "$src_assets" "$dst_assets"
-            echo "Copied: $src_assets -> $dst_assets"
-          }
-
-          copy_assets "01-Java基础/JVM/面试-JVM+GC.md" "docs/编程入门/笔记/Java/JVM/面试-JVM+GC.md"
-          copy_assets "01-Java基础/并发与JUC/Prog.md" "docs/编程入门/笔记/Java/并发与JUC/Prog.md"
-          copy_assets "01-Java基础/并发与JUC/面试-JUM线程+锁+并发安全.md" "docs/编程入门/笔记/Java/并发与JUC/面试-JUM线程+锁+并发安全.md"
-          copy_assets "01-Java基础/语言基础/Java-个人笔记.md" "docs/编程入门/笔记/Java/语言基础/Java-个人笔记.md"
-          copy_assets "01-Java基础/语言基础/Java-知识库笔记.md" "docs/编程入门/笔记/Java/语言基础/Java-知识库笔记.md"
-          copy_assets "01-Java基础/语言基础/面试-Java.md" "docs/编程入门/笔记/Java/语言基础/面试-Java.md"
-
-          copy_assets "02-Web与框架/JavaWeb/JavaWeb-知识库笔记.md" "docs/Web开发/笔记/JavaWeb/JavaWeb-知识库笔记.md"
-          copy_assets "02-Web与框架/JavaWeb/Web-个人笔记.md" "docs/Web开发/笔记/JavaWeb/Web-个人笔记.md"
-          copy_assets "02-Web与框架/MyBatisPlus/MyBatisPlus笔记.md" "docs/Web开发/笔记/Java后端/MyBatisPlus/MyBatisPlus笔记.md"
-          copy_assets "02-Web与框架/SpringBoot/面试-SpringBoot.md" "docs/Web开发/笔记/Java后端/SpringBoot/面试-SpringBoot.md"
-          copy_assets "02-Web与框架/Spring与SSM/SSM-个人笔记.md" "docs/Web开发/笔记/Java后端/Spring与SSM/SSM-个人笔记.md"
-          copy_assets "02-Web与框架/Spring与SSM/SSM-知识库笔记.md" "docs/Web开发/笔记/Java后端/Spring与SSM/SSM-知识库笔记.md"
-
-          copy_assets "03-数据库与缓存/MySQL/MySQL笔记.md" "docs/数据库系统/笔记/MySQL/MySQL笔记.md"
-          copy_assets "03-数据库与缓存/MySQL/面试-MySQL数据库.md" "docs/数据库系统/笔记/MySQL/面试-MySQL数据库.md"
-          copy_assets "03-数据库与缓存/Redis/Redis笔记.md" "docs/数据库系统/笔记/Redis/Redis笔记.md"
-          copy_assets "03-数据库与缓存/Redis/面试-Redis.md" "docs/数据库系统/笔记/Redis/面试-Redis.md"
-          copy_assets "03-数据库与缓存/综合数据库笔记/DB.md" "docs/数据库系统/笔记/数据库综合/DB.md"
-
-          copy_assets "04-分布式与中间件/SpringCloud/SpringCloud笔记.md" "docs/并行与分布式系统/笔记/SpringCloud/SpringCloud笔记.md"
-          copy_assets "04-分布式与中间件/分布式基础/面试-分布式系统.md" "docs/并行与分布式系统/笔记/分布式基础/面试-分布式系统.md"
-          copy_assets "04-分布式与中间件/消息队列/面试-MQ消息队列.md" "docs/并行与分布式系统/笔记/消息队列/面试-MQ消息队列.md"
-          copy_assets "04-分布式与中间件/综合框架与中间件/Frame.md" "docs/并行与分布式系统/笔记/中间件综合/Frame.md"
-
-          copy_assets "05-计算机基础/操作系统/面试-操作系统.md" "docs/操作系统/笔记/面试-操作系统.md"
-          copy_assets "05-计算机基础/数据结构与算法/面试-STL容器总结.md" "docs/数据结构与算法/笔记/面试-STL容器总结.md"
-          copy_assets "05-计算机基础/计算机网络/面试-网络.md" "docs/计算机网络/笔记/面试-网络.md"
-
-          copy_assets "06-工具与部署/Docker与K8s/Docker笔记.md" "docs/并行与分布式系统/笔记/容器与编排/Docker笔记.md"
-          copy_assets "06-工具与部署/Docker与K8s/面试-K8s&Docker.md" "docs/并行与分布式系统/笔记/容器与编排/面试-K8s&Docker.md"
-          copy_assets "06-工具与部署/Git/Git笔记.md" "docs/必学工具/我的笔记/Git笔记.md"
-          copy_assets "06-工具与部署/Linux/Linux笔记.md" "docs/必学工具/我的笔记/Linux笔记.md"
-          copy_assets "06-工具与部署/综合工具/Tool.md" "docs/必学工具/我的笔记/Tool.md"
-          copy_assets "07-综合面试/高频八股整理.md" "docs/Web开发/笔记/Java后端/综合面试/高频八股整理.md"
-
-      - name: Commit copied assets
+      - name: Extract mapped image assets
+        shell: bash
         run: |
           set -euo pipefail
+          tar -C "$GITHUB_WORKSPACE" -xzf /tmp/backend-assets.tar.gz
+          echo "imported_files=$(find docs -path '*/.assets/*' -type f | wc -l)"
+          du -sh docs || true
+
+      - name: Remove transfer chunks and commit images
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .transfer/backend-assets
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs
+          git add -A
 
           if git diff --cached --quiet; then
             echo "No asset changes."
             exit 0
           fi
 
-          git commit -m "Sync backend note images"
+          git commit -m "Import backend note images"
           git push
