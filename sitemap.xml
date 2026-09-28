@@ -8,10 +8,164 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/"/>
     </url>
     <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/database/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/database/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/database/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/database/mysql/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/database/mysql/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/database/mysql/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/database/mysql/indexes/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/database/mysql/indexes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/database/mysql/indexes/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/database/mysql/sql/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/database/mysql/sql/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/database/mysql/sql/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/database/mysql/transactions/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/database/mysql/transactions/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/database/mysql/transactions/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/java/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/java/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/java/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/java/basics/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/java/basics/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/java/basics/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/java/collections/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/java/collections/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/java/collections/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/java/jvm/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/java/jvm/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/java/jvm/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/java/oop/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/java/oop/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/java/oop/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/java/spring/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/java/spring/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/java/spring/"/>
+    </url>
+    <url>
         <loc>https://mop74720-commits.github.io/cs-notes/en/</loc>
         <lastmod>2026-09-28</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/en/database/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/database/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/database/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/en/database/mysql/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/database/mysql/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/database/mysql/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/en/database/mysql/indexes/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/database/mysql/indexes/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/database/mysql/indexes/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/en/database/mysql/sql/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/database/mysql/sql/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/database/mysql/sql/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/en/database/mysql/transactions/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/database/mysql/transactions/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/database/mysql/transactions/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/en/java/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/java/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/java/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/en/java/basics/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/java/basics/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/java/basics/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/en/java/collections/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/java/collections/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/java/collections/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/en/java/jvm/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/java/jvm/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/java/jvm/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/en/java/oop/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/java/oop/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/java/oop/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/en/java/spring/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/java/spring/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/java/spring/"/>
     </url>
 </urlset>
