@@ -14,7 +14,7 @@
 
 ORM（Object Relational Mapping）： 对象关系映射，指的是持久化数据和实体对象的映射模式，解决面向对象与关系型数据库存在的互不匹配的现象
 
-<img src="assets/SSM-个人笔记/media/image1.png" style="width:5.75in;height:1.61458in" />
+<img src="../assets/SSM-个人笔记/media/image1.png" style="width:5.75in;height:1.61458in" />
 
 **MyBatis** ：
 
@@ -683,7 +683,7 @@ private SqlSession sqlSession;</td>
 
 调用流程：
 
-<img src="assets/SSM-个人笔记/media/image2.png" style="width:5.75in;height:0.85417in" />
+<img src="../assets/SSM-个人笔记/media/image2.png" style="width:5.75in;height:0.85417in" />
 
 传统方式实现 DAO 层，需要写接口和实现类。采用 Mybatis 的代理开发方式实现 DAO 层的开发，只需要编写 Mapper 接口（相当于 Dao 接口），由 Mybatis 框架根据接口定义创建接口的 **动态代理对象**
 
@@ -703,7 +703,7 @@ Mapper.xml 文件中的增删改查标签的 parameterType 属性和 DAO 层 Map
 
 Mapper.xml 文件中的增删改查标签的 resultType 属性和 DAO 层 Mapper 接口方法的返回值相同
 
-<img src="assets/SSM-个人笔记/media/image3.png" style="width:5.75in;height:2.13542in" />
+<img src="../assets/SSM-个人笔记/media/image3.png" style="width:5.75in;height:2.13542in" />
 
 **实现原理**
 
@@ -1859,7 +1859,7 @@ List&lt;Student&gt; students = mapper.selectAll();</td>
 
 cacheEnabled：true 表示全局性地开启所有映射器配置文件中已配置的任何缓存，默认 true
 
-<img src="assets/SSM-个人笔记/media/image4.png" style="width:5.75in;height:4.03125in" />
+<img src="../assets/SSM-个人笔记/media/image4.png" style="width:5.75in;height:4.03125in" />
 
 参考文章：https://www.cnblogs.com/ysocean/p/7342498.html
 
@@ -1867,7 +1867,7 @@ cacheEnabled：true 表示全局性地开启所有映射器配置文件中已配
 
 一级缓存是 SqlSession 级别的缓存
 
-<img src="assets/SSM-个人笔记/media/image5.png" style="width:5.75in;height:3.15625in" />
+<img src="../assets/SSM-个人笔记/media/image5.png" style="width:5.75in;height:3.15625in" />
 
 工作流程：第一次发起查询用户 id 为 1 的用户信息，先去找缓存中是否有 id 为 1 的用户信息，如果没有，从数据库查询用户信息，得到用户信息，将用户信息存储到一级缓存中；第二次发起查询用户 id 为 1 的用户信息，先去找缓存中是否有 id 为 1 的用户信息，缓存中有，直接从缓存中获取用户信息。
 
@@ -2298,7 +2298,7 @@ OGNL：Object Graphic Navigation Language（对象图导航语言），用于对
 
 表结构：
 
-<img src="assets/SSM-个人笔记/media/image6.png" style="width:5.75in;height:1.4375in" />
+<img src="../assets/SSM-个人笔记/media/image6.png" style="width:5.75in;height:1.4375in" />
 
 **if**
 
@@ -2989,7 +2989,7 @@ Integer result = mapper.delete(4);<br />
 
 **运行机制**
 
-<img src="assets/SSM-个人笔记/media/image7.png" style="width:5.75in;height:4.14583in" />
+<img src="../assets/SSM-个人笔记/media/image7.png" style="width:5.75in;height:4.14583in" />
 
 MyBatis 运行过程：
 
@@ -3063,7 +3063,7 @@ parser.parse() ：解析 Mapper 接口
 
 SqlSource sqlSource = getSqlSourceFromAnnotations() ：获取 SQL 的资源对象
 
-> <img src="assets/SSM-个人笔记/media/image8.png" style="width:5.75in;height:0.89583in" />
+> <img src="../assets/SSM-个人笔记/media/image8.png" style="width:5.75in;height:0.89583in" />
 
 builderAssistant.addMappedStatement(...) ：封装成 MappedStatement 对象加入 Configuration 对象
 
@@ -3071,7 +3071,7 @@ return configuration ：返回配置完成的 configuration 对象
 
 return new DefaultSqlSessionFactory(config)：返回工厂对象，包含 Configuration 对象
 
-<img src="assets/SSM-个人笔记/media/image9.png" style="width:5.75in;height:3.61458in" />
+<img src="../assets/SSM-个人笔记/media/image9.png" style="width:5.75in;height:3.61458in" />
 
 总结：解析 XML 是对 Configuration 中的属性进行填充，那么可以在一个类中创建 Configuration 对象，自定义其中属性的值来达到配置的效果
 
@@ -3091,7 +3091,7 @@ configuration.newExecutor(tx, execType) ： **根据参数创建指定类型的 
 
 return new DefaultSqlSession(configuration, executor, autoCommit)：返回 DefaultSqlSession 对象
 
-<img src="assets/SSM-个人笔记/media/image10.png" style="width:5.75in;height:2.94792in" />
+<img src="../assets/SSM-个人笔记/media/image10.png" style="width:5.75in;height:2.94792in" />
 
 **获取代理**
 
@@ -3111,7 +3111,7 @@ MapperProxy\<T\> implements InvocationHandler 说明 MapperProxy 默认是一个
 
 Proxy.newProxyInstance() ： **JDK 动态代理** 创建 MapperProxy 对象
 
-<img src="assets/SSM-个人笔记/media/image11.png" style="width:5.75in;height:3.23958in" />
+<img src="../assets/SSM-个人笔记/media/image11.png" style="width:5.75in;height:3.23958in" />
 
 **执行SQL**
 
@@ -3193,7 +3193,7 @@ MappedStatement.getBoundSql(parameterObject) ： **把 parameterObject 封装成
 
 构造函数中有： this.parameterObject = parameterObject
 
-<img src="assets/SSM-个人笔记/media/image12.png" style="width:5.75in;height:1.17708in" />
+<img src="../assets/SSM-个人笔记/media/image12.png" style="width:5.75in;height:1.17708in" />
 
 CachingExecutor.createCacheKey() ：创建缓存对象
 
@@ -3290,7 +3290,7 @@ localCache.putObject(key, list) ： **放入一级（本地）缓存**
 
 return list.get(0) ：返回结果集的第一个数据
 
-<img src="assets/SSM-个人笔记/media/image13.png" style="width:5.75in;height:4.46875in" />
+<img src="../assets/SSM-个人笔记/media/image13.png" style="width:5.75in;height:4.46875in" />
 
 **插件使用**
 
@@ -3298,7 +3298,7 @@ return list.get(0) ：返回结果集的第一个数据
 
 实现原理：插件是按照插件配置顺序创建层层包装对象，执行目标方法的之后，按照逆向顺序执行（栈）
 
-<img src="assets/SSM-个人笔记/media/image14.png" style="width:5.75in;height:2.42708in" />
+<img src="../assets/SSM-个人笔记/media/image14.png" style="width:5.75in;height:2.42708in" />
 
 在四大对象创建时：
 
@@ -3383,7 +3383,7 @@ System.out.println("插件配置的信息：" + properties);<br />
 
 **分页插件**
 
-<img src="assets/SSM-个人笔记/media/image15.png" style="width:5.75in;height:2.79167in" />
+<img src="../assets/SSM-个人笔记/media/image15.png" style="width:5.75in;height:2.79167in" />
 
 分页可以将很多条结果进行分页显示。如果当前在第一页，则没有上一页。如果当前在最后一页，则没有下一页，需要明确当前是第几页，这一页中显示多少条结果。
 
@@ -3477,7 +3477,7 @@ isIsLastPage()：获取是否是最后一页
 
 Spring 是分层的 JavaSE/EE 应用 full-stack 轻量级开源框架
 
-<img src="assets/SSM-个人笔记/media/image16.png" style="width:3.57292in;height:2.625in" />
+<img src="../assets/SSM-个人笔记/media/image16.png" style="width:3.57292in;height:2.625in" />
 
 Spring 优点：
 
@@ -3495,7 +3495,7 @@ AOP 编程难过的支持
 
 体系结构：
 
-<img src="assets/SSM-个人笔记/media/image17.png" style="width:5.75in;height:2.61458in" />
+<img src="../assets/SSM-个人笔记/media/image17.png" style="width:5.75in;height:2.61458in" />
 
 参考视频：https://space.bilibili.com/37974444
 
@@ -3509,7 +3509,7 @@ IoC（Inversion Of Control）控制反转，Spring 反向控制应用程序所�
 
 官方网站：https://spring.io/ → Projects → spring-framework → LEARN → Reference Doc
 
-<img src="assets/SSM-个人笔记/media/image18.png" style="width:5.75in;height:2.07292in" />
+<img src="../assets/SSM-个人笔记/media/image18.png" style="width:5.75in;height:2.07292in" />
 
 耦合（Coupling）：代码编写过程中所使用技术的结合紧密度，用于衡量软件中各个模块之间的互联程度
 
@@ -3623,7 +3623,7 @@ userService.save();//user service running...<br />
 </tbody>
 </table>
 
-<img src="assets/SSM-个人笔记/media/image19.png" style="width:5.75in;height:1.17708in" />
+<img src="../assets/SSM-个人笔记/media/image19.png" style="width:5.75in;height:1.17708in" />
 
 **XML开发**
 
@@ -3963,7 +3963,7 @@ IoC（Inversion Of Control）控制翻转，Spring 反向控制应用程序所�
 
 DI（Dependency Injection）依赖注入，应用程序运行依赖的资源由 Spring 为其提供，资源进入应用程序的方式称为注入，简单说就是利用反射机制为类的属性赋值的操作
 
-<img src="assets/SSM-个人笔记/media/image20.png" style="width:5.25in;height:2.57292in" />
+<img src="../assets/SSM-个人笔记/media/image20.png" style="width:5.25in;height:2.57292in" />
 
 IoC 和 DI 的关系：IoC 与 DI 是同一件事站在不同角度看待问题
 
@@ -4964,7 +4964,7 @@ MapperScannerConfigurer 实现了 BeanDefinitionRegistryPostProcessor 接口，�
 
 缺点：为了达成注解驱动的目的，可能会将原先很简单的书写，变的更加复杂。XML 中配置第三方开发的资源是很方便的，但使用注解驱动无法在第三方开发的资源中进行编辑，因此会增大开发工作量
 
-<img src="assets/SSM-个人笔记/media/image21.png" style="width:5.75in;height:2.3125in" />
+<img src="../assets/SSM-个人笔记/media/image21.png" style="width:5.75in;height:2.3125in" />
 
 **纯注解**
 
@@ -5752,7 +5752,7 @@ ApplicationContext 启动后预载入所有的单实例 Bean，所以程序启�
 
 FileSystemXmlApplicationContext：加载文件系统中任意位置的配置文件，而 ClassPathXmlAC 只能加载类路径下的配置文件
 
-<img src="assets/SSM-个人笔记/media/image22.png" style="width:3.60417in;height:3.03125in" />
+<img src="../assets/SSM-个人笔记/media/image22.png" style="width:3.60417in;height:3.03125in" />
 
 BeanFactory 的成员属性：
 
@@ -6396,11 +6396,11 @@ Proxy（代理）：目标对象无法直接完成工作，需要对其进行功
 
 Introduction（引入/引介）：就是对原始对象无中生有的添加成员变量或成员方法
 
-<img src="assets/SSM-个人笔记/media/image23.png" style="width:5.75in;height:2.14583in" />
+<img src="../assets/SSM-个人笔记/media/image23.png" style="width:5.75in;height:2.14583in" />
 
-<img src="assets/SSM-个人笔记/media/image24.png" style="width:5.75in;height:2.40625in" />
+<img src="../assets/SSM-个人笔记/media/image24.png" style="width:5.75in;height:2.40625in" />
 
-<img src="assets/SSM-个人笔记/media/image25.png" style="width:5.75in;height:2.4375in" />
+<img src="../assets/SSM-个人笔记/media/image25.png" style="width:5.75in;height:2.4375in" />
 
 **入门项目**
 
@@ -7149,7 +7149,7 @@ Object[] args = jp.getArgs();<br />
 
 流程图：
 
-<img src="assets/SSM-个人笔记/media/image26.png" style="width:5.75in;height:2.20833in" />
+<img src="../assets/SSM-个人笔记/media/image26.png" style="width:5.75in;height:2.20833in" />
 
 解释：
 
@@ -7163,7 +7163,7 @@ Object[] args = jp.getArgs();<br />
 
 流程图：
 
-<img src="assets/SSM-个人笔记/media/image27.png" style="width:5.75in;height:1.97917in" />
+<img src="../assets/SSM-个人笔记/media/image27.png" style="width:5.75in;height:1.97917in" />
 
 解释：输出结果 a = param2 b = param1
 
@@ -7615,7 +7615,7 @@ userService.delete();<br />
 
 AOP 注解简化 XML：
 
-<img src="assets/SSM-个人笔记/media/image28.png" style="width:5.75in;height:1.78125in" />
+<img src="../assets/SSM-个人笔记/media/image28.png" style="width:5.75in;height:1.78125in" />
 
 注意事项：
 
@@ -8011,7 +8011,7 @@ CGLIB 动态代理无需要原始被代理对象，动态创建出新的代理�
 
 CGLIB **继承被代理类** ，如果代理类是 final 则不能实现
 
-<img src="assets/SSM-个人笔记/media/image29.png" style="width:5.10417in;height:3.55208in" />
+<img src="../assets/SSM-个人笔记/media/image29.png" style="width:5.10417in;height:3.55208in" />
 
 CGLIB 类
 
@@ -8136,7 +8136,7 @@ CGLIB 动态代理是通过继承的方式，覆盖被代理类的方法来进�
 
 **织入时机**
 
-<img src="assets/SSM-个人笔记/media/image30.png" style="width:5.75in;height:2.78125in" />
+<img src="../assets/SSM-个人笔记/media/image30.png" style="width:5.75in;height:2.78125in" />
 
 **事务**
 
@@ -9144,7 +9144,7 @@ return new Double(money.toString());<br />
 </tbody>
 </table>
 
-<img src="assets/SSM-个人笔记/media/image31.png" style="width:5.75in;height:2.78125in" />
+<img src="../assets/SSM-个人笔记/media/image31.png" style="width:5.75in;height:2.78125in" />
 
 **原理**
 
@@ -11099,7 +11099,7 @@ throw ex;<br />
 </tbody>
 </table>
 
-<img src="assets/SSM-个人笔记/media/image32.png" style="width:5.75in;height:3.20833in" />
+<img src="../assets/SSM-个人笔记/media/image32.png" style="width:5.75in;height:3.20833in" />
 
 参考视频：https://www.bilibili.com/video/BV1gW411W7wy
 
@@ -12063,7 +12063,7 @@ SpringMVC 优点：
 
 数据层：负责数据操作
 
-<img src="assets/SSM-个人笔记/media/image33.png" style="width:5.75in;height:2.03125in" />
+<img src="../assets/SSM-个人笔记/media/image33.png" style="width:5.75in;height:2.03125in" />
 
 MVC（Model View Controller），一种用于设计创建Web应用程序表现层的模式
 
@@ -12081,7 +12081,7 @@ Servlet
 
 SpringMVC
 
-<img src="assets/SSM-个人笔记/media/image34.png" style="width:5.75in;height:1.48958in" />
+<img src="../assets/SSM-个人笔记/media/image34.png" style="width:5.75in;height:1.48958in" />
 
 参考视频：https://space.bilibili.com/37974444/
 
@@ -12902,7 +12902,7 @@ SpringMVC 对接收的数据进行自动类型转换，该工作通过 Converter
 
 **日期**
 
-<img src="assets/SSM-个人笔记/media/image35.png" style="width:5.75in;height:1.875in" />
+<img src="../assets/SSM-个人笔记/media/image35.png" style="width:5.75in;height:1.875in" />
 
 如果访问 URL：http://localhost/requestParam11?date=1999-09-09 会报错，所以需要日期类型转换
 
@@ -13985,7 +13985,7 @@ View Resolver：视图解析器， 将 Handler 中返回的逻辑视图（ModelA
 
 View：视图， View 最后对页面进行渲染将结果返回给用户，SpringMVC 框架提供了很多的 View 视图类型，包括：jstlView、freemarkerView、pdfView 等
 
-<img src="assets/SSM-个人笔记/media/image36.png" style="width:5.75in;height:2.36458in" />
+<img src="../assets/SSM-个人笔记/media/image36.png" style="width:5.75in;height:2.36458in" />
 
 优点：
 
@@ -14033,7 +14033,7 @@ SpringMVC 会遍历所有的 bean，获取 Controller 中对应的 URL（这里�
 
 请求进入原生的 HttpServlet 的 doGet() 方法处理，调用子类 FrameworkServlet 的 doGet() 方法，最终调用 DispatcherServlet 的 doService() 方法，为请求设置相关属性后调用 doDispatch()，请求和响应的以参数的形式传入
 
-<img src="assets/SSM-个人笔记/media/image37.png" style="width:5.75in;height:1.10417in" />
+<img src="../assets/SSM-个人笔记/media/image37.png" style="width:5.75in;height:1.10417in" />
 
 <table>
 <colgroup>
@@ -14171,7 +14171,7 @@ return null;<br />
 </tbody>
 </table>
 
-<img src="assets/SSM-个人笔记/media/image38.png" style="width:5.75in;height:1.46875in" />
+<img src="../assets/SSM-个人笔记/media/image38.png" style="width:5.75in;height:1.46875in" />
 
 mapping.getHandler(request) ：调用 AbstractHandlerMapping#getHandler
 
@@ -14185,7 +14185,7 @@ handlerMethod = lookupHandlerMethod(lookupPath, request) ：获取当前 Handler
 
 directPathMatches = this.mappingRegistry.getMappingsByDirectPath(lookupPath) ：获取当前的映射器与当前 **请求的 URI 有关的所有映射规则**
 
-> <img src="assets/SSM-个人笔记/media/image39.png" style="width:5.75in;height:1.41667in" />
+> <img src="../assets/SSM-个人笔记/media/image39.png" style="width:5.75in;height:1.41667in" />
 
 addMatchingMappings(directPathMatches, matches, request) ： **匹配某个映射规则**
 
@@ -14262,7 +14262,7 @@ return "forward:/success";<br />
 </tbody>
 </table>
 
-<img src="assets/SSM-个人笔记/media/image40.png" style="width:5.75in;height:1.15625in" />
+<img src="../assets/SSM-个人笔记/media/image40.png" style="width:5.75in;height:1.15625in" />
 
 doDispatch() 中调用 mv = ha.handle(processedRequest, response, mappedHandler.getHandler()) **使用适配器执行方法**
 
@@ -14701,7 +14701,7 @@ List\<MediaType\> mediaTypes = MediaType.parseMediaTypes(headerValues) ：解析
 
 MediaType.sortBySpecificityAndQuality(mediaTypes) ：按照相对品质因数 q 降序排序
 
-<img src="assets/SSM-个人笔记/media/image41.png" style="width:5.75in;height:0.53125in" />
+<img src="../assets/SSM-个人笔记/media/image41.png" style="width:5.75in;height:0.53125in" />
 
 producibleTypes = getProducibleMediaTypes(request, valueType, targetType) ： **服务器能生成的媒体类型**
 
@@ -14776,7 +14776,7 @@ AbstractGenericHttpMessageConverter#write ：该类的方法
 
 addDefaultHeaders(headers, t, contentType) ： **设置响应头中的数据类型**
 
-<img src="assets/SSM-个人笔记/media/image42.png" style="width:5.75in;height:0.47917in" />
+<img src="../assets/SSM-个人笔记/media/image42.png" style="width:5.75in;height:0.47917in" />
 
 writeInternal(t, type, outputMessage) ： **数据写出为 JSON 格式**
 
@@ -15431,7 +15431,7 @@ alert("跨域调用信息反馈:" + data['name'] + "," + data['age']);<br />
 
 拦截内容不同： Filter 对所有访问进行增强， Interceptor 仅针对 SpringMVC 的访问进行增强
 
-<img src="assets/SSM-个人笔记/media/image43.png" style="width:5.75in;height:1.91667in" />
+<img src="../assets/SSM-个人笔记/media/image43.png" style="width:5.75in;height:1.91667in" />
 
 **处理方法**
 
@@ -15578,7 +15578,7 @@ ex：如果处理器执行过程中出现异常对象，可以针对异常情况
 
 可能存在节点上的循环引用现象，造成死循环，导致系统崩溃
 
-<img src="assets/SSM-个人笔记/media/image44.png" style="width:5.75in;height:3.05208in" />
+<img src="../assets/SSM-个人笔记/media/image44.png" style="width:5.75in;height:3.05208in" />
 
 **源码解析**
 
@@ -15692,7 +15692,7 @@ logger.error("HandlerInterceptor.afterCompletion threw exception", ex2);<br />
 
 拦截器的执行流程：
 
-<img src="assets/SSM-个人笔记/media/image45.png" style="width:5.75in;height:2.54167in" />
+<img src="../assets/SSM-个人笔记/media/image45.png" style="width:5.75in;height:2.54167in" />
 
 参考文章：https://www.yuque.com/atguigu/springboot/vgzmgh#wtPLU
 
@@ -16156,7 +16156,7 @@ return "error.jsp";<br />
 
 上传文件过程：
 
-<img src="assets/SSM-个人笔记/media/image46.png" style="width:5.75in;height:2.51042in" />
+<img src="../assets/SSM-个人笔记/media/image46.png" style="width:5.75in;height:2.51042in" />
 
 MultipartResolver接口：
 
@@ -16597,7 +16597,7 @@ private Integer age;//员工年龄<br />
 
 三种判定空校验器的区别
 
-<img src="assets/SSM-个人笔记/media/image47.png" style="width:5.75in;height:1.69792in" />
+<img src="../assets/SSM-个人笔记/media/image47.png" style="width:5.75in;height:1.69792in" />
 
 **嵌套校验**
 
@@ -16911,7 +16911,7 @@ SpringApplication.run(HelloApplication.class, args);<br />
 
 快速构建：
 
-<img src="assets/SSM-个人笔记/media/image48.png" style="width:5.75in;height:3.79167in" />
+<img src="../assets/SSM-个人笔记/media/image48.png" style="width:5.75in;height:3.79167in" />
 
 **自动装配**
 
@@ -17637,7 +17637,7 @@ return configurations ：返回所有自动装配类的候选项
 
 从 spring-boot-autoconfigure-2.5.3.jar/META-INF/spring.factories 文件中寻找 EnableAutoConfiguration 字段，获取自动装配类， **进行条件装配，按需装配**
 
-<img src="assets/SSM-个人笔记/media/image49.png" style="width:5.75in;height:1.27083in" />
+<img src="../assets/SSM-个人笔记/media/image49.png" style="width:5.75in;height:1.27083in" />
 
 **装配流程**
 
@@ -18304,7 +18304,7 @@ spring.profiles.active=dev</td>
 
 虚拟机参数：在VM options 指定： -Dspring.profiles.active=dev
 
-<img src="assets/SSM-个人笔记/media/image50.png" style="width:5.75in;height:2.51042in" />
+<img src="../assets/SSM-个人笔记/media/image50.png" style="width:5.75in;height:2.51042in" />
 
 命令行参数： java –jar xxx.jar --spring.profiles.active=dev
 
@@ -19769,7 +19769,7 @@ return b.sources(SpringbootDeployApplication.class);<br />
 
 SpringCloud 是分布式微服务的一站式解决方案，是多种微服务落地技术的集合体，俗称微服务全家桶
 
-<img src="assets/SSM-个人笔记/media/image51.png" style="width:5.75in;height:1.66667in" />
+<img src="../assets/SSM-个人笔记/media/image51.png" style="width:5.75in;height:1.66667in" />
 
 参考文档：https://www.yuque.com/mrlinxi/pxvr4g/wcwd39
 
@@ -19781,7 +19781,7 @@ SpringCloud 是分布式微服务的一站式解决方案，是多种微服务�
 
 Spring Cloud 封装了 Netflix 公司开发的 Eureka 模块来实现服务治理。Eureka 采用了 CS(Client-Server) 的设计架构，Eureka Server 是服务注册中心，系统中的其他微服务使用 Eureka 的客户端连接到 Eureka Server 并维持心跳连接
 
-<img src="assets/SSM-个人笔记/media/image52.png" style="width:5.75in;height:1.76042in" />
+<img src="../assets/SSM-个人笔记/media/image52.png" style="width:5.75in;height:1.76042in" />
 
 Eureka Server 提供服务注册服务：各个微服务节点通过配置启动后，会在 EurekaServer 中进行注册，EurekaServer 中的服务注册表中将会存储所有可用服务节点的信息，并且具有可视化界面
 
@@ -19994,7 +19994,7 @@ defaultZone: http://localhost:7001/eureka</td>
 
 浏览器访问 http://localhost:7001
 
-<img src="assets/SSM-个人笔记/media/image53.png" style="width:5.75in;height:1.09375in" />
+<img src="../assets/SSM-个人笔记/media/image53.png" style="width:5.75in;height:1.09375in" />
 
 **集群构建**
 
@@ -20002,7 +20002,7 @@ defaultZone: http://localhost:7001/eureka</td>
 
 Server 端高可用集群原理：实现负载均衡和故障容错，互相注册，相互守望
 
-<img src="assets/SSM-个人笔记/media/image54.png" style="width:5.75in;height:1.89583in" />
+<img src="../assets/SSM-个人笔记/media/image54.png" style="width:5.75in;height:1.89583in" />
 
 多台 Eureka 服务器，每一台 Eureka 服务器需要有自己的主机名，同时各服务器需要相互注册
 
@@ -20083,7 +20083,7 @@ SpringApplication.run(EurekaMain7002.class, args);<br />
 
 访问 http://eureka7001.com:7001 和 http://eureka7002.com:7002：
 
-<img src="assets/SSM-个人笔记/media/image55.png" style="width:5.75in;height:0.97917in" />
+<img src="../assets/SSM-个人笔记/media/image55.png" style="width:5.75in;height:0.97917in" />
 
 RPC 调用：controller.OrderController
 
@@ -20282,7 +20282,7 @@ return this.discoveryClient;<br />
 
 保护模式用于客户端和 EurekaServer 之间存在网络分区场景下的保护，一旦进入保护模式 EurekaServer 将会尝试保护其服务注册表中的信息，不在删除服务注册表中的数据，属于 CAP 里面的 AP 思想（可用性和分区容错性）
 
-<img src="assets/SSM-个人笔记/media/image56.png" style="width:5.75in;height:1.35417in" />
+<img src="../assets/SSM-个人笔记/media/image56.png" style="width:5.75in;height:1.35417in" />
 
 如果一定时间内丢失大量该微服务的实例，这时 Eureka 就会开启自我保护机制，不会剔除该服务。 因为这个现象可能是因为网络暂时不通，出现了 Eureka 的假死、拥堵、卡顿，客户端恢复后还能正常发送心跳
 
@@ -20558,7 +20558,7 @@ Ribbon 本地负载均衡，在调用微服务接口时会在注册中心上获�
 
 Ribbon 是一个软负载均衡的客户端组件
 
-<img src="assets/SSM-个人笔记/media/image57.png" style="width:5.75in;height:3.10417in" />
+<img src="../assets/SSM-个人笔记/media/image57.png" style="width:5.75in;height:3.10417in" />
 
 第一步先选择 EurekaServer，优先选择在同一个区域内负载较少的 Server
 
@@ -20582,7 +20582,7 @@ AvailabilityFilteringRule：先过滤掉故障实例，再选择并发较小的�
 
 ZoneAvoidanceRule：默认规则，复合判断 Server 所在区域的性能和 Server 的可用性选择服务器
 
-<img src="assets/SSM-个人笔记/media/image58.png" style="width:5.75in;height:2.05208in" />
+<img src="../assets/SSM-个人笔记/media/image58.png" style="width:5.75in;height:2.05208in" />
 
 注意：官方文档明确给出了警告，自定义负载均衡配置类不能放在 @ComponentScan 所扫描的当前包下以及子包下
 
@@ -20814,7 +20814,7 @@ return serverPort;<br />
 
 测试报错：
 
-<img src="assets/SSM-个人笔记/media/image59.png" style="width:5.75in;height:1.6875in" />
+<img src="../assets/SSM-个人笔记/media/image59.png" style="width:5.75in;height:1.6875in" />
 
 !\](C:\Users\Seazean\Desktop\123\Cloud-OpenFeign超时错误.png)
 
@@ -21210,7 +21210,7 @@ Hystrix 会监控微服务间调用的状况，当失败的调用到一定阈值
 
 熔断半开：部分请求根据规则调用当前服务，如果请求成功且符合规则则认为当前服务恢复正常，关闭熔断，反之继续熔断
 
-<img src="assets/SSM-个人笔记/media/image60.png" style="width:4.6875in;height:4.22917in" />
+<img src="../assets/SSM-个人笔记/media/image60.png" style="width:4.6875in;height:4.22917in" />
 
 **熔断操作**
 
@@ -21298,7 +21298,7 @@ Hystrix会将"成功"、"失败"、"拒绝"、"超时"等信息报告给断路�
 
 注意：如果、没有为命令实现降级逻辑或者在降级处理逻辑中抛出了异常， Hystrix 依然会返回一个 Observable 对象， 但是它不会发射任何结果数据，而是通过 onError 方法通知命令立即中断请求，并通过 onError() 方法将引起命令失败的异常发送给调用者
 
-<img src="assets/SSM-个人笔记/media/image61.png" style="width:5.75in;height:2.79167in" />
+<img src="../assets/SSM-个人笔记/media/image61.png" style="width:5.75in;height:2.79167in" />
 
 官方文档：https://github.com/Netflix/Hystrix/wiki/How-it-Works
 
@@ -21377,7 +21377,7 @@ SpringApplication.run(HystrixDashboardMain9001.class, args);<br />
 
 启动测试：http://localhost:9001/hystrix
 
-<img src="assets/SSM-个人笔记/media/image62.png" style="width:5.75in;height:3.70833in" />
+<img src="../assets/SSM-个人笔记/media/image62.png" style="width:5.75in;height:3.70833in" />
 
 新版本 Hystrix 需要在需要监控的微服务端的主启动类中指定监控路径，不然会报错
 
@@ -21417,7 +21417,7 @@ return registrationBean;<br />
 
 指标说明：
 
-<img src="assets/SSM-个人笔记/media/image63.png" style="width:5.75in;height:4.53125in" />
+<img src="../assets/SSM-个人笔记/media/image63.png" style="width:5.75in;height:4.53125in" />
 
 **服务网关**
 
@@ -21445,7 +21445,7 @@ Predicate：断言，可以匹配 HTTP 请求中的所有内容（例如请求�
 
 Filter：指 Spring 框架中的 GatewayFilter实例，使用过滤器可以在请求被路由前或之后（拦截）对请求进行修改
 
-<img src="assets/SSM-个人笔记/media/image64.png" style="width:4.76042in;height:4.41667in" />
+<img src="../assets/SSM-个人笔记/media/image64.png" style="width:4.76042in;height:4.41667in" />
 
 核心逻辑：路由转发 + 执行过滤器链
 
@@ -21659,7 +21659,7 @@ System.out.println(zbj); //2023-01-10T16:31:44.106+08:00[Asia/Shanghai]<br />
 
 测试：正常访问成功，将时间修改到 2023-01-10T16:31:44.106+08:00\[Asia/Shanghai\] 之后访问失败
 
-<img src="assets/SSM-个人笔记/media/image65.png" style="width:5.75in;height:2.5625in" />
+<img src="../assets/SSM-个人笔记/media/image65.png" style="width:5.75in;height:2.5625in" />
 
 常见断言类型：
 
@@ -21806,7 +21806,7 @@ return 0;<br />
 
 SpringCloud Config 为微服务架构中的微服务提供集中化的外部配置支持（Git/GitHub），为各个不同微服务应用的所有环境提供了一个中心化的外部配置（Config Server）
 
-<img src="assets/SSM-个人笔记/media/image66.png" style="width:5.75in;height:1.875in" />
+<img src="../assets/SSM-个人笔记/media/image66.png" style="width:5.75in;height:1.875in" />
 
 SpringCloud Config 分为服务端和客户端两部分
 
@@ -22132,7 +22132,7 @@ Spring Cloud Bus 能管理和传播分布式系统间的消息，就像分布式
 
 利用消息总线接触一个服务端 ConfigServer 的 /bus/refresh 断点，从而刷新所有客户端的配置
 
-<img src="assets/SSM-个人笔记/media/image67.png" style="width:5.75in;height:4.94792in" />
+<img src="../assets/SSM-个人笔记/media/image67.png" style="width:5.75in;height:4.94792in" />
 
 改造 ConfigClient：
 
@@ -22197,7 +22197,7 @@ include: 'bus-refresh'</td>
 
 /bus/refresh 请求不再发送到具体的服务实例上，而是发给 Config Server 并通过 destination 参数类指定需要更新配置的服务或实例
 
-<img src="assets/SSM-个人笔记/media/image68.png" style="width:5.75in;height:1.55208in" />
+<img src="../assets/SSM-个人笔记/media/image68.png" style="width:5.75in;height:1.55208in" />
 
 **Stream**
 
@@ -22207,7 +22207,7 @@ Spring Cloud Stream 是一个构建消息驱动微服务的框架，通过定义
 
 Stream 中的消息通信方式遵循了发布订阅模式，Binder 可以生成 Binding 用来绑定消息容器的生产者和消费者，Binding 有两种类型 Input 和 Output，Input 对应于消费者（消费者从 Stream 接收消息），Output 对应于生产者（生产者从 Stream 发布消息）
 
-<img src="assets/SSM-个人笔记/media/image69.png" style="width:5.75in;height:4.02083in" />
+<img src="../assets/SSM-个人笔记/media/image69.png" style="width:5.75in;height:4.02083in" />
 
 Binder：连接中间件
 
@@ -22771,7 +22771,7 @@ return "nacos registry, serverPort: " + serverPort + "\t id" + id;<br />
 
 管理后台服务：
 
-<img src="assets/SSM-个人笔记/media/image70.png" style="width:5.75in;height:1.75in" />
+<img src="../assets/SSM-个人笔记/media/image70.png" style="width:5.75in;height:1.75in" />
 
 新建一个模块端口是 9002，其他与 9001 服务一样，nacos-payment-provider 的实例数就变为 2
 
@@ -22997,13 +22997,13 @@ return configInfo;<br />
 
 新增配置，然后访问 http://localhost:3377/config/info
 
-<img src="assets/SSM-个人笔记/media/image71.png" style="width:5.75in;height:2.15625in" />
+<img src="../assets/SSM-个人笔记/media/image71.png" style="width:5.75in;height:2.15625in" />
 
 **分类配置**
 
 分布式开发中的多环境多项目管理问题，Namespace 用于区分部署环境，Group 和 DataID 逻辑上区分两个目标对象
 
-<img src="assets/SSM-个人笔记/media/image72.png" style="width:5.75in;height:2.04167in" />
+<img src="../assets/SSM-个人笔记/media/image72.png" style="width:5.75in;height:2.04167in" />
 
 Namespace 默认 public，主要用来实现隔离，图示三个开发环境
 
@@ -23043,7 +23043,7 @@ namespace: 95d44530-a4a6-4ead-98c6-23d192cee298</td>
 </tbody>
 </table>
 
-<img src="assets/SSM-个人笔记/media/image73.png" style="width:5.75in;height:1.20833in" />
+<img src="../assets/SSM-个人笔记/media/image73.png" style="width:5.75in;height:1.20833in" />
 
 **集群架构**
 
@@ -23236,7 +23236,7 @@ Warm Up：冷启动，根据 codeFactory（冷加载因子，默认 3）的值�
 
 排队等待：匀速排队，让请求以匀速的方式通过，阈值类型必须设置为 QPS，否则无效
 
-<img src="assets/SSM-个人笔记/media/image74.png" style="width:5.75in;height:2.97917in" />
+<img src="../assets/SSM-个人笔记/media/image74.png" style="width:5.75in;height:2.97917in" />
 
 通过调用 SystemRuleManager.loadRules() 方法来用硬编码的方式定义流量控制规则：
 
@@ -23286,7 +23286,7 @@ Sentinel 提供以下几种熔断策略：
 
 慢调用比例阈值 slowRatioThreshold：仅慢调用比例模式有效
 
-<img src="assets/SSM-个人笔记/media/image75.png" style="width:5.75in;height:3.46875in" />
+<img src="../assets/SSM-个人笔记/media/image75.png" style="width:5.75in;height:3.46875in" />
 
 注意异常降级仅针对业务异常，对 Sentinel 限流降级本身的异常 BlockException 不生效，为了统计异常比例或异常数，需要通过 Tracer.trace(ex) 记录业务异常或者通过 @SentinelResource 注解会自动统计业务异常
 
@@ -23322,7 +23322,7 @@ entry.exit();<br />
 
 热点参数限流会统计传入参数中的热点参数，并根据配置的限流阈值与模式，对包含热点参数的资源调用进行限流，Sentinel 利用 LRU 策略统计最近最常访问的热点参数，结合令牌桶算法来进行参数级别的流控
 
-<img src="assets/SSM-个人笔记/media/image76.png" style="width:5.75in;height:1.73958in" />
+<img src="../assets/SSM-个人笔记/media/image76.png" style="width:5.75in;height:1.73958in" />
 
 引入 @SentinelResource 注解：https://sentinelguard.io/zh-cn/docs/annotation-support.html
 
@@ -23360,7 +23360,7 @@ return "不用默认的兜底提示 Blocked by Sentinel(flow limiting)，自定�
 
 图示设置 p1 参数限流，规则是 1s 访问 1 次，当 p1=5 时 QPS \> 100，只访问 p2 不会出现限流 http://localhost:8401/testHotKey?p2=b
 
-<img src="assets/SSM-个人笔记/media/image77.png" style="width:5.75in;height:4.71875in" />
+<img src="../assets/SSM-个人笔记/media/image77.png" style="width:5.75in;height:4.71875in" />
 
 参数索引 paramIdx：热点参数的索引，图中索引 0 对应方法中的 p1 参数
 
@@ -23386,7 +23386,7 @@ RT：当单台机器上所有入口流量的平均 RT 达到阈值即触发系�
 
 CPU usage：当系统 CPU 使用率超过阈值即触发系统保护（取值范围 0.0-1.0）
 
-<img src="assets/SSM-个人笔记/media/image78.png" style="width:5.75in;height:2.28125in" />
+<img src="../assets/SSM-个人笔记/media/image78.png" style="width:5.75in;height:2.28125in" />
 
 详细内容参考文档：https://sentinelguard.io/zh-cn/docs/system-adaptive-protection.html
 
@@ -23555,7 +23555,7 @@ TM 向 TC 发起针对 XID 的全局提交或回滚决议
 
 TC 调度 XID 下管辖的全部分支事务完成提交或回滚请求
 
-<img src="assets/SSM-个人笔记/media/image79.png" style="width:5.75in;height:3.34375in" />
+<img src="../assets/SSM-个人笔记/media/image79.png" style="width:5.75in;height:3.34375in" />
 
 **基本配置**
 
@@ -23567,17 +23567,17 @@ file.conf：自定义事务组名称、事务日志存储模式为 db、数据�
 
 **事务分组** ：seata 的资源逻辑，可以按微服务的需要，在应用程序（客户端）对自行定义事务分组，每组取一个名字
 
-<img src="assets/SSM-个人笔记/media/image80.png" style="width:5.75in;height:3.375in" />
+<img src="../assets/SSM-个人笔记/media/image80.png" style="width:5.75in;height:3.375in" />
 
 数据库新建库 seata，建表 db_store.sql 在 https://github.com/seata/seata/tree/2.x/script/server/db 目录里面
 
 registry.conf：指明注册中心为 Nacos，及修改 Nacos 连接信息
 
-<img src="assets/SSM-个人笔记/media/image81.png" style="width:5.75in;height:1.36458in" />
+<img src="../assets/SSM-个人笔记/media/image81.png" style="width:5.75in;height:1.36458in" />
 
 启动 Nacos 和 Seata，如果 DB 报错，需要把将 lib 文件夹下 mysql-connector-java-5.1.30.jar 删除，替换为自己 MySQL 连接器版本
 
-<img src="assets/SSM-个人笔记/media/image82.png" style="width:5.75in;height:1.48958in" />
+<img src="../assets/SSM-个人笔记/media/image82.png" style="width:5.75in;height:1.48958in" />
 
 官网：https://seata.io
 

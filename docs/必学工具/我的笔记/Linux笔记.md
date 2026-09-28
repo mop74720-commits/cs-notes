@@ -14,7 +14,7 @@
 
 微信聊天时，操作系统的作用如下图：
 
-<img src="assets/Linux笔记/media/image1.png" style="width:5.75in;height:2.25in" />
+<img src="../assets/Linux笔记/media/image1.png" style="width:5.75in;height:2.25in" />
 
 常见的操作系统：
 
@@ -34,7 +34,7 @@ Linux操作系统由Linux系统内核和系统级应用程序组成。
 
 用户播放音乐时，不管是使用系统自带播放器还是第三方播放器，最终都会调用系统内核的相关功能：
 
-<img src="assets/Linux笔记/media/image2.png" style="width:5.75in;height:1.67708in" />
+<img src="../assets/Linux笔记/media/image2.png" style="width:5.75in;height:1.67708in" />
 
 **2.2 Linux发行版**
 
@@ -58,15 +58,15 @@ VMware WorkStation安装地址（资料中已提供）：
 
 **\[该类型的内容暂不支持下载\]**
 
-<img src="assets/Linux笔记/media/image3.png" style="width:5.75in;height:2.23958in" />
+<img src="../assets/Linux笔记/media/image3.png" style="width:5.75in;height:2.23958in" />
 
 双击安装包后按照如下步骤，最后输入密钥即可：
 
-<img src="assets/Linux笔记/media/image4.png" style="width:5.75in;height:2.10417in" />
+<img src="../assets/Linux笔记/media/image4.png" style="width:5.75in;height:2.10417in" />
 
 软件安装完成后，验证一下网络适配器是否正常配置：
 
-<img src="assets/Linux笔记/media/image5.png" style="width:5.75in;height:1.98958in" />
+<img src="../assets/Linux笔记/media/image5.png" style="width:5.75in;height:1.98958in" />
 
 **5.VMware上安装Linux虚拟机**
 
@@ -74,7 +74,7 @@ VMware WorkStation安装地址（资料中已提供）：
 
 **\[该类型的内容暂不支持下载\]**
 
-<img src="assets/Linux笔记/media/image6.png" style="width:5.75in;height:1.09375in" />
+<img src="../assets/Linux笔记/media/image6.png" style="width:5.75in;height:1.09375in" />
 
 或者直接使用如下链接下载（资料中已经提供CentOS操作系统的安装文件）：
 
@@ -82,11 +82,11 @@ VMware WorkStation安装地址（资料中已提供）：
 
 下载好操作系统的安装文件后，记住文件的位置，然后按照下列步骤操作：
 
-<img src="assets/Linux笔记/media/image7.png" style="width:5.75in;height:4.25in" />
+<img src="../assets/Linux笔记/media/image7.png" style="width:5.75in;height:4.25in" />
 
 点击完成后，即开启了CentOS系统的安装，耐心等待安装完成即可，后续都是自动化的：
 
-<img src="assets/Linux笔记/media/image8.png" style="width:5.75in;height:2.02083in" />
+<img src="../assets/Linux笔记/media/image8.png" style="width:5.75in;height:2.02083in" />
 
 ***注**：mac系统的相关安装和操作可以自己上网查找，这里只以windows系统为例。*
 
@@ -96,9 +96,9 @@ VMware WorkStation安装地址（资料中已提供）：
 
 无论是什么操作系统，都支持图形化和命令行两种形式操作操作系统，如windows常用图形化操作，而Linux通常用命令行操作。这是因为Linux在开发时重点就不在图形化页面上，使用图形化操作效率较低，而使用命令行效率高、资源占用低、程序运行稳定。
 
-<img src="assets/Linux笔记/media/image9.png" style="width:5.75in;height:1.76042in" />
+<img src="../assets/Linux笔记/media/image9.png" style="width:5.75in;height:1.76042in" />
 
-<img src="assets/Linux笔记/media/image10.png" style="width:5.75in;height:1.65625in" />
+<img src="../assets/Linux笔记/media/image10.png" style="width:5.75in;height:1.65625in" />
 
 **6.2 FinalShell简介**
 
@@ -110,25 +110,25 @@ VMware WorkStation安装地址（资料中已提供）：
 
 FinalShell的下载地址（资料中已提供）：http://www.hostbuf.com/downloads/finalshell_install.exe
 
-<img src="assets/Linux笔记/media/image11.png" style="width:5.75in;height:1.61458in" />
+<img src="../assets/Linux笔记/media/image11.png" style="width:5.75in;height:1.61458in" />
 
 **6.4 连接到Linux**
 
 先打开VMware中刚刚创建的虚拟机，在桌面右键选择最后一项Open Terminal打开命令行，输入ifconfig命令查询Linux系统的IP地址：
 
-<img src="assets/Linux笔记/media/image12.png" style="width:5.75in;height:2.5625in" />
+<img src="../assets/Linux笔记/media/image12.png" style="width:5.75in;height:2.5625in" />
 
 打开Finshell软件，配置到Linux系统的连接：
 
-<img src="assets/Linux笔记/media/image13.png" style="width:5.75in;height:2.40625in" />
+<img src="../assets/Linux笔记/media/image13.png" style="width:5.75in;height:2.40625in" />
 
-<img src="assets/Linux笔记/media/image14.png" style="width:5.75in;height:2.52083in" />
+<img src="../assets/Linux笔记/media/image14.png" style="width:5.75in;height:2.52083in" />
 
-<img src="assets/Linux笔记/media/image15.png" style="width:5.75in;height:2.70833in" />
+<img src="../assets/Linux笔记/media/image15.png" style="width:5.75in;height:2.70833in" />
 
 点击接受并保存显示如下就表示连接成功：
 
-<img src="assets/Linux笔记/media/image16.png" style="width:5.75in;height:3.55208in" />
+<img src="../assets/Linux笔记/media/image16.png" style="width:5.75in;height:3.55208in" />
 
 **注意**：Linux虚拟机如果重启，有可能，发生IP改变如果改变IP需要在FinalShell中修改连接的IP地址，固定IP的操作后续会讲（[虚拟机固定IP](https://mcnerzykwkel.feishu.cn/wiki/YLdtwfBTKiRhy9k0bNocH0rPn3g?fromScene=spaceOverview#share-QQvrdT3KToxWMtx3M2hc6IS4ned)）。
 
@@ -138,11 +138,11 @@ FinalShell的下载地址（资料中已提供）：http://www.hostbuf.com/downl
 
 WSL是用于Windows系统之上的Linux子系统，可以在Windows系统中获得Linux系统环境，并完全**直连计算机硬件**，无需通过虚拟机虚拟硬件：
 
-<img src="assets/Linux笔记/media/image17.png" style="width:5.75in;height:4.17708in" />
+<img src="../assets/Linux笔记/media/image17.png" style="width:5.75in;height:4.17708in" />
 
 WSL是Windows10自带功能，需要开启，无需下载：
 
-<img src="assets/Linux笔记/media/image18.png" style="width:5.75in;height:2.20833in" />
+<img src="../assets/Linux笔记/media/image18.png" style="width:5.75in;height:2.20833in" />
 
 确定后会进行部署，重启计算机就可以了。
 
@@ -150,35 +150,35 @@ WSL是Windows10自带功能，需要开启，无需下载：
 
 开启WSL后，接下来就是安装Ubuntu。
 
-<img src="assets/Linux笔记/media/image19.png" style="width:5.75in;height:3.03125in" />
+<img src="../assets/Linux笔记/media/image19.png" style="width:5.75in;height:3.03125in" />
 
 点击获取并安装：
 
-<img src="assets/Linux笔记/media/image20.png" style="width:5.75in;height:2.29167in" />
+<img src="../assets/Linux笔记/media/image20.png" style="width:5.75in;height:2.29167in" />
 
 点击启动：
 
-<img src="assets/Linux笔记/media/image21.png" style="width:5.75in;height:1.88542in" />
+<img src="../assets/Linux笔记/media/image21.png" style="width:5.75in;height:1.88542in" />
 
 输入用户名用以创建一个用户：
 
-<img src="assets/Linux笔记/media/image22.png" style="width:5.75in;height:0.52083in" />
+<img src="../assets/Linux笔记/media/image22.png" style="width:5.75in;height:0.52083in" />
 
 输入两次密码确认（注意，输入密码没有反馈，不用理会，正常输入即可）：
 
-<img src="assets/Linux笔记/media/image23.png" style="width:5.75in;height:0.51042in" />
+<img src="../assets/Linux笔记/media/image23.png" style="width:5.75in;height:0.51042in" />
 
 至此，得到了一个可用的Ubuntu操作系统环境：
 
-<img src="assets/Linux笔记/media/image24.png" style="width:5.75in;height:2.3125in" />
+<img src="../assets/Linux笔记/media/image24.png" style="width:5.75in;height:2.3125in" />
 
 Ubuntu自带的终端窗口软件不太好用，我们可以使用微软推出的：Windows Terminal软件。
 
 在应用商店中搜索terminal关键字，找到Windows Terminal软件下载并安装：
 
-<img src="assets/Linux笔记/media/image25.png" style="width:5.75in;height:2.14583in" />
+<img src="../assets/Linux笔记/media/image25.png" style="width:5.75in;height:2.14583in" />
 
-<img src="assets/Linux笔记/media/image26.png" style="width:5.75in;height:2.5in" />
+<img src="../assets/Linux笔记/media/image26.png" style="width:5.75in;height:2.5in" />
 
 再次打开Windows Terminal软件，即默认使用Ubuntu系统了（WSL）
 
@@ -188,17 +188,17 @@ Ubuntu自带的终端窗口软件不太好用，我们可以使用微软推出�
 
 **在VMware Workstation Pro中制作快照**
 
-<img src="assets/Linux笔记/media/image27.png" style="width:5.75in;height:1.82292in" />
+<img src="../assets/Linux笔记/media/image27.png" style="width:5.75in;height:1.82292in" />
 
-<img src="assets/Linux笔记/media/image28.png" style="width:5.75in;height:2.02083in" />
+<img src="../assets/Linux笔记/media/image28.png" style="width:5.75in;height:2.02083in" />
 
 填写好快照名称和快照描述后，点击拍摄快照就拍摄完成了。
 
 **在VMware Workstation Pro中还原快照**
 
-<img src="assets/Linux笔记/media/image29.png" style="width:5.75in;height:2.36458in" />
+<img src="../assets/Linux笔记/media/image29.png" style="width:5.75in;height:2.36458in" />
 
-<img src="assets/Linux笔记/media/image30.png" style="width:5.75in;height:0.72917in" />
+<img src="../assets/Linux笔记/media/image30.png" style="width:5.75in;height:0.72917in" />
 
 **二、Linux基础命令**
 
@@ -206,13 +206,13 @@ Ubuntu自带的终端窗口软件不太好用，我们可以使用微软推出�
 
 Linux不像Windows系统那样，有多个盘符，Linux只有一个根目录/，所有文件都在它下面：
 
-<img src="assets/Linux笔记/media/image31.png" style="width:5.75in;height:0.89583in" />
+<img src="../assets/Linux笔记/media/image31.png" style="width:5.75in;height:0.89583in" />
 
 在Linux系统中，路径之间的层级关系，使用：/ 来表示
 
 在Windows系统中，路径之间的层级关系，使用： \\ 来表示
 
-<img src="assets/Linux笔记/media/image32.png" style="width:5.75in;height:2.02083in" />
+<img src="../assets/Linux笔记/media/image32.png" style="width:5.75in;height:2.02083in" />
 
 **2.Linux命令入门**
 
@@ -246,7 +246,7 @@ parameter：\[可选，非必填\]命令的参数，多数用于命令的指向�
 
 -l，以列表形式查看
 
-<img src="assets/Linux笔记/media/image33.png" style="width:5.75in;height:2.6875in" />
+<img src="../assets/Linux笔记/media/image33.png" style="width:5.75in;height:2.6875in" />
 
 -h，以易于阅读的形式，列出文件大小，如K、M、G，必须和 -l 选项搭配使用
 
@@ -256,7 +256,7 @@ Linux路径是此命令可选的参数
 
 不使用选项和参数，直接使用ls命令本体，表示以平铺形式，列出当前工作目录下的内容：
 
-<img src="assets/Linux笔记/media/image34.png" style="width:5.75in;height:0.42708in" />
+<img src="../assets/Linux笔记/media/image34.png" style="width:5.75in;height:0.42708in" />
 
 *Linux的命令行的终端启动时默认打开当前登录用户的HOME目录作为当前工作目录。*
 
@@ -476,17 +476,17 @@ kMG表示大小单位，k(小写字母)表示kb，M表示MB，G表示GB
 
 不带选项，统计文件
 
-<img src="assets/Linux笔记/media/image35.png" style="width:5.75in;height:0.66667in" />
+<img src="../assets/Linux笔记/media/image35.png" style="width:5.75in;height:0.66667in" />
 
 **8.3 管道符 \|**
 
 含义：将管道符左边命令的结果，作为右边命令的输入
 
-<img src="assets/Linux笔记/media/image36.png" style="width:5.75in;height:0.63542in" />
+<img src="../assets/Linux笔记/media/image36.png" style="width:5.75in;height:0.63542in" />
 
 管道符可以嵌套使用，如cat itheima.txt \| grep itcast \| grep itheima：
 
-<img src="assets/Linux笔记/media/image37.png" style="width:5.75in;height:0.52083in" />
+<img src="../assets/Linux笔记/media/image37.png" style="width:5.75in;height:0.52083in" />
 
 **9.echo、tail和重定向符**
 
@@ -526,7 +526,7 @@ echo “Hello itheima” \>\> itheima.txt会把字符串Hello itheima追加到�
 
 复制一个新的FinalShell的标签
 
-> <img src="assets/Linux笔记/media/image38.png" style="width:5.75in;height:0.30208in" />
+> <img src="../assets/Linux笔记/media/image38.png" style="width:5.75in;height:0.30208in" />
 
 在第一个标签中，执行：touch test.txt，创建一个test.txt文件
 
@@ -552,7 +552,7 @@ vim 是 vi 的加强版本，兼容 vi 的所有指令，不仅能编辑文本�
 
 底线命令模式：以：开始，通常用于文件的保存、退出
 
-<img src="assets/Linux笔记/media/image39.png" style="width:5.75in;height:3.875in" />
+<img src="../assets/Linux笔记/media/image39.png" style="width:5.75in;height:3.875in" />
 
 **10.2 vi \\ vim编辑器的基本使用**
 
@@ -592,23 +592,23 @@ vi 文件路径或vim 文件路径，由于vim完全兼容vi，所以推荐使�
 
 **命令模式快捷键**
 
-<img src="assets/Linux笔记/media/image40.png" style="width:5.75in;height:1.65625in" />
+<img src="../assets/Linux笔记/media/image40.png" style="width:5.75in;height:1.65625in" />
 
-<img src="assets/Linux笔记/media/image41.png" style="width:5.75in;height:1.75in" />
+<img src="../assets/Linux笔记/media/image41.png" style="width:5.75in;height:1.75in" />
 
 **底线命令模式快捷键**
 
-<img src="assets/Linux笔记/media/image42.png" style="width:5.75in;height:1.19792in" />
+<img src="../assets/Linux笔记/media/image42.png" style="width:5.75in;height:1.19792in" />
 
 **11.查看命令帮助和手册**
 
 任何命令都支持：--help 选项， 可以通过这个选项，查看命令的帮助：
 
-<img src="assets/Linux笔记/media/image43.png" style="width:5.75in;height:0.97917in" />
+<img src="../assets/Linux笔记/media/image43.png" style="width:5.75in;height:0.97917in" />
 
 如果想要查看命令的详细手册，可以通过man（manual， 手册）命令查看，如man cd查看cd命令的详细手册：
 
-<img src="assets/Linux笔记/media/image44.png" style="width:5.75in;height:1.01042in" />
+<img src="../assets/Linux笔记/media/image44.png" style="width:5.75in;height:1.01042in" />
 
 命令的详细手册是英文的，如果看起来吃力，可以通过重定向写入到文件中，通过翻译软件翻译查看。
 
@@ -620,7 +620,7 @@ vi 文件路径或vim 文件路径，由于vim完全兼容vi，所以推荐使�
 
 无论是Windows、MacOS、Linux均采用多用户的管理模式进行权限管理，Linux中权限最大的用户是root（超级管理员），前期一直使用的普通用户itheima
 
-<img src="assets/Linux笔记/media/image45.png" style="width:5.75in;height:1.05208in" />
+<img src="../assets/Linux笔记/media/image45.png" style="width:5.75in;height:1.05208in" />
 
 普通用户的权限，一般在其HOME目录内是不受限的，一旦出了HOME目录，大多数地方仅有只读和执行权限，无修改权限。
 
@@ -678,7 +678,7 @@ itheima是用户名，也可以是其他用户名如itcast
 
 Linux系统中可以配置多个用户，也可以配置多个用户组，其中，用户可以加入多个用户组中（如）
 
-<img src="assets/Linux笔记/media/image45.png" style="width:5.75in;height:1.05208in" />
+<img src="../assets/Linux笔记/media/image45.png" style="width:5.75in;height:1.05208in" />
 
 Linux中关于权限的管控级别有2个级别，分别是：
 
@@ -716,13 +716,13 @@ Linux中关于权限的管控级别有2个级别，分别是：
 
 7.查看当前系统中有哪些用户：getent passwd
 
-<img src="assets/Linux笔记/media/image46.png" style="width:5.75in;height:1in" />
+<img src="../assets/Linux笔记/media/image46.png" style="width:5.75in;height:1in" />
 
 每个结果有7条信息，用户名:密码(x):用户ID:组ID:描述信息(无用):HOME目录:执行终端(默认bash)
 
 8.查看当前系统中有哪些用户组：getent group
 
-<img src="assets/Linux笔记/media/image47.png" style="width:5.75in;height:1.02083in" />
+<img src="../assets/Linux笔记/media/image47.png" style="width:5.75in;height:1.02083in" />
 
 每个结果有3条信息，组名称:组认证(显示为x):组ID
 
@@ -730,7 +730,7 @@ Linux中关于权限的管控级别有2个级别，分别是：
 
 通过ls -l 可以以列表形式查看内容，并显示权限细节：
 
-<img src="assets/Linux笔记/media/image48.png" style="width:5.75in;height:1.17708in" />
+<img src="../assets/Linux笔记/media/image48.png" style="width:5.75in;height:1.17708in" />
 
 序号1，表示文件、文件夹的权限控制信息
 
@@ -740,7 +740,7 @@ Linux中关于权限的管控级别有2个级别，分别是：
 
 序号2序号3刚刚说过，序号1表示权限细节，共分为10个槽位：
 
-<img src="assets/Linux笔记/media/image49.png" style="width:5.75in;height:1.34375in" />
+<img src="../assets/Linux笔记/media/image49.png" style="width:5.75in;height:1.34375in" />
 
 例如drwxr-xr-x表示：
 
@@ -954,7 +954,7 @@ ln命令可以用于创建软连接。
 
 -d 按照给定的字符串显示日期，一般用于日期计算
 
-> <img src="assets/Linux笔记/media/image50.png" style="width:5.75in;height:0.46875in" />
+> <img src="../assets/Linux笔记/media/image50.png" style="width:5.75in;height:0.46875in" />
 
 支持的时间标记：
 
@@ -990,7 +990,7 @@ second秒
 
 %s 自 1970-01-01 00:00:00 UTC 到现在的秒数
 
-<img src="assets/Linux笔记/media/image51.png" style="width:5.75in;height:0.34375in" />
+<img src="../assets/Linux笔记/media/image51.png" style="width:5.75in;height:0.34375in" />
 
 **5.2 修改Linux时区**
 
@@ -1035,7 +1035,7 @@ IPv4版本的地址格式是：a.b.c.d，其中abcd表示0~255的数字，如192
 
 通过ifconfig命令可以查看本机IP地址，如无法使用ifconfig命令，可以安装：yum -y install net-tools
 
-<img src="assets/Linux笔记/media/image52.png" style="width:5.75in;height:0.5in" />
+<img src="../assets/Linux笔记/media/image52.png" style="width:5.75in;height:0.5in" />
 
 **特殊IP地址**
 
@@ -1065,7 +1065,7 @@ IPv4版本的地址格式是：a.b.c.d，其中abcd表示0~255的数字，如192
 
 以访问www.baidu.com为例，解释域名解析流程：
 
-<img src="assets/Linux笔记/media/image53.png" style="width:5.75in;height:1.42708in" />
+<img src="../assets/Linux笔记/media/image53.png" style="width:5.75in;height:1.42708in" />
 
 先查看本机的记录（私人地址本）
 
@@ -1079,11 +1079,11 @@ Linux看：/etc/hosts
 
 在Windows系统的：C:\Windows\System32\drivers\etc\hosts文件中配置记录：
 
-<img src="assets/Linux笔记/media/image54.png" style="width:5.75in;height:3.08333in" />
+<img src="../assets/Linux笔记/media/image54.png" style="width:5.75in;height:3.08333in" />
 
 将FinalShell连接时使用的IP修改成centos：
 
-<img src="assets/Linux笔记/media/image55.png" style="width:5.75in;height:1.25in" />
+<img src="../assets/Linux笔记/media/image55.png" style="width:5.75in;height:1.25in" />
 
 **6.4 虚拟机配置固定IP**
 
@@ -1093,13 +1093,13 @@ DHCP：动态获取IP地址，即每次重启设备后都会获取一次，可�
 
 在VMware Workstation（或Fusion）中配置IP地址网关和网段（IP地址的范围）
 
-<img src="assets/Linux笔记/media/image56.png" style="width:5.75in;height:1.40625in" />
+<img src="../assets/Linux笔记/media/image56.png" style="width:5.75in;height:1.40625in" />
 
 在Linux系统中手动修改配置文件，固定IP
 
 使用vim编辑/etc/sysconfig/network-scripts/ifcfg-ens33文件，填入如下内容
 
-> <img src="assets/Linux笔记/media/image57.png" style="width:5.75in;height:1.94792in" />
+> <img src="../assets/Linux笔记/media/image57.png" style="width:5.75in;height:1.94792in" />
 
 执行：systemctl restart network 重启网卡，执行ifconfig即可看到ip地址固定为192.168.88.130了
 
@@ -1153,7 +1153,7 @@ DHCP：动态获取IP地址，即每次重启设备后都会获取一次，可�
 
 每台计算机内都有许多应用程序（QQ、微信等），通过IP地址只能锁定计算机，不能锁定计算机内的应用程序，如果两台电脑的同一个应用程序进行交流，那么需要确定端口号：
 
-<img src="assets/Linux笔记/media/image58.png" style="width:5.75in;height:0.54167in" />
+<img src="../assets/Linux笔记/media/image58.png" style="width:5.75in;height:0.54167in" />
 
 Linux系统可以支持65535个端口，这些端口分为3类：
 
@@ -1175,7 +1175,7 @@ Linux系统可以支持65535个端口，这些端口分为3类：
 
 语法：nmap 被查看的IP地址
 
-<img src="assets/Linux笔记/media/image59.png" style="width:5.75in;height:0.98958in" />
+<img src="../assets/Linux笔记/media/image59.png" style="width:5.75in;height:0.98958in" />
 
 **netstat命令**
 
@@ -1185,7 +1185,7 @@ Linux系统可以支持65535个端口，这些端口分为3类：
 
 语法：netstat -anp \| grep 端口号
 
-<img src="assets/Linux笔记/media/image60.png" style="width:5.75in;height:0.25in" />
+<img src="../assets/Linux笔记/media/image60.png" style="width:5.75in;height:0.25in" />
 
 可以看到当前系统6000端口被程序（进程号7174）占用了
 
@@ -1207,7 +1207,7 @@ Linux系统可以支持65535个端口，这些端口分为3类：
 
 **结果解析**
 
-<img src="assets/Linux笔记/media/image61.png" style="width:5.75in;height:0.51042in" />
+<img src="../assets/Linux笔记/media/image61.png" style="width:5.75in;height:0.51042in" />
 
 UID：进程所属的用户ID
 
@@ -1231,7 +1231,7 @@ CMD：进程对应的名称或启动路径或启动命令
 
 ps -ef \| grep tail，查看tail命令相关进程：
 
-<img src="assets/Linux笔记/media/image62.png" style="width:5.75in;height:0.25in" />
+<img src="../assets/Linux笔记/media/image62.png" style="width:5.75in;height:0.25in" />
 
 第二个结果是ps -ef \| grep tail这个命令的进程，不用理会即可
 
@@ -1255,13 +1255,13 @@ ps -ef \| grep 30001，过滤带有30001关键字的进程信息，一般指代�
 
 默认每5秒刷新一次，按q或ctrl + c退出
 
-<img src="assets/Linux笔记/media/image63.png" style="width:5.75in;height:3.02083in" />
+<img src="../assets/Linux笔记/media/image63.png" style="width:5.75in;height:3.02083in" />
 
 **top命令内容解析**
 
-<img src="assets/Linux笔记/media/image64.png" style="width:5.75in;height:1.84375in" />
+<img src="../assets/Linux笔记/media/image64.png" style="width:5.75in;height:1.84375in" />
 
-<img src="assets/Linux笔记/media/image65.png" style="width:5.75in;height:0.85417in" />
+<img src="../assets/Linux笔记/media/image65.png" style="width:5.75in;height:0.85417in" />
 
 PID：进程id
 
@@ -1289,11 +1289,11 @@ COMMAND：进程的命令或名称或程序文件路径
 
 **top命令选项**
 
-<img src="assets/Linux笔记/media/image66.png" style="width:5.75in;height:1.83333in" />
+<img src="../assets/Linux笔记/media/image66.png" style="width:5.75in;height:1.83333in" />
 
 当top以交互式运行（非-b选项启动），可以用以下交互式命令进行控制：
 
-<img src="assets/Linux笔记/media/image67.png" style="width:5.75in;height:3.23958in" />
+<img src="../assets/Linux笔记/media/image67.png" style="width:5.75in;height:3.23958in" />
 
 **9.2 df命令**
 
@@ -1303,7 +1303,7 @@ COMMAND：进程的命令或名称或程序文件路径
 
 选项：-h，以更加人性化的单位显示
 
-<img src="assets/Linux笔记/media/image68.png" style="width:5.75in;height:2.10417in" />
+<img src="../assets/Linux笔记/media/image68.png" style="width:5.75in;height:2.10417in" />
 
 **9.3 iostat命令**
 
@@ -1319,11 +1319,11 @@ num2：数字，刷新几次
 
 **iostat命令内容解析**
 
-<img src="assets/Linux笔记/media/image69.png" style="width:5.75in;height:1.3125in" />
+<img src="../assets/Linux笔记/media/image69.png" style="width:5.75in;height:1.3125in" />
 
 使用iostat的-x选项，可以显示更多信息：
 
-<img src="assets/Linux笔记/media/image70.png" style="width:5.75in;height:0.86458in" />
+<img src="../assets/Linux笔记/media/image70.png" style="width:5.75in;height:0.86458in" />
 
 rrqm/s：每秒这个设备相关的读取请求有多少被Merge了（当系统调用需要读取数据的时候，VFS将请求发到各个FS，如果FS发现不同的读取请求读取的是相同Block的数据，FS会将这个请求合并Merge, 提高IO利用率, 避免重复调用）
 
@@ -1363,7 +1363,7 @@ num2：查看次数（不填无限次数）
 
 查看2次，隔3秒刷新一次，并最终汇总平均记录：
 
-<img src="assets/Linux笔记/media/image71.png" style="width:5.75in;height:1.72917in" />
+<img src="../assets/Linux笔记/media/image71.png" style="width:5.75in;height:1.72917in" />
 
 IFACE 本地网卡接口的名称
 
@@ -1395,7 +1395,7 @@ PWD：记录当前工作路径
 
 **10.1 PATH**
 
-<img src="assets/Linux笔记/media/image72.png" style="width:5.75in;height:0.20833in" />
+<img src="../assets/Linux笔记/media/image72.png" style="width:5.75in;height:0.20833in" />
 
 PATH记录了系统执行任何命令的搜索路径，多个路径之间以:隔开，如上图中的PATH记录了：
 
@@ -1419,7 +1419,7 @@ PATH记录了系统执行任何命令的搜索路径，多个路径之间以:隔
 
 当和其它内容混合在一起的时候，可以通过{}来标注取的变量是谁，如echo \${PATH}ABC
 
-<img src="assets/Linux笔记/media/image73.png" style="width:5.75in;height:0.33333in" />
+<img src="../assets/Linux笔记/media/image73.png" style="width:5.75in;height:0.33333in" />
 
 **10.3 设置环境变量**
 
@@ -1439,7 +1439,7 @@ PATH记录了系统执行任何命令的搜索路径，多个路径之间以:隔
 
 在~/.bashrc文件最后添加命名：export MYNAME=example
 
-<img src="assets/Linux笔记/media/image74.png" style="width:5.75in;height:1.09375in" />
+<img src="../assets/Linux笔记/media/image74.png" style="width:5.75in;height:1.09375in" />
 
 保存退出后，执行命令source ~/.bashrc
 
@@ -1467,7 +1467,7 @@ Linux进行文件的上传和下载时，上传会上传电脑桌面fsdownload�
 
 浏览文件系统，找到合适的目录，将本地电脑的文件拓展进入，即可方便的上传数据到Linux中
 
-<img src="assets/Linux笔记/media/image75.png" style="width:5.75in;height:3.04167in" />
+<img src="../assets/Linux笔记/media/image75.png" style="width:5.75in;height:3.04167in" />
 
 **11.2 rz、sz命令**
 

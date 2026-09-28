@@ -523,15 +523,15 @@ String msg = sc.nextLine();<br />
 
 一个数组内存图
 
-<img src="assets/Java-个人笔记/media/image1.png" style="width:5.75in;height:2.44792in" />
+<img src="../assets/Java-个人笔记/media/image1.png" style="width:5.75in;height:2.44792in" />
 
 两个数组内存图
 
-<img src="assets/Java-个人笔记/media/image2.png" style="width:5.75in;height:2.52083in" />
+<img src="../assets/Java-个人笔记/media/image2.png" style="width:5.75in;height:2.52083in" />
 
 多个数组指向相同内存图
 
-<img src="assets/Java-个人笔记/media/image3.png" style="width:5.75in;height:2.61458in" />
+<img src="../assets/Java-个人笔记/media/image3.png" style="width:5.75in;height:2.61458in" />
 
 **数组异常**
 
@@ -1122,9 +1122,9 @@ Debug 是供程序员使用的程序调试工具，它可以用于查看程序�
 
 加断点 → Debug 运行 → 单步运行 → 看 Debugger 窗口 → 看 Console 窗口
 
-<img src="assets/Java-个人笔记/media/image4.png" style="width:5.75in;height:2.76042in" />
+<img src="../assets/Java-个人笔记/media/image4.png" style="width:5.75in;height:2.76042in" />
 
-<img src="assets/Java-个人笔记/media/image5.jpeg" style="width:5.75in;height:4.21875in" />
+<img src="../assets/Java-个人笔记/media/image5.jpeg" style="width:5.75in;height:4.21875in" />
 
 **对象**
 
@@ -2627,7 +2627,7 @@ Shallow Clone & Deep Clone：
 
 如果对一个引用类型进行克隆时只是克隆了它的引用，和原始对象共享对象成员变量
 
-<img src="assets/Java-个人笔记/media/image6.png" style="width:5.36458in;height:2.76042in" />
+<img src="../assets/Java-个人笔记/media/image6.png" style="width:5.36458in;height:2.76042in" />
 
 深克隆：在对整个对象浅克隆后，对其引用变量进行克隆，并将其更新到浅克隆对象中去
 
@@ -2822,7 +2822,7 @@ String str = new String("abc") 创建字符串对象：
 
 创建两个对象：字符串池中未找到 abc 对象，那么分别在堆中和字符串池中创建一个对象，字符串池中的比较都是采用 equals()
 
-<img src="assets/Java-个人笔记/media/image7.png" style="width:5.75in;height:0.86458in" />
+<img src="../assets/Java-个人笔记/media/image7.png" style="width:5.75in;height:0.86458in" />
 
 new String("a") + new String("b") 创建字符串对象：
 
@@ -2832,7 +2832,7 @@ new String("a") + new String("b") 创建字符串对象：
 
 对象 4：new String("b")、对象 5：常量池中的 b
 
-<img src="assets/Java-个人笔记/media/image7.png" style="width:5.75in;height:0.86458in" />
+<img src="../assets/Java-个人笔记/media/image7.png" style="width:5.75in;height:0.86458in" />
 
 StringBuilder 的 toString()：
 
@@ -3063,7 +3063,7 @@ System.out.println(i);<br />
 </tbody>
 </table>
 
-<img src="assets/Java-个人笔记/media/image8.png" style="width:5.75in;height:3.82292in" />
+<img src="../assets/Java-个人笔记/media/image8.png" style="width:5.75in;height:3.82292in" />
 
 **优化常量池**
 
@@ -4213,7 +4213,7 @@ System.out.println(matcher.group(1));<br />
 
 各数据结构时间复杂度对比：
 
-<img src="assets/Java-个人笔记/media/image9.png" style="width:5.75in;height:3.0625in" />
+<img src="../assets/Java-个人笔记/media/image9.png" style="width:5.75in;height:3.0625in" />
 
 图片来源：https://www.bigocheatsheet.com/
 
@@ -4807,7 +4807,7 @@ System.out.println(stack);// [第1颗子弹]<br />
 
 LinkedList 是一个实现了 List 接口的 **双端链表** ，支持高效的插入和删除操作，另外也实现了 Deque 接口，使得 LinkedList 类也具有队列的特性
 
-<img src="assets/Java-个人笔记/media/image10.png" style="width:5.75in;height:1.8125in" />
+<img src="../assets/Java-个人笔记/media/image10.png" style="width:5.75in;height:1.8125in" />
 
 核心方法：
 
@@ -4981,7 +4981,7 @@ JDK 1.8 之后：哈希表 = 数组（初始容量16) + 链表 + 红黑树 + （
 
 当链表长度超过阈值 8 且当前数组的长度 \< 64时，扩容
 
-<img src="assets/Java-个人笔记/media/image11.png" style="width:5.75in;height:2.47917in" />
+<img src="../assets/Java-个人笔记/media/image11.png" style="width:5.75in;height:2.47917in" />
 
 每个元素的 hashcode() 的值进行响应的算法运算，计算出的值相同的存入一个数组块中，以链表的形式存储，如果链表长度超过8就采取红黑树存储，所以输出的元素是无序的。
 
@@ -5344,7 +5344,7 @@ JDK1.8 以后 HashMap 由 **数组+链表 +红黑树** 数据结构组成
 
 即使哈希函数取得再好，也很难达到元素百分百均匀分布。当 HashMap 中有大量的元素都存放到同一个桶中时，就相当于一个长的单链表，假如单链表有 n 个元素，遍历的 **时间复杂度是 O(n)** ，所以 JDK1.8 中引入了 红黑树（查找 **时间复杂度为 O(logn)** ）来优化这个问题，使得查找效率更高
 
-<img src="assets/Java-个人笔记/media/image12.png" style="width:5.75in;height:2.92708in" />
+<img src="../assets/Java-个人笔记/media/image12.png" style="width:5.75in;height:2.92708in" />
 
 参考视频：https://www.bilibili.com/video/BV1nJ411J7AA
 
@@ -5352,7 +5352,7 @@ JDK1.8 以后 HashMap 由 **数组+链表 +红黑树** 数据结构组成
 
 HashMap 继承关系如下图所示：
 
-<img src="assets/Java-个人笔记/media/image13.bmp" style="width:4.25in;height:2.1875in" />
+<img src="../assets/Java-个人笔记/media/image13.bmp" style="width:4.25in;height:2.1875in" />
 
 说明：
 
@@ -5860,7 +5860,7 @@ return null;<br />
 
 (n - 1) & hash ：计算下标位置
 
-<img src="assets/Java-个人笔记/media/image14.png" style="width:5.75in;height:2.82292in" />
+<img src="../assets/Java-个人笔记/media/image14.png" style="width:5.75in;height:2.82292in" />
 
 余数本质是不断做除法，把剩余的数减去，运算效率要比位运算低
 
@@ -6048,7 +6048,7 @@ HashMap 在进行扩容后，节点 **要么就在原来的位置，要么就被
 
 注意：这里要求 **数组长度 2 的幂**
 
-<img src="assets/Java-个人笔记/media/image15.png" style="width:5.75in;height:3.32292in" />
+<img src="../assets/Java-个人笔记/media/image15.png" style="width:5.75in;height:3.32292in" />
 
 普通节点：把所有节点分成高低位两个链表，转移到数组
 
@@ -11673,7 +11673,7 @@ Java 代码执行流程： Java 程序 --（编译）--\> 字节码文件 --（�
 
 JVM 结构：
 
-<img src="assets/Java-个人笔记/media/image16.png" style="width:5.75in;height:3.14583in" />
+<img src="../assets/Java-个人笔记/media/image16.png" style="width:5.75in;height:3.14583in" />
 
 JVM、JRE、JDK 对比：
 
@@ -11681,7 +11681,7 @@ JDK(Java SE Development Kit)：Java 标准开发包，提供了编译、运行 J
 
 JRE( Java Runtime Environment)：Java 运行环境，用于解释执行 Java 的字节码文件
 
-<img src="assets/Java-个人笔记/media/image17.png" style="width:5.75in;height:3.38542in" />
+<img src="../assets/Java-个人笔记/media/image17.png" style="width:5.75in;height:3.38542in" />
 
 参考书籍：https://book.douban.com/subject/34907497/
 
@@ -11749,11 +11749,11 @@ JVM 内存结构规定了 Java 在运行过程中内存申请、分配、管理�
 
 Java1.8 以前的内存结构图：
 
-<img src="assets/Java-个人笔记/media/image18.png" style="width:5.75in;height:3.30208in" />
+<img src="../assets/Java-个人笔记/media/image18.png" style="width:5.75in;height:3.30208in" />
 
 Java1.8 之后的内存结果图：
 
-<img src="assets/Java-个人笔记/media/image19.png" style="width:5.75in;height:3.22917in" />
+<img src="../assets/Java-个人笔记/media/image19.png" style="width:5.75in;height:3.22917in" />
 
 线程运行诊断：
 
@@ -11799,7 +11799,7 @@ Java 虚拟机规范允许 **Java 栈的大小是动态的或者是固定不变�
 
 操作数栈或表达式栈和其他一些附加信息
 
-<img src="assets/Java-个人笔记/media/image20.png" style="width:5.75in;height:3.26042in" />
+<img src="../assets/Java-个人笔记/media/image20.png" style="width:5.75in;height:3.26042in" />
 
 设置栈内存大小： -Xss size -Xss 1024k
 
@@ -11867,13 +11867,13 @@ Java 虚拟机的解释引擎是基于栈的执行引擎，其中的栈指的就
 
 为了支持当前方法的代码能够实现动态链接，每一个栈帧内部都包含一个指向运行时常量池或该栈帧所属方法的引用
 
-<img src="assets/Java-个人笔记/media/image21.png" style="width:5.75in;height:1.82292in" />
+<img src="../assets/Java-个人笔记/media/image21.png" style="width:5.75in;height:1.82292in" />
 
 在 Java 源文件被编译成的字节码文件中，所有的变量和方法引用都作为符号引用保存在 class 的常量池中
 
 常量池的作用：提供一些符号和常量，便于指令的识别
 
-<img src="assets/Java-个人笔记/media/image22.png" style="width:5.75in;height:1.70833in" />
+<img src="../assets/Java-个人笔记/media/image22.png" style="width:5.75in;height:1.70833in" />
 
 **返回地址**
 
@@ -11921,7 +11921,7 @@ dlopen 函数：Linux 系统加载和链接共享库
 
 dlclose 函数：卸载共享库
 
-<img src="assets/Java-个人笔记/media/image23.png" style="width:5.61458in;height:2.64583in" />
+<img src="../assets/Java-个人笔记/media/image23.png" style="width:5.61458in;height:2.64583in" />
 
 图片来源：https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20%E8%99%9A%E6%8B%9F%E6%9C%BA.md
 
@@ -12064,7 +12064,7 @@ System.out.println("-Xmx : " + maxMemory + "M");//-Xmx : 3641M<br />
 
 本地内存概述图：
 
-<img src="assets/Java-个人笔记/media/image8.png" style="width:5.75in;height:3.82292in" />
+<img src="../assets/Java-个人笔记/media/image8.png" style="width:5.75in;height:3.82292in" />
 
 **元空间**
 
@@ -12222,7 +12222,7 @@ TLAB 分配使用的是 Eden 区域进行内存分配，属于堆内存
 
 问题：堆空间都是共享的么？ 不一定，因为还有 TLAB，在堆中划分出一块区域，为每个线程所独占
 
-<img src="assets/Java-个人笔记/media/image24.png" style="width:5.75in;height:2.86458in" />
+<img src="../assets/Java-个人笔记/media/image24.png" style="width:5.75in;height:2.86458in" />
 
 JVM 是将 TLAB 作为内存分配的首选，但不是所有的对象实例都能够在 TLAB 中成功分配内存，一旦对象在 TLAB 空间分配内存失败时，JVM 就会通过 **使用加锁机制确保数据操作的原子性** ，从而直接在堆中分配内存
 
@@ -12236,7 +12236,7 @@ JVM 是将 TLAB 作为内存分配的首选，但不是所有的对象实例都�
 
 -XX:TLABRefillWasteFraction ：指当 TLAB 空间不足，请求分配的对象内存大小超过此阈值时不会进行 TLAB 分配，直接进行堆内存分配，否则还是会优先进行 TLAB 分配
 
-<img src="assets/Java-个人笔记/media/image25.png" style="width:5.75in;height:2.66667in" />
+<img src="../assets/Java-个人笔记/media/image25.png" style="width:5.75in;height:2.66667in" />
 
 **逃逸分析**
 
@@ -12342,7 +12342,7 @@ Full GC：回收老年代和新生代，老年代对象其存活时间长，所�
 
 Eden 和 Survivor 大小比例默认为 8:1:1
 
-<img src="assets/Java-个人笔记/media/image26.png" style="width:5.75in;height:2.45833in" />
+<img src="../assets/Java-个人笔记/media/image26.png" style="width:5.75in;height:2.45833in" />
 
 **分代分配**
 
@@ -12519,7 +12519,7 @@ b = null; // b = 1<br />
 </tbody>
 </table>
 
-<img src="assets/Java-个人笔记/media/image27.png" style="width:5.75in;height:3.14583in" />
+<img src="../assets/Java-个人笔记/media/image27.png" style="width:5.75in;height:3.14583in" />
 
 **可达性分析**
 
@@ -12557,7 +12557,7 @@ GC Roots 对象：
 
 在可达性分析算法中，只有能够被根对象集合直接或者间接连接的对象才是存活对象
 
-<img src="assets/Java-个人笔记/media/image28.png" style="width:5.75in;height:3.85417in" />
+<img src="../assets/Java-个人笔记/media/image28.png" style="width:5.75in;height:3.85417in" />
 
 **三色标记**
 
@@ -12587,7 +12587,7 @@ GC Roots 对象：
 
 结束后，仍在白色集合的对象即为 GC Roots 不可达，可以进行回收
 
-<img src="assets/Java-个人笔记/media/image29.gif" style="width:5.75in;height:3.66667in" />
+<img src="../assets/Java-个人笔记/media/image29.gif" style="width:5.75in;height:3.66667in" />
 
 参考文章：https://www.jianshu.com/p/12544c0ad5c1
 
@@ -12601,7 +12601,7 @@ GC Roots 对象：
 
 浮动垃圾并不会影响应用程序的正确性，只是需要等到下一轮垃圾回收中才被清除
 
-<img src="assets/Java-个人笔记/media/image7.png" style="width:5.75in;height:0.86458in" />
+<img src="../assets/Java-个人笔记/media/image7.png" style="width:5.75in;height:0.86458in" />
 
 **漏标情况：**
 
@@ -12611,7 +12611,7 @@ GC Roots 对象：
 
 结果：导致该白色对象当作垃圾被 GC，影响到了程序的正确性
 
-<img src="assets/Java-个人笔记/media/image7.png" style="width:5.75in;height:0.86458in" />
+<img src="../assets/Java-个人笔记/media/image7.png" style="width:5.75in;height:0.86458in" />
 
 代码角度解释漏标：
 
@@ -12807,7 +12807,7 @@ obj = null;</td>
 
 应用场景：如果内存中的垃圾对象较多，需要复制的对象就较少，这种情况下适合使用该方式并且效率比较高，反之则不适合
 
-<img src="assets/Java-个人笔记/media/image30.png" style="width:5.75in;height:2.39583in" />
+<img src="../assets/Java-个人笔记/media/image30.png" style="width:5.75in;height:2.39583in" />
 
 算法优点：
 
@@ -12839,7 +12839,7 @@ obj = null;</td>
 
 会产生大量不连续的内存碎片，导致无法给大对象分配内存，需要维护一个空闲链表
 
-<img src="assets/Java-个人笔记/media/image31.png" style="width:5.75in;height:4.5in" />
+<img src="../assets/Java-个人笔记/media/image31.png" style="width:5.75in;height:4.5in" />
 
 **标记整理**
 
@@ -12851,7 +12851,7 @@ obj = null;</td>
 
 缺点：需要移动大量对象，处理效率比较低
 
-<img src="assets/Java-个人笔记/media/image32.png" style="width:5.75in;height:4.63542in" />
+<img src="../assets/Java-个人笔记/media/image32.png" style="width:5.75in;height:4.63542in" />
 
 |          |                    |                  |                                         |
 |----------|--------------------|------------------|-----------------------------------------|
@@ -12900,7 +12900,7 @@ GC 性能指标：
 
 **垃圾收集器的组合关系** ：
 
-<img src="assets/Java-个人笔记/media/image33.png" style="width:5.75in;height:3.10417in" />
+<img src="../assets/Java-个人笔记/media/image33.png" style="width:5.75in;height:3.10417in" />
 
 新生代收集器：Serial、ParNew、Parallel Scavenge
 
@@ -12934,7 +12934,7 @@ Serial old 在 Server 模式下主要有两个用途：
 
 开启参数： -XX:+UseSerialGC 等价于新生代用 Serial GC 且老年代用 Serial old GC
 
-<img src="assets/Java-个人笔记/media/image34.png" style="width:5.75in;height:1.77083in" />
+<img src="../assets/Java-个人笔记/media/image34.png" style="width:5.75in;height:1.77083in" />
 
 优点：简单而高效（与其他收集器的单线程比），对于限定单个 CPU 的环境来说，Serial 收集器由于没有线程交互的开销，可以获得最高的单线程收集效率
 
@@ -12954,7 +12954,7 @@ Par 是 Parallel 并行的缩写，New 是只能处理的是新生代
 
 -XX:ParallelGCThreads ：默认开启和 CPU 数量相同的线程数
 
-<img src="assets/Java-个人笔记/media/image35.png" style="width:5.75in;height:1.67708in" />
+<img src="../assets/Java-个人笔记/media/image35.png" style="width:5.75in;height:1.67708in" />
 
 ParNew 是很多 JVM 运行在 Server 模式下新生代的默认垃圾收集器
 
@@ -12986,7 +12986,7 @@ Parallel Scavenge 对比 ParNew 拥有 **自适应调节策略** ，可以通过
 
 在注重吞吐量及 CPU 资源敏感的场合，都可以优先考虑 Parallel Scavenge + Parallel Old 收集器，在 Server 模式下的内存回收性能很好， **Java8 默认是此垃圾收集器组合**
 
-<img src="assets/Java-个人笔记/media/image36.png" style="width:5.75in;height:1.76042in" />
+<img src="../assets/Java-个人笔记/media/image36.png" style="width:5.75in;height:1.76042in" />
 
 参数配置：
 
@@ -13036,7 +13036,7 @@ Mark Sweep 会造成内存碎片，不把算法换成 Mark Compact 的原因：M
 
 在整个过程中耗时最长的并发标记和并发清除过程中，收集器线程都可以与用户线程一起工作，不需要进行停顿
 
-<img src="assets/Java-个人笔记/media/image37.png" style="width:5.75in;height:1.77083in" />
+<img src="../assets/Java-个人笔记/media/image37.png" style="width:5.75in;height:1.77083in" />
 
 优点：并发收集、低延迟
 
@@ -13100,7 +13100,7 @@ G1 不会对巨型对象进行拷贝，回收时被优先考虑，G1 会跟踪�
 
 Region 结构图：
 
-<img src="assets/Java-个人笔记/media/image38.png" style="width:5.75in;height:2.35417in" />
+<img src="../assets/Java-个人笔记/media/image38.png" style="width:5.75in;height:2.35417in" />
 
 空间整合：
 
@@ -13132,7 +13132,7 @@ G1 垃圾收集器的缺点：
 
 记忆集 Remembered Set 在新生代中，每个 Region 都有一个 Remembered Set，用来被哪些其他 Region 里的对象引用（谁引用了我就记录谁）
 
-<img src="assets/Java-个人笔记/media/image39.png" style="width:5.75in;height:2.61458in" />
+<img src="../assets/Java-个人笔记/media/image39.png" style="width:5.75in;height:2.61458in" />
 
 程序对 Reference 类型数据写操作时，产生一个 Write Barrier 暂时中断操作，检查该对象和 Reference 类型数据是否在不同的 Region（跨代引用），不同就将相关引用信息记录到 Reference 类型所属的 Region 的 Remembered Set 之中
 
@@ -13162,7 +13162,7 @@ G1 中提供了三种垃圾回收模式：YoungGC、Mixed GC 和 Full GC，在�
 
 标记完成马上开始混合回收过程
 
-<img src="assets/Java-个人笔记/media/image40.png" style="width:5.75in;height:2.04167in" />
+<img src="../assets/Java-个人笔记/media/image40.png" style="width:5.75in;height:2.04167in" />
 
 顺时针：Young GC → Young GC + Concurrent Mark → Mixed GC 顺序，进行垃圾回收
 
@@ -13194,7 +13194,7 @@ dirty card queue：类似缓存，产生了引用先记录在这里，然后更�
 
 筛选回收：并发清理阶段，首先对 CSet 中各个 Region 中的回收价值和成本进行排序，根据用户所期望的 GC 停顿时间来制定回收计划，也需要 STW
 
-<img src="assets/Java-个人笔记/media/image41.jpeg" style="width:5.75in;height:1.875in" />
+<img src="../assets/Java-个人笔记/media/image41.jpeg" style="width:5.75in;height:1.875in" />
 
 **Mixed GC** ：当很多对象晋升到老年代时，为了避免堆内存被耗尽，虚拟机会触发一个混合的垃圾收集器，即 Mixed GC，除了回收整个 young region，还会回收一部分的 old region，过程同 YGC
 
@@ -13314,7 +13314,7 @@ Serial GC、Parallel GC、Concurrent Mark Sweep GC 这三个 GC 不同：
 
 最小化 GC 的中断或停顿时间，选 CMS GC
 
-<img src="assets/Java-个人笔记/media/image42.png" style="width:5.75in;height:1.55208in" />
+<img src="../assets/Java-个人笔记/media/image42.png" style="width:5.75in;height:1.55208in" />
 
 **内存泄漏**
 
@@ -13603,7 +13603,7 @@ private int hash32;</td>
 
 下图显示了一个简单的对象引用关系图，对象 A 引用了 C 和 D，对象 B 引用了 C 和 E。那么对象 A 的浅堆大小只是 A 本身， **A 的实际大小为 A、C、D 三者之和** ，A 的深堆大小为 A 与 D 之和，由于对象 C 还可以通过对象 B 访问到 C，因此 C 不在对象 A 的深堆范围内
 
-<img src="assets/Java-个人笔记/media/image43.png" style="width:5.71875in;height:3.28125in" />
+<img src="../assets/Java-个人笔记/media/image43.png" style="width:5.71875in;height:3.28125in" />
 
 内存分析工具 MAT 提供了一种叫支配树的对象图，体现了对象实例间的支配关系
 
@@ -13617,7 +13617,7 @@ private int hash32;</td>
 
 左图表示对象引用图，右图表示左图所对应的支配树：
 
-<img src="assets/Java-个人笔记/media/image44.png" style="width:5.75in;height:4in" />
+<img src="../assets/Java-个人笔记/media/image44.png" style="width:5.75in;height:4in" />
 
 比如：对象 F 与对象 D 相互引用，因为到对象 F 的所有路径必然经过对象 D，因此对象 D 是对象 F 的直接支配者
 
@@ -13658,7 +13658,7 @@ JVM 是通过 **栈帧中的对象引用** 访问到其内部的对象实例：
 
 优点：reference 中存储的是稳定的句柄地址，在对象被移动（垃圾收集）时只会改变句柄中的实例数据指针，而 reference 本身不需要被修改
 
-<img src="assets/Java-个人笔记/media/image45.jpeg" style="width:5.75in;height:2.83333in" />
+<img src="../assets/Java-个人笔记/media/image45.jpeg" style="width:5.75in;height:2.83333in" />
 
 直接指针（HotSpot 采用）：Java 堆对象的布局必须考虑如何放置访问类型数据的相关信息，reference 中直接存储的对象地址
 
@@ -13666,7 +13666,7 @@ JVM 是通过 **栈帧中的对象引用** 访问到其内部的对象实例：
 
 缺点：对象被移动时（如进行 GC 后的内存重新排列），对象的 reference 也需要同步更新
 
-<img src="assets/Java-个人笔记/media/image46.jpeg" style="width:5.75in;height:2.83333in" />
+<img src="../assets/Java-个人笔记/media/image46.jpeg" style="width:5.75in;height:2.83333in" />
 
 参考文章：https://www.cnblogs.com/afraidToForget/p/12584866.html
 
@@ -13923,7 +13923,7 @@ System.out.println("1"); //静态代码块<br />
 
 类是在运行期间 **第一次使用时动态加载** 的（不使用不加载），而不是一次性加载所有类，因为一次性加载会占用很多的内存，加载的类信息存放于一块成为方法区的内存空间
 
-<img src="assets/Java-个人笔记/media/image47.png" style="width:5.75in;height:1.22917in" />
+<img src="../assets/Java-个人笔记/media/image47.png" style="width:5.75in;height:1.22917in" />
 
 包括 7 个阶段：
 
@@ -13973,7 +13973,7 @@ System.out.println("1"); //静态代码块<br />
 
 Class 对象和 \_java_mirror 相互持有对方的地址，堆中对象通过 instanceKlass 和元空间进行交互
 
-<img src="assets/Java-个人笔记/media/image48.png" style="width:5.75in;height:2.66667in" />
+<img src="../assets/Java-个人笔记/media/image48.png" style="width:5.75in;height:2.66667in" />
 
 创建数组类有些特殊，因为数组类本身并不是由类加载器负责创建，而是由 JVM 在运行时根据需要而直接创建的，但数组的元素类型仍然需要依靠类加载器去创建，创建数组类的过程：
 
@@ -14426,7 +14426,7 @@ System.out.println("demo info");<br />
 
 双亲委派机制的缺点：检查类是否加载的委托过程是单向的，这个方式虽然从结构上看比较清晰，使各个 ClassLoader 的职责非常明确，但 **顶层的 ClassLoader 无法访问底层的 ClassLoader 所加载的类** （可见性）
 
-<img src="assets/Java-个人笔记/media/image7.png" style="width:5.75in;height:0.86458in" />
+<img src="../assets/Java-个人笔记/media/image7.png" style="width:5.75in;height:0.86458in" />
 
 **源码分析**
 
@@ -14526,7 +14526,7 @@ IBM 公司主导的 JSR一291（OSGiR4.2）实现模块化热部署的关键是�
 
 热替换是指在程序的运行过程中，不停止服务，只通过替换程序文件来修改程序的行为， **热替换的关键需求在于服务不能中断** ，修改必须立即表现正在运行的系统之中
 
-<img src="assets/Java-个人笔记/media/image49.png" style="width:5.75in;height:3.14583in" />
+<img src="../assets/Java-个人笔记/media/image49.png" style="width:5.75in;height:3.14583in" />
 
 **沙箱机制**
 
@@ -14542,7 +14542,7 @@ JDK1.2：改进了安全机制，增加了代码签名，不论本地代码或�
 
 JDK1.6：当前最新的安全机制，引入了域（Domain）的概念。虚拟机会把所有代码加载到不同的系统域和应用域，不同的保护域对应不一样的权限。系统域部分专门负责与关键资源进行交互，而各个应用域部分则通过系统域的部分代理来对各种需要的资源进行访问
 
-<img src="assets/Java-个人笔记/media/image50.png" style="width:5.75in;height:2.84375in" />
+<img src="../assets/Java-个人笔记/media/image50.png" style="width:5.75in;height:2.84375in" />
 
 **自定义**
 
@@ -14654,7 +14654,7 @@ JDK9 基于模块化进行构建（原来的 rt.jar 和 tools.jar 被拆分成�
 
 Java 文件编译执行的过程：
 
-<img src="assets/Java-个人笔记/media/image51.png" style="width:5.75in;height:3.07292in" />
+<img src="../assets/Java-个人笔记/media/image51.png" style="width:5.75in;height:3.07292in" />
 
 类加载器：用于装载字节码文件（.class文件）
 
@@ -14728,7 +14728,7 @@ ARM 指令集，对应的是 ARM 架构的平台
 
 通过编译器和虚拟机器实现，编译器将源码编译成字节码，虚拟机器将字节码转译为可以直接执行的指令
 
-<img src="assets/Java-个人笔记/media/image7.png" style="width:5.75in;height:0.86458in" />
+<img src="../assets/Java-个人笔记/media/image7.png" style="width:5.75in;height:0.86458in" />
 
 **类结构**
 
@@ -14832,7 +14832,7 @@ IDEA 插件 jclasslib
 | 54               | 0                | 1.10       |
 | 55               | 0                | 1.11       |
 
-<img src="assets/Java-个人笔记/media/image52.png" style="width:5.75in;height:2.48958in" />
+<img src="../assets/Java-个人笔记/media/image52.png" style="width:5.75in;height:2.48958in" />
 
 图片来源：https://www.bilibili.com/video/BV1PJ411n7xZ
 
@@ -15707,7 +15707,7 @@ montiorenter：进入并获取对象监视器，即为栈顶对象加锁
 
 monitorexit：释放并退出对象监视器，即为栈顶对象解锁
 
-<img src="assets/Java-个人笔记/media/image53.png" style="width:5.75in;height:2.64583in" />
+<img src="../assets/Java-个人笔记/media/image53.png" style="width:5.75in;height:2.64583in" />
 
 **执行流程**
 
@@ -15754,11 +15754,11 @@ ldc2_w 将一个 long 压入操作数栈（分两次压入，因为 long 是 8 �
 
 istore_1 ：将操作数栈顶数据弹出，存入局部变量表的 slot 1
 
-<img src="assets/Java-个人笔记/media/image54.png" style="width:5.75in;height:2.33333in" />
+<img src="../assets/Java-个人笔记/media/image54.png" style="width:5.75in;height:2.33333in" />
 
 ldc \#3 ：从常量池加载 \#3 数据到操作数栈 Short.MAX_VALUE 是 32767，所以 32768 = Short.MAX_VALUE + 1 实际是在编译期间计算完成
 
-<img src="assets/Java-个人笔记/media/image55.png" style="width:5.75in;height:2.30208in" />
+<img src="../assets/Java-个人笔记/media/image55.png" style="width:5.75in;height:2.30208in" />
 
 istore_2 ：将操作数栈顶数据弹出，存入局部变量表的 slot 2
 
@@ -15768,17 +15768,17 @@ iload_2 ：将局部变量表的 slot 2 数据弹出，放入操作数栈栈顶
 
 iadd ：执行相加操作
 
-<img src="assets/Java-个人笔记/media/image56.png" style="width:5.75in;height:4.78125in" />
+<img src="../assets/Java-个人笔记/media/image56.png" style="width:5.75in;height:4.78125in" />
 
 istore_3 ：将操作数栈顶数据弹出，存入局部变量表的 slot 3
 
 getstatic \#4 ：获取静态字段
 
-<img src="assets/Java-个人笔记/media/image57.png" style="width:5.75in;height:2.32292in" />
+<img src="../assets/Java-个人笔记/media/image57.png" style="width:5.75in;height:2.32292in" />
 
 iload_3 ：
 
-<img src="assets/Java-个人笔记/media/image58.png" style="width:5.75in;height:2.29167in" />
+<img src="../assets/Java-个人笔记/media/image58.png" style="width:5.75in;height:2.29167in" />
 
 invokevirtual \#5 ：
 
@@ -15794,7 +15794,7 @@ invokevirtual \#5 ：
 
 清除 main 操作数栈内容
 
-<img src="assets/Java-个人笔记/media/image59.png" style="width:5.75in;height:2.69792in" />
+<img src="../assets/Java-个人笔记/media/image59.png" style="width:5.75in;height:2.69792in" />
 
 return：完成 main 方法调用，弹出 main 栈帧，程序结束
 
@@ -15834,7 +15834,7 @@ HotSpot VM 可以通过 VM 参数设置程序执行方式：
 
 -Xmixed：采用解释器 + 即时编译器的混合模式共同执行程序
 
-<img src="assets/Java-个人笔记/media/image7.png" style="width:5.75in;height:0.86458in" />
+<img src="../assets/Java-个人笔记/media/image7.png" style="width:5.75in;height:0.86458in" />
 
 **热点探测**
 
@@ -16211,7 +16211,7 @@ invokeinterface 所使用的接口方法表（interface method table，itable）
 
 其二， **非重写的方法指向父类的方法表项，与父类共享一个方法表项，重写的方法指向本身自己的实现** ，这就是为什么多态情况下可以访问父类的方法。
 
-<img src="assets/Java-个人笔记/media/image60.png" style="width:5.75in;height:1.98958in" />
+<img src="../assets/Java-个人笔记/media/image60.png" style="width:5.75in;height:1.98958in" />
 
 Passenger 类的方法表包括两个方法，分别对应 0 号和 1 号。方法表调换了 toString 方法和 passThroughImmigration 方法的位置，是因为 toString 方法的索引值需要与 Object 类中同名方法的索引值一致，为了保持简洁，这里不考虑 Object 类中的其他方法。
 
@@ -16255,7 +16255,7 @@ public void sing() {}<br />
 </tbody>
 </table>
 
-<img src="assets/Java-个人笔记/media/image61.png" style="width:5.65625in;height:2.65625in" />
+<img src="../assets/Java-个人笔记/media/image61.png" style="width:5.65625in;height:2.65625in" />
 
 参考文档：https://www.cnblogs.com/kaleidoscope/p/9790766.html
 
@@ -17363,7 +17363,7 @@ jstatd 是一个 RMI 服务端程序，相当于代理服务器，建立本地�
 
 远程主机信息收集，前面的指令只涉及到监控本机的 Java 应用程序，而在这些工具中，一些监控工具也支持对远程计算机的监控（如 jps、jstat），为了启用远程监控，则需要配合使用 jstatd 工具。
 
-<img src="assets/Java-个人笔记/media/image62.png" style="width:5.75in;height:2.05208in" />
+<img src="../assets/Java-个人笔记/media/image62.png" style="width:5.75in;height:2.05208in" />
 
 **GUI工具**
 
@@ -17966,7 +17966,7 @@ buyBeer(totalMoney);<br />
 
 每轮两两比较几次
 
-<img src="assets/Java-个人笔记/media/image63.gif" style="width:5.75in;height:1.78125in" />
+<img src="../assets/Java-个人笔记/media/image63.gif" style="width:5.75in;height:1.78125in" />
 
 <table>
 <colgroup>
@@ -18028,7 +18028,7 @@ System.out.println(Arrays.toString(arr));<br />
 
 控制每轮从当前位置开始比较几次
 
-<img src="assets/Java-个人笔记/media/image64.gif" style="width:5.75in;height:1.75in" />
+<img src="../assets/Java-个人笔记/media/image64.gif" style="width:5.75in;height:1.75in" />
 
 <table>
 <colgroup>
@@ -18084,7 +18084,7 @@ System.out.println(Arrays.toString(arr));<br />
 
 交换后新的堆顶 R\[1\] 可能违反堆的性质，因此需要对当前无序区（R1,R2,……Rn-1）调整为新堆，然后再次将 R\[1\] 与无序区最后一个元素交换，得到新的无序区（R1,R2….Rn-2）和新的有序区（Rn-1,Rn），不断重复此过程直到有序区的元素个数为 n-1，则整个排序过程完成
 
-<img src="assets/Java-个人笔记/media/image65.jpeg" style="width:5.75in;height:2.73958in" />
+<img src="../assets/Java-个人笔记/media/image65.jpeg" style="width:5.75in;height:2.73958in" />
 
 floor：向下取整
 
@@ -18156,7 +18156,7 @@ arr[i] = temp;<br />
 
 插入排序（Insertion Sort）：在要排序的一组数中，假定前 n-1 个数已经排好序，现在将第 n 个数插到这个有序数列中，使得这 n 个数也是排好顺序的，如此反复循环，直到全部排好顺序
 
-<img src="assets/Java-个人笔记/media/image66.png" style="width:5.75in;height:3.10417in" />
+<img src="../assets/Java-个人笔记/media/image66.png" style="width:5.75in;height:3.10417in" />
 
 <table>
 <colgroup>
@@ -18209,7 +18209,7 @@ System.out.println(Arrays.toString(arr));<br />
 
 减小增长量，最小减为 1，重复第二步操作
 
-<img src="assets/Java-个人笔记/media/image67.png" style="width:5.75in;height:3.22917in" />
+<img src="../assets/Java-个人笔记/media/image67.png" style="width:5.75in;height:3.22917in" />
 
 希尔排序的核心在于间隔序列的设定，既可以提前设定好间隔序列，也可以动态的定义间隔序列，希尔排序就是插入排序增加了间隔
 
@@ -18268,15 +18268,15 @@ System.out.println(Arrays.toString(arr));<br />
 
 不断的重复步骤2，直到最终只有一个组为止
 
-<img src="assets/Java-个人笔记/media/image68.png" style="width:5.75in;height:3.73958in" />
+<img src="../assets/Java-个人笔记/media/image68.png" style="width:5.75in;height:3.73958in" />
 
 归并步骤：每次比较两端最小的值，把最小的值放在辅助数组的左边
 
-<img src="assets/Java-个人笔记/media/image69.png" style="width:5.75in;height:1.46875in" />
+<img src="../assets/Java-个人笔记/media/image69.png" style="width:5.75in;height:1.46875in" />
 
-<img src="assets/Java-个人笔记/media/image70.png" style="width:5.75in;height:1.41667in" />
+<img src="../assets/Java-个人笔记/media/image70.png" style="width:5.75in;height:1.41667in" />
 
-<img src="assets/Java-个人笔记/media/image71.png" style="width:5.75in;height:1.32292in" />
+<img src="../assets/Java-个人笔记/media/image71.png" style="width:5.75in;height:1.32292in" />
 
 **实现代码**
 
@@ -18329,7 +18329,7 @@ arr[low++] = assist[k];<br />
 </tbody>
 </table>
 
-<img src="assets/Java-个人笔记/media/image72.png" style="width:5.75in;height:2.14583in" />
+<img src="../assets/Java-个人笔记/media/image72.png" style="width:5.75in;height:2.14583in" />
 
 用树状图来描述归并，假设元素的个数为 n，那么使用归并排序拆分的次数为 log2(n) ，即层数，每次归并需要做 n 次对比，最终得出的归并排序的时间复杂度为 log2(n)\*n ，根据大O推导法则，忽略底数，最终归并排序的时间复杂度为 O(nlogn)
 
@@ -18347,7 +18347,7 @@ arr[low++] = assist[k];<br />
 
 递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序
 
-<img src="assets/Java-个人笔记/media/image73.gif" style="width:5.75in;height:1.78125in" />
+<img src="../assets/Java-个人笔记/media/image73.gif" style="width:5.75in;height:1.78125in" />
 
 <table>
 <colgroup>
@@ -18418,7 +18418,7 @@ quickSort(arr, right + 1, high);<br />
 
 最坏情况：每一次切分选择的基准数字是当前序列中最大数或者最小数，这使得每次切分都会有一个子组，那么总共就得切分n次，所以最坏情况下，快速排序的时间复杂度为 O(n^2)
 
-<img src="assets/Java-个人笔记/media/image74.png" style="width:5.75in;height:2.10417in" />
+<img src="../assets/Java-个人笔记/media/image74.png" style="width:5.75in;height:2.10417in" />
 
 平均情况：每一次切分选择的基准数字不是最大值和最小值，也不是中值，这种情况用数学归纳法证明，快速排序的时间复杂度为 O(nlogn)
 
@@ -18436,7 +18436,7 @@ quickSort(arr, right + 1, high);<br />
 
 解释：先排低位再排高位，可以说明在高位相等的情况下低位是递增的，如果高位也是递增，则数据有序
 
-<img src="assets/Java-个人笔记/media/image75.gif" style="width:5.75in;height:3.26042in" />
+<img src="../assets/Java-个人笔记/media/image75.gif" style="width:5.75in;height:3.26042in" />
 
 实现思路：
 
@@ -18517,7 +18517,7 @@ index++;<br />
 
 如果一组数据只需要一次排序，则稳定性一般是没有意义的，如果一组数据需要多次排序，稳定性是有意义的。
 
-<img src="assets/Java-个人笔记/media/image76.png" style="width:5.75in;height:2.44792in" />
+<img src="../assets/Java-个人笔记/media/image76.png" style="width:5.75in;height:2.44792in" />
 
 冒泡排序：只有当 arr\[i\]\>arr\[i+1\] 的时候，才会交换元素的位置，而相等的时候并不交换位置，所以冒泡排序是一种稳定排序算法
 
@@ -18539,7 +18539,7 @@ index++;<br />
 
 **算法对比**
 
-<img src="assets/Java-个人笔记/media/image77.png" style="width:5.75in;height:2.97917in" />
+<img src="../assets/Java-个人笔记/media/image77.png" style="width:5.75in;height:2.97917in" />
 
 **补充问题**
 
@@ -18609,7 +18609,7 @@ return -1;<br />
 </tbody>
 </table>
 
-<img src="assets/Java-个人笔记/media/image78.gif" style="width:5.75in;height:3.22917in" />
+<img src="../assets/Java-个人笔记/media/image78.gif" style="width:5.75in;height:3.22917in" />
 
 查找第一个匹配的元素：
 
@@ -18810,7 +18810,7 @@ return nextVal;<br />
 
 度：每一个节点的子节点数量称之为度
 
-<img src="assets/Java-个人笔记/media/image79.png" style="width:5.75in;height:2.625in" />
+<img src="../assets/Java-个人笔记/media/image79.png" style="width:5.75in;height:2.625in" />
 
 **排序树**
 
@@ -18826,7 +18826,7 @@ return nextVal;<br />
 
 不存在重复的节点
 
-<img src="assets/Java-个人笔记/media/image80.png" style="width:5.75in;height:2.44792in" />
+<img src="../assets/Java-个人笔记/media/image80.png" style="width:5.75in;height:2.44792in" />
 
 **代码实现**
 
@@ -18948,7 +18948,7 @@ return null;<br />
 
 删除节点：要删除节点12，先找到节点19，然后移动并替换节点12
 
-<img src="assets/Java-个人笔记/media/image81.png" style="width:5.75in;height:2.125in" />
+<img src="../assets/Java-个人笔记/media/image81.png" style="width:5.75in;height:2.125in" />
 
 代码链接：https://leetcode-cn.com/submissions/detail/190232548/
 
@@ -18970,15 +18970,15 @@ return null;<br />
 
 平衡二叉树和二叉查找树对比结构图
 
-<img src="assets/Java-个人笔记/media/image82.png" style="width:5.75in;height:2.11458in" />
+<img src="../assets/Java-个人笔记/media/image82.png" style="width:5.75in;height:2.11458in" />
 
 左旋：将根节点的右侧往左拉，原先的右子节点变成新的父节点，并把多余的左子节点出让，给已经降级的根节点当右子节点
 
-<img src="assets/Java-个人笔记/media/image83.png" style="width:5.75in;height:2.10417in" />
+<img src="../assets/Java-个人笔记/media/image83.png" style="width:5.75in;height:2.10417in" />
 
 右旋：将根节点的左侧往右拉，左子节点变成了新的父节点，并把多余的右子节点出让，给已经降级根节点当左子节点
 
-<img src="assets/Java-个人笔记/media/image84.png" style="width:5.75in;height:2.32292in" />
+<img src="../assets/Java-个人笔记/media/image84.png" style="width:5.75in;height:2.32292in" />
 
 推荐文章：https://pdai.tech/md/algorithm/alg-basic-tree-balance.html
 
@@ -19010,11 +19010,11 @@ AVL 树是更加严格的平衡，可以提供更快的查找速度，适用于�
 
 红黑树整体性能略优于 AVL 树，AVL 树的旋转比红黑树的旋转多，更加难以平衡和调试，插入和删除的效率比红黑树慢
 
-<img src="assets/Java-个人笔记/media/image85.png" style="width:5.75in;height:1.82292in" />
+<img src="../assets/Java-个人笔记/media/image85.png" style="width:5.75in;height:1.82292in" />
 
 红黑树添加节点的默认颜色为红色，效率高
 
-<img src="assets/Java-个人笔记/media/image86.png" style="width:5.75in;height:2.53125in" />
+<img src="../assets/Java-个人笔记/media/image86.png" style="width:5.75in;height:2.53125in" />
 
 **红黑树添加节点后如何保持红黑规则：**
 
@@ -19068,7 +19068,7 @@ AVL 树是更加严格的平衡，可以提供更快的查找速度，适用于�
 
 元素在树中并没有子父级关系的硬性要求
 
-<img src="assets/Java-个人笔记/media/image87.png" style="width:5.75in;height:3.69792in" />
+<img src="../assets/Java-个人笔记/media/image87.png" style="width:5.75in;height:3.69792in" />
 
 可以高效地进行如下操作：
 
@@ -19078,11 +19078,11 @@ AVL 树是更加严格的平衡，可以提供更快的查找速度，适用于�
 
 存储结构：
 
-<img src="assets/Java-个人笔记/media/image88.png" style="width:5.75in;height:2.07292in" />
+<img src="../assets/Java-个人笔记/media/image88.png" style="width:5.75in;height:2.07292in" />
 
 合并方式：
 
-<img src="assets/Java-个人笔记/media/image89.png" style="width:5.75in;height:2.44792in" />
+<img src="../assets/Java-个人笔记/media/image89.png" style="width:5.75in;height:2.44792in" />
 
 代码实现：
 
@@ -19189,7 +19189,7 @@ System.out.println("********************");<br />
 
 让每个索引处的节点都指向它的父节点，当 eleGroup\[i\] = i 时，说明 i 是根节点
 
-<img src="assets/Java-个人笔记/media/image90.png" style="width:5.75in;height:2.23958in" />
+<img src="../assets/Java-个人笔记/media/image90.png" style="width:5.75in;height:2.23958in" />
 
 <table>
 <colgroup>
@@ -19230,7 +19230,7 @@ this.count-<br />
 
 平均时间复杂度为 O(N)，最坏时间复杂度是 O(N^2)
 
-<img src="assets/Java-个人笔记/media/image91.png" style="width:5.75in;height:1.91667in" />
+<img src="../assets/Java-个人笔记/media/image91.png" style="width:5.75in;height:1.91667in" />
 
 继续优化：路径压缩，保证每次把小树合并到大树
 
@@ -19306,7 +19306,7 @@ this.count--;<br />
 
 畅通工程：某省调查城镇交通状况，得到现有城镇道路统计表，表中列出了每条道路直接连通的城镇。省政府畅通工程的目标是使全省任何两个城镇间都可以实现交通，但不一定有直接的道路相连，只要互相间接通过道路可达即可，问最少还需要建设多少条道路？
 
-<img src="assets/Java-个人笔记/media/image92.png" style="width:5.75in;height:2.64583in" />
+<img src="../assets/Java-个人笔记/media/image92.png" style="width:5.75in;height:2.64583in" />
 
 解题思路：
 
@@ -19359,9 +19359,9 @@ Trie 树，也叫字典树，是一种专门处理字符串匹配的树形结构
 
 红色节点并不都是叶子节点
 
-<img src="assets/Java-个人笔记/media/image7.png" style="width:5.75in;height:0.86458in" />
+<img src="../assets/Java-个人笔记/media/image7.png" style="width:5.75in;height:0.86458in" />
 
-<img src="assets/Java-个人笔记/media/image7.png" style="width:5.75in;height:0.86458in" />
+<img src="../assets/Java-个人笔记/media/image7.png" style="width:5.75in;height:0.86458in" />
 
 注意：要查找的是字符串“he”，从根节点开始，沿着某条路径来匹配，可以匹配成功。但是路径的最后一个节点“e”并不是红色的，也就是说，“he”是某个字符串的前缀子串，但并不能完全匹配任何字符串
 
@@ -19369,7 +19369,7 @@ Trie 树，也叫字典树，是一种专门处理字符串匹配的树形结构
 
 通过一个下标与字符一一映射的数组，来存储子节点的指针
 
-<img src="assets/Java-个人笔记/media/image7.png" style="width:5.75in;height:0.86458in" />
+<img src="../assets/Java-个人笔记/media/image7.png" style="width:5.75in;height:0.86458in" />
 
 时间复杂度是 O(n)（n 表示要查找字符串的长度）
 
@@ -19435,7 +19435,7 @@ this.data = data;<br />
 
 Trie 树是非常耗内存，采取空间换时间的思路。Trie 树的变体有很多，可以在一定程度上解决内存消耗的问题。比如缩点优化，对只有一个子节点的节点，而且此节点不是一个串的结束节点，可以将此节点与子节点合并
 
-<img src="assets/Java-个人笔记/media/image7.png" style="width:5.75in;height:0.86458in" />
+<img src="../assets/Java-个人笔记/media/image7.png" style="width:5.75in;height:0.86458in" />
 
 参考文章：https://time.geekbang.org/column/article/72414
 
@@ -19530,7 +19530,7 @@ this.info = null;<br />
 
 布隆过滤器：一种数据结构，是一个很长的二进制向量（位数组）和一系列随机映射函数（哈希函数），既然是二进制，每个空间存放的不是 0 就是 1，但是初始默认值都是 0，所以布隆过滤器不存数据只存状态
 
-<img src="assets/Java-个人笔记/media/image93.png" style="width:5.75in;height:0.95833in" />
+<img src="../assets/Java-个人笔记/media/image93.png" style="width:5.75in;height:0.95833in" />
 
 这种数据结构是高效且性能很好的，但缺点是具有一定的错误识别率和删除难度。并且理论情况下，添加到集合中的元素越多，误报的可能性就越大
 
@@ -19538,7 +19538,7 @@ this.info = null;<br />
 
 向布隆过滤器中添加一个元素 key 时，会通过多个 hash 函数得到多个哈希值，在位数组中把对应下标的值置为 1
 
-<img src="assets/Java-个人笔记/media/image94.png" style="width:5.75in;height:1.79167in" />
+<img src="../assets/Java-个人笔记/media/image94.png" style="width:5.75in;height:1.79167in" />
 
 布隆过滤器查询一个数据，是否在二进制的集合中，查询过程如下：
 

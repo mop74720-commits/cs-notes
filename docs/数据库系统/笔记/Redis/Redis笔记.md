@@ -159,7 +159,7 @@ make &amp;&amp; make install</td>
 
 如果没有出错，应该就安装成功了。默认的安装路径是 /usr/local/bin目录：
 
-<img src="assets/Redis笔记/media/image1.png" style="width:5.75in;height:1in" />
+<img src="../assets/Redis笔记/media/image1.png" style="width:5.75in;height:1in" />
 
 此时，任意目录下都能运行如下指令：
 
@@ -189,7 +189,7 @@ redis-server</td>
 </tbody>
 </table>
 
-<img src="assets/Redis笔记/media/image2.png" style="width:5.75in;height:2.58333in" />
+<img src="../assets/Redis笔记/media/image2.png" style="width:5.75in;height:2.58333in" />
 
 这种启动属于前台启动，会阻塞整个会话窗口，窗口关闭或者按下Ctrl + C则Redis停止。不推荐使用。
 
@@ -409,7 +409,7 @@ ping：与redis服务端做心跳测试，服务端正常会返回pong
 
 不指定commond时，会进入redis-cli的交互控制台：
 
-<img src="assets/Redis笔记/media/image3.png" style="width:5.75in;height:1.01042in" />
+<img src="../assets/Redis笔记/media/image3.png" style="width:5.75in;height:1.01042in" />
 
 **1.4.2 图形化客户端**
 
@@ -417,7 +417,7 @@ Redis的图形化桌面客户端的windows安装包：
 
 **\[该类型的内容暂不支持下载\]**
 
-<img src="assets/Redis笔记/media/image4.png" style="width:5.75in;height:1.6875in" />
+<img src="../assets/Redis笔记/media/image4.png" style="width:5.75in;height:1.6875in" />
 
 **1.4.3 安装和使用**
 
@@ -425,15 +425,15 @@ Redis的图形化桌面客户端的windows安装包：
 
 安装后双击打开rdm，点击左上角的连接到Redis服务器按钮，在弹出的窗口中填写Redis服务信息：
 
-<img src="assets/Redis笔记/media/image5.png" style="width:5.75in;height:1.88542in" />
+<img src="../assets/Redis笔记/media/image5.png" style="width:5.75in;height:1.88542in" />
 
 点击确定后，在左侧菜单会出现这个链接：
 
-<img src="assets/Redis笔记/media/image6.png" style="width:5.75in;height:0.19792in" />
+<img src="../assets/Redis笔记/media/image6.png" style="width:5.75in;height:0.19792in" />
 
 点击即可建立连接：
 
-<img src="assets/Redis笔记/media/image7.png" style="width:5.75in;height:2.47917in" />
+<img src="../assets/Redis笔记/media/image7.png" style="width:5.75in;height:2.47917in" />
 
 Redis默认有16个仓库，编号从0至15. 通过配置文件可以设置仓库数量，但是不超过16，并且不能自定义仓库名称。
 
@@ -458,7 +458,7 @@ select 0</td>
 
 Redis是典型的key-value数据库，key一般是字符串，而value包含很多不同的数据类型：
 
-<img src="assets/Redis笔记/media/image8.png" style="width:5.75in;height:1.53125in" />
+<img src="../assets/Redis笔记/media/image8.png" style="width:5.75in;height:1.53125in" />
 
 不同类型的命令称为一个group，通过help命令可以查看各种不同group的命令，如以下命令可以查看通用命令：
 
@@ -570,7 +570,7 @@ String类型存放JSON数据时，操作某个字段很不方便，此时Hash类
 
 Hash类型也叫散列，其value是一个无序字典，类似于Java中的HashMap结构：
 
-<img src="assets/Redis笔记/media/image9.png" style="width:5.75in;height:1.375in" />
+<img src="../assets/Redis笔记/media/image9.png" style="width:5.75in;height:1.375in" />
 
 **Hash的常见命令有**：
 
@@ -1034,7 +1034,7 @@ System.out.println("name = " + name);<br />
 
 RedisTemplate可以接收任意Object作为值写入Redis，只不过写入前会把Object序列化为字节形式，默认是采用JDK序列化：
 
-<img src="assets/Redis笔记/media/image10.png" style="width:5.75in;height:0.86458in" />
+<img src="../assets/Redis笔记/media/image10.png" style="width:5.75in;height:0.86458in" />
 
 但是JDK序列化后内存占用高、可读性差，所以自定义RedisTemplate的序列化方式：
 
@@ -1072,7 +1072,7 @@ return template;<br />
 
 这样采用JSON序列化代替JDK序列化，可读性大大提高：
 
-<img src="assets/Redis笔记/media/image11.png" style="width:5.75in;height:1.02083in" />
+<img src="../assets/Redis笔记/media/image11.png" style="width:5.75in;height:1.02083in" />
 
 但是会记录序列化时对应的class名称，以至于查询时实现自动反序列化。
 
@@ -1080,7 +1080,7 @@ return template;<br />
 
 为了更加节省内存，可以不使用JSON序列化器，统一使用String序列化器，要求只能存储String类型的key和value。如果要存对象，可以手动实现序列化和反序列化：
 
-<img src="assets/Redis笔记/media/image12.png" style="width:5.75in;height:2.03125in" />
+<img src="../assets/Redis笔记/media/image12.png" style="width:5.75in;height:2.03125in" />
 
 StringRedisTemplate是SpringDataRedis提供的RedisTemplate的子类，它的key和value的序列化方式默认就是String方式：
 
@@ -1161,7 +1161,7 @@ tb_voucher_order：优惠券的订单表
 
 打开浏览器，开启浏览器的手机模式，然后访问http://localhost:8080，就可以看到前端页面了：
 
-<img src="assets/Redis笔记/media/image13.png" style="width:5.75in;height:2.46875in" />
+<img src="../assets/Redis笔记/media/image13.png" style="width:5.75in;height:2.46875in" />
 
 **1.2 基于Session实现登录**
 
@@ -1173,7 +1173,7 @@ tb_voucher_order：优惠券的订单表
 
 **校验登录状态**：用户请求时，后台从Cookie获取sessionID，然后从session中获取用户信息，只有用户存在才保存用户信息到ThreadLocal并放行，否则不放行。
 
-<img src="assets/Redis笔记/media/image14.png" style="width:5.75in;height:2.19792in" />
+<img src="../assets/Redis笔记/media/image14.png" style="width:5.75in;height:2.19792in" />
 
 **1.2.1 发送验证码**
 
@@ -1422,7 +1422,7 @@ return Result.ok(user);<br />
 
 Session共享即当任意一台服务器的session修改时，都会同步给其他的Tomcat服务器的session，此时就能解决集群分布下session失效问题。但是，这样会带来额外的开销，给服务器带来压力。
 
-<img src="assets/Redis笔记/media/image15.png" style="width:5.75in;height:2.58333in" />
+<img src="../assets/Redis笔记/media/image15.png" style="width:5.75in;height:2.58333in" />
 
 **1.4 Redis代替Session共享**
 
@@ -1434,11 +1434,11 @@ Session共享即当任意一台服务器的session修改时，都会同步给其
 
 **短信验证码登录、注册**：后端拿到手机号和验证码后，从redis中获取正确的验证码，然后和用户输入的验证码校对，不一致无法通过，一致就根据手机号从MySQL获取用户，用户不存在创建并保存一个新用户，然后同一致保存用户到Redis中。
 
-<img src="assets/Redis笔记/media/image16.png" style="width:5.75in;height:2.85417in" />
+<img src="../assets/Redis笔记/media/image16.png" style="width:5.75in;height:2.85417in" />
 
 **校验登录状态**：和原来的业务逻辑基本一致，只是获取用户不再是从session获取，而是从Redis获取。
 
-<img src="assets/Redis笔记/media/image17.png" style="width:5.75in;height:2.77083in" />
+<img src="../assets/Redis笔记/media/image17.png" style="width:5.75in;height:2.77083in" />
 
 **1.4.2 Key-Value的设计**
 
@@ -1636,7 +1636,7 @@ registry.addInterceptor(new LoginInterceptor(stringRedisTemplate))<br />
 
 可以在LoginInterceptor拦截器之前再定义一个拦截器，拦截所有请求，这个拦截器实现基本逻辑（用户存在性判断以外的其他逻辑），并更新token有效期：
 
-<img src="assets/Redis笔记/media/image18.png" style="width:5.75in;height:1.84375in" />
+<img src="../assets/Redis笔记/media/image18.png" style="width:5.75in;height:1.84375in" />
 
 在utils包下新建一个拦截器RefreshTokenInterceptor：
 
@@ -1761,11 +1761,11 @@ return shopService.queryById(id);<br />
 </tbody>
 </table>
 
-<img src="assets/Redis笔记/media/image19.png" style="width:5.75in;height:0.73958in" />
+<img src="../assets/Redis笔记/media/image19.png" style="width:5.75in;height:0.73958in" />
 
 当前端点击103茶餐厅选项后（其他也一样），后端就请求到queryShopById方法从数据库获取店铺信息，可以缓存对应的店铺信息到Redis中，后续请求时只要从Redis中取数据即可，从而降低数据库压力并提高效率，相应的缓存模型和业务逻辑为：
 
-<img src="assets/Redis笔记/media/image20.png" style="width:5.75in;height:2.04167in" />
+<img src="../assets/Redis笔记/media/image20.png" style="width:5.75in;height:2.04167in" />
 
 **2.2.2 代码实现**
 
@@ -1962,7 +1962,7 @@ return Result.ok(typeList);<br />
 
 现有三种方案解决数据库不一致问题：
 
-<img src="assets/Redis笔记/media/image21.png" style="width:5.75in;height:1.5in" />
+<img src="../assets/Redis笔记/media/image21.png" style="width:5.75in;height:1.5in" />
 
 如果使用Cache Aside Pattern方案，需要考虑三个问题：
 
@@ -1990,7 +1990,7 @@ return Result.ok(typeList);<br />
 
 先操作数据库再操作缓存：假如此时缓存失效（比如超时），数据库中数据为10，线程1查询缓存，未命中，查询数据库，将要写入缓存时或写入缓存的过程中，此时线程2更新数据库内容为20，然后删除缓存，之后线程1将数据10写入缓存，此时缓存数据和数据库数据发生不一致。
 
-<img src="assets/Redis笔记/media/image22.png" style="width:5.75in;height:2.83333in" />
+<img src="../assets/Redis笔记/media/image22.png" style="width:5.75in;height:2.83333in" />
 
 由于写入缓存的速度很快，这段时间基本不可能有其他线程完成业务逻辑，所以先操作数据库再操作缓存的不一致现象很难发生，而先删除缓存再操作数据库的不一致现象就很常见，所以先操作数据库再操作缓存胜出。
 
@@ -2121,7 +2121,7 @@ return Result.ok();<br />
 
 布隆过滤：采用哈希思想，利用一个庞大的二进制数组，走哈希思想判断当前请求的数据是否存在（对应位置是0还是1），如果存在，则放行，如果不存在，则直接返回。布隆过滤虽然节约内存空间，但是由于哈希冲突，存在误判风险。
 
-<img src="assets/Redis笔记/media/image23.png" style="width:5.75in;height:2.63542in" />
+<img src="../assets/Redis笔记/media/image23.png" style="width:5.75in;height:2.63542in" />
 
 缓存空对象
 
@@ -2139,7 +2139,7 @@ return Result.ok();<br />
 
 在原来的逻辑中，如果这个数据在mysql中不存在，直接就返回404，这样会存在缓存穿透，我们使用缓存空对象解决，实现思路如下：
 
-<img src="assets/Redis笔记/media/image24.png" style="width:5.75in;height:2.25in" />
+<img src="../assets/Redis笔记/media/image24.png" style="width:5.75in;height:2.25in" />
 
 **代码实现**
 
@@ -2200,7 +2200,7 @@ return Result.ok(shop);<br />
 
 给业务添加多级缓存
 
-<img src="assets/Redis笔记/media/image25.png" style="width:5.75in;height:2.41667in" />
+<img src="../assets/Redis笔记/media/image25.png" style="width:5.75in;height:2.41667in" />
 
 **2.8 缓存击穿**
 
@@ -2208,7 +2208,7 @@ return Result.ok(shop);<br />
 
 详细解释：假设线程1在查询缓存之后，查询数据库并重建缓存数据，此时线程1正在执行，线程2、线程3、线程4...同时访问当前这个方法， 且都没有从缓存中查到数据，就会同一时刻访问查询访问数据库，同时执行数据库代码，数据库压力就会过大。
 
-<img src="assets/Redis笔记/media/image26.png" style="width:5.75in;height:3in" />
+<img src="../assets/Redis笔记/media/image26.png" style="width:5.75in;height:3in" />
 
 常见的解决方案有两种：互斥锁、逻辑过期
 
@@ -2220,7 +2220,7 @@ return Result.ok(shop);<br />
 
 如下图：线程1先过来访问，未命中缓存，获取互斥锁并查询数据库重建缓存，此时线程2访问，未命中缓存，尝试获取锁，由于互斥锁线程1未释放，就会获取失败，然后休眠等待不断尝试获取锁，只有线程1业务执行完释放锁后，线程2才能获取锁成功，命中缓存，返回缓存中的数据。
 
-<img src="assets/Redis笔记/media/image27.png" style="width:5.75in;height:2.53125in" />
+<img src="../assets/Redis笔记/media/image27.png" style="width:5.75in;height:2.53125in" />
 
 **逻辑过期介绍**
 
@@ -2228,7 +2228,7 @@ return Result.ok(shop);<br />
 
 如下图：当线程1请求过来时，通过逻辑判断发现缓存过期，尝试获取互斥锁，获取成功，开启一个新的线程实现查询数据库并重建缓存，重置过期时间，而线程1先返回脏数据，即使其他线程插队，也会从缓存中获取过期数据，尝试获取互斥锁，获取失败，返回脏数据。
 
-<img src="assets/Redis笔记/media/image28.png" style="width:5.75in;height:2.36458in" />
+<img src="../assets/Redis笔记/media/image28.png" style="width:5.75in;height:2.36458in" />
 
 <table>
 <colgroup>
@@ -2264,7 +2264,7 @@ return Result.ok(shop);<br />
 
 使用**互斥锁**解决商品查询业务的缓存击穿问题，业务逻辑如下：
 
-<img src="assets/Redis笔记/media/image29.png" style="width:5.75in;height:2.59375in" />
+<img src="../assets/Redis笔记/media/image29.png" style="width:5.75in;height:2.59375in" />
 
 如何获取全局唯一的互斥锁：利用redis的setnx方法，如果redis中没有这个key，则插入成功返回1，stringRedisTemplate中对应true；如果有这个key，则插入失败返回0，stringRedisTemplate中对应false，通过true或false，来表示是否成功获得互斥锁。
 
@@ -2415,7 +2415,7 @@ return Result.ok(shop);<br />
 
 使用Postman实现100个请求：
 
-<img src="assets/Redis笔记/media/image30.png" style="width:5.75in;height:3.57292in" />
+<img src="../assets/Redis笔记/media/image30.png" style="width:5.75in;height:3.57292in" />
 
 如果在控制台发现只有一次SQL语句，表示测试成功。
 
@@ -2423,7 +2423,7 @@ return Result.ok(shop);<br />
 
 使用**逻辑过期**解决商品查询业务的缓存击穿问题，业务逻辑如下：
 
-<img src="assets/Redis笔记/media/image31.png" style="width:5.75in;height:2.53125in" />
+<img src="../assets/Redis笔记/media/image31.png" style="width:5.75in;height:2.53125in" />
 
 现在有一个问题，逻辑过期时间字段是添加在原有pojo上还是新建一个类RedisData，并继承pojo？都不是，代码开发尽量不要修改源代码，所以使用一个Object字段或泛型字段定义真实数据：
 
@@ -2547,7 +2547,7 @@ shopService.saveShop2Redis(1L, 10L);<br />
 
 启动项目后，使用Postman发送200条请求：
 
-<img src="assets/Redis笔记/media/image32.png" style="width:5.75in;height:3.5625in" />
+<img src="../assets/Redis笔记/media/image32.png" style="width:5.75in;height:3.5625in" />
 
 最后看到前面的几条请求的响应数据是103茶餐厅（脏数据），后面的响应数据就都正确了。
 
@@ -2863,7 +2863,7 @@ snowflake算法
 
 对于long型id，占用8个字节64位，对这64位进行分解：
 
-<img src="assets/Redis笔记/media/image33.png" style="width:5.75in;height:0.51042in" />
+<img src="../assets/Redis笔记/media/image33.png" style="width:5.75in;height:0.51042in" />
 
 最高位：符号位：1bit，永远为0
 
@@ -3002,7 +3002,7 @@ tb_seckill_voucher：优惠券的库存、开始抢购时间，结束抢购时�
 
 秒杀下单需要保证在秒杀时间范围内且库存充足，具体思路如下：
 
-<img src="assets/Redis笔记/media/image34.png" style="width:5.75in;height:2.4375in" />
+<img src="../assets/Redis笔记/media/image34.png" style="width:5.75in;height:2.4375in" />
 
 修改VoucherOrderController类：
 
@@ -3111,13 +3111,13 @@ return Result.ok(orderId);<br />
 
 原因分析：如下图，线程1查询出库存假设为1，操作数据库扣减库存，由于操作数据库较慢，此时线程2、线程3也查询库存，而此时线程1并没有更新库存完毕，所以也认为还有库存还有，就会更新数据库，最终导致库存超卖。
 
-<img src="assets/Redis笔记/media/image35.png" style="width:5.75in;height:1.90625in" />
+<img src="../assets/Redis笔记/media/image35.png" style="width:5.75in;height:1.90625in" />
 
 **3.5.2 乐观锁和悲观锁分析**
 
 解决库存超卖的方案就是加锁，但是锁分为悲观锁和乐观锁，两种锁都能解决库存超卖：
 
-<img src="assets/Redis笔记/media/image36.png" style="width:5.75in;height:1.45833in" />
+<img src="../assets/Redis笔记/media/image36.png" style="width:5.75in;height:1.45833in" />
 
 **悲观锁**：实现对于数据的串行化执行，确保某一逻辑同一时间只能有一个线程执行，如Synchronized、Lock锁等都属于悲观锁。
 
@@ -3125,11 +3125,11 @@ return Result.ok(orderId);<br />
 
 版本号法：通过版本号，每次更新数据库都使版本号加1，如果更新数据库时版本号还是原来的版本号，说明这段时间没有线程更新数据库，可以更新数据库，如果更新数据库时版本号已经改变，就说明这段时间已经有线程更新数据库，就不更新或重新处理请求逻辑。
 
-<img src="assets/Redis笔记/media/image37.png" style="width:5.75in;height:1.69792in" />
+<img src="../assets/Redis笔记/media/image37.png" style="width:5.75in;height:1.69792in" />
 
 **CAS法**：CAS法就是利用数据本身有没有变化来判断拒绝更新还是重试，如果更新数据库时数据和原来的数据不一样，说明这段时间有线程操作了数据库，就不更新或重新处理请求逻辑，否则，说明这段时间没有线程插队，线程安全，可以更新。
 
-<img src="assets/Redis笔记/media/image38.png" style="width:5.75in;height:1.71875in" />
+<img src="../assets/Redis笔记/media/image38.png" style="width:5.75in;height:1.71875in" />
 
 **3.5.3 乐观锁解决库存超卖**
 
@@ -3181,7 +3181,7 @@ boolean success = seckillVoucherService.update()<br />
 
 实现思路：如果秒杀开始，则进一步判断库存是否足够，然后再根据优惠卷id和用户id查询用户是否已经下过这个订单，如果下过这个订单，则不再下单，否则进行下单
 
-<img src="assets/Redis笔记/media/image39.png" style="width:5.75in;height:2.08333in" />
+<img src="../assets/Redis笔记/media/image39.png" style="width:5.75in;height:2.08333in" />
 
 **3.6.2 代码实现**
 
@@ -3419,11 +3419,11 @@ return proxy.createVoucherOrder(voucherId);<br />
 
 首先复制一个服务器HmDianPingApplication2，并指定端口号为8082：
 
-<img src="assets/Redis笔记/media/image40.png" style="width:5.75in;height:1.88542in" />
+<img src="../assets/Redis笔记/media/image40.png" style="width:5.75in;height:1.88542in" />
 
 然后修改nginx服务器的配置：
 
-<img src="assets/Redis笔记/media/image41.png" style="width:5.75in;height:1.17708in" />
+<img src="../assets/Redis笔记/media/image41.png" style="width:5.75in;height:1.17708in" />
 
 进入nginx的目录的命令行，执行nginx.exe -s reload命令重启nginx。
 
@@ -3431,7 +3431,7 @@ return proxy.createVoucherOrder(voucherId);<br />
 
 **锁失效原因分析**：如下图，两个服务器就有两个虚拟机，当JVM1中的线程1获取锁并查询订单不存在，与此同时JVM2也会尝试获取锁，虽然用户id一致，但是两台虚拟机是相互独立的，JVM2的线程3会在自己的范围内生成一个对象，JVM1和JVM2的对象是不同的，所以都能获取锁成功，线程3查询订单不存在，线程1和线程3同时插入订单，导致一人多单。
 
-<img src="assets/Redis笔记/media/image42.png" style="width:5.75in;height:2.04167in" />
+<img src="../assets/Redis笔记/media/image42.png" style="width:5.75in;height:2.04167in" />
 
 **4.分布式锁**
 
@@ -3439,7 +3439,7 @@ return proxy.createVoucherOrder(voucherId);<br />
 
 分布式锁，满足分布式系统或集群模式下多进程可见并且互斥的锁。核心思想是让所有线程都使用同一把锁，这样就能保证所有线程串行化，而不会出现锁失效的情况。
 
-<img src="assets/Redis笔记/media/image43.png" style="width:5.75in;height:2.28125in" />
+<img src="../assets/Redis笔记/media/image43.png" style="width:5.75in;height:2.28125in" />
 
 分布式锁应满足以下几点：
 
@@ -3596,17 +3596,17 @@ lock.unlock();<br />
 
 如下图，线程1获取锁后业务发生阻塞，触发锁的超时释放，然后线程2获取锁，由于锁已经释放，线程2获取成功，执行业务过程中线程1好了，完成业务并释放了不属于自己的锁，释放完的同时线程3又可以获取锁执行业务，这时就有线程2和线程3并发执行业务。
 
-<img src="assets/Redis笔记/media/image44.png" style="width:5.75in;height:1.59375in" />
+<img src="../assets/Redis笔记/media/image44.png" style="width:5.75in;height:1.59375in" />
 
 解决办法是线程释放锁时判断锁是否还是自己的，如果还是自己的锁，就说明这个过程没有其他线程执行，可以删除，否则就不删除：
 
-<img src="assets/Redis笔记/media/image45.png" style="width:5.75in;height:1.85417in" />
+<img src="../assets/Redis笔记/media/image45.png" style="width:5.75in;height:1.85417in" />
 
 **代码实现**
 
 实现思路：在存入锁时，放入自己线程的标识 ，在删除锁时，判断当前这把锁的标识是不是自己存入的，如果是，则进行删除，如果不是，则不进行删除。
 
-<img src="assets/Redis笔记/media/image46.png" style="width:5.75in;height:2.02083in" />
+<img src="../assets/Redis笔记/media/image46.png" style="width:5.75in;height:2.02083in" />
 
 对于多台虚拟机，每台虚拟机相互独立，可能出现两个线程标识（如线程id）一致的情况，可以利用UUID类和static关键字实现为每台虚拟机生成唯一标识，再拼接线程标识就保证了分布式下线程的唯一标识。
 
@@ -3650,7 +3650,7 @@ stringRedisTemplate.delete(KEY_PREFIX + name);<br />
 
 如下图，当线程1获取锁执行完业务后，判断锁是自己的，这时业务阻塞，导致锁超时释放，线程2就能成功获取锁，而线程1这时又结束阻塞直接删除线程2的锁，然后线程3就又能获取锁，这就是分布式锁的原子性问题。解决方案就是保证判断锁逻辑和释放锁逻辑保持原子性，同时成功。
 
-<img src="assets/Redis笔记/media/image47.png" style="width:5.75in;height:1.89583in" />
+<img src="../assets/Redis笔记/media/image47.png" style="width:5.75in;height:1.89583in" />
 
 **4.2.5 Lua脚本**
 
@@ -3751,7 +3751,7 @@ EVAL "return redis.call('set', KEYS[1], ARGV[1])" 1 name Rose</td>
 
 RedisTemplate提供了execute方法执行Lua脚本：
 
-<img src="assets/Redis笔记/media/image48.png" style="width:5.75in;height:0.9375in" />
+<img src="../assets/Redis笔记/media/image48.png" style="width:5.75in;height:0.9375in" />
 
 在resources目录下编写Lua脚本unlock.lua：
 
@@ -3999,7 +3999,7 @@ lock.unlock();<br />
 
 可重入的具体实现流程如下：
 
-<img src="assets/Redis笔记/media/image49.png" style="width:5.75in;height:2.55208in" />
+<img src="../assets/Redis笔记/media/image49.png" style="width:5.75in;height:2.55208in" />
 
 其中，获取锁的Lua脚本如下：
 
@@ -4069,11 +4069,11 @@ end;</td>
 
 tryLock()方法支持传递参数，如下图，其中包含尝试锁重试时间waitTime和锁有效期leaseTime，第三个参数为时间单位，这里以两个参数讲解redission锁重试和WatchDog机制
 
-<img src="assets/Redis笔记/media/image50.png" style="width:5.75in;height:0.70833in" />
+<img src="../assets/Redis笔记/media/image50.png" style="width:5.75in;height:0.70833in" />
 
 **锁重试**
 
-<img src="assets/Redis笔记/media/image51.png" style="width:5.75in;height:0.84375in" />
+<img src="../assets/Redis笔记/media/image51.png" style="width:5.75in;height:0.84375in" />
 
 调用tryLock()方法并指定锁重试时间后，进入tryAcquire()方法获取锁的剩余有效期：
 
@@ -4127,17 +4127,17 @@ return ttlRemainingFuture;<br />
 
 进入tryLockInnerAsync()方法获取锁的信息，这里可以看到之前的获取锁Lua脚本，脚本nil即对应null，表示获取锁成 功，redis.call('pttl', KEYS\[1\])得到锁的剩余有效期，表示获取锁失败
 
-<img src="assets/Redis笔记/media/image52.png" style="width:5.75in;height:1.9375in" />
+<img src="../assets/Redis笔记/media/image52.png" style="width:5.75in;height:1.9375in" />
 
 回到tryLock()源码，获取到锁的剩余有效期ttl后，如果ttl不为null，计算当前剩余等待时间time，如果time小于等于0，证明获取锁逻辑耗费完了等待获取锁时间，调用acquireFailed()方法处理。
 
 **订阅**：time大于0时，获取系统当前时间current，然后创建一个用于订阅锁释放通知的 subscribeFuture，调用 subscribe() 方法进行订阅。接下来调用subscribeFuture.await(time, TimeUnit.MILLISECONDS)等待 time 毫秒时间，等待订阅结果。如果在等待期间未收到订阅结果，表示等待超时。等待超时后代码会尝试取消订阅任务。如果取消失败，会在subscribeFuture.onComplete()方法中进行处理，判断是否需要取消订阅，并调用unsubscribe()方法进行处理。如果取消成功，则代码调用acquireFailed()方法进行处理，表示当前线程获取锁失败，最终返回false
 
-<img src="assets/Redis笔记/media/image53.png" style="width:5.75in;height:2.69792in" />
+<img src="../assets/Redis笔记/media/image53.png" style="width:5.75in;height:2.69792in" />
 
 订阅的通知就是释放锁Lua脚本当中发布的通知：
 
-<img src="assets/Redis笔记/media/image54.png" style="width:5.75in;height:0.375in" />
+<img src="../assets/Redis笔记/media/image54.png" style="width:5.75in;height:0.375in" />
 
 如果在time时间之内获得释放锁的通知，则会走以下代码逻辑，这也是**锁重试**的原理：
 
@@ -4223,11 +4223,11 @@ WatchDog机制就是用于解决业务阻塞导致锁**超时释放**的安全�
 
 如果回调函数中异常参数 e 为 null，表示获取结果成功。此时，代码判断返回的 ttlRemaining 是否为 null，如果为 null，表示锁的状态为有效，调用 scheduleExpirationRenewal() 方法进行锁的过期续约
 
-<img src="assets/Redis笔记/media/image55.png" style="width:5.75in;height:2.10417in" />
+<img src="../assets/Redis笔记/media/image55.png" style="width:5.75in;height:2.10417in" />
 
 进入到scheduleExpirationRenewal()方法，EXPIRATION_RENEWAL_MAP.putIfAbsent(this.getEntryName(), entry)方法将这个新的Entry对象放入一个名为EXPIRATION_RENEWAL_MAP的map集合中，使用this.getEntryName()方法返回一个唯一的名称（可以理解为锁的名称）作为键。
 
-<img src="assets/Redis笔记/media/image56.png" style="width:5.75in;height:1.48958in" />
+<img src="../assets/Redis笔记/media/image56.png" style="width:5.75in;height:1.48958in" />
 
 如果不是第一次获取锁，putIfAbsent()会返回旧的Entry，执行addThreadId()方法为当前线程的重入次数自增1，如果是第一次获取锁，除了执行addThreadId()方法新增Redis可重入锁，还会执行renewExpiration()方法，开启一个Timeout定时任务，每隔internalLockLeaseTime / 3 时间即10秒更新锁的有效期即续约。
 
@@ -4248,15 +4248,15 @@ WatchDog机制就是用于解决业务阻塞导致锁**超时释放**的安全�
 
 **释放锁流程**
 
-<img src="assets/Redis笔记/media/image57.png" style="width:5.75in;height:0.69792in" />
+<img src="../assets/Redis笔记/media/image57.png" style="width:5.75in;height:0.69792in" />
 
 unlock()释放锁会进入cancelExpirationRenewal()方法取消自动更新，如removeThreadId()删除锁，timeout.cancel()取消Timeout定时任务，最终remove()确保删除EXPIRATION_RENEWAL_MAP中的目标ExpirationEntry对象，即使释放锁出现异常，WatchDog也会通过判断后不再给锁续期。
 
-<img src="assets/Redis笔记/media/image58.png" style="width:5.75in;height:2.3125in" />
+<img src="../assets/Redis笔记/media/image58.png" style="width:5.75in;height:2.3125in" />
 
 **总结下来**，获取锁和释放锁的业务流程如下：
 
-<img src="assets/Redis笔记/media/image59.png" style="width:5.75in;height:2.3125in" />
+<img src="../assets/Redis笔记/media/image59.png" style="width:5.75in;height:2.3125in" />
 
 **可重入**：利用hash结构记录线程id和重入次数
 
@@ -4272,11 +4272,11 @@ unlock()释放锁会进入cancelExpirationRenewal()方法取消自动更新，�
 
 假设现在有一台主机和一台从机组成主从结构，假设主机还没来得及把数据写入到从机时，主机宕机，哨兵会发现主机宕机，并选举一个slave变成master，而此时新的master中并没有锁信息，导致锁信息丢失：
 
-<img src="assets/Redis笔记/media/image60.png" style="width:5.75in;height:1.38542in" />
+<img src="../assets/Redis笔记/media/image60.png" style="width:5.75in;height:1.38542in" />
 
 为了解决这个问题，redission提出了MutiLock锁。建立多个主从结构，每个主节点的地位一致，MutiLock锁进行加锁时，仅当所有主节点都写入锁时才算加锁成功，只要有一个主节点没有写入锁，就算加锁失败，即使一个节点宕机了，其他主节点也有同样的锁，从而保证锁的可靠性：
 
-<img src="assets/Redis笔记/media/image61.png" style="width:5.75in;height:1.53125in" />
+<img src="../assets/Redis笔记/media/image61.png" style="width:5.75in;height:1.53125in" />
 
 **基本使用**
 
@@ -4391,7 +4391,7 @@ lock.unlock();<br />
 
 当设置了多个锁时，redission会将多个锁添加到一个集合中，然后用while循环去不停地尝试拿锁，但是会有一个总共的加锁时间，这个时间是用 需要加锁的个数 \* 1500ms ，假设有3个锁，那么时间就是4500ms，假设在这4500ms内，所有的锁都加锁成功， 那么此时才算是加锁成功，如果在4500ms有线程加锁失败，则会再次去进行重试：
 
-<img src="assets/Redis笔记/media/image62.png" style="width:5.75in;height:1.66667in" />
+<img src="../assets/Redis笔记/media/image62.png" style="width:5.75in;height:1.66667in" />
 
 **5.秒杀优化**
 
@@ -4413,7 +4413,7 @@ lock.unlock();<br />
 
 我们可以把查询优惠券、判断库存、查询订单、校验一人一单交给Redis去做，而扣减库存和创建订单这些必须操作数据库的放到阻塞队列中开启一个线程慢慢执行。
 
-<img src="assets/Redis笔记/media/image63.png" style="width:5.75in;height:2.52083in" />
+<img src="../assets/Redis笔记/media/image63.png" style="width:5.75in;height:2.52083in" />
 
 **Redis端**：当用户下单之后，判断库存是否充足只需要到redis中去根据key找对应的value是否大于0，如果不充足，则直接结束，如果充足，继续在redis中判断用户是否可以下单，如果set集合中没有这条数据，说明他可以下单，如果set集合中没有这条记录，则将userId和优惠卷存入到redis中，并且返回0，整个过程需要保证是原子性，所以使用lua来操作。
 
@@ -4713,7 +4713,7 @@ JVM的内存限制问题
 
 由于Redis的List数据结构是一个双向链表，设置当入口和出口在不同边时，就能模拟一个队列，为了实现阻塞效果，出口使用BRPOP或BLPOP，这样，就用List模拟出一个消息队列：
 
-<img src="assets/Redis笔记/media/image64.png" style="width:5.75in;height:0.40625in" />
+<img src="../assets/Redis笔记/media/image64.png" style="width:5.75in;height:0.40625in" />
 
 优点：
 
@@ -4733,7 +4733,7 @@ JVM的内存限制问题
 
 PubSub是Redis2.0版本引入的消息传递模型。顾名思义，消费者可以订阅一个或多个channel，生产者向对应channel发送消息后，所有订阅者都能收到相关消息。
 
-<img src="assets/Redis笔记/media/image65.png" style="width:5.75in;height:1.38542in" />
+<img src="../assets/Redis笔记/media/image65.png" style="width:5.75in;height:1.38542in" />
 
 SUBSCRIBE channel \[channel\] ：订阅一个或多个频道
 
@@ -4765,23 +4765,23 @@ Stream 是Redis 5.0引入的一种新数据类型，可以实现一个功能非�
 
 发送消息的命令：
 
-<img src="assets/Redis笔记/media/image66.png" style="width:5.75in;height:0.80208in" />
+<img src="../assets/Redis笔记/media/image66.png" style="width:5.75in;height:0.80208in" />
 
 其中，key为消息队列名称，NOMKSTREAM参数一般不指定，常用写法为：
 
-<img src="assets/Redis笔记/media/image67.png" style="width:5.75in;height:0.71875in" />
+<img src="../assets/Redis笔记/media/image67.png" style="width:5.75in;height:0.71875in" />
 
 读取消息的方式之一XREAD：
 
-<img src="assets/Redis笔记/media/image68.png" style="width:5.75in;height:1.14583in" />
+<img src="../assets/Redis笔记/media/image68.png" style="width:5.75in;height:1.14583in" />
 
 例如从第一条消息开始读取users队列中的一条消息：
 
-<img src="assets/Redis笔记/media/image69.png" style="width:5.75in;height:1.27083in" />
+<img src="../assets/Redis笔记/media/image69.png" style="width:5.75in;height:1.27083in" />
 
 读取users队列中的最新一条消息，并等待1秒：
 
-<img src="assets/Redis笔记/media/image70.png" style="width:5.75in;height:0.53125in" />
+<img src="../assets/Redis笔记/media/image70.png" style="width:5.75in;height:0.53125in" />
 
 业务中通过XREAD阻塞结合循环就能实现持续监听队列的效果：
 
@@ -5270,7 +5270,7 @@ return Result.ok(orderId);<br />
 
 当点击主页下方的加号时就能实现发布探店笔记：
 
-<img src="assets/Redis笔记/media/image71.png" style="width:5.75in;height:1.47917in" />
+<img src="../assets/Redis笔记/media/image71.png" style="width:5.75in;height:1.47917in" />
 
 tb_blog：探店笔记表，包含笔记中的标题、文字、图片等
 
@@ -5498,7 +5498,7 @@ blog.setIsLike(BooleanUtil.isTrue(isMember));<br />
 
 在探店笔记详情页面，需要按照点赞时间的前后顺序显示Top5点赞排行榜：
 
-<img src="assets/Redis笔记/media/image72.png" style="width:5.75in;height:1.46875in" />
+<img src="../assets/Redis笔记/media/image72.png" style="width:5.75in;height:1.46875in" />
 
 由于需要按点赞时间排序，原来的Set集合就不能使用了，需要使用SortedSet集合进行存放点赞用户，score字段放置时间戳。
 
@@ -5688,7 +5688,7 @@ return Result.ok(count &gt; 0);<br />
 
 查询两个人的共同关注就是求两个人关注列表的交集，考虑到Redis的Set集合有求交集功能，这里用Set集合实现。
 
-<img src="assets/Redis笔记/media/image73.png" style="width:5.75in;height:1.72917in" />
+<img src="../assets/Redis笔记/media/image73.png" style="width:5.75in;height:1.72917in" />
 
 UserController导入查询用户详情的代码：
 
@@ -5858,7 +5858,7 @@ Feed流的实现有两种模式：
 
 拉模式也叫读扩散，比如：张三、李四、王五各自有自己的发件箱，发送消息发送到自己的发件箱，如果赵六要读取，需要拉取三个人的发件箱信息到自己的收件箱，然后按照时间排序，读取完清除。
 
-<img src="assets/Redis笔记/media/image74.png" style="width:5.75in;height:1.53125in" />
+<img src="../assets/Redis笔记/media/image74.png" style="width:5.75in;height:1.53125in" />
 
 优点：节约空间，没有重复读取，读完清除
 
@@ -5868,7 +5868,7 @@ Feed流的实现有两种模式：
 
 推模式也叫写扩散，比如：每个粉丝都有自己的收件箱，张三或李四发布内容要推送到所有粉丝的收件箱里。
 
-<img src="assets/Redis笔记/media/image75.png" style="width:5.75in;height:1.64583in" />
+<img src="../assets/Redis笔记/media/image75.png" style="width:5.75in;height:1.64583in" />
 
 优点：时效快，不用临时拉取
 
@@ -5878,7 +5878,7 @@ Feed流的实现有两种模式：
 
 推拉结合模式也叫读写混合，兼具推和拉两种模式的优点，比如：普通用户粉丝少，就可以直接把消息推动给所有粉丝，而大V粉丝多，有一个自己的发件箱，发送消息写入发件箱的同时推送给活跃的粉丝，不活跃的粉丝查看时自己从发件箱读。
 
-<img src="assets/Redis笔记/media/image76.png" style="width:5.75in;height:1.51042in" />
+<img src="../assets/Redis笔记/media/image76.png" style="width:5.75in;height:1.51042in" />
 
 Timeline模式三种实现模式对比：
 
@@ -5905,11 +5905,11 @@ Timeline模式三种实现模式对比：
 
 以传统的分页查询为例，如下图，t1时刻查询第一页数据到6，t2时刻Feed流推送了新的消息11，t3时再查询第二页数据理论上应该从5开始，但是实际是从6开始，所以原始的分页查询不适用，此时就要用到**滚动分页查询**。
 
-<img src="assets/Redis笔记/media/image77.png" style="width:5.75in;height:1.5in" />
+<img src="../assets/Redis笔记/media/image77.png" style="width:5.75in;height:1.5in" />
 
 如下图，采用滚动分页时，t1时刻查询到6，此时记录下这一次查询的最后值6，t2时刻Feed流推动了新的消息11，但是此时我们从上一次查询的最后值6往后分页查询，就查询到了正确的数据。
 
-<img src="assets/Redis笔记/media/image78.png" style="width:5.75in;height:1.45833in" />
+<img src="../assets/Redis笔记/media/image78.png" style="width:5.75in;height:1.45833in" />
 
 考虑到Set集合只能通过索引分页，所以这里使用SortedSet集合实现，以时间戳为score，每次记录最后的时间戳score，下次从这里开始，用到的命令如下：
 
@@ -6005,7 +6005,7 @@ return Result.ok(blog.getId());<br />
 
 **7.3.3 实现分页查询收邮箱**
 
-<img src="assets/Redis笔记/media/image79.png" style="width:5.75in;height:1.47917in" />
+<img src="../assets/Redis笔记/media/image79.png" style="width:5.75in;height:1.47917in" />
 
 在dto包下创建实体类ScrollResult（已经实现）：
 
@@ -6124,7 +6124,7 @@ GEOSEARCHSTORE：与GEOSEARCH功能一致，不过可以把结果存储到一个
 
 首页点击某个频道，即可按照距离显示各个频道的店铺信息：
 
-<img src="assets/Redis笔记/media/image80.png" style="width:5.75in;height:1.4375in" />
+<img src="../assets/Redis笔记/media/image80.png" style="width:5.75in;height:1.4375in" />
 
 现在的问题是怎么合理设置Redis的结构，我们可以以商铺类型id作为键key，key中存放每个店铺的坐标，店铺的值就使用店铺id，这样查询时只需要根据类型到指定key中查找店铺与当前位置的距离即可。
 
@@ -6298,7 +6298,7 @@ return Result.ok(shops);<br />
 
 虽然可以使用tb_sign表存储用户的签到信息，但是每一次签到都要记录一条记录，对于巨大的用户和频繁的签到，那记录的数据量是难以想象的，所以，可以用一串由0、1构成的字符串存储用户这个月的签到情况，一个位置代表一天，0表示未签到，1表示已签到，这种思想也被成为**位图**。
 
-<img src="assets/Redis笔记/media/image81.png" style="width:5.75in;height:0.70833in" />
+<img src="../assets/Redis笔记/media/image81.png" style="width:5.75in;height:0.70833in" />
 
 **9.1 BitMap**
 
@@ -6626,7 +6626,7 @@ fork采用的是copy-on-write技术：
 
 当主进程执行写操作时，则会拷贝一份数据，执行写操作
 
-<img src="assets/Redis笔记/media/image82.png" style="width:5.75in;height:1.73958in" />
+<img src="../assets/Redis笔记/media/image82.png" style="width:5.75in;height:1.73958in" />
 
 Redis并不会直接操作内存，而是为进程设置一个虚拟内存，并通过页表保存虚拟内存和物理内存的映射关系，bgsave开始fork主进程得到一个子进程，同时将物理内存中的数据标记为read-only，仅仅复制页表，子进程根据页表读取内存中的数据写一个新的rdb文件替换旧的rdb文件，如果复制页表或写rdb文件时主进程执行写操作，会将内存中的原数据拷贝一个副本，修改并读取副本的数据。
 
@@ -6638,7 +6638,7 @@ RDB的缺点：执行间隔时间长，两次RDB之间写入数据有丢失的�
 
 AOF即追加文件。Redis处理的每一个写命令都会记录在AOF文件，可以看做是命令日志文件：
 
-<img src="assets/Redis笔记/media/image83.png" style="width:5.75in;height:1.27083in" />
+<img src="../assets/Redis笔记/media/image83.png" style="width:5.75in;height:1.27083in" />
 
 **1.2.2 AOF配置**
 
@@ -6689,7 +6689,7 @@ appendfsync no</td>
 
 因为AOF文件记录命令，往往比RDB文件大得多。对同一条数据的两次修改只有最后一条命令有效，但是会记录两次命令，通过bgrewriteaof命令可以对AOF文件进行重写，节省空间：
 
-<img src="assets/Redis笔记/media/image84.png" style="width:5.75in;height:0.40625in" />
+<img src="../assets/Redis笔记/media/image84.png" style="width:5.75in;height:0.40625in" />
 
 Redis也会在触发阈值时自动去重写AOF文件，阈值可以在redis.conf中配置：
 
@@ -6727,7 +6727,7 @@ RDB和AOF各有自己的优缺点，如果对数据安全性要求较高，在�
 
 单节点Redis的并发能力是有上限的，要进一步提高Redis的并发能力，就需要搭建主从集群，实现读写分离。
 
-<img src="assets/Redis笔记/media/image85.png" style="width:5.75in;height:1.51042in" />
+<img src="../assets/Redis笔记/media/image85.png" style="width:5.75in;height:1.51042in" />
 
 **2.1 Redis主从环境搭建**
 
@@ -6951,7 +6951,7 @@ info replication</td>
 </tbody>
 </table>
 
-<img src="assets/Redis笔记/media/image86.png" style="width:5.75in;height:0.88542in" />
+<img src="../assets/Redis笔记/media/image86.png" style="width:5.75in;height:0.88542in" />
 
 <table>
 <colgroup>
@@ -6976,7 +6976,7 @@ info replication</td>
 
 主从第一次建立连接时，会执行**全量同步**，将master节点的所有数据都拷贝给slave节点：
 
-<img src="assets/Redis笔记/media/image87.png" style="width:5.75in;height:2.17708in" />
+<img src="../assets/Redis笔记/media/image87.png" style="width:5.75in;height:2.17708in" />
 
 第一次建立连接时，slave执行replicaof命令并建立连接，请求master进行数据同步，master判断是否是第一次同步，是第一次同步，返回master的数据版本信息，slave收到并保存版本信息，然后master执行bgsave命令生成RDB文件并发送RDB文件到slave，slave清空本地数据并加载收到的RDB文件，但是RDB期间可能有新的命令执行，master会记录这些命令缓存到repl_baklog中，RDB结束后master再发送repl_baklog中的命令给slave，slave在执行收到的命令，如果期间再有命令，还是缓存到repl_baklog，然后不断地发送执行，从而保证主从数据同步。
 
@@ -6986,13 +6986,13 @@ info replication</td>
 
 slave做数据同步必须向master声明自己的replid和offset，master才可以判断是否是第一次同步、同步哪些数据：初始时slave有自己的replid和offset，建立连接时，master发现slave发送来的replid与自己的不一致，需要做全量同步，并将自己的replid和offset都发送给这个slave，slave保存这些信息，以后slave的replid就与master一致了。
 
-<img src="assets/Redis笔记/media/image88.png" style="width:5.75in;height:2.05208in" />
+<img src="../assets/Redis笔记/media/image88.png" style="width:5.75in;height:2.05208in" />
 
 **2.2.2 增量同步**
 
 全量同步是在master与slave第一次建立连接时执行的，其他情况、slave重启时都是进行的**增量同步**，所谓增量同步，即只更新slave与master存在差异的部分数据：
 
-<img src="assets/Redis笔记/media/image89.png" style="width:5.75in;height:1.66667in" />
+<img src="../assets/Redis笔记/media/image89.png" style="width:5.75in;height:1.66667in" />
 
 当slave重启后，携带replid和offset向master请求数据同步，master判断请求的replid与自己的一致，则不是第一次，回复continue给slave，然后获取repl_baklog中offset偏移量之后的数据（命令）并发送给slave，slave执行收到的命令保证主从数据一致。
 
@@ -7000,13 +7000,13 @@ slave做数据同步必须向master声明自己的replid和offset，master才可
 
 repl_backlog是一个固定大小的环形数组，即角标到达数组末尾后，会再次从0开始读写。repl_baklog中会记录Redis处理过的命令日志及offset，包括master当前的offset，和slave已经拷贝到的offset：
 
-<img src="assets/Redis笔记/media/image90.png" style="width:5.75in;height:1.07292in" />
+<img src="../assets/Redis笔记/media/image90.png" style="width:5.75in;height:1.07292in" />
 
 进行增量同步时，仅仅是拷贝slave偏移量和master偏移量有差别的部分（即红色区域），随着不断地拷贝，slave也在不断追赶master，即使数组已经满了进行覆盖旧数据，由于这部分旧数据已经被slave同步，所以并不会有影响。
 
 但是，如果slave宕机时间太长，以至于master偏移量超过了slave偏移量（如下图），此时slave重启发现自己的slave偏移量已经没有了，无法进行增量同步，就只能进行**全量同步**。
 
-<img src="assets/Redis笔记/media/image91.png" style="width:5.75in;height:1.15625in" />
+<img src="../assets/Redis笔记/media/image91.png" style="width:5.75in;height:1.15625in" />
 
 **总结**
 
@@ -7034,7 +7034,7 @@ Redis单节点上的内存占用不要太大，减少RDB导致的过多磁盘IO
 
 限制一个master上的slave节点数量，如果实在是太多slave，则可以采用主-从-从链式结构，减少master压力
 
-<img src="assets/Redis笔记/media/image92.png" style="width:5.75in;height:1.42708in" />
+<img src="../assets/Redis笔记/media/image92.png" style="width:5.75in;height:1.42708in" />
 
 **3.Redis哨兵**
 
@@ -7046,7 +7046,7 @@ Redis的哨兵机制用来实现主从集群的自动故障恢复：
 
 **通知**：Sentinel充当Redis客户端的服务发现来源，当集群发生故障转移时，会将最新信息推送给Redis的客户端
 
-<img src="assets/Redis笔记/media/image93.png" style="width:5.75in;height:1.69792in" />
+<img src="../assets/Redis笔记/media/image93.png" style="width:5.75in;height:1.69792in" />
 
 **3.1 集群监控原理**
 
@@ -7056,7 +7056,7 @@ Sentinel是怎么判断Redis服务器是否发生故障？答案是基于**心�
 
 客观下线：若超过指定数量（quorum）的sentinel都认为该实例主观下线，则该实例**客观下线**。quorum值最好超过Sentinel实例数量的一半
 
-<img src="assets/Redis笔记/media/image94.png" style="width:5.75in;height:1.40625in" />
+<img src="../assets/Redis笔记/media/image94.png" style="width:5.75in;height:1.40625in" />
 
 **3.2 集群故障恢复原理**
 
@@ -7080,7 +7080,7 @@ sentinel给所有其它slave发送slaveof 192.168.150.101 7002（新master的IP�
 
 最后，sentinel将故障节点标记为slave（修改配置文件添加slaveof），当故障节点恢复后会自动成为新的master的slave节点
 
-<img src="assets/Redis笔记/media/image95.png" style="width:5.75in;height:1.60417in" />
+<img src="../assets/Redis笔记/media/image95.png" style="width:5.75in;height:1.60417in" />
 
 **3.3 哨兵集群环境搭建**
 
@@ -7112,7 +7112,7 @@ mkdir s1 s2 s3</td>
 </tbody>
 </table>
 
-<img src="assets/Redis笔记/media/image96.png" style="width:5.75in;height:0.85417in" />
+<img src="../assets/Redis笔记/media/image96.png" style="width:5.75in;height:0.85417in" />
 
 在s1目录创建一个sentinel.conf文件，添加如下内容：
 
@@ -7200,15 +7200,15 @@ redis-sentinel s3/sentinel.conf</td>
 
 尝试让master节点7001宕机，查看sentinel日志：
 
-<img src="assets/Redis笔记/media/image97.png" style="width:5.75in;height:2.84375in" />
+<img src="../assets/Redis笔记/media/image97.png" style="width:5.75in;height:2.84375in" />
 
 查看7003的日志：
 
-<img src="assets/Redis笔记/media/image98.png" style="width:5.75in;height:2.46875in" />
+<img src="../assets/Redis笔记/media/image98.png" style="width:5.75in;height:2.46875in" />
 
 查看7002的日志：
 
-<img src="assets/Redis笔记/media/image99.png" style="width:5.75in;height:1.9375in" />
+<img src="../assets/Redis笔记/media/image99.png" style="width:5.75in;height:1.9375in" />
 
 **3.4 RedisTemplate**
 
@@ -7297,7 +7297,7 @@ master之间通过ping监测彼此健康状态
 
 客户端请求可以访问集群任意节点，最终都会被转发到正确节点
 
-<img src="assets/Redis笔记/media/image100.png" style="width:5.75in;height:1.95833in" />
+<img src="../assets/Redis笔记/media/image100.png" style="width:5.75in;height:1.95833in" />
 
 **4.1 分片集群环境搭建**
 
@@ -7437,7 +7437,7 @@ ps -ef | grep redis</td>
 
 发现服务都已经正常启动：
 
-<img src="assets/Redis笔记/media/image101.png" style="width:5.75in;height:0.80208in" />
+<img src="../assets/Redis笔记/media/image101.png" style="width:5.75in;height:0.80208in" />
 
 如果要关闭所有进程，可以执行命令：
 
@@ -7532,11 +7532,11 @@ create：代表是创建集群
 
 运行后的样子：
 
-<img src="assets/Redis笔记/media/image102.png" style="width:5.75in;height:2.33333in" />
+<img src="../assets/Redis笔记/media/image102.png" style="width:5.75in;height:2.33333in" />
 
 这里输入yes，则集群开始创建：
 
-<img src="assets/Redis笔记/media/image103.png" style="width:5.75in;height:3.17708in" />
+<img src="../assets/Redis笔记/media/image103.png" style="width:5.75in;height:3.17708in" />
 
 通过以下命令可以查看集群状态：
 
@@ -7579,7 +7579,7 @@ set a 1</td>
 
 Redis会把每一个master节点映射到0~16383共16384个插槽（hash slot）上，查看集群信息时就能看到：
 
-<img src="assets/Redis笔记/media/image104.png" style="width:5.75in;height:0.6875in" />
+<img src="../assets/Redis笔记/media/image104.png" style="width:5.75in;height:0.6875in" />
 
 数据key不是与节点绑定，而是与插槽绑定。redis会根据key的**有效部分**计算插槽值：
 
@@ -7589,7 +7589,7 @@ key中不包含“{}”，整个key都是有效部分
 
 例如key是num，那么就根据num计算，如果是{itcast}num，则根据itcast计算。计算方式是利用CRC16算法得到一个hash值，然后对16384取余，得到的结果就是slot值。
 
-<img src="assets/Redis笔记/media/image105.png" style="width:5.75in;height:0.58333in" />
+<img src="../assets/Redis笔记/media/image105.png" style="width:5.75in;height:0.58333in" />
 
 *要想将一类数据固定的保存在同一个Redis实例，可以使它们的key都以{typeId}为前缀，从而保证key有效部分相同。*
 
@@ -7651,7 +7651,7 @@ redis-cli -p 7001 cluster nodes</td>
 
 如图，7004加入了集群，并且默认是一个master节点：
 
-<img src="assets/Redis笔记/media/image106.png" style="width:5.75in;height:0.90625in" />
+<img src="../assets/Redis笔记/media/image106.png" style="width:5.75in;height:0.90625in" />
 
 但是，7004节点的插槽数量为0，因此没有任何数据可以存储到7004上
 
@@ -7659,7 +7659,7 @@ redis-cli -p 7001 cluster nodes</td>
 
 通过get num命令可以看到num对应的插槽位置是2765：
 
-<img src="assets/Redis笔记/media/image107.png" style="width:5.75in;height:0.47917in" />
+<img src="../assets/Redis笔记/media/image107.png" style="width:5.75in;height:0.47917in" />
 
 要想使num这个key存储到7004实例，可以将前3000个插槽从7001转移到7004，转移插槽的命令：
 
@@ -7677,11 +7677,11 @@ redis-cli --cluster reshard 192.168.150.101:7001</td>
 
 执行命令后，首先会询问要移动多少个插槽，输入3000即可：
 
-<img src="assets/Redis笔记/media/image108.png" style="width:5.75in;height:0.29167in" />
+<img src="../assets/Redis笔记/media/image108.png" style="width:5.75in;height:0.29167in" />
 
 然后，会询问哪个节点接收这些插槽，需要输入节点ID，7004节点的ID在4.3.3中的日志就可以看到，拷贝到控制台即可：
 
-<img src="assets/Redis笔记/media/image109.png" style="width:5.75in;height:0.54167in" />
+<img src="../assets/Redis笔记/media/image109.png" style="width:5.75in;height:0.54167in" />
 
 之后会询问插槽是从哪里移动过来的，这里要从7001获取，因此填写7001的ID：
 
@@ -7691,7 +7691,7 @@ all：代表全部，也就是三个节点各转移一部分
 
 done：没有了
 
-<img src="assets/Redis笔记/media/image110.png" style="width:5.75in;height:1.01042in" />
+<img src="../assets/Redis笔记/media/image110.png" style="width:5.75in;height:1.01042in" />
 
 最后会询问是否确认转移，输入yes就可以了。
 
@@ -7709,7 +7709,7 @@ redis-cli -p 7001 cluster node</td>
 </tbody>
 </table>
 
-<img src="assets/Redis笔记/media/image111.png" style="width:5.75in;height:0.96875in" />
+<img src="../assets/Redis笔记/media/image111.png" style="width:5.75in;height:0.96875in" />
 
 **4.4 故障转移**
 
@@ -7735,15 +7735,15 @@ redis-cli -p 7002 shutdown</td>
 
 然后是疑似宕机：
 
-<img src="assets/Redis笔记/media/image112.png" style="width:5.75in;height:0.48958in" />
+<img src="../assets/Redis笔记/media/image112.png" style="width:5.75in;height:0.48958in" />
 
 最后是确定下线，自动提升一个slave为新的master：
 
-<img src="assets/Redis笔记/media/image113.png" style="width:5.75in;height:0.51042in" />
+<img src="../assets/Redis笔记/media/image113.png" style="width:5.75in;height:0.51042in" />
 
 当7002再次启动，就会变为一个slave节点：
 
-<img src="assets/Redis笔记/media/image114.png" style="width:5.75in;height:0.5625in" />
+<img src="../assets/Redis笔记/media/image114.png" style="width:5.75in;height:0.5625in" />
 
 **4.4.2 手动故障转移**
 
@@ -7751,7 +7751,7 @@ redis-cli -p 7002 shutdown</td>
 
 利用cluster failover命令可以手动让集群中的某个master宕机，切换到执行cluster failover命令的这个slave节点，实现无感知的数据迁移，具体流程如下：
 
-<img src="assets/Redis笔记/media/image115.png" style="width:5.75in;height:2.35417in" />
+<img src="../assets/Redis笔记/media/image115.png" style="width:5.75in;height:2.35417in" />
 
 failover命令可以指定三种模式：
 
@@ -7840,13 +7840,13 @@ return clientConfigurationBuilder -&gt; clientConfigurationBuilder.readFrom(Read
 
 多级缓存就是充分利用请求处理的每个环节，分别添加缓存，减轻Tomcat压力，提升服务性能：
 
-<img src="assets/Redis笔记/media/image116.png" style="width:5.75in;height:1.625in" />
+<img src="../assets/Redis笔记/media/image116.png" style="width:5.75in;height:1.625in" />
 
 浏览器访问静态资源时，优先读取浏览器本地缓存，访问非静态资源（Ajax查数据）时，访问服务器，当请求到达Nginx后，优先读取**Nginx本地缓存**，如果Nginx本地缓存未命中，则去查Redis缓存（不经过Tomcat），若Redis也没命中，则查Tomcat内的**JVM进程缓存**，如果JVM进程缓存也没命中，最后才查数据库。
 
 在多级缓存架构中，Nginx内部需要编写本地缓存查询、Redis查询、Tomcat查询的业务逻辑，因此这样的nginx不再是一个反向代理服务器，而是一个编写**业务的Web服务器**，所以需要搭建Nginx集群，再由专门的Nginx反向代理。同理，Tomcat也需要搭建集群。最终的多级缓存架构如下：
 
-<img src="assets/Redis笔记/media/image117.png" style="width:5.75in;height:1.35417in" />
+<img src="../assets/Redis笔记/media/image117.png" style="width:5.75in;height:1.35417in" />
 
 **1.JVM进程缓存**
 
@@ -7959,7 +7959,7 @@ tb_item_stock：商品库存表，包含商品的库存信息
 
 导入上面的item-service项目到IDEA，最终项目结构如下：
 
-<img src="assets/Redis笔记/media/image118.png" style="width:5.75in;height:1.80208in" />
+<img src="../assets/Redis笔记/media/image118.png" style="width:5.75in;height:1.80208in" />
 
 修改配置文件的MySQL信息为自己的数据库信息：
 
@@ -8202,7 +8202,7 @@ print("Hello World!")</td>
 
 **2.2.1 Lua的数据类型**
 
-<img src="assets/Redis笔记/media/image119.png" style="width:5.75in;height:1.625in" />
+<img src="../assets/Redis笔记/media/image119.png" style="width:5.75in;height:1.625in" />
 
 可以通过type()函数判断数据类型，如print(type('Hello World'))输出结果为string
 
@@ -8380,7 +8380,7 @@ end</td>
 
 与JAVA不同的是，布尔表达式中的逻辑运算是基于英文单词：
 
-<img src="assets/Redis笔记/media/image120.png" style="width:5.75in;height:1.08333in" />
+<img src="../assets/Redis笔记/media/image120.png" style="width:5.75in;height:1.08333in" />
 
 例如，自定义printArr函数打印table，当参数为nil时打印错误信息：
 
@@ -8483,7 +8483,7 @@ yum install -y openresty-opm</td>
 
 默认情况下，OpenResty安装的目录是/usr/local/openresty，目录结构如下：
 
-<img src="assets/Redis笔记/media/image121.png" style="width:5.75in;height:1.92708in" />
+<img src="../assets/Redis笔记/media/image121.png" style="width:5.75in;height:1.92708in" />
 
 通过nginx目录可以看到，OpenResty就是在Nginx基础上集成了一些Lua模块。
 
@@ -8514,7 +8514,7 @@ source /etc/profile</td>
 
 OpenResty底层是基于Nginx的，查看OpenResty目录的nginx目录，结构与windows中安装的nginx基本一致：
 
-<img src="assets/Redis笔记/media/image122.png" style="width:5.75in;height:0.82292in" />
+<img src="../assets/Redis笔记/media/image122.png" style="width:5.75in;height:0.82292in" />
 
 所以运行方式与nginx基本一致：
 
@@ -8601,7 +8601,7 @@ nginx</td>
 
 访问商品查询页http://localhost/item.html?id=10001时，会发送一个GET请求http://localhost/api/item/10001，请求被Windows上的Nginx捕获，并反向代理给OpenResty集群，也就是缓存Nginx集群。
 
-<img src="assets/Redis笔记/media/image123.png" style="width:5.75in;height:1.46875in" />
+<img src="../assets/Redis笔记/media/image123.png" style="width:5.75in;height:1.46875in" />
 
 我们需要在OpenResty中编写业务，查询商品数据（假数据）并返回到浏览器。
 
@@ -8702,7 +8702,7 @@ nginx -s reload</td>
 
 OpenResty中提供了一些API用来获取不同类型的前端请求参数：
 
-<img src="assets/Redis笔记/media/image124.png" style="width:5.75in;height:2.19792in" />
+<img src="../assets/Redis笔记/media/image124.png" style="width:5.75in;height:2.19792in" />
 
 **3.3.2 获取参数并返回**
 
@@ -8765,7 +8765,7 @@ nginx -s reload</td>
 
 此时lua脚本中的数据还是静态的，我们需要实现商品数据从Tomcat获取，再响应给前端：
 
-<img src="assets/Redis笔记/media/image125.png" style="width:5.75in;height:1.35417in" />
+<img src="../assets/Redis笔记/media/image125.png" style="width:5.75in;height:1.35417in" />
 
 需要注意的是，Tomcat在Windows，而OpenResty在Linux，只需要将Linux上的IP最后一位变成1，前三位不变，就能得到Windows的IP，例如192.168.150.**101**对应到本地Windows就是192.168.150.**1**
 
@@ -8814,7 +8814,7 @@ proxy_pass http://192.168.150.1:8081;<br />
 </tbody>
 </table>
 
-<img src="assets/Redis笔记/media/image126.png" style="width:5.75in;height:1.28125in" />
+<img src="../assets/Redis笔记/media/image126.png" style="width:5.75in;height:1.28125in" />
 
 **3.4.2 封装http工具**
 
@@ -9078,7 +9078,7 @@ nginx -s reload</td>
 
 复制Tomcat服务，并指定端口号为8082（参考实战篇一人一单）：
 
-<img src="assets/Redis笔记/media/image127.png" style="width:5.75in;height:2.08333in" />
+<img src="../assets/Redis笔记/media/image127.png" style="width:5.75in;height:2.08333in" />
 
 同时启动两个tomcat并多次访问http://localhost/api/item/10001，可以看到只有8082第一次访问有查询数据库的SQL，后几次没有日志记录，说明请求到达8082并且缓存生效。
 
@@ -9490,11 +9490,11 @@ nginx -s reload</td>
 
 **基于MQ的异步通知**：业务完成对数据的修改后，发送一条消息到MQ中，缓存服务监听MQ消息，然后更新缓存，但是这种方式仍然有少量代码入侵
 
-<img src="assets/Redis笔记/media/image128.png" style="width:5.75in;height:1.64583in" />
+<img src="../assets/Redis笔记/media/image128.png" style="width:5.75in;height:1.64583in" />
 
 **基于Canal的通知**：业务完成对数据的修改后直接结束，Canal监听MySQL变化，当发现MySQL变化后，立即通知缓存服务，缓存服务进行缓存更新，这种方式实现了代码零入侵
 
-<img src="assets/Redis笔记/media/image129.png" style="width:5.75in;height:1.52083in" />
+<img src="../assets/Redis笔记/media/image129.png" style="width:5.75in;height:1.52083in" />
 
 **3.8.2 Canal工作原理**
 
@@ -9506,7 +9506,7 @@ Canal的Github网址：
 
 Canal是基于MySQL的主从同步来实现的，MySQL主从同步的原理如下：
 
-<img src="assets/Redis笔记/media/image130.png" style="width:5.75in;height:1.84375in" />
+<img src="../assets/Redis笔记/media/image130.png" style="width:5.75in;height:1.84375in" />
 
 MySQL master 将数据变更写入二进制日志（binary log），其中记录的数据叫做binary log events，MySQL slave 将 master 的 binary log events拷贝到它的中继日志（relay log），然后重放 relay log 中事件，将数据变更反映它自己的数据。
 
@@ -9710,7 +9710,7 @@ mysql 数据解析关注的表，Perl正则表达式.<br />
 
 Canal提供了各种语言的客户端，当Canal监听到binlog变化时，会通知Canal的客户端，这里使用Java客户端：
 
-<img src="assets/Redis笔记/media/image131.png" style="width:5.75in;height:1.38542in" />
+<img src="../assets/Redis笔记/media/image131.png" style="width:5.75in;height:1.38542in" />
 
 我们使用Github上的第三方客户端canal-starter，它与SpringBoot完美整合，自动装配，比官方客户端简单好用。
 
@@ -10003,7 +10003,7 @@ CPU压力：对BigKey的数据序列化和反序列化会导致CPU的使用率�
 
 命令：redis-cli -a 密码 --bigkeys
 
-<img src="assets/Redis笔记/media/image132.png" style="width:5.75in;height:1.52083in" />
+<img src="../assets/Redis笔记/media/image132.png" style="width:5.75in;height:1.52083in" />
 
 **说明**：这种方式仅仅能统计每个类型数据占用内存最大的key，但这个key不一定是BigKey
 
@@ -10190,7 +10190,7 @@ Redis-Rdb-Tools的Github网址：
 
 自定义工具，监控进出Redis的网络数据，超出预警值时主动告警。一般阿里云搭建的云服务器就有相关监控页面：
 
-<img src="assets/Redis笔记/media/image133.png" style="width:5.75in;height:1.08333in" />
+<img src="../assets/Redis笔记/media/image133.png" style="width:5.75in;height:1.08333in" />
 
 **1.2.5 删除BigKey**
 
@@ -10198,7 +10198,7 @@ BigKey内存占用较多，即便是删除这样的key也需要耗费很长时�
 
 Redis 3.0 之前：如果是集合类型，则遍历BigKey的元素，先逐个删除子元素，最后删除BigKey
 
-<img src="assets/Redis笔记/media/image134.png" style="width:5.75in;height:1.19792in" />
+<img src="../assets/Redis笔记/media/image134.png" style="width:5.75in;height:1.19792in" />
 
 Redis 4.0 以后：Redis在4.0后提供了异步删除的命令UNLINK key \[key ...\]，它会开启新线程进行删除
 
@@ -10363,15 +10363,15 @@ Hash结构的entry数量不要超过1000
 
 单个命令的执行流程：一次命令的响应时间 = 1次往返的网络传输耗时 + 1次Redis执行命令耗时
 
-<img src="assets/Redis笔记/media/image135.png" style="width:5.75in;height:1in" />
+<img src="../assets/Redis笔记/media/image135.png" style="width:5.75in;height:1in" />
 
 N条命令的执行流程：N次命令的响应时间 = N次往返的网络传输耗时 + N次Redis执行命令耗时
 
-<img src="assets/Redis笔记/media/image136.png" style="width:5.75in;height:0.98958in" />
+<img src="../assets/Redis笔记/media/image136.png" style="width:5.75in;height:0.98958in" />
 
 由于Redis执行命令很快，所以命令响应时间往往只取决于网络传输耗时，所以可以一次发送N条命令，这时N条命令的执行流程就变化成：N次命令的响应时间 = 1次往返的网络传输耗时 + N次Redis执行命令耗时
 
-<img src="assets/Redis笔记/media/image137.png" style="width:5.75in;height:0.97917in" />
+<img src="../assets/Redis笔记/media/image137.png" style="width:5.75in;height:0.97917in" />
 
 **2.1.1 MSET**
 
@@ -10450,7 +10450,7 @@ System.out.println("time: " + (e - b));<br />
 
 目前有4种解决方案（slot表示插槽）：
 
-<img src="assets/Redis笔记/media/image138.png" style="width:5.75in;height:2.05208in" />
+<img src="../assets/Redis笔记/media/image138.png" style="width:5.75in;height:2.05208in" />
 
 **2.2.1 串行化执行代码实践**
 
@@ -11118,7 +11118,7 @@ Redis的持久化虽然可以保证数据安全，但也会带来很多额外的
 
 主线程接收到写操作后，不仅将数据写到内存，还要将命令写到AOF缓冲区，根据刷盘策略（如每1秒刷盘）开启新线程同步进行刷盘，同时监听本次刷盘时间，如果刷盘超过2秒，主线程阻塞等待刷盘完成为止，否则通过正常执行指令：
 
-> <img src="assets/Redis笔记/media/image139.png" style="width:5.75in;height:1.60417in" />
+> <img src="../assets/Redis笔记/media/image139.png" style="width:5.75in;height:1.60417in" />
 
 部署有关建议：
 
@@ -11136,7 +11136,7 @@ Redis实例的物理机要预留足够内存，应对fork和rewrite
 
 Redis是单线程的，客户端发出的指令都会进入到Redis底层的queue（队列）来执行，如果此时有一些慢查询的数据，就会导致大量请求阻塞，从而引起报错：
 
-<img src="assets/Redis笔记/media/image140.png" style="width:5.75in;height:0.97917in" />
+<img src="../assets/Redis笔记/media/image140.png" style="width:5.75in;height:0.97917in" />
 
 慢查询的阈值对应配置项slowlog-log-slower-than，单位微妙，默认是10000，建议1000，可以通过命令临时修改：
 
@@ -11158,7 +11158,7 @@ slowlog get \[n\]：读取n条慢查询日志
 
 slowlog reset：清空慢查询列表
 
-<img src="assets/Redis笔记/media/image141.png" style="width:5.75in;height:1.33333in" />
+<img src="../assets/Redis笔记/media/image141.png" style="width:5.75in;height:1.33333in" />
 
 **3.3 命令及安全配置**
 
@@ -11350,7 +11350,7 @@ C语言的字符串存在如下问题：
 
 SDS是一个结构体，源码如下：
 
-<img src="assets/Redis笔记/media/image142.png" style="width:5.75in;height:0.9375in" />
+<img src="../assets/Redis笔记/media/image142.png" style="width:5.75in;height:0.9375in" />
 
 初始时alloc和len相同，但随着动态扩容，两者会有差异
 
@@ -11358,11 +11358,11 @@ SDS是一个结构体，源码如下：
 
 为了适应不同长度的字符串，Redis设计了五种SDS头部结构，这些结构的主要区别在于它们能够表示的字符串长度的范围不同：
 
-<img src="assets/Redis笔记/media/image143.png" style="width:5.75in;height:2.71875in" />
+<img src="../assets/Redis笔记/media/image143.png" style="width:5.75in;height:2.71875in" />
 
 例如保存一个"hi"字符串的SDS结构为：
 
-<img src="assets/Redis笔记/media/image144.png" style="width:5.75in;height:0.4375in" />
+<img src="../assets/Redis笔记/media/image144.png" style="width:5.75in;height:0.4375in" />
 
 SDS还具备动态扩容能力，比如在"hi"字符串后追加 “,Amy” ，首先申请内存空间：
 
@@ -11370,7 +11370,7 @@ SDS还具备动态扩容能力，比如在"hi"字符串后追加 “,Amy” ，�
 
 如果新字符串大于1M，则新空间为 扩展后字符串长度+1M+1 ，称为内存预分配
 
-<img src="assets/Redis笔记/media/image145.png" style="width:5.75in;height:0.34375in" />
+<img src="../assets/Redis笔记/media/image145.png" style="width:5.75in;height:0.34375in" />
 
 SDS的优点：
 
@@ -11396,15 +11396,15 @@ SDS的优点：
 
 IntSet是Redis中set集合的一种实现方式，基于整数数组来实现，并且具备长度可变、有序等特征。 结构如下：
 
-<img src="assets/Redis笔记/media/image146.png" style="width:5.75in;height:0.92708in" />
+<img src="../assets/Redis笔记/media/image146.png" style="width:5.75in;height:0.92708in" />
 
 其中的encoding包含三种模式，表示存储的整数大小不同：
 
-<img src="assets/Redis笔记/media/image147.png" style="width:5.75in;height:0.90625in" />
+<img src="../assets/Redis笔记/media/image147.png" style="width:5.75in;height:0.90625in" />
 
 为了方便查找，Redis会将intset中所有的整数按照**升序**依次保存在contents数组中。例如存放数据\[5，10，20\]，采用INTSET_ENC_INT16编码，插入后的intset结构：
 
-<img src="assets/Redis笔记/media/image148.png" style="width:5.75in;height:1.04167in" />
+<img src="../assets/Redis笔记/media/image148.png" style="width:5.75in;height:1.04167in" />
 
 现在，数组中每个数字都在int16_t的范围内，因此采用的编码方式是INTSET_ENC_INT16，每部分占用的字节大小：
 
@@ -11416,7 +11416,7 @@ contents：2字节 \* 3 = 6字节
 
 数组中每个数字采用相同的编码方式，即占用空间大小相同，结合数组起始地址和数组下标可以快速定位到每个元素的物理地址：startPtr + (sizeof(int16) \* index)，所以数组下标也表示当前元素到数组起始地址间隔了多少个元素。
 
-<img src="assets/Redis笔记/media/image149.png" style="width:5.75in;height:0.4375in" />
+<img src="../assets/Redis笔记/media/image149.png" style="width:5.75in;height:0.4375in" />
 
 现在向数组\[5，10，20\]中添加元素50000，这个数字已经超出INTSET_ENC_INT16的范围，intset将自动升级编码方式到合适的大小：
 
@@ -11428,11 +11428,11 @@ contents：2字节 \* 3 = 6字节
 
 最后，将inset的encoding属性改为INTSET_ENC_INT32，将length属性改为4
 
-<img src="assets/Redis笔记/media/image150.png" style="width:5.75in;height:0.78125in" />
+<img src="../assets/Redis笔记/media/image150.png" style="width:5.75in;height:0.78125in" />
 
 添加元素的源码如下：
 
-<img src="assets/Redis笔记/media/image151.png" style="width:5.75in;height:2.05208in" />
+<img src="../assets/Redis笔记/media/image151.png" style="width:5.75in;height:2.05208in" />
 
 总结下来，Intset可以看做是特殊的整数数组，具备如下特点：
 
@@ -11450,7 +11450,7 @@ Redis是一个键值型数据库，可以根据键实现快速的增删改查。
 
 Dict由三部分组成，分别是：哈希表（DictHashTable）、哈希节点（DictEntry）、字典（Dict）
 
-<img src="assets/Redis笔记/media/image152.png" style="width:5.75in;height:1.28125in" />
+<img src="../assets/Redis笔记/media/image152.png" style="width:5.75in;height:1.28125in" />
 
 哈希表实际上是一个数组，其中：
 
@@ -11466,17 +11466,17 @@ used：哈希表数组中已存在的entry的个数
 
 *h & sizemask相当于 h % size，由于size总是2的幂次方，对应二进制总是一位为1，其余位为0，所以size - 1即siezmask的二进制就是1后面所有位是1（不包含原来的1），其余位是0，而h % size就是得到size中1后面所有低位对应h二进制中的数据，恰好是h & sizemask：*
 
-<img src="assets/Redis笔记/media/image153.png" style="width:5.75in;height:0.54167in" />
+<img src="../assets/Redis笔记/media/image153.png" style="width:5.75in;height:0.54167in" />
 
 若此时要插入两个键值对k1-v1、k2-v2，加入k1计算出的hash值h = 1，1 & 3 = 1，所以存储在数组索引为1的位置，假如k2计算出也要存放在数组索引为1的位置，就会发生Hash冲突，Redis会将两个哈希结点形成链表，把k2-v2采用头插法插入链表头部（table指向链表第一个哈希节点，采用尾插法需要遍历找到最后一个节点再插入，效率低）：
 
-<img src="assets/Redis笔记/media/image154.png" style="width:5.75in;height:0.92708in" />
+<img src="../assets/Redis笔记/media/image154.png" style="width:5.75in;height:0.92708in" />
 
 接下来看看字典的结构：
 
-<img src="assets/Redis笔记/media/image155.png" style="width:5.75in;height:0.9375in" />
+<img src="../assets/Redis笔记/media/image155.png" style="width:5.75in;height:0.9375in" />
 
-<img src="assets/Redis笔记/media/image156.png" style="width:5.75in;height:1.73958in" />
+<img src="../assets/Redis笔记/media/image156.png" style="width:5.75in;height:1.73958in" />
 
 **3.2 Dict的扩容**
 
@@ -11490,17 +11490,17 @@ Dict在每次新增键值对时都会检查负载因子（LoadFactor = used/size
 
 扩容的源码如下：
 
-<img src="assets/Redis笔记/media/image157.png" style="width:5.75in;height:1.82292in" />
+<img src="../assets/Redis笔记/media/image157.png" style="width:5.75in;height:1.82292in" />
 
 **3.3 Dict的收缩**
 
 Dict除了扩容以外，每次删除元素时，也会对负载因子做检查，当LoadFactor \< 0.1时，会做哈希表收缩：
 
-<img src="assets/Redis笔记/media/image158.png" style="width:5.75in;height:2.27083in" />
+<img src="../assets/Redis笔记/media/image158.png" style="width:5.75in;height:2.27083in" />
 
 扩容和收缩都会调用dictExpand方法，其源码如下：
 
-<img src="assets/Redis笔记/media/image159.png" style="width:5.75in;height:7.47917in" />
+<img src="../assets/Redis笔记/media/image159.png" style="width:5.75in;height:7.47917in" />
 
 **3.4 Dict的rehash**
 
@@ -11524,7 +11524,7 @@ Dict除了扩容以外，每次删除元素时，也会对负载因子做检查�
 
 执行过程截图：
 
-<img src="assets/Redis笔记/media/image160.png" style="width:5.75in;height:2.73958in" />
+<img src="../assets/Redis笔记/media/image160.png" style="width:5.75in;height:2.73958in" />
 
 但是rehash是在执行增删操作时判断是否要执行rehash，而这些操作是在Redis的主进程中进行的，若一次迁移太多的entry会导致主进程阻塞，直至完成rehash后才能处理新命令。
 
@@ -11560,7 +11560,7 @@ ziplist是一种压缩存储结构，用于存储字符串或整数，它使用�
 
 ziplist结构如下：
 
-<img src="assets/Redis笔记/media/image161.png" style="width:5.75in;height:1.71875in" />
+<img src="../assets/Redis笔记/media/image161.png" style="width:5.75in;height:1.71875in" />
 
 zlbytes：类型uint32_t，长度4 字节，记录整个压缩列表占用的内存字节数
 
@@ -11576,7 +11576,7 @@ zlend：类型uint8_t，长度1 字节，特殊值0xFF（十进制255），用�
 
 ZipList 中的Entry并不像普通链表那样记录前后节点的指针，因为记录两个指针要占用16个字节，浪费内存。而是采用了下面的结构：
 
-<img src="assets/Redis笔记/media/image162.png" style="width:5.75in;height:0.34375in" />
+<img src="../assets/Redis笔记/media/image162.png" style="width:5.75in;height:0.34375in" />
 
 previous_entry_length：前一个节点的长度，占1个或5个字节
 
@@ -11602,19 +11602,19 @@ ZipListEntry中的encoding编码分为字符串和整数两种：
 
 **字符串**：如果encoding是以“00”、“01”或者“10”开头，则证明content是字符串
 
-<img src="assets/Redis笔记/media/image163.png" style="width:5.75in;height:0.84375in" />
+<img src="../assets/Redis笔记/media/image163.png" style="width:5.75in;height:0.84375in" />
 
 例如依次存储“ab”和“bc”，previous_entry_length = 0，对应二进制00000000，“a”和“b”的UTF-8编码分别是97、98，即01100001、01100010，“ab”长度为2bytes，所以采用00xxxxxx，对应encoding是00000010，所以ab的entry为：
 
-<img src="assets/Redis笔记/media/image164.png" style="width:5.75in;height:0.9375in" />
+<img src="../assets/Redis笔记/media/image164.png" style="width:5.75in;height:0.9375in" />
 
 "bc"类似，所以插入“ab”和“bc”后最终ziplist结构为：
 
-<img src="assets/Redis笔记/media/image165.png" style="width:5.75in;height:0.82292in" />
+<img src="../assets/Redis笔记/media/image165.png" style="width:5.75in;height:0.82292in" />
 
 **整数**：如果encoding是以“11”开始，则证明content是整数，且encoding固定只占用1个字节
 
-<img src="assets/Redis笔记/media/image166.png" style="width:5.75in;height:1.16667in" />
+<img src="../assets/Redis笔记/media/image166.png" style="width:5.75in;height:1.16667in" />
 
 整数的数据类型只有byte、short、int、long，对应的数据分别为1、2、4、8个字节，所以整数只要确定了类型，其content的长度就确定了，所以整数编码无需保存content的长度。
 
@@ -11622,7 +11622,7 @@ ZipListEntry中的encoding编码分为字符串和整数两种：
 
 例如，一个ZipList中包含两个整数值："2"和"5"，其Entry结构和整个ZipList结构如下：
 
-<img src="assets/Redis笔记/media/image167.png" style="width:5.75in;height:2.08333in" />
+<img src="../assets/Redis笔记/media/image167.png" style="width:5.75in;height:2.08333in" />
 
 **4.4 连锁更新问题**
 
@@ -11634,11 +11634,11 @@ ZipList的每个Entry都包含previous_entry_length字段来记录上一个节�
 
 假设有N个连续的、长度为250~253字节之间的entry，因此entry的previous_entry_length属性用1个字节即可表示，如图所示：
 
-<img src="assets/Redis笔记/media/image168.png" style="width:5.75in;height:0.85417in" />
+<img src="../assets/Redis笔记/media/image168.png" style="width:5.75in;height:0.85417in" />
 
 若此时在表头插入一个长度为254字节的entry，原来表头entry的previous_entry_length就要从1个字节变为5个字节，那么这个entry的长度就变成254字节。原来第二个entry为了记录前面entry的长度，它的previous_entry_length也要从1个字节变为5个字节，它的长度也变成254字节，又会引起后面一个entry的previous_entry_length变大...：
 
-<img src="assets/Redis笔记/media/image169.png" style="width:5.75in;height:0.65625in" />
+<img src="../assets/Redis笔记/media/image169.png" style="width:5.75in;height:0.65625in" />
 
 ZipList这种特殊情况下产生的连续多次空间扩展操作称之为连锁更新。新增、删除都可能导致连锁更新，但是连锁更新发生概率很低，所以不用在意。
 
@@ -11660,7 +11660,7 @@ ZipList这种特殊情况下产生的连续多次空间扩展操作称之为连�
 
 QuickList是Redis3.2引入的数据结构，它是一个双端链表，只不过链表中的每个节点都是一个ZipList。QuickList结合了ZipList和双向链表的优点，旨在提供高效的内存利用率和快速的插入、删除操作，其结构如下：
 
-<img src="assets/Redis笔记/media/image170.png" style="width:5.75in;height:1.20833in" />
+<img src="../assets/Redis笔记/media/image170.png" style="width:5.75in;height:1.20833in" />
 
 为了避免QuickList中的每个ZipList的entry过多，Redis提供了配置项list-max-ziplist-size来限制：
 
@@ -11694,11 +11694,11 @@ QuickList是Redis3.2引入的数据结构，它是一个双端链表，只不过
 
 QuickList和QuickListNode的结构源码：
 
-<img src="assets/Redis笔记/media/image171.png" style="width:5.75in;height:2.0625in" />
+<img src="../assets/Redis笔记/media/image171.png" style="width:5.75in;height:2.0625in" />
 
 QuickList和QuickListNode的结构内存图：
 
-<img src="assets/Redis笔记/media/image172.png" style="width:5.75in;height:2.14583in" />
+<img src="../assets/Redis笔记/media/image172.png" style="width:5.75in;height:2.14583in" />
 
 *当向QuickList中插入1个元素时，Redis会根据一定的策略选择一个合适的quicklistNode，并将元素插入到该节点中。如果插入操作导致quicklistNode中的元素数量超过了一定的阈值（由list-max-ziplist-size参数决定），Redis会将该节点拆分成两个节点。同样，如果删除操作导致quicklistNode中的元素数量过少，Redis会将相邻的两个节点合并成一个节点。*
 
@@ -11722,11 +11722,11 @@ SkipList首先是链表，但与传统链表相比有几点差异：
 
 节点可能包含多个指针，指针跨度不同（多级指针）
 
-<img src="assets/Redis笔记/media/image173.png" style="width:5.75in;height:1.5in" />
+<img src="../assets/Redis笔记/media/image173.png" style="width:5.75in;height:1.5in" />
 
 SkipList结构定义如下：
 
-<img src="assets/Redis笔记/media/image174.png" style="width:5.75in;height:1.05208in" />
+<img src="../assets/Redis笔记/media/image174.png" style="width:5.75in;height:1.05208in" />
 
 ele：结点的值，类型是动态字符串
 
@@ -11738,7 +11738,7 @@ level\[\]：多级索引数组，每个结点包含的指针数量不确定，�
 
 SkipList内存结构：
 
-<img src="assets/Redis笔记/media/image175.png" style="width:5.75in;height:2.0625in" />
+<img src="../assets/Redis笔记/media/image175.png" style="width:5.75in;height:2.0625in" />
 
 **查找操作**：
 
@@ -11874,23 +11874,23 @@ String是Redis中最常见的数据存储类型：
 
 基本编码方式是**RAW**，基于简单动态字符串（SDS）实现，存储上限为512mb
 
-<img src="assets/Redis笔记/media/image176.png" style="width:5.75in;height:1.10417in" />
+<img src="../assets/Redis笔记/media/image176.png" style="width:5.75in;height:1.10417in" />
 
 如果存储的SDS长度小于44字节，则会采用**EMBSTR**编码，此时RedisObject对象头和SDS是一段连续空间，申请内存时只需要调用一次内存分配函数，效率更高
 
-<img src="assets/Redis笔记/media/image177.png" style="width:5.75in;height:0.46875in" />
+<img src="../assets/Redis笔记/media/image177.png" style="width:5.75in;height:0.46875in" />
 
 为什么是44字节？SDS头信息中len、alloc、flags各占一字节，字符结束符\0占一字节，字符串内容44字节，整个SDS共占48字节，RedisObject头信息共占16字节，加起来是64字节，Redis中jemalloc是默认的内存分配器，Jemalloc会为不同大小的内存请求分配固定大小的块（这些块的大小通常是2的幂次），在分配内存时会尽量满足内存对齐的要求，以减少由于频繁的内存分配和释放操作导致的内存碎片。64字节刚好是Jemalloc的一个内存分配单位，能把这些数据存储在一个连续的内存块中而不产生内存碎片。
 
 当存储的字符串是整数值，并且大小在LONG_MAX范围内，则会采用**INT**编码，直接将数据保存在RedisObject的ptr指针位置，不再需要SDS：
 
-<img src="assets/Redis笔记/media/image178.png" style="width:5.75in;height:0.58333in" />
+<img src="../assets/Redis笔记/media/image178.png" style="width:5.75in;height:0.58333in" />
 
 如果整数值超过了LONG_MAX的范围，就会使用**ROW**编码方式，把整数当成字符串存储
 
 最后看一下RAW、EMBSTR、INT三种编码对比加深印象：
 
-<img src="assets/Redis笔记/media/image179.png" style="width:5.75in;height:2.04167in" />
+<img src="../assets/Redis笔记/media/image179.png" style="width:5.75in;height:2.04167in" />
 
 **8.2 List类型**
 
@@ -11906,7 +11906,7 @@ QuickList：LinkedList + ZipList，可以从双端访问，内存占用较低，
 
 在3.2版本之后：Redis统一采用**QuickList**来实现List：
 
-<img src="assets/Redis笔记/media/image180.png" style="width:5.75in;height:1.77083in" />
+<img src="../assets/Redis笔记/media/image180.png" style="width:5.75in;height:1.77083in" />
 
 **8.3 Set类型**
 
@@ -11932,7 +11932,7 @@ set-max-intset-entries可以在配置文件中设置，默认为512
 
 如果该字符不是数值类型，则会采用HT编码，创建Dict存储元素
 
-<img src="assets/Redis笔记/media/image181.png" style="width:5.75in;height:1.625in" />
+<img src="../assets/Redis笔记/media/image181.png" style="width:5.75in;height:1.625in" />
 
 在向set插入元素过程中（非第一次插入）：
 
@@ -11940,11 +11940,11 @@ set-max-intset-entries可以在配置文件中设置，默认为512
 
 若当前的编码是IntSet，需要进行判断。当目前插入的元素不是数值类型或者该元素是数值类型，但成功插入后Set中的元素个数超过了设定值时，该Set的编码会从IntSet切换为HT，并使用Dict存储当前IntSet中的值。若这两个条件都不满足，则继续在原来的IntSet中存储新元素。
 
-<img src="assets/Redis笔记/media/image182.png" style="width:5.75in;height:4.08333in" />
+<img src="../assets/Redis笔记/media/image182.png" style="width:5.75in;height:4.08333in" />
 
 通过内存图来理解IntSet编码切换为HT编码：
 
-<img src="assets/Redis笔记/media/image183.png" style="width:5.75in;height:2.38542in" />
+<img src="../assets/Redis笔记/media/image183.png" style="width:5.75in;height:2.38542in" />
 
 **8.4 ZSet类型**
 
@@ -11964,9 +11964,9 @@ HT（Dict）：可以键值存储，并且可以根据key找value，但无法排
 
 Zset底层同时使用了这两种编码结构，结合它们的功能满足Zset的需要，ZSet的结构定义如下，在创建ZsetObject对象时，先创建了Zset对象，再为Zset对象创建了Dict和SkipList，并将编码方式设置为**OBJ_ENCODING_SKIPLIST**：
 
-<img src="assets/Redis笔记/media/image184.png" style="width:5.75in;height:1.125in" />
+<img src="../assets/Redis笔记/media/image184.png" style="width:5.75in;height:1.125in" />
 
-<img src="assets/Redis笔记/media/image185.png" style="width:5.75in;height:2.71875in" />
+<img src="../assets/Redis笔记/media/image185.png" style="width:5.75in;height:2.71875in" />
 
 当元素数量不多时，HT和SkipList的优势不明显，而且更耗内存，同一份数据存储了两份。因此zset还会采用**ZipList**结构来节省内存，不过需要同时满足两个条件：
 
@@ -11980,17 +11980,17 @@ ZipList是连续内存，因此score和element是紧挨在一起的两个entry�
 
 score越小越接近队首，score越大越接近队尾，按照score值升序排列
 
-<img src="assets/Redis笔记/media/image186.png" style="width:5.75in;height:1.16667in" />
+<img src="../assets/Redis笔记/media/image186.png" style="width:5.75in;height:1.16667in" />
 
 **ZipList实现ZSet源码分析**：
 
 创建Zset：在zadd添加元素时，先根据key找到zset，不存在则创建新的zset。创建时判断配置文件中zset_max_ziplist_entries值是否为0，设置为0就是禁用了zipList，或者value大小超过了zset_max_ziplist_value，此时采用HT和SKipList结合方案，否则采用ZipList：
 
-<img src="assets/Redis笔记/media/image187.png" style="width:5.75in;height:1.91667in" />
+<img src="../assets/Redis笔记/media/image187.png" style="width:5.75in;height:1.91667in" />
 
 向Zset中添加元素时，首先判断编码方式，若本身是SKIPLIST编码，无序转换。否则，可能存在编码转换的可能：
 
-<img src="assets/Redis笔记/media/image188.png" style="width:5.75in;height:4.21875in" />
+<img src="../assets/Redis笔记/media/image188.png" style="width:5.75in;height:4.21875in" />
 
 **8.5 Hash类型**
 
@@ -12004,7 +12004,7 @@ zset要根据score排序；hash则无需排序
 
 Hash结构默认采用**ZipList**编码，用以节省内存，ZipList中相邻的两个entry分别保存field和value：
 
-<img src="assets/Redis笔记/media/image189.png" style="width:5.75in;height:1.08333in" />
+<img src="../assets/Redis笔记/media/image189.png" style="width:5.75in;height:1.08333in" />
 
 当数据量较大时，Hash结构会转为**HT编码**，也就是Dict，触发条件有两种：
 
@@ -12012,13 +12012,13 @@ ZipList中的元素数量超过了hash-max-ziplist-entries（默认512）
 
 ZipList中的任意entry大小超过了hash-max-ziplist-value（默认64字节）
 
-<img src="assets/Redis笔记/media/image190.png" style="width:5.75in;height:1.29167in" />
+<img src="../assets/Redis笔记/media/image190.png" style="width:5.75in;height:1.29167in" />
 
 **源码分析**：
 
 创建Hash结构时默认采用ZipList编码，由于存在两种编码格式，在添加元素时可能会发生格式转换：
 
-<img src="assets/Redis笔记/media/image191.png" style="width:5.75in;height:3.58333in" />
+<img src="../assets/Redis笔记/media/image191.png" style="width:5.75in;height:3.58333in" />
 
 **七、Redis网络模型**
 
@@ -12030,13 +12030,13 @@ Redis、MySQL等用户应用无法直接执行访问系统硬件，需要通过�
 
 计算机硬件包括CPU、内存、网卡等，内核通过寻址空间可以操作硬件，但是内核需要不同设备的**驱动**，有了这些驱动后就可以对计算机硬件进行内存管理，文件系统管理，进程管理等等。
 
-<img src="assets/Redis笔记/media/image192.png" style="width:5.75in;height:2.0625in" />
+<img src="../assets/Redis笔记/media/image192.png" style="width:5.75in;height:2.0625in" />
 
 用户应用想要访问计算机硬件，计算机就必须对外暴露的一些**接口**才能访问到，从而间接实现对内核的操控，但是内核本身也是一个应用，也需要一些内存、CPU等设备资源，用户应用也在消耗这些资源。为了避免了用户程序随意操作系统资源，错误或恶意执行危险指令（如清空内存、修改时钟），就需要把用户和内核隔离开。所以进程的寻址空间被划分成**内核空间**和**用户空间**，也就是内核态和用户态。
 
 用户空间和内核空间都无法直接访问物理内存，而是通过分配**虚拟内存**映射到物理内存，通过虚拟内存可以将内核空间与用户空间隔离开来，避免用户程序错误地或恶意地访问内核空间。在32位Linux操作系统中，虚拟内存空间大小为 4GB，高位的1G空间作为内核空间，低位的3G空间作为用户空间。
 
-<img src="assets/Redis笔记/media/image193.png" style="width:5.75in;height:2.21875in" />
+<img src="../assets/Redis笔记/media/image193.png" style="width:5.75in;height:2.21875in" />
 
 在linux中权限分成两个等级，0和3，用户空间只能执行受限的命令（Ring3），不能直接调用系统资源，必须通过内核提供的接口来访问。内核空间可以执行特权命令（Ring0），调用一切系统资源。一般情况下，用户操作运行在用户空间，内核运行的数据在内核空间，而有些情况下，应用程序需要调用一些特权资源，去调用一些内核空间的操作，此时需要在用户态和内核态之间进行切换。
 
@@ -12050,11 +12050,11 @@ Linux系统为了提高IO效率，会在用户空间和内核空间都加入缓�
 
 用户读数据时，向内核态申请读取内核的数据，而内核数据要等待驱动程序从硬件上读取数据，当从磁盘上加载到数据之后，内核会将数据写入到内核的缓冲区中，然后再将数据拷贝到用户态的缓冲区中，返回给应用程序：
 
-<img src="assets/Redis笔记/media/image194.png" style="width:5.75in;height:2.5625in" />
+<img src="../assets/Redis笔记/media/image194.png" style="width:5.75in;height:2.5625in" />
 
 该过程主要的时间花费在用户等待数据就绪以及用户态和内核态数据缓冲区之间的数据拷贝。为了提高IO效率，Linux的五种不同的IO模型就是在等待数据就绪和读取数据这两个阶段做了不同的处理：
 
-<img src="assets/Redis笔记/media/image195.png" style="width:5.75in;height:1.30208in" />
+<img src="../assets/Redis笔记/media/image195.png" style="width:5.75in;height:1.30208in" />
 
 五种IO模型：
 
@@ -12072,7 +12072,7 @@ IO多路复用（IO Multiplexing）
 
 阻塞IO分为两个阶段，数据从硬件读取到内核缓冲区 和 内核拷贝缓冲区数据到用户缓冲区，阻塞IO的这两个阶段都是阻塞的：
 
-<img src="assets/Redis笔记/media/image196.png" style="width:5.75in;height:1.875in" />
+<img src="../assets/Redis笔记/media/image196.png" style="width:5.75in;height:1.875in" />
 
 当应用程序调用IO函数（如read或write）时，如果数据没有准备好，用户进程会被阻塞，直到数据准备好并被复制到应用程序的缓冲区中。在阻塞期间，进程无法执行其他任务，阻塞 IO 的阻塞期间不会占用 CPU 资源。
 
@@ -12080,7 +12080,7 @@ IO多路复用（IO Multiplexing）
 
 非阻塞IO的recvfrom操作会立即返回结果而不是阻塞用户进程，如果数据没有准备好，函数会立即返回一个错误码（如EWOULDBLOCK），表示当前没有数据可读或可写。用户程序需要不断轮询内核，检查数据是否准备好，这会导致CPU资源的浪费：
 
-<img src="assets/Redis笔记/media/image197.png" style="width:5.75in;height:1.88542in" />
+<img src="../assets/Redis笔记/media/image197.png" style="width:5.75in;height:1.88542in" />
 
 非阻塞IO模型中，用户进程第一个阶段是非阻塞，第二个阶段是阻塞状态。虽然是非阻塞，但性能并没有得到提高。而且忙等机制会导致CPU空转，CPU使用率暴增。
 
@@ -12098,7 +12098,7 @@ IO多路复用（IO Multiplexing）
 
 **IO多路复用**是利用单个线程同时监听多个FD，并在某个FD可读、可写时得到通知，从而避免无效的等待，充分利用CPU资源
 
-<img src="assets/Redis笔记/media/image198.png" style="width:5.75in;height:1.97917in" />
+<img src="../assets/Redis笔记/media/image198.png" style="width:5.75in;height:1.97917in" />
 
 Linux系统监听FD的方式、通知的方式有多种实现，常见的有**select**、**poll**和**epoll**，它们是Linux提供的用于监听多个文件描述符状态的系统调用，这些系统调用允许程序将一组文件描述符注册到监听队列中，当其中任何一个文件描述符的状态发生变化时（如可读、可写或发生错误），系统调用会返回并通知应用程序。
 
@@ -12106,7 +12106,7 @@ Linux系统监听FD的方式、通知的方式有多种实现，常见的有**se
 
 select是Linux中最早的I/O多路复用实现方案，源码如下：
 
-<img src="assets/Redis笔记/media/image199.png" style="width:5.75in;height:2.16667in" />
+<img src="../assets/Redis笔记/media/image199.png" style="width:5.75in;height:2.16667in" />
 
 数组fds_bits每个元素占用4 \* 8 = 32个bit，数组长度为32，所以数组可以表示32 \* 32 = 1024bit，其中每个比特位监听一个FD文件，将来要监听哪个FD，就把对应位置（自低位从1开始）比特为置为1，如1,2,5要监听对应的就是...00010011。
 
@@ -12122,11 +12122,11 @@ select方式进行IO多路复用的流程如下：
 
 若当前没有就绪的fd，休眠等待数据就绪被唤醒或超时
 
-<img src="assets/Redis笔记/media/image200.png" style="width:5.75in;height:1.90625in" />
+<img src="../assets/Redis笔记/media/image200.png" style="width:5.75in;height:1.90625in" />
 
 当有fd就绪时，内核遍历rfds找到被监听的fd，将其与已就绪的fd比较，相同则保留，其余的fd置为0，之后内核将自己的rfds拷贝回用户空间的rfds，此时rfds中保存的是已就绪的fd，并且select函数返回已就绪fd的数量
 
-<img src="assets/Redis笔记/media/image201.png" style="width:5.75in;height:1.80208in" />
+<img src="../assets/Redis笔记/media/image201.png" style="width:5.75in;height:1.80208in" />
 
 最后用户进程遍历fd_set，找到就绪的fd，读取其中的数据
 
@@ -12144,7 +12144,7 @@ select无法得知具体是哪个fd就绪，需要遍历整个fd_set fd_set
 
 poll模式对select模式做了简单改进，但性能提升不明显，源码如下：
 
-<img src="assets/Redis笔记/media/image202.png" style="width:5.75in;height:2.14583in" />
+<img src="../assets/Redis笔记/media/image202.png" style="width:5.75in;height:2.14583in" />
 
 poll方式实现IO多路复用的流程如下：
 
@@ -12192,15 +12192,15 @@ epoll方式实现IO多路复用的流程如下：
 
 epoll_create：在内核创建eventpoll结构体，返回对应的句柄epfd，即该eventpoll的唯一标识。每一个句柄epfd对应一个eventpoll
 
-<img src="assets/Redis笔记/media/image203.png" style="width:5.75in;height:1.61458in" />
+<img src="../assets/Redis笔记/media/image203.png" style="width:5.75in;height:1.61458in" />
 
 epoll_ctl：将一个FD添加到eventpoll的红黑树中并对其进行监听，但不会等待FD就绪，而是对该FD设置事件发生时的回调函数ep_poll_callback，当要监听的事件发生时，自动调用该回调函数，把对应的FD加入到就绪链表list_head中
 
-<img src="assets/Redis笔记/media/image204.png" style="width:5.75in;height:1.85417in" />
+<img src="../assets/Redis笔记/media/image204.png" style="width:5.75in;height:1.85417in" />
 
 epoll_wait：将FD添加到红黑树中后，调用epoll_wait 检查就绪链表是否为空，不为空则返回就绪的FD的数量，同时将就绪链表中的FD拷贝到用户空间的events数组中（只拷贝就绪的FD），如果epoll_wait为空就等待FD就绪
 
-<img src="assets/Redis笔记/media/image205.png" style="width:5.75in;height:1.95833in" />
+<img src="../assets/Redis笔记/media/image205.png" style="width:5.75in;height:1.95833in" />
 
 小总结：
 
@@ -12242,7 +12242,7 @@ epoll模式中如何解决这些问题的？
 
 在epoll模式中，将就绪链表list_head中的FD拷贝到用户空间events数组之前，会先将就绪的FD从list_head移除，假设第一次没有拷贝完FD的数据，若采用LT模式拷贝完会将这些FD重新添加回list_head，若采用ET模式则不会添加回list_head。
 
-<img src="assets/Redis笔记/media/image206.png" style="width:5.75in;height:1.67708in" />
+<img src="../assets/Redis笔记/media/image206.png" style="width:5.75in;height:1.67708in" />
 
 例如：
 
@@ -12268,7 +12268,7 @@ ET模式适用于需要高效处理大量并发事件，对延迟敏感的应用
 
 **基于epoll的服务器端流程**
 
-<img src="assets/Redis笔记/media/image207.png" style="width:5.75in;height:2.1875in" />
+<img src="../assets/Redis笔记/media/image207.png" style="width:5.75in;height:2.1875in" />
 
 服务器启动时，在服务端调用epoll_create创建epoll实例，即在内核中创建红黑树（管理监听FD）和就绪链表（存储就绪FD）
 
@@ -12298,7 +12298,7 @@ ssfd专门用于监听客户端的连接请求，有客户端连接服务器时�
 
 信号驱动IO允许用户进程通过注册一个 信号处理函数 来异步接收数据可用的通知。当设备数据可用时，内核会向用户进程发送一个SIGIO信号，触发用户进程预先注册的信号处理函数，进而执行相应的IO操作，期间用户应用可以执行其它业务，无需阻塞等待：
 
-<img src="assets/Redis笔记/media/image208.png" style="width:5.75in;height:2.28125in" />
+<img src="../assets/Redis笔记/media/image208.png" style="width:5.75in;height:2.28125in" />
 
 与其他IO模型的比较：
 
@@ -12316,7 +12316,7 @@ ssfd专门用于监听客户端的连接请求，有客户端连接服务器时�
 
 异步IO的整个过程都是非阻塞的，用户进程调用完异步API后就可以去做其它事情，内核等待数据就绪并拷贝到用户空间后才会递交信号，通知用户进程：
 
-<img src="assets/Redis笔记/media/image209.png" style="width:5.75in;height:2.13542in" />
+<img src="../assets/Redis笔记/media/image209.png" style="width:5.75in;height:2.13542in" />
 
 **优点**
 
@@ -12340,7 +12340,7 @@ ssfd专门用于监听客户端的连接请求，有客户端连接服务器时�
 
 在IO操作中，同步和异步 与 阻塞和非阻塞没有直接关系。IO操作是同步还是异步，关键看数据在内核空间与用户空间的拷贝过程（数据读写的IO操作），也就是阶段二是同步还是异步：
 
-<img src="assets/Redis笔记/media/image210.png" style="width:5.75in;height:2.44792in" />
+<img src="../assets/Redis笔记/media/image210.png" style="width:5.75in;height:2.44792in" />
 
 **3.Redis网络模型**
 
@@ -12368,15 +12368,15 @@ Redis v6.0：在核心网络模型中引入多线程，进一步提高对于多�
 
 Redis通过IO多路复用来提高网络性能，支持各种不同的多路复用实现，Redis将这些实现进行封装，提供了统一的高性能事件库API库 AE：
 
-<img src="assets/Redis笔记/media/image211.png" style="width:5.75in;height:1.79167in" />
+<img src="../assets/Redis笔记/media/image211.png" style="width:5.75in;height:1.79167in" />
 
 在ae.c中根据当前系统支持的多路复用方式，引入对应响应的API库，之后调用API时就会调用对应文件中的函数：
 
-<img src="assets/Redis笔记/media/image212.png" style="width:5.75in;height:1.63542in" />
+<img src="../assets/Redis笔记/media/image212.png" style="width:5.75in;height:1.63542in" />
 
 在Linux系统下，Redis底层使用epoll实现多路复用，分析Redis单线程网络模型的源码：
 
-<img src="assets/Redis笔记/media/image213.png" style="width:5.75in;height:1.86458in" />
+<img src="../assets/Redis笔记/media/image213.png" style="width:5.75in;height:1.86458in" />
 
 Redis单线程网络模型的代码执行流程如下：
 
@@ -12404,7 +12404,7 @@ redis将各种命令都封装成xxxCommand函数，并建立了命令和对应�
 
 最后开始监听FD，执行aeApiPoll（类似以epoll_wait），当有FD就绪时，返回就绪FD的数量，调用对应的处理器处理就绪的FD
 
-<img src="assets/Redis笔记/media/image214.png" style="width:5.75in;height:2.40625in" />
+<img src="../assets/Redis笔记/media/image214.png" style="width:5.75in;height:2.40625in" />
 
 整体来讲，Redis使用了IO多路复用技术，允许单个线程同时监听多个文件描述符（包括服务端的ServerSocket和客户端的socket），并在有数据可读或可写时将任务派发给不同的处理器进行处理。具体来说：
 
@@ -12422,7 +12422,7 @@ redis将各种命令都封装成xxxCommand函数，并建立了命令和对应�
 
 所以Redis 6.0引入了多线程以提高IO读写效率，因此在解析客户端命令、写响应结果时采用了多线程。核心的命令执行、IO多路复用模块依然是由主线程执行：
 
-<img src="assets/Redis笔记/media/image215.png" style="width:5.75in;height:2.33333in" />
+<img src="../assets/Redis笔记/media/image215.png" style="width:5.75in;height:2.33333in" />
 
 **4.Redis通信协议**
 
@@ -12458,7 +12458,7 @@ Redis 6.0版本中，从RESP2升级到了RESP3协议，增加了更多数据类�
 
 多行字符串：首字节是\$，表示二进制安全的字符串，记录时保存**字符串长度**和**字符串本身**，最大支持512MB：
 
-<img src="assets/Redis笔记/media/image216.png" style="width:5.75in;height:0.71875in" />
+<img src="../assets/Redis笔记/media/image216.png" style="width:5.75in;height:0.71875in" />
 
 如果大小为0，则代表空字符串："\$0\r\n\r\n"
 
@@ -12466,7 +12466,7 @@ Redis 6.0版本中，从RESP2升级到了RESP3协议，增加了更多数据类�
 
 数组：首字节是\*，后面跟上数组元素个数，再跟上元素，元素数据类型不限：
 
-<img src="assets/Redis笔记/media/image217.png" style="width:5.75in;height:0.70833in" />
+<img src="../assets/Redis笔记/media/image217.png" style="width:5.75in;height:0.70833in" />
 
 **4.2 自定义Redis客户端**
 
@@ -12600,17 +12600,17 @@ Redis通过expire命令可以为key设置一个有效期TTL，当key过期后，
 
 在Redis中最多可以有16个数据库，每个数据库都被保存为一个redisDb实例。Redis所有数据都是以key-value的形式存在，在redisDb实例中，dict用于存放所有的key和value，expires用于存放所有key的有效期TTL（不包含value）：
 
-<img src="assets/Redis笔记/media/image218.png" style="width:5.75in;height:1.48958in" />
+<img src="../assets/Redis笔记/media/image218.png" style="width:5.75in;height:1.48958in" />
 
 redisDb实例的结构示意图：
 
-<img src="assets/Redis笔记/media/image219.png" style="width:5.75in;height:1.94792in" />
+<img src="../assets/Redis笔记/media/image219.png" style="width:5.75in;height:1.94792in" />
 
 当key的TTL到期后，key不是会被立即删除，删除情况有惰性删除和周期删除两种：
 
 **惰性删除**：在访问一个key的时候，检查该key的存活时间，如果已经过期才执行删除
 
-<img src="assets/Redis笔记/media/image220.png" style="width:5.75in;height:1.60417in" />
+<img src="../assets/Redis笔记/media/image220.png" style="width:5.75in;height:1.60417in" />
 
 但是如果很多key过期后很长时间没有被访问，只采用惰性删除时，这些key就无法被释放，这就需要周期删除。
 
@@ -12634,7 +12634,7 @@ databasesCron使用SLOW模式循环不断地尝试清理过期的key
 
 有FD就绪处理完IO事件后，判断是否到可以调用serverCron使用SLOW模式清理（就是判断距离上次执行serverCron是否过去了100ms），如果可以清理就调用serverCron清理，否则下一次循环
 
-<img src="assets/Redis笔记/media/image221.png" style="width:5.75in;height:1.94792in" />
+<img src="../assets/Redis笔记/media/image221.png" style="width:5.75in;height:1.94792in" />
 
 SLOW模式规则：
 
@@ -12666,7 +12666,7 @@ FAST模式规则（过期key比例小于10%不执行）：
 
 Redis会在处理客户端命令的方法 processCommand() 中尝试做内存淘汰：
 
-<img src="assets/Redis笔记/media/image222.png" style="width:5.75in;height:1.95833in" />
+<img src="../assets/Redis笔记/media/image222.png" style="width:5.75in;height:1.95833in" />
 
 Redis支持8种不同策略来选择要删除的key：
 
@@ -12696,7 +12696,7 @@ Redis的数据都会被封装为一个redisObject，其中的unsigned lru:LRU_BI
 
 若采用LFU淘汰策略，该字段会用高16位 以分钟为单位记录最近一次访问时间，低8位记录逻辑访问次数
 
-<img src="assets/Redis笔记/media/image223.png" style="width:5.75in;height:1.11458in" />
+<img src="../assets/Redis笔记/media/image223.png" style="width:5.75in;height:1.11458in" />
 
 Redis会通过unsigned lru:LRU_BITS统计一个key最近一次的访问时间或最近一次访问的频率，其中LFU策略的逻辑访问次数并不是key的真实访问次数，而是通过计算得到：
 
@@ -12712,6 +12712,6 @@ Redis会通过unsigned lru:LRU_BITS统计一个key最近一次的访问时间或
 
 Redis在执行每一条客户端命令前执行 processCommand() 进行内存淘汰，该函数根据设置的淘汰策略淘汰一部分key，执行流程如下：
 
-<img src="assets/Redis笔记/media/image224.png" style="width:5.75in;height:2.84375in" />
+<img src="../assets/Redis笔记/media/image224.png" style="width:5.75in;height:2.84375in" />
 
 执行 LRU\|LFU\|TTL 淘汰策略本质是比较key的过期时间进行淘汰，但数据库通常有成千上万的key，不可能遍历所有key进行比较，所以就创建一个淘汰池 evication_pool 从数据库（遍历所有DB）中随机找一部分key进行比较，池子的规则是按照某一种规则进行升序排列，排列后值越大的的越先淘汰，具体的算法根据淘汰策略不同进行调整使之可以适用越大越先淘汰的逻辑，池子中的数据删除时倒序值越大越应该删除。
