@@ -29,6 +29,20 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/database/mysql/indexes/"/>
     </url>
     <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/database/mysql/locks/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/database/mysql/locks/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/database/mysql/locks/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/database/mysql/mvcc/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/database/mysql/mvcc/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/database/mysql/mvcc/"/>
+    </url>
+    <url>
         <loc>https://mop74720-commits.github.io/cs-notes/database/mysql/sql/</loc>
         <lastmod>2026-09-28</lastmod>
         <changefreq>daily</changefreq>
@@ -111,6 +125,20 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/database/mysql/indexes/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/database/mysql/indexes/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/en/database/mysql/locks/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/database/mysql/locks/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/database/mysql/locks/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/en/database/mysql/mvcc/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/database/mysql/mvcc/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/database/mysql/mvcc/"/>
     </url>
     <url>
         <loc>https://mop74720-commits.github.io/cs-notes/en/database/mysql/sql/</loc>
