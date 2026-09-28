@@ -160,6 +160,8 @@ nav:
       - 项目总览: "projects/index.md"
       - AERA-Lite: "projects/aera-lite.md"
 
+  - CS DIY 自学指南: "csdiy/index.md"
+
   - Blog:
       - "blog/index.md"
       - 标签: "blog/tags.md"
