@@ -244,7 +244,7 @@ Pluggable Storage Engines：存储引擎接口，MySQL 区别于其他数据库�
 
 File System：文件系统，保存配置文件、数据文件、日志文件、错误文件、二进制文件等
 
-<img src=".assets/DB/media/image1.png" style="width:5.75in;height:3.45833in" />
+<img src="assets/DB/media/image1.png" style="width:5.75in;height:3.45833in" />
 
 **建立连接**
 
@@ -258,7 +258,7 @@ MySQL 服务器可以同时和多个客户端进行交互，所以要保证每�
 
 整体的执行流程：
 
-<img src=".assets/DB/media/image2.png" style="width:5.75in;height:0.86458in" />
+<img src="assets/DB/media/image2.png" style="width:5.75in;height:0.86458in" />
 
 **权限信息**
 
@@ -266,7 +266,7 @@ grant 语句会同时修改数据表和内存，判断权限的时候使用的�
 
 flush privileges 语句本身会用数据表（磁盘）的数据重建一份内存权限数据，所以在权限数据可能存在不一致的情况下使用，这种不一致往往是由于直接用 DML 语句操作系统权限表导致的，所以尽量不要使用这类语句
 
-<img src=".assets/DB/media/image3.png" style="width:5.75in;height:2.04167in" />
+<img src="assets/DB/media/image3.png" style="width:5.75in;height:2.04167in" />
 
 **连接状态**
 
@@ -294,7 +294,7 @@ MySQL 5.7 版本，可以在每次执行一个比较大的操作后，通过执�
 
 SHOW PROCESSLIST：查看当前 MySQL 在进行的线程，可以实时地查看 SQL 的执行情况，其中的 Command 列显示为 Sleep 的这一行，就表示现在系统里面有一个空闲连接
 
-<img src=".assets/DB/media/image4.png" style="width:5.75in;height:0.90625in" />
+<img src="assets/DB/media/image4.png" style="width:5.75in;height:0.90625in" />
 
 |         |                                                                                                                            |
 |---------|----------------------------------------------------------------------------------------------------------------------------|
@@ -415,7 +415,7 @@ SHOW STATUS LIKE 'Qcache%';</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image5.png" style="width:5.75in;height:2.70833in" />
+<img src="assets/DB/media/image5.png" style="width:5.75in;height:2.70833in" />
 
 |                         |                                                                  |
 |-------------------------|------------------------------------------------------------------|
@@ -855,11 +855,11 @@ mysqldump -uroot -p2143 -T /tmp test city</td>
 
 备份
 
-<img src=".assets/DB/media/image6.png" style="width:5.75in;height:1.86458in" />
+<img src="assets/DB/media/image6.png" style="width:5.75in;height:1.86458in" />
 
 恢复
 
-<img src=".assets/DB/media/image7.png" style="width:5.75in;height:1.89583in" />
+<img src="assets/DB/media/image7.png" style="width:5.75in;height:1.89583in" />
 
 **import**
 
@@ -986,7 +986,7 @@ DCL（Data Control Language）数据控制语言
 
 用来定义数据库的访问权限和安全级别，及创建用户。关键字：grant， revoke等
 
-<img src=".assets/DB/media/image8.png" style="width:5.75in;height:2.5in" />
+<img src="assets/DB/media/image8.png" style="width:5.75in;height:2.5in" />
 
 **DDL**
 
@@ -1839,7 +1839,7 @@ SELECT * FROM product WHERE NAME LIKE '%电脑%';</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image9.png" style="width:5.75in;height:2.17708in" />
+<img src="assets/DB/media/image9.png" style="width:5.75in;height:2.17708in" />
 
 **函数查询**
 
@@ -2159,7 +2159,7 @@ SELECT * FROM product LIMIT 6,2; -- 第四页 开始索引=(4-1) * 2</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image10.png" style="width:5.75in;height:1.64583in" />
+<img src="assets/DB/media/image10.png" style="width:5.75in;height:1.64583in" />
 
 **多表操作**
 
@@ -2611,7 +2611,7 @@ INSERT INTO card VALUES (NULL,'12345',1),(NULL,'56789',2);</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image11.png" style="width:5.75in;height:2.27083in" />
+<img src="assets/DB/media/image11.png" style="width:5.75in;height:2.27083in" />
 
 **一对多**
 
@@ -2647,7 +2647,7 @@ INSERT INTO orderlist VALUES (NULL,'hm001',1),(NULL,'hm002',1),(NULL,'hm003',2),
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image12.png" style="width:5.75in;height:2.39583in" />
+<img src="assets/DB/media/image12.png" style="width:5.75in;height:2.39583in" />
 
 **多对多**
 
@@ -2692,7 +2692,7 @@ INSERT INTO stu_course VALUES (NULL,1,1),(NULL,1,2),(NULL,2,1),(NULL,2,2);</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image13.png" style="width:5.75in;height:3.27083in" />
+<img src="assets/DB/media/image13.png" style="width:5.75in;height:3.27083in" />
 
 **连接查询**
 
@@ -2768,7 +2768,7 @@ SELECT 列名 FROM 表名1 RIGHT [OUTER] JOIN 表名2 ON 条件;</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image14.png" style="width:5.75in;height:4.10417in" />
+<img src="assets/DB/media/image14.png" style="width:5.75in;height:4.10417in" />
 
 **关联查询**
 
@@ -2796,7 +2796,7 @@ INSERT INTO employee VALUES (1001,'孙悟空',1005,9000.00),..,(1009,'宋江',NU
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image15.png" style="width:4.27083in;height:3.5in" />
+<img src="assets/DB/media/image15.png" style="width:4.27083in;height:3.5in" />
 
 数据查询
 
@@ -3113,7 +3113,7 @@ CONSTRAINT up_fk2 FOREIGN KEY (pid) REFERENCES product(id)<br />
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image16.png" style="width:5.75in;height:4.22917in" />
+<img src="assets/DB/media/image16.png" style="width:5.75in;height:4.22917in" />
 
 **数据查询：**
 
@@ -4720,7 +4720,7 @@ CREATE TABLE order_all(<br />
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image17.png" style="width:5.75in;height:1.76042in" />
+<img src="assets/DB/media/image17.png" style="width:5.75in;height:1.76042in" />
 
 |              |                                |               |                      |
 |--------------|--------------------------------|---------------|----------------------|
@@ -4835,7 +4835,7 @@ MySQL 官方对索引的定义为：索引（index）是帮助 MySQL 高效获�
 
 索引使用：一张数据表，用于保存数据；一个索引配置文件，用于保存索引；每个索引都指向了某一个数据
 
-<img src=".assets/DB/media/image18.png" style="width:5.75in;height:1.875in" />
+<img src="assets/DB/media/image18.png" style="width:5.75in;height:1.875in" />
 
 左边是数据表，一共有两列七条记录，最左边的是数据记录的物理地址（注意逻辑上相邻的记录在磁盘上也并不是一定物理相邻的）。为了加快 Col2 的查找，可以维护一个右边所示的二叉查找树，每个节点分别包含索引键值和一个指向对应数据的物理地址的指针，这样就可以运用二叉查找快速获取到相应数据
 
@@ -4893,7 +4893,7 @@ Full-text 索引（全文索引）：快速匹配全部文档的方式。MyISAM 
 
 联合索引图示：根据身高年龄建立的组合索引（height、age）
 
-<img src=".assets/DB/media/image19.png" style="width:5.75in;height:1.6875in" />
+<img src="assets/DB/media/image19.png" style="width:5.75in;height:1.6875in" />
 
 **索引操作**
 
@@ -5074,7 +5074,7 @@ InnoDB 的所有辅助索引（二级索引）都引用主键作为 data 域
 
 InnoDB 表是基于聚簇索引建立的，因此 InnoDB 的索引能提供一种非常快速的主键查找性能。不过辅助索引也会包含主键列，所以不建议使用过长的字段作为主键， **过长的主索引会令辅助索引变得过大**
 
-<img src=".assets/DB/media/image20.png" style="width:5.75in;height:1.52083in" />
+<img src="assets/DB/media/image20.png" style="width:5.75in;height:1.52083in" />
 
 **MyISAM**
 
@@ -5086,7 +5086,7 @@ MyISAM 的主键索引使用的是非聚簇索引，索引文件和数据文件�
 
 由于索引树是独立的，通过辅助索引检索 **无需回表查询** 访问主键的索引树
 
-<img src=".assets/DB/media/image21.jpeg" style="width:5.75in;height:3.15625in" />
+<img src="assets/DB/media/image21.jpeg" style="width:5.75in;height:3.15625in" />
 
 **索引实现**
 
@@ -5096,7 +5096,7 @@ MyISAM 的索引方式也叫做非聚集的，之所以这么称呼是为了与 
 
 辅助索引：MyISAM 中主索引和辅助索引（Secondary key）在结构上没有任何区别，只是主索引要求 key 是唯一的，而辅助索引的 key 可以重复
 
-<img src=".assets/DB/media/image22.png" style="width:5.75in;height:2.01042in" />
+<img src="assets/DB/media/image22.png" style="width:5.75in;height:2.01042in" />
 
 参考文章：https://blog.csdn.net/lm1060891265/article/details/81482136
 
@@ -5158,41 +5158,41 @@ BTree 又叫多路平衡搜索树，一颗 m 叉的 BTree 特性如下：
 
 插入前 4 个字母 C N G A
 
-<img src=".assets/DB/media/image23.png" style="width:2.63542in;height:0.65625in" />
+<img src="assets/DB/media/image23.png" style="width:2.63542in;height:0.65625in" />
 
 插入 H，n\>4，中间元素 G 字母向上分裂到新的节点
 
-<img src=".assets/DB/media/image24.png" style="width:4.125in;height:1.76042in" />
+<img src="assets/DB/media/image24.png" style="width:4.125in;height:1.76042in" />
 
 插入 E、K、Q 不需要分裂
 
-<img src=".assets/DB/media/image25.png" style="width:4.61458in;height:2.22917in" />
+<img src="assets/DB/media/image25.png" style="width:4.61458in;height:2.22917in" />
 
 插入 M，中间元素 M 字母向上分裂到父节点 G
 
-<img src=".assets/DB/media/image26.png" style="width:4.79167in;height:2.20833in" />
+<img src="assets/DB/media/image26.png" style="width:4.79167in;height:2.20833in" />
 
 插入 F，W，L，T 不需要分裂
 
-<img src=".assets/DB/media/image27.png" style="width:5.75in;height:1.91667in" />
+<img src="assets/DB/media/image27.png" style="width:5.75in;height:1.91667in" />
 
 插入 Z，中间元素 T 向上分裂到父节点中
 
-<img src=".assets/DB/media/image28.png" style="width:5.75in;height:1.76042in" />
+<img src="assets/DB/media/image28.png" style="width:5.75in;height:1.76042in" />
 
 插入 D，中间元素 D 向上分裂到父节点中，然后插入 P，R，X，Y 不需要分裂
 
-<img src=".assets/DB/media/image29.png" style="width:5.75in;height:1.51042in" />
+<img src="assets/DB/media/image29.png" style="width:5.75in;height:1.51042in" />
 
 最后插入 S，NPQR 节点 n\>5，中间节点 Q 向上分裂，但分裂后父节点 DGMT 的 n\>5，中间节点 M 向上分裂
 
-<img src=".assets/DB/media/image30.png" style="width:5.75in;height:2.55208in" />
+<img src="assets/DB/media/image30.png" style="width:5.75in;height:2.55208in" />
 
 BTree 树就已经构建完成了，BTree 树和二叉树相比， 查询数据的效率更高， 因为对于相同的数据量来说， **BTree 的层级结构比二叉树少** ，所以搜索速度快
 
 BTree 结构的数据可以让系统高效的找到数据所在的磁盘块，定义一条记录为一个二元组 \[key, data\] ，key 为记录的键值，对应表中的主键值，data 为一行记录中除主键外的数据。对于不同的记录，key 值互不相同，BTree 中的每个节点根据实际情况可以包含大量的关键字信息和分支
 
-<img src=".assets/DB/media/image31.png" style="width:5.75in;height:1.94792in" />
+<img src="assets/DB/media/image31.png" style="width:5.75in;height:1.94792in" />
 
 缺点：当进行范围查找时会出现回旋查找
 
@@ -5214,7 +5214,7 @@ n 叉 B+Tree 最多含有 n 个 key（哈希值），而 BTree 最多含有 n-1 
 
 所有节点中的 key 在叶子节点中也存在（比如 5)， **key 允许重复** ，B 树不同节点不存在重复的 key
 
-<img src=".assets/DB/media/image32.png" style="width:5.75in;height:3.03125in" />
+<img src="assets/DB/media/image32.png" style="width:5.75in;height:3.03125in" />
 
 B\* 树：是 B+ 树的变体，在 B+ 树的非根和非叶子结点再增加指向兄弟的指针
 
@@ -5226,7 +5226,7 @@ MySQL 索引数据结构对经典的 B+Tree 进行了优化，在原 B+Tree 的�
 
 B+ 树的 **叶子节点是数据页** （page），一个页里面可以存多个数据行
 
-<img src=".assets/DB/media/image33.png" style="width:5.75in;height:2.11458in" />
+<img src="assets/DB/media/image33.png" style="width:5.75in;height:2.11458in" />
 
 通常在 B+Tree 上有两个头指针， **一个指向根节点，另一个指向关键字最小的叶子节点** ，而且所有叶子节点（即数据节点）之间是一种链式环结构。可以对 B+Tree 进行两种查找运算：
 
@@ -5380,11 +5380,11 @@ SELECT id,age FROM user WHERE age = 30;</td>
 
 不使用索引下推优化时存储引擎通过索引检索到数据，然后回表查询记录返回给 Server 层， **服务器判断数据是否符合条件**
 
-<img src=".assets/DB/media/image34.png" style="width:5.75in;height:2.5in" />
+<img src="assets/DB/media/image34.png" style="width:5.75in;height:2.5in" />
 
 使用索引下推优化时，如果 **存在某些被索引的列的判断条件** 时，由存储引擎在索引遍历的过程中判断数据是否符合传递的条件，将符合条件的数据进行回表，检索出来返回给服务器，由此减少 IO 次数
 
-<img src=".assets/DB/media/image35.png" style="width:5.75in;height:2.5in" />
+<img src="assets/DB/media/image35.png" style="width:5.75in;height:2.5in" />
 
 **适用条件** ：
 
@@ -5410,11 +5410,11 @@ SELECT * FROM user WHERE name LIKE '张%' AND　age = 10; -- 头部模糊匹配�
 
 优化前：在非主键索引树上找到满足第一个条件的行，然后通过叶子节点记录的主键值再回到主键索引树上查找到对应的行数据，再对比 AND 后的条件是否符合，符合返回数据，需要 4 次回表
 
-<img src=".assets/DB/media/image36.png" style="width:5.75in;height:2.28125in" />
+<img src="assets/DB/media/image36.png" style="width:5.75in;height:2.28125in" />
 
 优化后：检查索引中存储的列信息是否符合索引条件，然后交由存储引擎用剩余的判断条件判断此行数据是否符合要求， **不满足条件的不去读取表中的数据** ，满足下推条件的就根据主键值进行回表查询，2 次回表
 
-<img src=".assets/DB/media/image37.png" style="width:5.75in;height:2.38542in" />
+<img src="assets/DB/media/image37.png" style="width:5.75in;height:2.38542in" />
 
 当使用 EXPLAIN 进行分析时，如果使用了索引条件下推，Extra 会显示 Using index condition
 
@@ -5811,7 +5811,7 @@ SHOW STATUS LIKE 'Com_____';</td>
 
 Com_xxx 表示每种语句执行的次数
 
-<img src=".assets/DB/media/image38.png" style="width:5.75in;height:1.59375in" />
+<img src="assets/DB/media/image38.png" style="width:5.75in;height:1.59375in" />
 
 查询 SQL 语句影响的行数：
 
@@ -5827,7 +5827,7 @@ SHOW STATUS LIKE 'Innodb_rows_%';</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image39.png" style="width:5.75in;height:1.01042in" />
+<img src="assets/DB/media/image39.png" style="width:5.75in;height:1.01042in" />
 
 Com_xxxx：这些参数对于所有存储引擎的表操作都会进行累计
 
@@ -5916,7 +5916,7 @@ SHOW VARIABLES LIKE '%query%'</td>
 
 SHOW PROCESSLIST： **实时查看** 当前 MySQL 在进行的连接线程，包括线程的状态、是否锁表、SQL 的执行情况，同时对一些锁表操作进行优化
 
-<img src=".assets/DB/media/image4.png" style="width:5.75in;height:0.90625in" />
+<img src="assets/DB/media/image4.png" style="width:5.75in;height:0.90625in" />
 
 **EXPLAIN**
 
@@ -5938,7 +5938,7 @@ EXPLAIN SELECT * FROM table_1 WHERE id = 1;</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image40.png" style="width:5.75in;height:0.70833in" />
+<img src="assets/DB/media/image40.png" style="width:5.75in;height:0.70833in" />
 
 |               |                                                                                                                                                                              |
 |---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -5971,7 +5971,7 @@ SHOW WARINGS：在使用 EXPALIN 命令后执行该语句，可以查询与执�
 
 环境准备：
 
-<img src=".assets/DB/media/image41.png" style="width:5.75in;height:1.63542in" />
+<img src="assets/DB/media/image41.png" style="width:5.75in;height:1.63542in" />
 
 **id**
 
@@ -5991,7 +5991,7 @@ EXPLAIN SELECT * FROM t_role r, t_user u, user_role ur WHERE r.id = ur.role_id A
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image42.png" style="width:5.75in;height:0.6875in" />
+<img src="assets/DB/media/image42.png" style="width:5.75in;height:0.6875in" />
 
 id 不同时，id 值越大优先级越高，越先被执行
 
@@ -6007,7 +6007,7 @@ EXPLAIN SELECT * FROM t_role WHERE id = (SELECT role_id FROM user_role WHERE use
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image43.png" style="width:5.75in;height:0.77083in" />
+<img src="assets/DB/media/image43.png" style="width:5.75in;height:0.77083in" />
 
 id 有相同也有不同时，id 相同的可以认为是一组，从上往下顺序执行；在所有的组中，id 的值越大的组，优先级越高，越先执行
 
@@ -6023,7 +6023,7 @@ EXPLAIN SELECT * FROM t_role r , (SELECT * FROM user_role ur WHERE ur.`user_id` 
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image44.png" style="width:5.75in;height:0.75in" />
+<img src="assets/DB/media/image44.png" style="width:5.75in;height:0.75in" />
 
 id 为 NULL 时代表的是临时表
 
@@ -6124,11 +6124,11 @@ SHOW PROFILES 能够在做 SQL 优化时分析当前会话中语句执行的 **�
 
 通过 have_profiling 参数，能够看到当前 MySQL 是否支持 profile：
 
-<img src=".assets/DB/media/image45.png" style="width:5.75in;height:0.72917in" />
+<img src="assets/DB/media/image45.png" style="width:5.75in;height:0.72917in" />
 
 默认 profiling 是关闭的，可以通过 set 语句在 Session 级别开启 profiling：
 
-<img src=".assets/DB/media/image46.png" style="width:5.75in;height:0.70833in" />
+<img src="assets/DB/media/image46.png" style="width:5.75in;height:0.70833in" />
 
 <table>
 <colgroup>
@@ -6156,7 +6156,7 @@ SHOW PROFILES;</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image47.png" style="width:5.75in;height:1.19792in" />
+<img src="assets/DB/media/image47.png" style="width:5.75in;height:1.19792in" />
 
 查看到该 SQL 执行过程中每个线程的状态和消耗的时间：
 
@@ -6172,11 +6172,11 @@ SHOW PROFILE FOR QUERY query_id;</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image48.png" style="width:5.75in;height:2.09375in" />
+<img src="assets/DB/media/image48.png" style="width:5.75in;height:2.09375in" />
 
 在获取到最消耗时间的线程状态后，MySQL 支持选择 all、cpu、block io 、context switch、page faults 等类型查看 MySQL 在使用什么资源上耗费了过高的时间。例如，选择查看 CPU 的耗费时间：
 
-<img src=".assets/DB/media/image49.png" style="width:5.75in;height:2.05208in" />
+<img src="assets/DB/media/image49.png" style="width:5.75in;height:2.05208in" />
 
 Status：SQL 语句执行的状态
 
@@ -6264,7 +6264,7 @@ CREATE INDEX idx_seller_name_sta_addr ON tb_seller(name, status, address); # 联
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image50.png" style="width:5.75in;height:1.1875in" />
+<img src="assets/DB/media/image50.png" style="width:5.75in;height:1.1875in" />
 
 **避免失效**
 
@@ -6284,7 +6284,7 @@ EXPLAIN SELECT * FROM tb_seller WHERE name='小米科技' AND status='1' AND add
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image51.png" style="width:5.75in;height:0.53125in" />
+<img src="assets/DB/media/image51.png" style="width:5.75in;height:0.53125in" />
 
 **最左前缀法则** ：联合索引遵守最左前缀法则
 
@@ -6303,7 +6303,7 @@ EXPLAIN SELECT * FROM tb_seller WHERE name='小米科技' AND status='1';</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image52.png" style="width:5.75in;height:0.5625in" />
+<img src="assets/DB/media/image52.png" style="width:5.75in;height:0.5625in" />
 
 违法最左前缀法则 ， 索引失效：
 
@@ -6320,7 +6320,7 @@ EXPLAIN SELECT * FROM tb_seller WHERE status='1' AND address='西安市';</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image53.png" style="width:5.75in;height:0.66667in" />
+<img src="assets/DB/media/image53.png" style="width:5.75in;height:0.66667in" />
 
 如果符合最左法则，但是出现跳跃某一列，只有最左列索引生效：
 
@@ -6336,7 +6336,7 @@ EXPLAIN SELECT * FROM tb_seller WHERE name='小米科技' AND address='西安市
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image54.png" style="width:5.75in;height:0.55208in" />
+<img src="assets/DB/media/image54.png" style="width:5.75in;height:0.55208in" />
 
 虽然索引列失效，但是系统会 **使用了索引下推进行了优化**
 
@@ -6356,7 +6356,7 @@ EXPLAIN SELECT * FROM tb_seller WHERE name='小米科技' AND status&gt;'1' AND 
 
 根据前面的两个字段 name ， status 查询是走索引的， 但是最后一个条件 address 没有用到索引，使用了索引下推
 
-<img src=".assets/DB/media/image55.png" style="width:5.75in;height:0.48958in" />
+<img src="assets/DB/media/image55.png" style="width:5.75in;height:0.48958in" />
 
 在索引列上 **函数或者运算（+ - 数值）操作** ， 索引将失效：会破坏索引值的有序性
 
@@ -6372,7 +6372,7 @@ EXPLAIN SELECT * FROM tb_seller WHERE SUBSTRING(name,3,2) = '科技';</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image56.png" style="width:5.75in;height:0.65625in" />
+<img src="assets/DB/media/image56.png" style="width:5.75in;height:0.65625in" />
 
 **字符串不加单引号** ，造成索引失效：隐式类型转换，当字符串和数字比较时会 **把字符串转化为数字**
 
@@ -6390,7 +6390,7 @@ EXPLAIN SELECT * FROM tb_seller WHERE name='小米科技' AND status = 1;</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image57.png" style="width:5.75in;height:0.54167in" />
+<img src="assets/DB/media/image57.png" style="width:5.75in;height:0.54167in" />
 
 如果 status 是 int 类型，SQL 为 SELECT \* FROM tb_seller WHERE status = '1' 并不会造成索引失效，因为会将 '1' 转换为 1 ，并 **不会对索引列产生操作**
 
@@ -6415,7 +6415,7 @@ EXPLAIN SELECT * FROM tb_seller WHERE name='小米科技' OR status='1';</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image58.png" style="width:5.75in;height:0.625in" />
+<img src="assets/DB/media/image58.png" style="width:5.75in;height:0.625in" />
 
 **AND 分割的条件不影响** ：
 
@@ -6431,7 +6431,7 @@ EXPLAIN SELECT * FROM tb_seller WHERE name='阿里巴巴' AND createtime = '2088
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image59.png" style="width:5.75in;height:0.54167in" />
+<img src="assets/DB/media/image59.png" style="width:5.75in;height:0.54167in" />
 
 **以 % 开头的 LIKE 模糊查询** ，索引失效：
 
@@ -6449,7 +6449,7 @@ EXPLAIN SELECT * FROM tb_seller WHERE name like '%科技%';</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image60.png" style="width:5.75in;height:1.07292in" />
+<img src="assets/DB/media/image60.png" style="width:5.75in;height:1.07292in" />
 
 解决方案：通过覆盖索引来解决
 
@@ -6465,7 +6465,7 @@ EXPLAIN SELECT sellerid,name,status FROM tb_seller WHERE name like '%科技%';</
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image61.png" style="width:5.75in;height:0.57292in" />
+<img src="assets/DB/media/image61.png" style="width:5.75in;height:0.57292in" />
 
 原因：在覆盖索引的这棵 B+ 数上只需要进行 like 的匹配，或者是基于覆盖索引查询再进行 WHERE 的判断就可以获得结果
 
@@ -6491,7 +6491,7 @@ EXPLAIN SELECT * FROM tb_seller WHERE address='北京市';</td>
 
 北京市的键值占 9/10（区分度低），所以优化为全表扫描，type = ALL
 
-<img src=".assets/DB/media/image62.png" style="width:5.75in;height:1.41667in" />
+<img src="assets/DB/media/image62.png" style="width:5.75in;height:1.41667in" />
 
 IS NULL、IS NOT NULL **有时** 索引失效：
 
@@ -6510,7 +6510,7 @@ EXPLAIN SELECT * FROM tb_seller WHERE name IS NOT NULL;</td>
 
 NOT NULL 失效的原因是 name 列全部不是 null，优化为全表扫描，当 NULL 过多时，IS NULL 失效
 
-<img src=".assets/DB/media/image63.png" style="width:5.75in;height:1.25in" />
+<img src="assets/DB/media/image63.png" style="width:5.75in;height:1.25in" />
 
 IN 肯定会走索引，但是当 IN 的取值范围较大时会导致索引失效，走全表扫描：
 
@@ -6533,17 +6533,17 @@ EXPLAIN SELECT * FROM tb_seller WHERE sellerId NOT IN ('alibaba','huawei');</td>
 
 索引失效一般是针对联合索引，联合索引一般由几个字段组成，排序方式是先按照第一个字段进行排序，然后排序第二个，依此类推，图示（a, b）索引， **a 相等的情况下 b 是有序的**
 
-<img src=".assets/DB/media/image64.png" style="width:5.75in;height:2.94792in" />
+<img src="assets/DB/media/image64.png" style="width:5.75in;height:2.94792in" />
 
 最左前缀法则：当不匹配前面的字段的时候，后面的字段都是无序的。这种无序不仅体现在叶子节点，也会 **导致查询时扫描的非叶子节点也是无序的** ，因为索引树相当于忽略的第一个字段，就无法使用二分查找
 
 范围查询右边的列，不能使用索引，比如语句： WHERE a \> 1 AND b = 1 ，在 a 大于 1 的时候，b 是无序的，a \> 1 是扫描时有序的，但是找到以后进行寻找 b 时，索引树就不是有序的了
 
-<img src=".assets/DB/media/image65.png" style="width:5.75in;height:2.0625in" />
+<img src="assets/DB/media/image65.png" style="width:5.75in;height:2.0625in" />
 
 以 % 开头的 LIKE 模糊查询，索引失效，比如语句： WHERE a LIKE '%d' ，前面的不确定，导致不符合最左匹配，直接去索引中搜索以 d 结尾的节点，所以没有顺序
 
-<img src=".assets/DB/media/image66.png" style="width:4.5625in;height:1.35417in" />
+<img src="assets/DB/media/image66.png" style="width:4.5625in;height:1.35417in" />
 
 参考文章：https://mp.weixin.qq.com/s/B_M09dzLe9w7cT46rdGIeQ
 
@@ -6562,7 +6562,7 @@ SHOW GLOBAL STATUS LIKE 'Handler_read%';</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image67.png" style="width:4.70833in;height:2.16667in" />
+<img src="assets/DB/media/image67.png" style="width:4.70833in;height:2.16667in" />
 
 Handler_read_first：索引中第一条被读的次数，如果较高，表示服务器正执行大量全索引扫描（这个值越低越好）
 
@@ -6654,7 +6654,7 @@ EXPLAIN SELECT name,status,address FROM tb_seller WHERE name='小米科技' AND 
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image68.png" style="width:5.75in;height:0.52083in" />
+<img src="assets/DB/media/image68.png" style="width:5.75in;height:0.52083in" />
 
 如果查询列，超出索引列，也会降低性能：
 
@@ -6670,7 +6670,7 @@ EXPLAIN SELECT name,status,address,password FROM tb_seller WHERE name='小米科
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image69.png" style="width:5.75in;height:0.46875in" />
+<img src="assets/DB/media/image69.png" style="width:5.75in;height:0.46875in" />
 
 **减少访问**
 
@@ -6773,21 +6773,21 @@ LOAD DATA LOCAL INFILE = '/home/seazean/sql1.log' INTO TABLE `tb_user_1` FIELD T
 
 插入 ID 顺序排列数据：
 
-<img src=".assets/DB/media/image70.png" style="width:5.75in;height:0.96875in" />
+<img src="assets/DB/media/image70.png" style="width:5.75in;height:0.96875in" />
 
 插入 ID 无序排列数据：
 
-<img src=".assets/DB/media/image71.png" style="width:5.75in;height:0.98958in" />
+<img src="assets/DB/media/image71.png" style="width:5.75in;height:0.98958in" />
 
 **关闭唯一性校验** ：在导入数据前执行 SET UNIQUE_CHECKS=0 ，关闭唯一性校验；导入结束后执行 SET UNIQUE_CHECKS=1 ，恢复唯一性校验，可以提高导入的效率。
 
-<img src=".assets/DB/media/image72.png" style="width:5.75in;height:1.14583in" />
+<img src="assets/DB/media/image72.png" style="width:5.75in;height:1.14583in" />
 
 **手动提交事务** ：如果应用使用自动提交的方式，建议在导入前执行 SET AUTOCOMMIT=0 ，关闭自动提交；导入结束后再打开自动提交，可以提高导入的效率。
 
 事务需要控制大小，事务太大可能会影响执行的效率。MySQL 有 innodb_log_buffer_size 配置项，超过这个值的日志会写入磁盘数据，效率会下降，所以在事务大小达到配置项数据级前进行事务提交可以提高效率
 
-<img src=".assets/DB/media/image73.png" style="width:5.75in;height:1.54167in" />
+<img src="assets/DB/media/image73.png" style="width:5.75in;height:1.54167in" />
 
 **分组排序**
 
@@ -7041,7 +7041,7 @@ EXPLAIN SELECT * FROM t_user WHERE id IN (SELECT user_id FROM user_role);</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image74.png" style="width:5.75in;height:0.6875in" />
+<img src="assets/DB/media/image74.png" style="width:5.75in;height:0.6875in" />
 
 优化后：
 
@@ -7057,7 +7057,7 @@ EXPLAIN SELECT * FROM t_user u , user_role ur WHERE u.id = ur.user_id;</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image75.png" style="width:5.75in;height:0.71875in" />
+<img src="assets/DB/media/image75.png" style="width:5.75in;height:0.71875in" />
 
 连接查询之所以效率更高 ，是因为 **不需要在内存中创建临时表** 来完成逻辑上需要两个步骤的查询工作
 
@@ -7081,7 +7081,7 @@ EXPLAIN SELECT * FROM tb_user_1 LIMIT 200000,10;</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image76.png" style="width:5.75in;height:0.71875in" />
+<img src="assets/DB/media/image76.png" style="width:5.75in;height:0.71875in" />
 
 优化方式一：内连接查询，在索引列 id 上完成排序分页操作，最后根据主键关联回原表查询所需要的其他列内容
 
@@ -7097,7 +7097,7 @@ EXPLAIN SELECT * FROM tb_user_1 t,(SELECT id FROM tb_user_1 ORDER BY id LIMIT 20
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image77.png" style="width:5.75in;height:0.86458in" />
+<img src="assets/DB/media/image77.png" style="width:5.75in;height:0.86458in" />
 
 优化方式二：方案适用于主键自增的表，可以把 LIMIT 查询转换成某个位置的查询
 
@@ -7114,7 +7114,7 @@ EXPLAIN SELECT * FROM tb_user_1 WHERE id BETWEEN 200000 and 200010; -- 写法 2<
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image78.png" style="width:5.75in;height:0.64583in" />
+<img src="assets/DB/media/image78.png" style="width:5.75in;height:0.64583in" />
 
 **使用提示**
 
@@ -7135,7 +7135,7 @@ EXPLAIN SELECT * FROM tb_seller USE INDEX(idx_seller_name) WHERE name='小米科
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image79.png" style="width:5.75in;height:0.63542in" />
+<img src="assets/DB/media/image79.png" style="width:5.75in;height:0.63542in" />
 
 IGNORE INDEX：让 MySQL 忽略一个或者多个索引，则可以使用 IGNORE INDEX 作为提示
 
@@ -7151,7 +7151,7 @@ EXPLAIN SELECT * FROM tb_seller IGNORE INDEX(idx_seller_name) WHERE name = '小�
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image80.png" style="width:5.75in;height:0.55208in" />
+<img src="assets/DB/media/image80.png" style="width:5.75in;height:0.55208in" />
 
 FORCE INDEX：强制 MySQL 使用一个特定的索引
 
@@ -7167,7 +7167,7 @@ EXPLAIN SELECT * FROM tb_seller FORCE INDEX(idx_seller_name_sta_addr) WHERE NAME
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image81.png" style="width:5.75in;height:0.58333in" />
+<img src="assets/DB/media/image81.png" style="width:5.75in;height:0.58333in" />
 
 **统计计数**
 
@@ -7185,7 +7185,7 @@ InnoDB 表执行 count(\*) 会遍历全表，虽然结果准确，但会导致�
 
 计数直接放到数据库里单独的一张计数表中，利用事务解决计数精确问题：
 
-<img src=".assets/DB/media/image82.png" style="width:5.75in;height:3.08333in" />
+<img src="assets/DB/media/image82.png" style="width:5.75in;height:3.08333in" />
 
 会话 B 的读操作在 T3 执行的，这时更新事务还没有提交，所以计数值加 1 这个操作对会话 B 还不可见，因此会话 B 查询的计数值和最近 100 条记录，返回的结果逻辑上就是一致的
 
@@ -7241,7 +7241,7 @@ MySQL 提供了缓冲页的快速查找方式： **哈希表** ，使用表空�
 
 MySQL 启动时完成对 Buffer Pool 的初始化，先向操作系统申请连续的内存空间，然后将内存划分为若干对控制块和缓冲页。为了区分空闲和已占用的数据页，将所有空闲缓冲页对应的 **控制块作为一个节点** 放入一个链表中，就是 Free 链表（ **空闲链表** ）
 
-<img src=".assets/DB/media/image83.png" style="width:5.75in;height:2.91667in" />
+<img src="assets/DB/media/image83.png" style="width:5.75in;height:2.91667in" />
 
 基节点：是一块单独申请的内存空间（占 40 字节），并不在 Buffer Pool 的那一大片连续内存空间里
 
@@ -7259,7 +7259,7 @@ MySQL 启动时完成对 Buffer Pool 的初始化，先向操作系统申请连�
 
 Flush 链表是一个用来 **存储脏页** 的链表，对于已经修改过的缓冲脏页，第一次修改后加入到 **链表头部** ，以后每次修改都不会重新加入，只修改部分控制信息，出于性能考虑并不是直接更新到磁盘，而是在未来的某个时间进行刷脏
 
-<img src=".assets/DB/media/image84.png" style="width:5.75in;height:2.75in" />
+<img src="assets/DB/media/image84.png" style="width:5.75in;height:2.75in" />
 
 **后台有专门的线程每隔一段时间把脏页刷新到磁盘** ：
 
@@ -7415,7 +7415,7 @@ Server 层针对优化 **查询** 的内存为 Net Buffer，内存的大小是�
 
 MySQL 采用的是边读边发的逻辑，因此对于数据量很大的查询来说，不会在 Server 端保存完整的结果集，如果客户端读结果不及时，会堵住 MySQL 的查询过程，但是 **不会把内存打爆导致 OOM**
 
-<img src=".assets/DB/media/image85.png" style="width:5.75in;height:2.48958in" />
+<img src="assets/DB/media/image85.png" style="width:5.75in;height:2.48958in" />
 
 SHOW PROCESSLIST 获取线程信息后，处于 Sending to client 状态代表服务器端的网络栈写满，等待客户端接收数据
 
@@ -7510,7 +7510,7 @@ ON ：表示每个 InnoDB 表数据存储在一个以 .ibd 为后缀的文件中
 
 MySQL 的数据删除就是移除掉某个记录后，该位置就被标记为 **可复用** ，如果有符合范围条件的数据可以插入到这里。符合范围条件的意思是假设删除记录 R4，之后要再插入一个 ID 在 300 和 600 之间的记录时，就会复用这个位置
 
-<img src=".assets/DB/media/image86.png" style="width:5.40625in;height:3.20833in" />
+<img src="assets/DB/media/image86.png" style="width:5.40625in;height:3.20833in" />
 
 InnoDB 的数据是按页存储的如果删掉了一个数据页上的所有记录，整个数据页就可以被复用了，如果相邻的两个数据页利用率都很小，系统就会把这两个页上的数据合到其中一个页上，另外一个数据页就被标记为可复用
 
@@ -7550,7 +7550,7 @@ MySQL 5.6 版本开始引入的 **Online DDL** ，重建表的命令默认执行
 
 用临时文件替换表 A 的数据文件
 
-<img src=".assets/DB/media/image87.png" style="width:5.75in;height:3.53125in" />
+<img src="assets/DB/media/image87.png" style="width:5.75in;height:3.53125in" />
 
 Online DDL 操作会先获取 MDL 写锁，再退化成 MDL 读锁。但 MDL 写锁持有时间比较短，所以可以称为 Online； 而 MDL 读锁，不阻止数据增删查改，但会阻止其它线程修改表结构（可以对比 ANALYZE TABLE t 命令）
 
@@ -8074,7 +8074,7 @@ DB_ROLL_PTR：回滚指针， **指向记录对应的 undo log 日志** ，undo 
 
 DB_ROW_ID：隐含的自增 ID（ **隐藏主键** ），如果数据表没有主键，InnoDB 会自动以 DB_ROW_ID 作为聚簇索引
 
-<img src=".assets/DB/media/image88.png" style="width:5.75in;height:0.70833in" />
+<img src="assets/DB/media/image88.png" style="width:5.75in;height:0.70833in" />
 
 **版本链**
 
@@ -8096,7 +8096,7 @@ update undo log：事务在进行 update 或 delete 时产生的 undo log，在�
 
 说明：因为 DELETE 删除记录，都是移动到垃圾链表中，不是真正的删除，所以才可以通过版本链访问原始数据
 
-<img src=".assets/DB/media/image89.png" style="width:5.75in;height:3.28125in" />
+<img src="assets/DB/media/image89.png" style="width:5.75in;height:3.28125in" />
 
 注意：undo 是逻辑日志，这里只是直观的展示出来
 
@@ -8188,7 +8188,7 @@ START TRANSACTION; -- 开启事务<br />
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image90.png" style="width:5.75in;height:2.375in" />
+<img src="assets/DB/media/image90.png" style="width:5.75in;height:2.375in" />
 
 ID 为 0 的事务创建 Read View：
 
@@ -8200,7 +8200,7 @@ max_trx_id：61
 
 creator_trx_id：0
 
-<img src=".assets/DB/media/image91.png" style="width:5.75in;height:0.84375in" />
+<img src="assets/DB/media/image91.png" style="width:5.75in;height:0.84375in" />
 
 只有红框部分才复合条件，所以只有张三对应的版本的数据可以被看到
 
@@ -8452,7 +8452,7 @@ update T set c=c+1 where ID=2;</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image2.png" style="width:5.75in;height:0.86458in" />
+<img src="assets/DB/media/image2.png" style="width:5.75in;height:0.86458in" />
 
 流程说明：执行引擎将这行新数据读入到内存中（Buffer Pool）后，先将此次更新操作记录到 redo log buffer 里，然后更新记录。最后将 redo log 刷盘后事务处于 prepare 状态，执行器会生成这个操作的 binlog，并 **把 binlog 写入磁盘** ，完成提交
 
@@ -8813,7 +8813,7 @@ SHOW OPEN TABLES;</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image92.png" style="width:5.75in;height:0.55208in" />
+<img src="assets/DB/media/image92.png" style="width:5.75in;height:0.55208in" />
 
 In_user：表当前被查询使用的次数，如果该数为零，则表是打开的，但是当前没有被使用
 
@@ -8831,7 +8831,7 @@ LOCK TABLE tb_book READ; -- 执行命令</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image93.png" style="width:5.75in;height:0.58333in" />
+<img src="assets/DB/media/image93.png" style="width:5.75in;height:0.58333in" />
 
 查看锁状态：
 
@@ -9156,7 +9156,7 @@ InnoDB 为了支持多粒度的加锁，允许行锁和表锁同时存在，支�
 
 兼容性如下所示：
 
-<img src=".assets/DB/media/image2.png" style="width:5.75in;height:0.86458in" />
+<img src="assets/DB/media/image2.png" style="width:5.75in;height:0.86458in" />
 
 **插入意向锁** Insert Intention Lock 是在插入一行记录操作之前设置的一种间隙锁，是行级锁
 
@@ -9338,7 +9338,7 @@ SHOW ENGINE INNODB STATUS\G; #InnoDB整体状态，其中包括锁的情况</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image94.png" style="width:5.32292in;height:1.41667in" />
+<img src="assets/DB/media/image94.png" style="width:5.32292in;height:1.41667in" />
 
 lock_id 是锁 id；lock_trx_id 为事务 id；lock_mode 为 X 代表排它锁（写锁）；lock_type 为 RECORD 代表锁为行锁（记录锁）
 
@@ -9434,7 +9434,7 @@ MySQL 的主从之间维持了一个 **长连接** 。主库内部有一个线�
 
 主从复制原理图：
 
-<img src=".assets/DB/media/image95.jpeg" style="width:5.27083in;height:3.53125in" />
+<img src="assets/DB/media/image95.jpeg" style="width:5.27083in;height:3.53125in" />
 
 主从复制主要依赖的是 binlog，MySQL 默认是异步复制，需要三个线程：
 
@@ -9696,7 +9696,7 @@ trx1 事务更新完成后，从返回包直接获取这个事务的 GTID，记�
 
 分流查询：通过 MySQL 的主从复制，实现读写分离，使增删改操作走主节点，查询操作走从节点，从而可以降低单台服务器的读写压力
 
-<img src=".assets/DB/media/image96.jpeg" style="width:5.75in;height:4.15625in" />
+<img src="assets/DB/media/image96.jpeg" style="width:5.75in;height:4.15625in" />
 
 分布式数据库架构：适合大数据量、负载高的情况，具有良好的拓展性和高可用性。通过在多台服务器之间分布数据，可以实现在多台服务器之间的负载均衡，提高访问效率
 
@@ -9774,7 +9774,7 @@ SHOW MASTER STATUS;</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image97.png" style="width:5.75in;height:0.90625in" />
+<img src="assets/DB/media/image97.png" style="width:5.75in;height:0.90625in" />
 
 File：从哪个日志文件开始推送日志文件
 
@@ -9878,11 +9878,11 @@ INSERT INTO user(id,NAME,sex) VALUES(NULL,'Dawn','1');</td>
 
 在从库中，可以查看到刚才创建的数据库：
 
-<img src=".assets/DB/media/image98.png" style="width:5.75in;height:1.11458in" />
+<img src="assets/DB/media/image98.png" style="width:5.75in;height:1.11458in" />
 
 在该数据库中，查询表中的数据：
 
-<img src=".assets/DB/media/image99.png" style="width:5.75in;height:0.98958in" />
+<img src="assets/DB/media/image99.png" style="width:5.75in;height:0.98958in" />
 
 **主从切换**
 
@@ -10269,7 +10269,7 @@ mysqlbinlog mysqlbing.000001;</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image100.png" style="width:5.75in;height:2.96875in" />
+<img src="assets/DB/media/image100.png" style="width:5.75in;height:2.96875in" />
 
 日志结尾有 COMMIT
 
@@ -10318,7 +10318,7 @@ mysqlbinlog -vv mysqlbin.000002</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image101.png" style="width:5.75in;height:1.89583in" />
+<img src="assets/DB/media/image101.png" style="width:5.75in;height:1.89583in" />
 
 **日志删除**
 
@@ -10416,7 +10416,7 @@ SELECT * FROM tb_book WHERE id &lt; 8</td>
 
 执行完毕之后， 再次来查询日志文件：
 
-<img src=".assets/DB/media/image102.png" style="width:5.75in;height:1.57292in" />
+<img src="assets/DB/media/image102.png" style="width:5.75in;height:1.57292in" />
 
 **慢日志**
 
@@ -10459,7 +10459,7 @@ cat slow_query.log</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image103.png" style="width:5.75in;height:0.79167in" />
+<img src="assets/DB/media/image103.png" style="width:5.75in;height:0.79167in" />
 
 如果慢查询日志内容很多，直接查看文件比较繁琐，可以借助 mysql 自带的 mysqldumpslow 工具对慢查询日志进行分类汇总：
 
@@ -10475,7 +10475,7 @@ mysqldumpslow slow_query.log</td>
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image104.png" style="width:5.75in;height:0.5625in" />
+<img src="assets/DB/media/image104.png" style="width:5.75in;height:0.5625in" />
 
 **范式**
 
@@ -10487,11 +10487,11 @@ mysqldumpslow slow_query.log</td>
 
 基本表：
 
-<img src=".assets/DB/media/image105.png" style="width:5.75in;height:3.11458in" />
+<img src="assets/DB/media/image105.png" style="width:5.75in;height:3.11458in" />
 
 第一范式表：
 
-<img src=".assets/DB/media/image106.png" style="width:5.75in;height:3.19792in" />
+<img src="assets/DB/media/image106.png" style="width:5.75in;height:3.19792in" />
 
 **第二范式**
 
@@ -10523,7 +10523,7 @@ mysqldumpslow slow_query.log</td>
 
 非主属性：除码属性组以外的属性
 
-<img src=".assets/DB/media/image107.png" style="width:5.75in;height:1.98958in" />
+<img src="assets/DB/media/image107.png" style="width:5.75in;height:1.98958in" />
 
 **第三范式**
 
@@ -10531,11 +10531,11 @@ mysqldumpslow slow_query.log</td>
 
 作用：可以通过主键 id 区分相同数据，修改数据的时候只需要修改一张表（方便修改），反之需要修改多表。
 
-<img src=".assets/DB/media/image108.png" style="width:5.75in;height:2.84375in" />
+<img src="assets/DB/media/image108.png" style="width:5.75in;height:2.84375in" />
 
 **总结**
 
-<img src=".assets/DB/media/image109.png" style="width:5.75in;height:0.85417in" />
+<img src="assets/DB/media/image109.png" style="width:5.75in;height:0.85417in" />
 
 **Redis**
 
@@ -10986,7 +10986,7 @@ int dbnum;<br />
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image110.png" style="width:5.75in;height:2.03125in" />
+<img src="assets/DB/media/image110.png" style="width:5.75in;height:2.03125in" />
 
 **在服务器内部** ，客户端状态 redisClient 结构的 db 属性记录了目标数据库，是一个指向 redisDb 结构的指针
 
@@ -11067,7 +11067,7 @@ dict *dict<br />
 
 键空间的值就是数据库的值，每个值可以是任意一种 Redis 对象
 
-<img src=".assets/DB/media/image111.png" style="width:5.75in;height:2.875in" />
+<img src="assets/DB/media/image111.png" style="width:5.75in;height:2.875in" />
 
 当使用 Redis 命令对数据库进行读写时，服务器不仅会对键空间执行指定的读写操作，还会 **进行一些维护操作** ：
 
@@ -11566,7 +11566,7 @@ robj *cmpobj;<br />
 
 遍历数组，将各个数组项的 obj 指针所指向的值作为排序结果返回给客户端，程序首先访问数组的索引 0，依次向后访问
 
-<img src=".assets/DB/media/image112.png" style="width:5.75in;height:3.29167in" />
+<img src="assets/DB/media/image112.png" style="width:5.75in;height:3.29167in" />
 
 对于 SORT key \[ASC/DESC\] 函数：
 
@@ -11789,7 +11789,7 @@ SORT &lt;key&gt; ALPHA [ASC/DESC] BY &lt;by-pattern&gt; LIMIT &lt;offset&gt; &lt
 
 图示订阅 0 号数据库 message 键：
 
-<img src=".assets/DB/media/image113.png" style="width:5.75in;height:2.91667in" />
+<img src="assets/DB/media/image113.png" style="width:5.75in;height:2.91667in" />
 
 服务器配置的 notify-keyspace-events 选项决定了服务器所发送通知的类型
 
@@ -11841,11 +11841,11 @@ Redis 基于 Reactor 模式开发了网络事件处理器，这个处理器被�
 
 文件事件处理器的组成结构：
 
-<img src=".assets/DB/media/image114.png" style="width:5.75in;height:1.9375in" />
+<img src="assets/DB/media/image114.png" style="width:5.75in;height:1.9375in" />
 
 I/O 多路复用程序将所有产生事件的套接字处理请求放入一个 **单线程的执行队列** 中，通过队列有序、同步的向文件事件分派器传送套接字，上一个套接字产生的事件处理完后，才会继续向分派器传送下一个
 
-<img src=".assets/DB/media/image115.png" style="width:5.75in;height:0.73958in" />
+<img src="assets/DB/media/image115.png" style="width:5.75in;height:0.73958in" />
 
 Redis 单线程也能高效的原因：
 
@@ -11917,7 +11917,7 @@ timeProc：时间事件处理器，当时间事件到达时，服务器就会调
 
 服务器将所有时间事件都放在一个 **无序链表** 中，新的时间事件插入到链表的表头：
 
-<img src=".assets/DB/media/image116.png" style="width:5.75in;height:1.82292in" />
+<img src="assets/DB/media/image116.png" style="width:5.75in;height:1.82292in" />
 
 无序链表指是链表不按 when 属性的大小排序，每当时间事件执行器运行时就必须遍历整个链表，查找所有已到达的时间事件，并调用相应的事件处理器处理
 
@@ -12002,7 +12002,7 @@ io-threads 4 #官网建议4核的机器建议设置为2或3个线程，8核的�
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image117.png" style="width:5.75in;height:2.78125in" />
+<img src="assets/DB/media/image117.png" style="width:5.75in;height:2.78125in" />
 
 参考文章：https://mp.weixin.qq.com/s/dqmiR0ECf4lB6Y2OyK-dyA
 
@@ -12031,7 +12031,7 @@ list *clients;<br />
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image118.png" style="width:5.75in;height:0.95833in" />
+<img src="assets/DB/media/image118.png" style="width:5.75in;height:0.95833in" />
 
 **数据结构**
 
@@ -12162,7 +12162,7 @@ buf 是一个大小为 REDIS_REPLY_CHUNK_BYTES (常量默认 16\*1024 = 16KB) �
 
 通过使用 reply 链表连接多个字符串对象，可以为客户端保存一个非常长的命令回复，而不必受到固定大小缓冲区 16KB 大小的限制
 
-<img src=".assets/DB/media/image119.png" style="width:5.75in;height:0.9375in" />
+<img src="assets/DB/media/image119.png" style="width:5.75in;height:0.9375in" />
 
 **命令**
 
@@ -12172,13 +12172,13 @@ argv 属性是一个数组，数组中的每项都是字符串对象，其中 ar
 
 argc 属性负责记录 argv 数组的长度
 
-<img src=".assets/DB/media/image120.png" style="width:5.75in;height:1.64583in" />
+<img src="assets/DB/media/image120.png" style="width:5.75in;height:1.64583in" />
 
 服务器将根据项 argv\[0\] 的值，在命令表中查找命令所对应的命令的 redisCommand，将客户端状态的 cmd 指向该结构
 
 命令表是一个字典结构，键是 SDS 结构保存命令的名字；值是命令所对应的 redisCommand 结构，保存了命令的实现函数、命令标志、 命令应该给定的参数个数、命令的总执行次数和总消耗时长等统计信息
 
-<img src=".assets/DB/media/image121.png" style="width:5.75in;height:1.89583in" />
+<img src="assets/DB/media/image121.png" style="width:5.75in;height:1.89583in" />
 
 **验证**
 
@@ -12223,7 +12223,7 @@ obuf_soft_limit_reached_time 属性记录了 **输出缓冲区第一次到达软
 
 如果客户端是通过网络连接与服务器进行连接的普通客户端，那么在客户端使用 connect 函数连接到服务器时，服务器就会调用连接应答处理器为客户端创建相应的客户端状态，并将这个新的客户端状态添加到服务器状态结构 clients 链表的末尾
 
-<img src=".assets/DB/media/image118.png" style="width:5.75in;height:0.95833in" />
+<img src="assets/DB/media/image118.png" style="width:5.75in;height:0.95833in" />
 
 服务器会在初始化时创建负责执行 Lua 脚本中包含的 Redis 命令的伪客户端，并将伪客户端关联在服务器状态的 lua_client 属性
 
@@ -12928,7 +12928,7 @@ char buf[];<br />
 
 SDS 遵循 C 字符串 **以空字符结尾** 的惯例，保存空字符的 1 字节不计算在 len 属性，SDS 会自动为空字符分配额外的 1 字节空间和添加空字符到字符串末尾，所以空字符对于 SDS 的使用者来说是完全透明的
 
-<img src=".assets/DB/media/image122.png" style="width:5.75in;height:1.54167in" />
+<img src="assets/DB/media/image122.png" style="width:5.75in;height:1.54167in" />
 
 **对比**
 
@@ -12944,7 +12944,7 @@ C 字符串调用 strcat 函数拼接字符串时，如果字符串内存不够�
 
 s1 和 s2 是内存中相邻的字符串，执行 strcat(s1, " Cluster") （有空格）：
 
-<img src=".assets/DB/media/image123.png" style="width:5.75in;height:1.17708in" />
+<img src="assets/DB/media/image123.png" style="width:5.75in;height:1.17708in" />
 
 SDS 空间分配策略：当对 SDS 进行修改时，首先检查 SDS 的空间是否满足修改所需的要求， 如果不满足会自动将 SDS 的空间扩展至执行修改所需的大小，然后执行实际的修改操作， 避免了缓冲区溢出的问题
 
@@ -12970,7 +12970,7 @@ SDS 通过未使用空间解除了字符串长度和底层数组长度之间的�
 
 s 为 Redis，执行 sdscat(s, " Cluster") 后，len 变为 13 字节，所以也分配了 13 字节的 free 空间，总长度变为 27 字节（额外的一字节保存空字符，13 + 13 + 1 = 27）
 
-<img src=".assets/DB/media/image124.png" style="width:5.75in;height:1.03125in" />
+<img src="assets/DB/media/image124.png" style="width:5.75in;height:1.03125in" />
 
 对 SDS 修改之后，SDS 的长度大于等于 1MB，程序会分配 1MB 的未使用空间
 
@@ -13009,7 +13009,7 @@ void *value<br />
 
 多个 listNode 通过 prev 和 next 指针组成 **双端链表** ：
 
-<img src=".assets/DB/media/image125.png" style="width:5.75in;height:0.64583in" />
+<img src="assets/DB/media/image125.png" style="width:5.75in;height:0.64583in" />
 
 list 链表结构：提供了表头指针 head 、表尾指针 tail 以及链表长度计数器 len
 
@@ -13040,7 +13040,7 @@ int (*match) (void *ptr, void *key);<br />
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image126.png" style="width:5.75in;height:1.53125in" />
+<img src="assets/DB/media/image126.png" style="width:5.75in;height:1.53125in" />
 
 Redis 链表的特性：
 
@@ -13111,7 +13111,7 @@ struct dictEntry *next;<br />
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image127.png" style="width:5.75in;height:1.54167in" />
+<img src="assets/DB/media/image127.png" style="width:5.75in;height:1.54167in" />
 
 **字典结构**
 
@@ -13148,7 +13148,7 @@ type 属性是指向 dictType 结构的指针， 每个 dictType 结构保存了
 
 privdata 属性保存了需要传给那些类型特定函数的可选参数
 
-<img src=".assets/DB/media/image128.png" style="width:5.75in;height:2.66667in" />
+<img src="assets/DB/media/image128.png" style="width:5.75in;height:2.66667in" />
 
 **哈希冲突**
 
@@ -13174,7 +13174,7 @@ Redis 的哈希表使用链地址法（separate chaining）来解决键哈希冲
 
 dictEntry 节点组成的链表没有指向链表表尾的指针，为了速度考虑，程序总是将新节点添加到链表的表头位置（ **头插法** ），时间复杂度为 O(1)
 
-<img src=".assets/DB/media/image129.png" style="width:5.75in;height:1.89583in" />
+<img src="assets/DB/media/image129.png" style="width:5.75in;height:1.89583in" />
 
 **负载因子**
 
@@ -13298,7 +13298,7 @@ robj *obj;<br />
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image130.png" style="width:5.75in;height:1.9375in" />
+<img src="assets/DB/media/image130.png" style="width:5.75in;height:1.9375in" />
 
 **属性分析**
 
@@ -13355,7 +13355,7 @@ encoding 取值为三种：INTSET_ENC_INT16、INTSET_ENC_INT32、INTSET_ENC_INT6
 
 整数集合的每个元素都是 contents 数组的一个数组项（item），在数组中按值的大小从小到大 **有序排列** ，并且数组中 **不包含任何重复项** 。虽然 contents 属性声明为 int8_t 类型，但实际上数组并不保存任何 int8_t 类型的值， 真正类型取决于 encoding 属性
 
-<img src=".assets/DB/media/image131.png" style="width:5.75in;height:1.97917in" />
+<img src="assets/DB/media/image131.png" style="width:5.75in;height:1.97917in" />
 
 说明：底层存储结构是数组，所以为了保证有序性和不重复性，每次添加一个元素的时间复杂度是 O(N)
 
@@ -13371,7 +13371,7 @@ encoding 取值为三种：INTSET_ENC_INT16、INTSET_ENC_INT32、INTSET_ENC_INT6
 
 将新元素添加到底层数组里
 
-<img src=".assets/DB/media/image132.png" style="width:5.75in;height:1.35417in" />
+<img src="assets/DB/media/image132.png" style="width:5.75in;height:1.35417in" />
 
 每次向整数集合添加新元素都可能会引起升级，而每次升级都需要对底层数组中的所有元素进行类型转换，所以向整数集合添加新元素的时间复杂度为 O(N)
 
@@ -13395,7 +13395,7 @@ encoding 取值为三种：INTSET_ENC_INT16、INTSET_ENC_INT32、INTSET_ENC_INT6
 
 压缩列表（ziplist）是 Redis 为了节约内存而开发的，是列表键和哈希键的底层实现之一。是由一系列特殊编码的连续内存块组成的顺序型（sequential）数据结构，一个压缩列表可以包含任意多个节点（entry），每个节点可以保存一个字节数组或者一个整数值
 
-<img src=".assets/DB/media/image133.png" style="width:5.75in;height:0.39583in" />
+<img src="assets/DB/media/image133.png" style="width:5.75in;height:0.39583in" />
 
 zlbytes：uint32_t 类型 4 字节，记录整个压缩列表占用的内存字节数，在对压缩列表进行内存重分配或者计算 zlend 的位置时使用
 
@@ -13407,7 +13407,7 @@ entryX：列表节点，压缩列表中的各个节点， **节点的长度由�
 
 zlend：uint8_t 类型 1 字节，是一个特殊值 0xFF (255)，用于标记压缩列表的末端
 
-<img src=".assets/DB/media/image134.png" style="width:5.75in;height:0.69792in" />
+<img src="assets/DB/media/image134.png" style="width:5.75in;height:0.69792in" />
 
 列表 zlbytes 属性的值为 0x50 (十进制 80)，表示压缩列表的总长为 80 字节，列表 zltail 属性的值为 0x3c (十进制 60)，假设表的起始地址为 p，计算得出表尾节点 entry3 的地址 p + 60
 
@@ -13415,7 +13415,7 @@ zlend：uint8_t 类型 1 字节，是一个特殊值 0xFF (255)，用于标记�
 
 列表节点 entry 的数据结构：
 
-<img src=".assets/DB/media/image135.png" style="width:5.75in;height:0.64583in" />
+<img src="assets/DB/media/image135.png" style="width:5.75in;height:0.64583in" />
 
 previous_entry_length：以字节为单位记录了压缩列表中前一个节点的长度，程序可以通过指针运算，根据当前节点的起始地址来计算出前一个节点的起始地址，完成 **从表尾向表头遍历** 操作
 
@@ -13427,11 +13427,11 @@ encoding：记录了节点的 content 属性所保存的数据类型和长度
 
 **长度为 1 字节、2 字节或者 5 字节** ，值的最高位为 00、01 或者 10 的是字节数组编码，数组的长度由编码除去最高两位之后的其他位记录，下划线 \_ 表示留空，而 b 、 x 等变量则代表实际的二进制数据
 
-<img src=".assets/DB/media/image136.png" style="width:5.75in;height:1.0625in" />
+<img src="assets/DB/media/image136.png" style="width:5.75in;height:1.0625in" />
 
 长度为 1 字节，值的最高位为 11 的是整数编码，整数值的类型和长度由编码除去最高两位之后的其他位记录
 
-<img src=".assets/DB/media/image137.png" style="width:5.75in;height:1.64583in" />
+<img src="assets/DB/media/image137.png" style="width:5.75in;height:1.64583in" />
 
 content：每个压缩列表节点可以保存一个字节数组或者一个整数值
 
@@ -13463,11 +13463,11 @@ Redis 将在特殊情况下产生的连续多次空间扩展操作称之为连�
 
 假设在一个压缩列表中，有多个连续的、长度介于 250 到 253 字节之间的节点 e1 至 eN。将一个长度大于等于 254 字节的新节点 new 设置为压缩列表的头节点，new 就成为 e1 的前置节点。e1 的 previous_entry_length 属性仅为 1 字节，无法保存新节点 new 的长度，所以要对压缩列表执行空间重分配操作，并将 e1 节点的 previous_entry_length 属性从 1 字节长扩展为 5 字节长。由于 e1 原本的长度介于 250 至 253 字节之间，所以扩展后 e1 的长度就变成了 254 至 257 字节之间，导致 e2 的 previous_entry_length 属性无法保存 e1 的长度，程序需要不断地对压缩列表执行空间重分配操作，直到 eN 为止
 
-<img src=".assets/DB/media/image138.png" style="width:5.75in;height:1.21875in" />
+<img src="assets/DB/media/image138.png" style="width:5.75in;height:1.21875in" />
 
 删除节点也可能会引发连锁更新，big.length \>= 254，small.length \< 254，删除 small 节点
 
-<img src=".assets/DB/media/image139.png" style="width:5.75in;height:0.70833in" />
+<img src="assets/DB/media/image139.png" style="width:5.75in;height:0.70833in" />
 
 连锁更新在最坏情况下需要对压缩列表执行 N 次空间重分配，每次重分配的最坏复杂度为 O(N)，所以连锁更新的最坏复杂度为 O(N^2)
 
@@ -13508,7 +13508,7 @@ Redis 并没有直接使用数据结构来实现键值对数据库，而是基�
 
 Redis 是一个 Map 类型，其中所有的数据都是采用 key : value 的形式存储， **键对象都是字符串对象** ，而值对象有五种基本类型和三种高级类型对象
 
-<img src=".assets/DB/media/image140.png" style="width:5.75in;height:2.44792in" />
+<img src="assets/DB/media/image140.png" style="width:5.75in;height:2.44792in" />
 
 对一个数据库键执行 TYPE 命令，返回的结果为数据库键对应的值对象的类型，而不是键对象的类型
 
@@ -13559,7 +13559,7 @@ int refcount;<br />
 
 将被共享的值对象的引用计数增一
 
-<img src=".assets/DB/media/image141.png" style="width:5.44792in;height:2.67708in" />
+<img src="assets/DB/media/image141.png" style="width:5.44792in;height:2.67708in" />
 
 Redis 在初始化服务器时创建一万个（配置文件可以修改）字符串对象，包含了 **从 0 到 9999 的所有整数值** ，当服务器需要用到值为 0 到 9999 的字符串对象时，服务器就会使用这些共享对象，而不是新创建对象
 
@@ -13629,7 +13629,7 @@ redis&gt; OBJECT IDLETIME msg<br />
 
 存储内容：通常使用字符串，如果字符串以整数的形式展示，可以作为数字操作使用
 
-<img src=".assets/DB/media/image142.png" style="width:5.75in;height:1.76042in" />
+<img src="assets/DB/media/image142.png" style="width:5.75in;height:1.76042in" />
 
 Redis 所有操作都是 **原子性** 的，采用 **单线程** 机制，命令是单个顺序执行，无需考虑并发带来影响，原子性就是有一个失败则都失败
 
@@ -13738,7 +13738,7 @@ Redis 可用于控制数据库表主键 ID，为数据库表主键提供生成�
 
 多数据执行 1 条指令的过程：1 次发送 + 3 次处理 + 1 次返回（发送和返回的事件略高于单数据）
 
-<img src=".assets/DB/media/image143.png" style="width:5.75in;height:2.77083in" />
+<img src="assets/DB/media/image143.png" style="width:5.75in;height:2.77083in" />
 
 **实现**
 
@@ -13746,15 +13746,15 @@ Redis 可用于控制数据库表主键 ID，为数据库表主键提供生成�
 
 int：字符串对象保存的是 **整数值** ，并且整数值可以用 long 类型来表示，那么对象会将整数值保存在字符串对象结构的 ptr 属性面（将 void \* 转换成 long)，并将字符串对象的编码设置为 int（浮点数用另外两种方式）
 
-<img src=".assets/DB/media/image144.png" style="width:5.69792in;height:2.95833in" />
+<img src="assets/DB/media/image144.png" style="width:5.69792in;height:2.95833in" />
 
 raw：字符串对象保存的是一个字符串值，并且值的长度大于 39 字节，那么对象将使用简单动态字符串（SDS）来保存该值，并将对象的编码设置为 raw
 
-<img src=".assets/DB/media/image145.png" style="width:5.75in;height:1.25in" />
+<img src="assets/DB/media/image145.png" style="width:5.75in;height:1.25in" />
 
 embstr：字符串对象保存的是一个字符串值，并且值的长度小于等于 39 字节，那么对象将使用 embstr 编码的方式来保存这个字符串值，并将对象的编码设置为 embstr
 
-<img src=".assets/DB/media/image146.png" style="width:5.75in;height:0.70833in" />
+<img src="assets/DB/media/image146.png" style="width:5.75in;height:0.70833in" />
 
 上图所示，embstr 与 raw 都使用了 redisObject 和 sdshdr 来表示字符串对象，但是 raw 需要调用两次内存分配函数分别创建两种结构，embstr 只需要一次内存分配来分配一块 **连续的空间**
 
@@ -13844,7 +13844,7 @@ key的设置约定：表名 : 主键名 : 主键值 : 字段名
 
 hash 类型：底层使用 **哈希表** 结构实现数据存储
 
-<img src=".assets/DB/media/image147.png" style="width:5.75in;height:3.51042in" />
+<img src="assets/DB/media/image147.png" style="width:5.75in;height:3.51042in" />
 
 Redis 中的 hash 类似于 Java 中的 Map\<String, Map\<Object,object\>\> ，左边是 key，右边是值，中间叫 field 字段，本质上 **hash 存了一个 key-value 的存储空间**
 
@@ -13939,11 +13939,11 @@ hgetall 操作可以获取全部属性，如果内部 field 过多，遍历整�
 
 压缩列表实现哈希对象：同一键值对的节点总是挨在一起，保存键的节点在前，保存值的节点在后
 
-<img src=".assets/DB/media/image148.png" style="width:5.75in;height:0.72917in" />
+<img src="assets/DB/media/image148.png" style="width:5.75in;height:0.72917in" />
 
 字典实现哈希对象：字典的每一个键都是一个字符串对象，每个值也是
 
-<img src=".assets/DB/media/image149.png" style="width:5.75in;height:3.47917in" />
+<img src="assets/DB/media/image149.png" style="width:5.75in;height:3.47917in" />
 
 当存储的数据量比较小的情况下，Redis 才使用压缩列表来实现字典类型，具体需要满足两个条件：
 
@@ -13973,7 +13973,7 @@ user:id:3506728370 → {"name":"春晚","fans":12210862,"blogs":83}</td>
 
 假如现在粉丝数量发生了变化，要把整个值都改变，但是用单条存就不存在这个问题，只需要改其中一个就可以
 
-<img src=".assets/DB/media/image150.png" style="width:5.75in;height:1.95833in" />
+<img src="assets/DB/media/image150.png" style="width:5.75in;height:1.95833in" />
 
 可以实现购物车的功能，key 对应着每个用户，存储空间存储购物车的信息
 
@@ -13987,7 +13987,7 @@ user:id:3506728370 → {"name":"春晚","fans":12210862,"blogs":83}</td>
 
 list 类型：保存多个数据，底层使用 **双向链表** 存储结构实现，类似于 LinkedList
 
-<img src=".assets/DB/media/image151.png" style="width:5.75in;height:2.51042in" />
+<img src="assets/DB/media/image151.png" style="width:5.75in;height:2.51042in" />
 
 如果两端都能存取数据的话，这就是双端队列，如果只能从一端进一端出，这个模型叫栈
 
@@ -14076,11 +14076,11 @@ list 可以对数据进行分页操作，通常第一页的信息来自于 list�
 
 压缩列表实现的列表对象：PUSH 1、three、5 三个元素
 
-<img src=".assets/DB/media/image152.png" style="width:5.75in;height:1.41667in" />
+<img src="assets/DB/media/image152.png" style="width:5.75in;height:1.41667in" />
 
 链表实现的列表对象：为了简化字符串对象的表示，使用了 StringObject 的结构，底层其实是 sdshdr 结构
 
-<img src=".assets/DB/media/image153.png" style="width:5.75in;height:1.22917in" />
+<img src="assets/DB/media/image153.png" style="width:5.75in;height:1.22917in" />
 
 列表中存储的数据量比较小的时候，列表就会使用一块连续的内存存储，采用压缩列表的方式实现的条件：
 
@@ -14092,7 +14092,7 @@ list 可以对数据进行分页操作，通常第一页的信息来自于 list�
 
 在 Redis3.2 版本 以后对列表数据结构进行了改造，使用 \*\*quicklist（快速列表）\*\*代替了 linkedlist，quicklist 实际上是 ziplist 和 linkedlist 的混合体，将 linkedlist 按段切分，每一段使用 ziplist 来紧凑存储，多个 ziplist 之间使用双向指针串接起来，既满足了快速的插入删除性能，又不会出现太大的空间冗余
 
-<img src=".assets/DB/media/image154.png" style="width:5.75in;height:3.22917in" />
+<img src="assets/DB/media/image154.png" style="width:5.75in;height:3.22917in" />
 
 **应用**
 
@@ -14118,7 +14118,7 @@ list 可以对数据进行分页操作，通常第一页的信息来自于 list�
 
 set 类型：与 hash 存储结构哈希表完全相同，只是仅存储键不存储值（nil），所以添加，删除，查找的复杂度都是 O(1)，并且 **值是不允许重复且无序的**
 
-<img src=".assets/DB/media/image155.png" style="width:5.75in;height:3.46875in" />
+<img src="assets/DB/media/image155.png" style="width:5.75in;height:3.46875in" />
 
 **操作**
 
@@ -14216,11 +14216,11 @@ set 虽然与 hash 的存储结构相同，但是无法启用 hash 中存储值�
 
 整数集合实现的集合对象：
 
-<img src=".assets/DB/media/image156.png" style="width:5.75in;height:1.66667in" />
+<img src="assets/DB/media/image156.png" style="width:5.75in;height:1.66667in" />
 
 字典实现的集合对象：键值对的值为 NULL
 
-<img src=".assets/DB/media/image157.png" style="width:5.75in;height:2.22917in" />
+<img src="assets/DB/media/image157.png" style="width:5.75in;height:2.22917in" />
 
 当集合对象可以同时满足以下两个条件时，对象使用 intset 编码：
 
@@ -14333,7 +14333,7 @@ sorted_set 底层存储还是基于 set 结构的，因此数据不能重复，�
 
 压缩列表实现有序集合对象：ziplist 本身是有序、不可重复的，符合有序集合的特性
 
-<img src=".assets/DB/media/image158.png" style="width:5.75in;height:0.75in" />
+<img src="assets/DB/media/image158.png" style="width:5.75in;height:0.75in" />
 
 跳跃表实现有序集合对象： **底层是 zset 结构，zset 同时包含字典和跳跃表的结构** ，图示字典和跳跃表中重复展示了各个元素的成员和分值，但实际上两者会 **通过指针来共享相同元素的成员和分值** ，不会产生空间浪费
 
@@ -14352,7 +14352,7 @@ dict *dict;<br />
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image159.png" style="width:5.75in;height:2.92708in" />
+<img src="assets/DB/media/image159.png" style="width:5.75in;height:2.92708in" />
 
 使用字典加跳跃表的优势：
 
@@ -14388,7 +14388,7 @@ dict *dict;<br />
 
 Bitmaps 是二进制位数组（bit array），底层使用 SDS 字符串表示，因为 SDS 是二进制安全的
 
-<img src=".assets/DB/media/image160.png" style="width:5.75in;height:1.78125in" />
+<img src="assets/DB/media/image160.png" style="width:5.75in;height:1.78125in" />
 
 buf 数组的每个字节用一行表示，buf\[1\] 是 '\0' ，保存位数组的顺序和书写位数组的顺序是完全相反的，图示的位数组 0100 1101
 
@@ -14506,7 +14506,7 @@ AND、OR、XOR 三个命令可以接受多个位数组作为输入，需要遍�
 
 **解决 Redis 缓存穿透** ，判断给定数据是否存在， 防止缓存穿透
 
-<img src=".assets/DB/media/image161.png" style="width:5.75in;height:4.10417in" />
+<img src="assets/DB/media/image161.png" style="width:5.75in;height:4.10417in" />
 
 垃圾邮件过滤，对每一个发送邮件的地址进行判断是否在布隆的黑名单中，如果在就判断为垃圾邮件
 
@@ -14650,7 +14650,7 @@ Redis 应用于地理位置计算
 
 计算机中的数据全部都是二进制，保存一组数据有两种方式
 
-<img src=".assets/DB/media/image162.png" style="width:5.75in;height:2.41667in" />
+<img src="assets/DB/media/image162.png" style="width:5.75in;height:2.41667in" />
 
 RDB：将当前数据状态进行保存，快照形式，存储数据结果，存储格式简单
 
@@ -14691,7 +14691,7 @@ BGSAVE：bg 是 background，代表后台执行，命令的完成需要两个进
 
 工作原理：
 
-<img src=".assets/DB/media/image163.png" style="width:5.75in;height:1.17708in" />
+<img src="assets/DB/media/image163.png" style="width:5.75in;height:1.17708in" />
 
 流程：客户端发出 BGSAVE 指令，Redis 服务器使用 fork 函数创建一个子进程，然后响应后台已经开始执行的信息给客户端。子进程会异步执行持久化的操作，持久化过程是先将数据写入到一个临时文件中，持久化操作结束再用这个临时文件 **替换** 上次持久化的文件
 
@@ -14911,13 +14911,13 @@ Redis 的服务器周期性操作函数 serverCron 默认每隔 100 毫秒就会
 
 serverCron 函数的其中一项工作是检查 save 选项所设置的保存条件是否满足，会遍历 saveparams 数组中的 **所有保存条件** ，只要有任意一个条件被满足服务器就会执行 BGSAVE 命令
 
-<img src=".assets/DB/media/image164.png" style="width:5.75in;height:1.92708in" />
+<img src="assets/DB/media/image164.png" style="width:5.75in;height:1.92708in" />
 
 **文件结构**
 
 RDB 的存储结构：图示全大写单词标示常量，用全小写单词标示变量和数据
 
-<img src=".assets/DB/media/image165.png" style="width:5.75in;height:0.5625in" />
+<img src="assets/DB/media/image165.png" style="width:5.75in;height:0.5625in" />
 
 REDIS：长度为 5 字节，保存着 REDIS 五个字符，是 RDB 文件的开头，在载入文件时可以快速检查所载入的文件是否 RDB 文件
 
@@ -14941,7 +14941,7 @@ AOF 主要作用是解决了 **数据持久化的实时性** ，目前已经是 
 
 AOF 写数据过程：
 
-<img src=".assets/DB/media/image166.png" style="width:5.75in;height:2.125in" />
+<img src="assets/DB/media/image166.png" style="width:5.75in;height:2.125in" />
 
 Redis 只会将对数据库进行了修改的命令写入到 AOF 文件，并复制到各个从服务器，但是 PUBSUB 和 SCRIPT LOAD 命令例外：
 
@@ -15114,7 +15114,7 @@ bgrewriteaof</td>
 
 子进程带有服务器进程的数据副本，使用子进程而不是线程，可以在避免使用锁的情况下， 保证数据安全性
 
-<img src=".assets/DB/media/image167.png" style="width:5.75in;height:1.13542in" />
+<img src="assets/DB/media/image167.png" style="width:5.75in;height:1.13542in" />
 
 子进程在进行 AOF 重写期间，服务器进程还需要继续处理命令请求，而新命令可能会对现有的数据库状态进行修改，从而使得服务器当前的数据库状态和重写后的 AOF 文件所保存的数据库状态不一致，所以 Redis 设置了 AOF 重写缓冲区
 
@@ -15336,7 +15336,7 @@ i 父id id 子id<br />
 </tbody>
 </table>
 
-<img src=".assets/DB/media/image168.png" style="width:5.75in;height:2.75in" />
+<img src="assets/DB/media/image168.png" style="width:5.75in;height:2.75in" />
 
 在 p3224 和 p3225 执行完第二个循环后，main 函数退出，进程死亡。所以 p3226，p3227 就没有父进程了，成为孤儿进程，所以 p3226 和 p3227 的父进程就被置为 ID 为 1 的 init 进程（笔记 Tool → Linux → 进程管理详解）
 
@@ -15350,7 +15350,7 @@ fork() 调用之后父子进程的内存关系
 
 父子进程的代码段是相同的，所以代码段是没必要复制的，只需内核将代码段标记为只读，父子进程就共享此代码段。fork() 之后在进程创建代码段时，子进程的进程级页表项都指向和父进程相同的物理页帧
 
-<img src=".assets/DB/media/image169.png" style="width:5.75in;height:2.70833in" />
+<img src="assets/DB/media/image169.png" style="width:5.75in;height:2.70833in" />
 
 对于父进程的数据段，堆段，栈段中的各页，由于父子进程相互独立，采用 **写时复制 COW** 的技术，来提高内存以及内核的利用率
 
@@ -15358,7 +15358,7 @@ fork() 调用之后父子进程的内存关系
 
 fork 之后内核会将子进程放在队列的前面，让子进程先执行，以免父进程执行导致写时复制，而后子进程再执行，因无意义的复制而造成效率的下降
 
-<img src=".assets/DB/media/image170.png" style="width:5.75in;height:2.59375in" />
+<img src="assets/DB/media/image170.png" style="width:5.75in;height:2.59375in" />
 
 补充知识：
 
@@ -15544,11 +15544,11 @@ Redis 不支持事务回滚机制（rollback），即使事务队列中的某个
 
 入队错误：命令格式输入错误，出现语法错误造成， **整体事务中所有命令均不会执行** ，包括那些语法正确的命令
 
-<img src=".assets/DB/media/image171.png" style="width:5.75in;height:1.1875in" />
+<img src="assets/DB/media/image171.png" style="width:5.75in;height:1.1875in" />
 
 执行错误：命令执行出现错误，例如对字符串进行 incr 操作，事务中正确的命令会被执行，运行错误的命令不会被执行
 
-<img src=".assets/DB/media/image172.png" style="width:5.75in;height:2.1875in" />
+<img src="assets/DB/media/image172.png" style="width:5.75in;height:2.1875in" />
 
 服务器停机：
 
@@ -15701,7 +15701,7 @@ Lua 将命令结果返回给 redis.call 函数或者 redis.pcall 函数
 
 redis.call 函数或者 redis.pcall 函数会将命令结果作为返回值返回给脚本的调用者
 
-<img src=".assets/DB/media/image173.png" style="width:5.75in;height:1.1875in" />
+<img src="assets/DB/media/image173.png" style="width:5.75in;height:1.1875in" />
 
 **脚本字典**
 
@@ -16343,7 +16343,7 @@ PSYNC 命令具有完整重同步（full resynchronization）和 **部分重同�
 
 当主服务器进行 **命令传播时，不仅会将写命令发送给所有从服务器，还会将写命令入队到复制积压缓冲区** ，缓冲区会保存着一部分最近传播的写命令，并且缓冲区会为队列中的每个字节记录相应的复制偏移量
 
-<img src=".assets/DB/media/image174.png" style="width:5.75in;height:1.22917in" />
+<img src="assets/DB/media/image174.png" style="width:5.75in;height:1.22917in" />
 
 从服务器会通过 PSYNC 命令将自己的复制偏移量 offset 发送给主服务器，主服务器会根据这个复制偏移量来决定对从服务器执行何种同步操作：
 
@@ -16460,7 +16460,7 @@ SLAVEOF 命令是一个 **异步命令** ，在完成属性的设置后服务器
 
 **复制图示**
 
-<img src=".assets/DB/media/image175.png" style="width:5.75in;height:2.52083in" />
+<img src="assets/DB/media/image175.png" style="width:5.75in;height:2.52083in" />
 
 **心跳检测**
 
@@ -16638,7 +16638,7 @@ slave-serve-stale-data yes|no</td>
 
 Sentinel（哨兵）是 Redis 的高可用性（high availability）解决方案，由一个或多个 Sentinel 实例 instance 组成的 Sentinel 系统可以监视任意多个主服务器，以及这些主服务器的所有从服务器，并在被监视的主服务器下线时进行故障转移
 
-<img src=".assets/DB/media/image176.png" style="width:5.75in;height:3.76042in" />
+<img src="assets/DB/media/image176.png" style="width:5.75in;height:3.76042in" />
 
 双环图案表示主服务器
 
@@ -16936,7 +16936,7 @@ Sentinel 还必须向主服务器发送命令，以此来与主服务器进行�
 
 说明：断线的意思就是网络连接断开
 
-<img src=".assets/DB/media/image177.png" style="width:5.75in;height:3.01042in" />
+<img src="assets/DB/media/image177.png" style="width:5.75in;height:3.01042in" />
 
 **信息交互**
 
@@ -17191,7 +17191,7 @@ Sentinel 集群允许 1 个 Sentinel 节点故障则需要 3 个节点的集群�
 
 示例：sever1 是主，sever2、sever3、sever4 是从服务器，sever1 故障后选中 sever2 升级
 
-<img src=".assets/DB/media/image178.png" style="width:5.75in;height:2.20833in" />
+<img src="assets/DB/media/image178.png" style="width:5.75in;height:2.20833in" />
 
 **选择算法**
 
@@ -17223,7 +17223,7 @@ Redis 集群是 Redis 提供的分布式数据库方案，集群通过分片（s
 
 节点会继续使用所有在单机模式中使用的服务器组件，使用 redisServer 结构来保存服务器的状态，使用 redisClient 结构来保存客户端的状态，也有集群特有的数据结构
 
-<img src=".assets/DB/media/image179.png" style="width:5.75in;height:1.97917in" />
+<img src="assets/DB/media/image179.png" style="width:5.75in;height:1.97917in" />
 
 **数据结构**
 
@@ -17351,7 +17351,7 @@ CLUSTER MEET &lt;ip&gt; &lt;port&gt;</td>
 
 节点 B 收到 PING 消息后， 代表节点 B 可以知道节点 A 已经成功地接收到了自己返回的 PONG 消息，握手完成
 
-<img src=".assets/DB/media/image180.png" style="width:5.75in;height:1.5625in" />
+<img src="assets/DB/media/image180.png" style="width:5.75in;height:1.5625in" />
 
 节点 A 会将节点 B 的信息通过 Gossip 协议传播给集群中的其他节点，让其他节点也与节点 B 进行握手，最终经过一段时间之后，节点 B 会被集群中的所有节点认识
 
@@ -17425,7 +17425,7 @@ slots 是一个二进制位数组（bit array），长度为 16384/8 = 2048 个�
 
 在索引 i 上的二进制位的值为 0，那么表示节点不负责处理槽 i
 
-<img src=".assets/DB/media/image181.png" style="width:5.75in;height:0.78125in" />
+<img src="assets/DB/media/image181.png" style="width:5.75in;height:0.78125in" />
 
 取出和设置 slots 数组中的任意一个二进制位的值的 **复杂度仅为 O(1)** ，所以对于一个给定节点的 slots 数组来说，检查节点是否负责处理某个槽或者将某个槽指派给节点负责，这两个动作的复杂度都是 O(1)
 
@@ -17483,7 +17483,7 @@ slots_to_keys 跳跃表每个节点的分值（score）都是一个槽号，而�
 
 当节点删除数据库中的某个键值对时，节点就会在 slots_to_keys 跳跃表解除被删除键与槽号的关联
 
-<img src=".assets/DB/media/image182.png" style="width:5.75in;height:2.01042in" />
+<img src="assets/DB/media/image182.png" style="width:5.75in;height:2.01042in" />
 
 通过在 slots_to_keys 跳跃表中记录各个数据库键所属的槽，可以很方便地对属于某个或某些槽的所有数据库键进行批量操作，比如 CLUSTER GETKEYSINSLOT \<slot\> \<count\> 命令返回最多 count 个属于槽 slot 的数据库键，就是通过该跳表实现
 
@@ -17627,7 +17627,7 @@ redis-trib 向源节点发送 CLUSTER GETKEYSINSLOT \<slot\> \<count\> 命令，
 
 redis-trib 向集群中的任意一个节点发送 CLUSTER SETSLOT \<slot\> NODE \<target \_id\> 命令，将槽 slot 指派给目标节点，这一指派信息会通过消息传播至整个集群，最终集群中的所有节点都直到槽 slot 已经指派给了目标节点
 
-<img src=".assets/DB/media/image183.png" style="width:5.75in;height:1.25in" />
+<img src="assets/DB/media/image183.png" style="width:5.75in;height:1.25in" />
 
 如果重新分片涉及多个槽，那么 redis-trib 将对每个给定的槽分别执行上面给出的步骤
 
@@ -18359,7 +18359,7 @@ Redis 发布订阅（pub/sub）是一种消息通信模式：发送者（pub）�
 
 Redis 客户端可以订阅任意数量的频道，每当有客户端向被订阅的频道发送消息（message）时，频道的 **所有订阅者都会收到消息**
 
-<img src=".assets/DB/media/image184.png" style="width:4.90625in;height:3.15625in" />
+<img src="assets/DB/media/image184.png" style="width:4.90625in;height:3.15625in" />
 
 操作过程：
 
@@ -18369,7 +18369,7 @@ Redis 客户端可以订阅任意数量的频道，每当有客户端向被订�
 
 第一个客户端可以看到发送的消息
 
-<img src=".assets/DB/media/image185.png" style="width:5.75in;height:2.36458in" />
+<img src="assets/DB/media/image185.png" style="width:5.75in;height:2.36458in" />
 
 客户端还可以通过 PSUBSCRIBE 命令订阅一个或多个模式，每当有其他客户端向某个频道发送消息时，消息不仅会被发送给这个频道的所有订阅者，还会被 **发送给所有与这个频道相匹配的模式的订阅者** ，比如 PSUBSCRIBE channel\* 订阅模式，与 channel1 匹配
 
@@ -18474,7 +18474,7 @@ PUBSUB NUMPAT 命令用于返回服务器当前被订阅模式的数量
 
 Redis ACL 是 Access Control List（访问控制列表）的缩写，该功能允许根据可以执行的命令和可以访问的键来限制某些连接
 
-<img src=".assets/DB/media/image186.png" style="width:5.75in;height:1.85417in" />
+<img src="assets/DB/media/image186.png" style="width:5.75in;height:1.85417in" />
 
 acl cat：查看添加权限指令类别
 
@@ -18508,7 +18508,7 @@ send_reply("OK")</td>
 
 服务器每次处理命令请求都会调用 replicationFeedMonitors 函数，函数将被处理的命令请求的相关信息 **发送给各个监视器**
 
-<img src=".assets/DB/media/image187.png" style="width:5.75in;height:2.875in" />
+<img src="assets/DB/media/image187.png" style="width:5.75in;height:2.875in" />
 
 <table>
 <colgroup>
@@ -19025,7 +19025,7 @@ SQL 注入攻击演示
 
 在登录界面，输入一个错误的用户名或密码，也可以登录成功
 
-<img src=".assets/DB/media/image188.png" style="width:5.75in;height:3.33333in" />
+<img src="assets/DB/media/image188.png" style="width:5.75in;height:3.33333in" />
 
 原理：我们在密码处输入的所有内容，都应该认为是密码的组成，但是 Statement 对象在执行 SQL 语句时，将一部分内容当做查询条件来执行
 
@@ -19086,7 +19086,7 @@ pst.setString(2,password);</td>
 
 数据库连接池原理
 
-<img src=".assets/DB/media/image189.png" style="width:5.75in;height:2.90625in" />
+<img src="assets/DB/media/image189.png" style="width:5.75in;height:2.90625in" />
 
 **归还连接**
 

@@ -18,15 +18,15 @@ Git是一个分布式版本控制工具，主要用于管理开发过程中的�
 
 在IDEA开发工具中可以集成Git（后面会讲解Git安装和集成过程）：
 
-<img src=".assets/Git笔记/media/image1.png" style="width:5.75in;height:4.11458in" />
+<img src="assets/Git笔记/media/image1.png" style="width:5.75in;height:4.11458in" />
 
 集成后在IDEA中可以看到Git相关图标：
 
-<img src=".assets/Git笔记/media/image2.png" style="width:2.11458in;height:0.29167in" />
+<img src="assets/Git笔记/media/image2.png" style="width:2.11458in;height:0.29167in" />
 
 可以通过启动两个IDEA窗口模拟两个开发人员来展示Git的使用：
 
-<img src=".assets/Git笔记/media/image3.png" style="width:5.75in;height:3.03125in" />
+<img src="assets/Git笔记/media/image3.png" style="width:5.75in;height:3.03125in" />
 
 其他的版本控制工具：
 
@@ -56,7 +56,7 @@ Git 是一个分布式版本控制工具，通常用来对软件开发过程中�
 
 远程仓库：远程服务器上的 Git 仓库
 
-<img src=".assets/Git笔记/media/image4.png" style="width:5.75in;height:3.98958in" />
+<img src="assets/Git笔记/media/image4.png" style="width:5.75in;height:3.98958in" />
 
 解释说明：
 
@@ -72,27 +72,27 @@ Git 是一个分布式版本控制工具，通常用来对软件开发过程中�
 
 **\[该类型的内容暂不支持下载\]**
 
-<img src=".assets/Git笔记/media/image5.png" style="width:5.75in;height:1.3125in" />
+<img src="assets/Git笔记/media/image5.png" style="width:5.75in;height:1.3125in" />
 
 下载完成后得到安装文件：
 
-<img src=".assets/Git笔记/media/image6.png" style="width:2.88542in;height:0.38542in" />
+<img src="assets/Git笔记/media/image6.png" style="width:2.88542in;height:0.38542in" />
 
 直接双击完成安装即可，安装完成后可以在任意目录下点击鼠标右键，如果能够看到如下菜单则说明安装成功：
 
-<img src=".assets/Git笔记/media/image7.png" style="width:5.75in;height:1.64583in" />
+<img src="assets/Git笔记/media/image7.png" style="width:5.75in;height:1.64583in" />
 
 Git GUI Here：打开Git 图形界面
 
-<img src=".assets/Git笔记/media/image8.png" style="width:5.75in;height:1.91667in" />
+<img src="assets/Git笔记/media/image8.png" style="width:5.75in;height:1.91667in" />
 
 Git Bash Here：打开Git 命令行
 
-<img src=".assets/Git笔记/media/image9.png" style="width:5.75in;height:2.02083in" />
+<img src="assets/Git笔记/media/image9.png" style="width:5.75in;height:2.02083in" />
 
 Git安装目录结构如下：
 
-<img src=".assets/Git笔记/media/image10.png" style="width:5.75in;height:2.5in" />
+<img src="assets/Git笔记/media/image10.png" style="width:5.75in;height:2.5in" />
 
 **3. Git代码托管服务**
 
@@ -116,7 +116,7 @@ Git中存在两种类型的仓库，即**本地仓库**和**远程仓库**。那
 
 **\[该类型的内容暂不支持下载\]**
 
-<img src=".assets/Git笔记/media/image11.png" style="width:5.75in;height:2.125in" />
+<img src="assets/Git笔记/media/image11.png" style="width:5.75in;height:2.125in" />
 
 使用码云的操作流程如下：
 
@@ -134,7 +134,7 @@ Git中存在两种类型的仓库，即**本地仓库**和**远程仓库**。那
 
 **\[该类型的内容暂不支持下载\]**
 
-<img src=".assets/Git笔记/media/image12.png" style="width:5.75in;height:2.60417in" />
+<img src="assets/Git笔记/media/image12.png" style="width:5.75in;height:2.60417in" />
 
 **3.2.2 登录码云**
 
@@ -142,17 +142,17 @@ Git中存在两种类型的仓库，即**本地仓库**和**远程仓库**。那
 
 **\[该类型的内容暂不支持下载\]**
 
-<img src=".assets/Git笔记/media/image13.png" style="width:5.75in;height:2.10417in" />
+<img src="assets/Git笔记/media/image13.png" style="width:5.75in;height:2.10417in" />
 
 **3.2.3 创建远程仓库**
 
 登录成功后可以创建远程仓库，操作方式如下：
 
-<img src=".assets/Git笔记/media/image14.png" style="width:5.75in;height:1.4375in" />
+<img src="assets/Git笔记/media/image14.png" style="width:5.75in;height:1.4375in" />
 
 页面跳转到新建仓库页面：
 
-<img src=".assets/Git笔记/media/image15.png" style="width:5.75in;height:3.32292in" />
+<img src="assets/Git笔记/media/image15.png" style="width:5.75in;height:3.32292in" />
 
 解释说明：
 
@@ -166,7 +166,7 @@ Git中存在两种类型的仓库，即**本地仓库**和**远程仓库**。那
 
 创建完成后可以查看仓库信息：
 
-<img src=".assets/Git笔记/media/image16.png" style="width:5.75in;height:1.89583in" />
+<img src="assets/Git笔记/media/image16.png" style="width:5.75in;height:1.89583in" />
 
 **注意**：每个Git远程仓库都会对应一个网络地址，点击【克隆/下载】按钮，在弹出窗口点击【复制】按钮即可复制网络地址，地址如下：
 
@@ -178,15 +178,15 @@ Git中存在两种类型的仓库，即**本地仓库**和**远程仓库**。那
 
 点击管理按钮进入仓库管理页面，左侧菜单中可以看到【仓库成员管理】：
 
-<img src=".assets/Git笔记/media/image17.png" style="width:5.75in;height:2.16667in" />
+<img src="assets/Git笔记/media/image17.png" style="width:5.75in;height:2.16667in" />
 
 点击【开发者】菜单，跳转到如下页面：
 
-<img src=".assets/Git笔记/media/image18.png" style="width:5.75in;height:1.90625in" />
+<img src="assets/Git笔记/media/image18.png" style="width:5.75in;height:1.90625in" />
 
 点击【添加仓库成员】菜单下的【邀请用户】菜单，跳转到如下页面：
 
-<img src=".assets/Git笔记/media/image19.png" style="width:5.75in;height:2.71875in" />
+<img src="assets/Git笔记/media/image19.png" style="width:5.75in;height:2.71875in" />
 
 可以看到邀请用户有多种方式：链接邀请、直接添加、通过仓库邀请成员
 
@@ -208,7 +208,7 @@ git config --global user.email "itcast@itcast.cn"
 
 git config --list
 
-<img src=".assets/Git笔记/media/image20.png" style="width:5.75in;height:3.26042in" />
+<img src="assets/Git笔记/media/image20.png" style="width:5.75in;height:3.26042in" />
 
 注意：上面设置的user.name和user.email并不是我们在注册码云账号时使用的用户名和邮箱，此处可以任意设置。
 
@@ -234,7 +234,7 @@ git config --list
 
 如果在当前目录中看到.git文件夹（此文件夹为隐藏文件夹）则说明Git仓库创建成功
 
-<img src=".assets/Git笔记/media/image21.png" style="width:5.75in;height:1.07292in" />
+<img src="assets/Git笔记/media/image21.png" style="width:5.75in;height:1.07292in" />
 
 **4.2.2 从远程仓库克隆**
 
@@ -242,7 +242,7 @@ git config --list
 
 **命令格式**：git clone 远程仓库地址
 
-<img src=".assets/Git笔记/media/image22.png" style="width:5.75in;height:2.02083in" />
+<img src="assets/Git笔记/media/image22.png" style="width:5.75in;height:2.02083in" />
 
 **4.3 工作区、暂存区、版本库**
 
@@ -254,7 +254,7 @@ git config --list
 
 **暂存区**：.git文件夹中有很多文件，其中有一个index文件就是暂存区，也可以叫做stage。暂存区是一个临时保存修改文件的地方
 
-<img src=".assets/Git笔记/media/image23.png" style="width:5.75in;height:1.39583in" />
+<img src="assets/Git笔记/media/image23.png" style="width:5.75in;height:1.39583in" />
 
 **4.4 Git工作区中文件的状态**
 
@@ -290,7 +290,7 @@ git log 查看日志
 
 git status 命令用于查看文件状态
 
-<img src=".assets/Git笔记/media/image24.png" style="width:5.75in;height:1.60417in" />
+<img src="assets/Git笔记/media/image24.png" style="width:5.75in;height:1.60417in" />
 
 注意：由于工作区中文件状态的不同，执行 git status 命令后的输出也会不同
 
@@ -298,7 +298,7 @@ git status 命令用于查看文件状态
 
 git add 命令的作用是将文件的修改加入暂存区，命令格式：git add fileName
 
-<img src=".assets/Git笔记/media/image25.png" style="width:5.75in;height:0.42708in" />
+<img src="assets/Git笔记/media/image25.png" style="width:5.75in;height:0.42708in" />
 
 加入暂存区后再执行 git status 命令，可以发现文件的状态已经发生变化。
 
@@ -308,11 +308,11 @@ git reset 命令的作用是将暂存区的文件**取消暂存**或者是**切�
 
 取消暂存命令格式：git reset 文件名
 
-<img src=".assets/Git笔记/media/image26.png" style="width:5.75in;height:0.52083in" />
+<img src="assets/Git笔记/media/image26.png" style="width:5.75in;height:0.52083in" />
 
 切换到指定版本命令格式：git reset --hard 版本号
 
-<img src=".assets/Git笔记/media/image27.png" style="width:5.75in;height:0.73958in" />
+<img src="assets/Git笔记/media/image27.png" style="width:5.75in;height:0.73958in" />
 
 注意：每次Git提交都会产生新的版本号，通过版本号就可以回到历史版本
 
@@ -320,7 +320,7 @@ git reset 命令的作用是将暂存区的文件**取消暂存**或者是**切�
 
 git commit 命令的作用是将暂存区的文件修改提交到版本库，命令格式：git commit -m msg 文件名
 
-<img src=".assets/Git笔记/media/image28.png" style="width:5.75in;height:2.28125in" />
+<img src="assets/Git笔记/media/image28.png" style="width:5.75in;height:2.28125in" />
 
 解释说明：
 
@@ -332,7 +332,7 @@ git commit 命令的作用是将暂存区的文件修改提交到版本库，命
 
 git log 命令的作用是查看提交日志
 
-<img src=".assets/Git笔记/media/image29.png" style="width:5.75in;height:2.55208in" />
+<img src="assets/Git笔记/media/image29.png" style="width:5.75in;height:2.55208in" />
 
 通过git log命令查看日志，可以发现每次提交都会产生一个版本号，提交时设置的message、提交人、邮箱、提交时间等信息都会记录到日志中
 
@@ -356,7 +356,7 @@ git push 推送到远程仓库
 
 如果已经克隆了远程仓库，那么至少应该能看到 origin ，这是 Git 克隆的仓库服务器的默认名字。
 
-<img src=".assets/Git笔记/media/image30.png" style="width:5.75in;height:1.16667in" />
+<img src="assets/Git笔记/media/image30.png" style="width:5.75in;height:1.16667in" />
 
 解释说明：
 
@@ -368,7 +368,7 @@ git push 推送到远程仓库
 
 添加远程仓库命令格式：git remote add 简称 远程仓库地址
 
-<img src=".assets/Git笔记/media/image31.png" style="width:5.75in;height:1.02083in" />
+<img src="assets/Git笔记/media/image31.png" style="width:5.75in;height:1.02083in" />
 
 注意：一个本地仓库可以关联多个远程仓库
 
@@ -378,21 +378,21 @@ git push 推送到远程仓库
 
 克隆仓库的命令格式： git clone 远程仓库地址
 
-<img src=".assets/Git笔记/media/image32.png" style="width:5.75in;height:1.21875in" />
+<img src="assets/Git笔记/media/image32.png" style="width:5.75in;height:1.21875in" />
 
 **4.6.4 git push**
 
 将本地仓库内容推送到远程仓库，命令格式：git push 远程仓库简称 分支名称
 
-<img src=".assets/Git笔记/media/image33.png" style="width:5.75in;height:1.59375in" />
+<img src="assets/Git笔记/media/image33.png" style="width:5.75in;height:1.59375in" />
 
 在使用git push命令将本地文件推送至码云远程仓库时，如果是第一次操作，需要进行身份认证，认证通过才可以推送，如下：
 
-<img src=".assets/Git笔记/media/image34.png" style="width:5.75in;height:2.125in" />
+<img src="assets/Git笔记/media/image34.png" style="width:5.75in;height:2.125in" />
 
 注意：上面的用户名和密码对应的就是我们在码云上注册的用户名和密码，认证通过后会将用户名和密码保存到windows系统中（如下图），后续再推送则无需重复输入用户名和密码。
 
-<img src=".assets/Git笔记/media/image35.png" style="width:5.75in;height:1.4375in" />
+<img src="assets/Git笔记/media/image35.png" style="width:5.75in;height:1.4375in" />
 
 推送完成后可以到远程仓库中查看文件的变化。
 
@@ -408,7 +408,7 @@ git push 推送到远程仓库
 
 命令格式：git pull 远程仓库简称 分支名称
 
-<img src=".assets/Git笔记/media/image36.png" style="width:5.75in;height:2.13542in" />
+<img src="assets/Git笔记/media/image36.png" style="width:5.75in;height:2.13542in" />
 
 **注意**：如果当前本地仓库不是从远程仓库克隆，而是本地创建的仓库，并且仓库中存在文件，此时再从远程仓库拉取文件的时候会报错（fatal: refusing to merge unrelated histories ）
 
@@ -422,7 +422,7 @@ git push 推送到远程仓库
 
 通过git init 命令创建本地仓库时默认会创建一个master分支。
 
-<img src=".assets/Git笔记/media/image37.png" style="width:5.75in;height:0.82292in" />
+<img src="assets/Git笔记/media/image37.png" style="width:5.75in;height:0.82292in" />
 
 本节我们会学习关于分支的相关命令，具体命令如下：
 
@@ -446,19 +446,19 @@ git branch -r 列出所有远程分支
 
 git branch -a 列出所有本地分支和远程分支
 
-<img src=".assets/Git笔记/media/image38.png" style="width:5.75in;height:2.15625in" />
+<img src="assets/Git笔记/media/image38.png" style="width:5.75in;height:2.15625in" />
 
 **4.7.2 创建分支**
 
 创建分支命令格式：git branch 分支名称
 
-<img src=".assets/Git笔记/media/image39.png" style="width:5.75in;height:1.63542in" />
+<img src="assets/Git笔记/media/image39.png" style="width:5.75in;height:1.63542in" />
 
 **4.7.3 切换分支**
 
 一个仓库中可以有多个分支，切换分支命令格式：git checkout 分支名称
 
-<img src=".assets/Git笔记/media/image40.png" style="width:5.75in;height:0.89583in" />
+<img src="assets/Git笔记/media/image40.png" style="width:5.75in;height:0.89583in" />
 
 注意：在命令行中会显示出当前所在分支，如上图所示。
 
@@ -466,17 +466,17 @@ git branch -a 列出所有本地分支和远程分支
 
 推送至远程仓库分支命令格式：git push 远程仓库简称 分支命令
 
-<img src=".assets/Git笔记/media/image41.png" style="width:5.75in;height:1.4375in" />
+<img src="assets/Git笔记/media/image41.png" style="width:5.75in;height:1.4375in" />
 
 推送完成后可以查看远程仓库：
 
-<img src=".assets/Git笔记/media/image42.png" style="width:5.75in;height:1.6875in" />
+<img src="assets/Git笔记/media/image42.png" style="width:5.75in;height:1.6875in" />
 
 **4.7.5 合并分支**
 
 合并分支就是将两个分支的文件进行合并处理，命令格式：git merge 分支命令
 
-<img src=".assets/Git笔记/media/image43.png" style="width:5.75in;height:0.96875in" />
+<img src="assets/Git笔记/media/image43.png" style="width:5.75in;height:0.96875in" />
 
 注意：分支合并时需注意合并的方向，如上图所示，在Master分支执行操作，结果就是将b3分支合并到Master分支。
 
@@ -486,7 +486,7 @@ Git 中的标签，指的是某个分支某个特定时间点的状态。通过�
 
 比较有代表性的是人们会使用这个功能来标记发布结点（v1.0 、v1.2等）。下面是mybatis-plus的标签：
 
-<img src=".assets/Git笔记/media/image44.png" style="width:5.75in;height:2.3125in" />
+<img src="assets/Git笔记/media/image44.png" style="width:5.75in;height:2.3125in" />
 
 在本节中，我们将学习如下和标签相关的命令：
 
@@ -502,19 +502,19 @@ git checkout -b \[branch\] \[name\] 检出标签
 
 查看标签命令：git tag
 
-<img src=".assets/Git笔记/media/image45.png" style="width:5.75in;height:0.39583in" />
+<img src="assets/Git笔记/media/image45.png" style="width:5.75in;height:0.39583in" />
 
 **4.8.2 创建标签**
 
 创建标签命令：git tag 标签名
 
-<img src=".assets/Git笔记/media/image46.png" style="width:5.75in;height:1.69792in" />
+<img src="assets/Git笔记/media/image46.png" style="width:5.75in;height:1.69792in" />
 
 **4.8.3 将标签推送至远程仓库**
 
 将标签推送至远程仓库命令：git push 远程仓库简称 标签名
 
-<img src=".assets/Git笔记/media/image47.png" style="width:5.75in;height:1.3125in" />
+<img src="assets/Git笔记/media/image47.png" style="width:5.75in;height:1.3125in" />
 
 推送完成后可以在远程仓库中查看标签。
 
@@ -522,7 +522,7 @@ git checkout -b \[branch\] \[name\] 检出标签
 
 检出标签时需要新建一个分支来指向某个标签，检出标签的命令格式：git checkout -b 分支名 标签名
 
-<img src=".assets/Git笔记/media/image48.png" style="width:5.75in;height:0.9375in" />
+<img src="assets/Git笔记/media/image48.png" style="width:5.75in;height:0.9375in" />
 
 **5. 在IDEA中使用Git**
 
@@ -534,7 +534,7 @@ git checkout -b \[branch\] \[name\] 检出标签
 
 Git安装目录：
 
-<img src=".assets/Git笔记/media/image49.png" style="width:5.75in;height:1.375in" />
+<img src="assets/Git笔记/media/image49.png" style="width:5.75in;height:1.375in" />
 
 解释说明：
 
@@ -542,7 +542,7 @@ Git安装目录：
 
 IDEA中的配置：
 
-<img src=".assets/Git笔记/media/image50.png" style="width:5.75in;height:3.27083in" />
+<img src="assets/Git笔记/media/image50.png" style="width:5.75in;height:3.27083in" />
 
 说明：如果Git安装在默认目录中（C:\Program Files\Git），则IDEA中无需再手动配置，直接就可以使用。
 
@@ -560,19 +560,19 @@ IDEA中的配置：
 
 1）依次选择菜单【VCS】---【Import into Version Control】---【Create Git Repository】
 
-<img src=".assets/Git笔记/media/image51.png" style="width:5.75in;height:1.875in" />
+<img src="assets/Git笔记/media/image51.png" style="width:5.75in;height:1.875in" />
 
 2）在弹出的【Create Git Repository】对话框中选择当前项目根目录，点击【OK】按钮：
 
-<img src=".assets/Git笔记/media/image52.png" style="width:5.75in;height:3.29167in" />
+<img src="assets/Git笔记/media/image52.png" style="width:5.75in;height:3.29167in" />
 
 操作完成后可以看到当前项目根目录下出现了.git隐藏目录：
 
-<img src=".assets/Git笔记/media/image53.png" style="width:5.75in;height:1.45833in" />
+<img src="assets/Git笔记/media/image53.png" style="width:5.75in;height:1.45833in" />
 
 操作完成后可以在IDEA的工具栏中看到Git的相关操作图标：
 
-<img src=".assets/Git笔记/media/image54.png" style="width:3.03125in;height:0.45833in" />
+<img src="assets/Git笔记/media/image54.png" style="width:3.03125in;height:0.45833in" />
 
 **5.2.2 从远程仓库克隆**
 
@@ -580,21 +580,21 @@ IDEA中的配置：
 
 1）在IDEA开始窗口中点击【Get from Version Control】
 
-<img src=".assets/Git笔记/media/image55.png" style="width:5.75in;height:2.67708in" />
+<img src="assets/Git笔记/media/image55.png" style="width:5.75in;height:2.67708in" />
 
 2）在弹出的【Get from Version Control】窗口中输入远程仓库的URL地址和对应的本地仓库存放目录，点击【Clone】按钮进行仓库克隆操作
 
-<img src=".assets/Git笔记/media/image56.png" style="width:5.75in;height:2.64583in" />
+<img src="assets/Git笔记/media/image56.png" style="width:5.75in;height:2.64583in" />
 
 **5.3 Git忽略文件**
 
 在Git工作区中有一个特殊的文件 .gitignore，通过此文件可以指定工作区中的哪些文件不需要Git管理。我们在码云上创建Git远程仓库时可以指定生成此文件，如下：
 
-<img src=".assets/Git笔记/media/image57.png" style="width:5.75in;height:2.64583in" />
+<img src="assets/Git笔记/media/image57.png" style="width:5.75in;height:2.64583in" />
 
 创建完成后效果如下：
 
-<img src=".assets/Git笔记/media/image58.png" style="width:5.75in;height:2.61458in" />
+<img src="assets/Git笔记/media/image58.png" style="width:5.75in;height:2.61458in" />
 
 解释说明：
 
@@ -646,7 +646,7 @@ offline_user.md<br />
 
 当在Git工作区新增文件或者对已有文件修改后，就需要将文件的修改加入暂存区，具体操作如下：
 
-<img src=".assets/Git笔记/media/image59.png" style="width:5.75in;height:4.46875in" />
+<img src="assets/Git笔记/media/image59.png" style="width:5.75in;height:4.46875in" />
 
 **5.4.2 将暂存区文件提交到版本库**
 
@@ -654,19 +654,19 @@ offline_user.md<br />
 
 1）提交一个文件：
 
-<img src=".assets/Git笔记/media/image60.png" style="width:5.75in;height:5.19792in" />
+<img src="assets/Git笔记/media/image60.png" style="width:5.75in;height:5.19792in" />
 
 可以看到，如果选中一个文件提交，则菜单名称为【Commit File...】
 
 2）提交多个文件：
 
-<img src=".assets/Git笔记/media/image61.png" style="width:5.75in;height:4.44792in" />
+<img src="assets/Git笔记/media/image61.png" style="width:5.75in;height:4.44792in" />
 
 可以看到，如果提交多个文件，则菜单名称为【Commit Directory...】
 
 由于提交操作属于高频操作，所以为了进一步方便操作，在IDEA的工具栏中提供了提交操作的快捷按钮：
 
-<img src=".assets/Git笔记/media/image62.png" style="width:2.125in;height:0.35417in" />
+<img src="assets/Git笔记/media/image62.png" style="width:2.125in;height:0.35417in" />
 
 **5.4.3 查看日志**
 
@@ -674,15 +674,15 @@ offline_user.md<br />
 
 1）查看整个项目的提交日志：
 
-<img src=".assets/Git笔记/media/image63.png" style="width:5.75in;height:4.6875in" />
+<img src="assets/Git笔记/media/image63.png" style="width:5.75in;height:4.6875in" />
 
-<img src=".assets/Git笔记/media/image64.png" style="width:5.75in;height:2.85417in" />
+<img src="assets/Git笔记/media/image64.png" style="width:5.75in;height:2.85417in" />
 
 2）查看某个文件的提交日志
 
-<img src=".assets/Git笔记/media/image65.png" style="width:5.75in;height:4.64583in" />
+<img src="assets/Git笔记/media/image65.png" style="width:5.75in;height:4.64583in" />
 
-<img src=".assets/Git笔记/media/image66.png" style="width:5.75in;height:3.04167in" />
+<img src="assets/Git笔记/media/image66.png" style="width:5.75in;height:3.04167in" />
 
 **5.5 远程仓库操作**
 
@@ -700,31 +700,31 @@ offline_user.md<br />
 
 操作过程如下：
 
-<img src=".assets/Git笔记/media/image67.png" style="width:5.75in;height:3.95833in" />
+<img src="assets/Git笔记/media/image67.png" style="width:5.75in;height:3.95833in" />
 
 在弹出的【Git Remotes】窗口中可以看到配置的远程仓库：
 
-<img src=".assets/Git笔记/media/image68.png" style="width:5.75in;height:1.38542in" />
+<img src="assets/Git笔记/media/image68.png" style="width:5.75in;height:1.38542in" />
 
 **5.5.2 添加远程仓库**
 
 一个本地仓库可以配置多个远程仓库，在【Git Remotes】窗口中点击【+】来添加一个新的远程仓库：
 
-<img src=".assets/Git笔记/media/image69.png" style="width:5.75in;height:1.54167in" />
+<img src="assets/Git笔记/media/image69.png" style="width:5.75in;height:1.54167in" />
 
 **5.5.3 推送至远程仓库**
 
 可以通过如下操作将本地仓库文件推送至远程仓库：
 
-<img src=".assets/Git笔记/media/image70.png" style="width:5.75in;height:4.11458in" />
+<img src="assets/Git笔记/media/image70.png" style="width:5.75in;height:4.11458in" />
 
 在弹出的【Push Commits】窗口中可以看到本次推送的文件，点击【Push】按钮即可推送至远程仓库：
 
-<img src=".assets/Git笔记/media/image71.png" style="width:5.75in;height:3.78125in" />
+<img src="assets/Git笔记/media/image71.png" style="width:5.75in;height:3.78125in" />
 
 由于推送至远程仓库操作属于高频操作，所以可以通过IDEA工具栏中的提交快捷按钮同时完成提交和推送：
 
-<img src=".assets/Git笔记/media/image72.png" style="width:5.75in;height:4.66667in" />
+<img src="assets/Git笔记/media/image72.png" style="width:5.75in;height:4.66667in" />
 
 点击【Commit and Push...】按钮同时完成提交和推送操作
 
@@ -732,15 +732,15 @@ offline_user.md<br />
 
 可以通过如下操作从远程仓库拉取：
 
-<img src=".assets/Git笔记/media/image73.png" style="width:5.75in;height:4.63542in" />
+<img src="assets/Git笔记/media/image73.png" style="width:5.75in;height:4.63542in" />
 
 由于从远程仓库拉取文件属于高频操作，所以在IDEA的工具栏中提供了对应的快捷按钮：
 
-<img src=".assets/Git笔记/media/image74.png" style="width:2.10417in;height:0.33333in" />
+<img src="assets/Git笔记/media/image74.png" style="width:2.10417in;height:0.33333in" />
 
 在弹出的【Update Project】窗口中点击【OK】：
 
-<img src=".assets/Git笔记/media/image75.png" style="width:5.75in;height:1.21875in" />
+<img src="assets/Git笔记/media/image75.png" style="width:5.75in;height:1.21875in" />
 
 **5.6 分支操作**
 
@@ -760,25 +760,25 @@ offline_user.md<br />
 
 可以通过如下操作查看分支：
 
-<img src=".assets/Git笔记/media/image76.png" style="width:5.75in;height:4.36458in" />
+<img src="assets/Git笔记/media/image76.png" style="width:5.75in;height:4.36458in" />
 
 在弹出的窗口中可以看到本地分支和远程分支：
 
-<img src=".assets/Git笔记/media/image77.png" style="width:5.75in;height:1.73958in" />
+<img src="assets/Git笔记/media/image77.png" style="width:5.75in;height:1.73958in" />
 
 由于分支操作属于高频操作，所以在IDEA的状态栏中提供了分支操作的快捷按钮：
 
-<img src=".assets/Git笔记/media/image78.png" style="width:5.75in;height:2.64583in" />
+<img src="assets/Git笔记/media/image78.png" style="width:5.75in;height:2.64583in" />
 
 点击【master】快捷按钮即可弹出【Git Branches】分支窗口：
 
-<img src=".assets/Git笔记/media/image79.png" style="width:5.75in;height:3.16667in" />
+<img src="assets/Git笔记/media/image79.png" style="width:5.75in;height:3.16667in" />
 
 **5.6.2 创建分支**
 
 在【Git Branches】分支窗口中点击【New Branch】，弹出如下窗口：
 
-<img src=".assets/Git笔记/media/image80.png" style="width:5.75in;height:1.58333in" />
+<img src="assets/Git笔记/media/image80.png" style="width:5.75in;height:1.58333in" />
 
 在弹出的【Create New Branch】窗口中输入新分支的名称，点击【Create】按钮完成分支创建
 
@@ -786,16 +786,16 @@ offline_user.md<br />
 
 通过如下操作可以切换分支：
 
-<img src=".assets/Git笔记/media/image81.png" style="width:5.75in;height:2.29167in" />
+<img src="assets/Git笔记/media/image81.png" style="width:5.75in;height:2.29167in" />
 
 **5.6.4 将分支推送到远程仓库**
 
 通过如下操作可以将分支推送到远程仓库：
 
-<img src=".assets/Git笔记/media/image82.png" style="width:5.75in;height:1.94792in" />
+<img src="assets/Git笔记/media/image82.png" style="width:5.75in;height:1.94792in" />
 
 **5.6.5 合并分支**
 
 通过下面操作可以进行分支的合并：
 
-<img src=".assets/Git笔记/media/image83.png" style="width:5.75in;height:2.0625in" />
+<img src="assets/Git笔记/media/image83.png" style="width:5.75in;height:2.0625in" />

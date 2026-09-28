@@ -225,7 +225,7 @@ docker官方镜像仓库网址：
 
 **\[该类型的内容暂不支持下载\]**
 
-<img src=".assets/Docker笔记/media/image1.png" style="width:5.75in;height:1.85417in" />
+<img src="assets/Docker笔记/media/image1.png" style="width:5.75in;height:1.85417in" />
 
 <table>
 <colgroup>
@@ -972,7 +972,7 @@ Dockerfile 是一个文本文件，包含一系列构建指令，用于**自动�
 
 例如，从零开始部署一个Java应用，分为 准备Linux服务（如CentOS）、安装并配置JDK、上传jar包、运行jar包 四个步骤，那么打包镜像就是 准备Linux运行环境、安装并配置JDK、拷贝jar包、配置启动脚本 四个操作，每一次操作就是生产一些文件，即镜像就是文件的集合。但是，镜像文件不是随意堆放的，而是按照操作步骤分层叠加而成，每一层形成的文件都会单独打包并标记一个唯一id，称为**Layer**（**层**），如果构建时用到的某些层其他人已经制作过，就可以直接拷贝使用这些层，而不用重复制作。
 
-<img src=".assets/Docker笔记/media/image2.png" style="width:5.75in;height:3.14583in" />
+<img src="assets/Docker笔记/media/image2.png" style="width:5.75in;height:3.14583in" />
 
 由于制作镜像的过程中，需要逐层处理和打包，比较复杂，所以Docker就提供了自动打包镜像的功能。我们只需要将打包的过程，每一层要做的事情用固定的语法写下来，交给Docker去执行即可。这种记录镜像结构的文件就称为**Dockerfile**。
 
@@ -1878,7 +1878,7 @@ hm-service：业务模块
 
 执行package生命周期进行项目打包，结果如下：
 
-<img src=".assets/Docker笔记/media/image3.png" style="width:5.75in;height:3.47917in" />
+<img src="assets/Docker笔记/media/image3.png" style="width:5.75in;height:3.47917in" />
 
 将hm-service目录下的Dockerfile和hm-service/target目录下的hm-service.jar一起上传到虚拟机的root目录，其中Dockerfile文件内容如下：
 
@@ -1976,7 +1976,7 @@ nginx</td>
 
 测试，通过浏览器访问http://你的虚拟机ip:18080，最终看到如下页面：
 
-<img src=".assets/Docker笔记/media/image4.png" style="width:5.75in;height:2.75in" />
+<img src="assets/Docker笔记/media/image4.png" style="width:5.75in;height:2.75in" />
 
 **2.Docker Compose**
 

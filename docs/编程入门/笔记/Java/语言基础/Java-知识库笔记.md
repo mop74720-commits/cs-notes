@@ -102,11 +102,11 @@ java + 文件名（运行编译之后的class文件）
 
 ①**JAVA_HOME**：告诉操作系统JDK安装在了哪个位置（未来其他技术要通过这个找JDK）
 
-<img src=".assets/Java-知识库笔记/media/image1.png" style="width:5.75in;height:0.26042in" />
+<img src="assets/Java-知识库笔记/media/image1.png" style="width:5.75in;height:0.26042in" />
 
 ②**Path**：告诉操作系统JDK提供的javac(编译)、java(执行)命令安装到了哪个位置
 
-<img src=".assets/Java-知识库笔记/media/image2.png" style="width:5.75in;height:1.03125in" />
+<img src="assets/Java-知识库笔记/media/image2.png" style="width:5.75in;height:1.03125in" />
 
 **5.Java语言的发展**
 
@@ -136,7 +136,7 @@ JavaEE：用于Web方向的网站开发。（主要从事后台服务器的开�
 
 虚拟机会把Java语言翻译成操作系统能看得懂的语言。
 
-<img src=".assets/Java-知识库笔记/media/image3.png" style="width:5.75in;height:1.94792in" />
+<img src="assets/Java-知识库笔记/media/image3.png" style="width:5.75in;height:1.94792in" />
 
 **二、Java基础语法**
 
@@ -1739,13 +1739,13 @@ p.sendMessage(); //发短信<br />
 
 成员变量使用过程
 
-<img src=".assets/Java-知识库笔记/media/image4.png" style="width:5.75in;height:2.22917in" />
+<img src="assets/Java-知识库笔记/media/image4.png" style="width:5.75in;height:2.22917in" />
 
 对象存放在堆内存当中（本身的值就是所占空间的地址值），成员变量被放在堆中，通过对象名.可以在内存中找到变量。
 
 成员方法调用过程
 
-<img src=".assets/Java-知识库笔记/media/image5.png" style="width:5.75in;height:2.5625in" />
+<img src="assets/Java-知识库笔记/media/image5.png" style="width:5.75in;height:2.5625in" />
 
 方法运行时进栈，运行完出栈。
 
@@ -1753,13 +1753,13 @@ p.sendMessage(); //发短信<br />
 
 成员变量使用过程
 
-<img src=".assets/Java-知识库笔记/media/image6.png" style="width:5.75in;height:2.33333in" />
+<img src="assets/Java-知识库笔记/media/image6.png" style="width:5.75in;height:2.33333in" />
 
 每一个对象都有一个单独的堆内存空间，成员变量存储在各自的内存区域中。
 
 成员方法调用过程
 
-<img src=".assets/Java-知识库笔记/media/image7.png" style="width:5.75in;height:2.33333in" />
+<img src="assets/Java-知识库笔记/media/image7.png" style="width:5.75in;height:2.33333in" />
 
 多个对象共用一套成员方法，运行时进栈，运行完出栈。
 
@@ -2179,7 +2179,7 @@ student.eat("汉堡包"); //张三正在吃汉堡包<br />
 
 简单理解，就是父类有的子类也有，只要继承这个父类就可以使这个类具有父类的东西。
 
-<img src=".assets/Java-知识库笔记/media/image8.png" style="width:5.75in;height:2.08333in" />
+<img src="assets/Java-知识库笔记/media/image8.png" style="width:5.75in;height:2.08333in" />
 
 **继承的好处**：
 
@@ -2450,7 +2450,7 @@ System.out.println("子类有参");<br />
 
 **super(...)图解**：
 
-<img src=".assets/Java-知识库笔记/media/image9.png" style="width:5.75in;height:1.91667in" />
+<img src="assets/Java-知识库笔记/media/image9.png" style="width:5.75in;height:1.91667in" />
 
 **this(...)的使用**：
 
@@ -2979,7 +2979,7 @@ System.out.println(avg2);//3665.6666666666665<br />
 
 建包操作如下：
 
-<img src=".assets/Java-知识库笔记/media/image10.png" style="width:5.75in;height:2.72917in" />
+<img src="assets/Java-知识库笔记/media/image10.png" style="width:5.75in;height:2.72917in" />
 
 **包名的命名规范**：
 
@@ -4049,7 +4049,7 @@ System.out.println(o.getInstance());<br />
 
 创建内部类对象时，对象中有一个隐含的外部类名.this记录外部类对象的地址值
 
-<img src=".assets/Java-知识库笔记/media/image11.png" style="width:5.75in;height:1.875in" />
+<img src="assets/Java-知识库笔记/media/image11.png" style="width:5.75in;height:1.875in" />
 
 <table>
 <colgroup>
@@ -4464,13 +4464,13 @@ toString方法的作用：以良好的格式，更方便的展示对象中的属
 
 Object类默认的是浅克隆
 
-<img src=".assets/Java-知识库笔记/media/image12.png" style="width:5.75in;height:2.33333in" />
+<img src="assets/Java-知识库笔记/media/image12.png" style="width:5.75in;height:2.33333in" />
 
 **深克隆**
 
 基本数据类型拷贝过来，字符串复用，引用数据类型会重新创建新的
 
-<img src=".assets/Java-知识库笔记/media/image13.png" style="width:5.75in;height:2.35417in" />
+<img src="assets/Java-知识库笔记/media/image13.png" style="width:5.75in;height:2.35417in" />
 
 <table>
 <colgroup>
@@ -4668,7 +4668,7 @@ public int intValue() //转为int类型整数，超出范围数据有误</td>
 
 对于计算机而言，其实是没有数据类型的概念的，都是0101010101，数据类型是编程语言自己规定的，所以在实际存储的时候，先把具体的数字变成二进制，**每32个bit为一组**，存储在数组中。
 
-<img src=".assets/Java-知识库笔记/media/image14.png" style="width:5.75in;height:2.625in" />
+<img src="assets/Java-知识库笔记/media/image14.png" style="width:5.75in;height:2.625in" />
 
 理论上，BigInteger能表示的最大数字为：42亿的21亿次方。但是这个数字太大了，很难达到，所以任何BigInteger没有上限。
 
@@ -4678,7 +4678,7 @@ BigDecimal类位于java.math包下，需要导包使用，可以用来提高小�
 
 **7.1 构造方法**
 
-<img src=".assets/Java-知识库笔记/media/image15.png" style="width:5.75in;height:1.41667in" />
+<img src="assets/Java-知识库笔记/media/image15.png" style="width:5.75in;height:1.41667in" />
 
 <table>
 <colgroup>
@@ -4746,7 +4746,7 @@ System.out.println(b1.divide(b2 , 2 , RoundingMode.HALF_UP));</td>
 
 把数据看成字符串，遍历得到里面的每一个字符，把这些字符在ASCII码表上的值，都存储到数组中。
 
-<img src=".assets/Java-知识库笔记/media/image16.png" style="width:5.75in;height:1.34375in" />
+<img src="assets/Java-知识库笔记/media/image16.png" style="width:5.75in;height:1.34375in" />
 
 **8.Date类**
 
@@ -4841,7 +4841,7 @@ java.util.Calendar类表示一个“日历类”，可以进行日期运算。�
 
 Calendar底层会根据不同时区来获取不同的日历对象，把时间中的纪元、年、月、日、时、分、秒、星期等都放到一个数组中：
 
-<img src=".assets/Java-知识库笔记/media/image17.png" style="width:5.75in" />
+<img src="assets/Java-知识库笔记/media/image17.png" style="width:5.75in" />
 
 **field常用取值**：
 
@@ -6111,7 +6111,7 @@ return "Block{max = " + max + ", startIndex = " + startIndex + ", endIndex = " +
 
 **1.2.1 选择排序**
 
-<img src=".assets/Java-知识库笔记/media/image18.gif" style="width:5.75in;height:1.75in" />
+<img src="assets/Java-知识库笔记/media/image18.gif" style="width:5.75in;height:1.75in" />
 
 从0索引开始，跟后面的元素一一比较
 
@@ -6154,7 +6154,7 @@ arr[j] = temp;<br />
 
 **1.2.2 冒泡排序**
 
-<img src=".assets/Java-知识库笔记/media/image19.gif" style="width:5.75in;height:1.78125in" />
+<img src="assets/Java-知识库笔记/media/image19.gif" style="width:5.75in;height:1.78125in" />
 
 相邻的元素两两比较，大的放右边，小的放左边
 
@@ -6191,7 +6191,7 @@ arr[j + 1] = temp;<br />
 
 **1.2.3 插入排序**
 
-<img src=".assets/Java-知识库笔记/media/image20.gif" style="width:5.75in;height:3.57292in" />
+<img src="assets/Java-知识库笔记/media/image20.gif" style="width:5.75in;height:3.57292in" />
 
 将0索引的元素到N索引的元素看做是有序的，把N+1索引的元素到最后一个当成是无序的。
 
@@ -6235,7 +6235,7 @@ j--;<br />
 
 **1.2.4 快速排序**
 
-<img src=".assets/Java-知识库笔记/media/image21.gif" style="width:5.75in;height:1.78125in" />
+<img src="assets/Java-知识库笔记/media/image21.gif" style="width:5.75in;height:1.78125in" />
 
 从数列中挑出一个元素，一般都是左边第一个数字，称为 "基准数"
 
@@ -6356,7 +6356,7 @@ quickSort(arr,start + 1,j);<br />
 
 **二叉树结构图**：
 
-<img src=".assets/Java-知识库笔记/media/image22.png" style="width:5.75in;height:2.40625in" />
+<img src="assets/Java-知识库笔记/media/image22.png" style="width:5.75in;height:2.40625in" />
 
 **1.3.2 二叉查找树**
 
@@ -6372,7 +6372,7 @@ quickSort(arr,start + 1,j);<br />
 
 **二叉查找树结构图**：
 
-<img src=".assets/Java-知识库笔记/media/image23.png" style="width:5.75in;height:2.27083in" />
+<img src="assets/Java-知识库笔记/media/image23.png" style="width:5.75in;height:2.27083in" />
 
 **二叉查找树添加节点规则**：
 
@@ -6398,15 +6398,15 @@ quickSort(arr,start + 1,j);<br />
 
 左旋：就是将根节点的右侧往左拉，原先的右子节点变成新的父节点，并把多余的左子节点出让，给已经降级的根节点当右子节点
 
-<img src=".assets/Java-知识库笔记/media/image24.png" style="width:5.75in;height:2.78125in" />
+<img src="assets/Java-知识库笔记/media/image24.png" style="width:5.75in;height:2.78125in" />
 
 右旋：就是将根节点的左侧往右拉，左子节点变成了新的父节点，并把多余的右子节点出让，给已经降级根节点当左子节点
 
-<img src=".assets/Java-知识库笔记/media/image25.png" style="width:5.75in;height:2.96875in" />
+<img src="assets/Java-知识库笔记/media/image25.png" style="width:5.75in;height:2.96875in" />
 
 平衡二叉树和二叉查找树对比结构图
 
-<img src=".assets/Java-知识库笔记/media/image26.png" style="width:5.75in;height:1.72917in" />
+<img src="assets/Java-知识库笔记/media/image26.png" style="width:5.75in;height:1.72917in" />
 
 平衡二叉树旋转的四种情况：
 
@@ -6416,7 +6416,7 @@ quickSort(arr,start + 1,j);<br />
 
 如何旋转：直接对整体进行右旋即可
 
-> <img src=".assets/Java-知识库笔记/media/image27.png" style="width:5.75in;height:0.97917in" />
+> <img src="assets/Java-知识库笔记/media/image27.png" style="width:5.75in;height:0.97917in" />
 
 左右
 
@@ -6424,7 +6424,7 @@ quickSort(arr,start + 1,j);<br />
 
 如何旋转：先在左子树对应的节点位置进行左旋，在对整体进行右旋
 
-> <img src=".assets/Java-知识库笔记/media/image28.png" style="width:5.75in;height:1.11458in" />
+> <img src="assets/Java-知识库笔记/media/image28.png" style="width:5.75in;height:1.11458in" />
 
 右右
 
@@ -6432,7 +6432,7 @@ quickSort(arr,start + 1,j);<br />
 
 如何旋转：直接对整体进行左旋即可
 
-> <img src=".assets/Java-知识库笔记/media/image29.png" style="width:5.75in;height:1.03125in" />
+> <img src="assets/Java-知识库笔记/media/image29.png" style="width:5.75in;height:1.03125in" />
 
 右左
 
@@ -6440,7 +6440,7 @@ quickSort(arr,start + 1,j);<br />
 
 如何旋转：先在右子树对应的节点位置进行右旋，在对整体进行左旋
 
-> <img src=".assets/Java-知识库笔记/media/image30.png" style="width:5.75in;height:0.97917in" />
+> <img src="assets/Java-知识库笔记/media/image30.png" style="width:5.75in;height:0.97917in" />
 
 **1.3.4 红黑树**
 
@@ -6470,7 +6470,7 @@ quickSort(arr,start + 1,j);<br />
 
 **红黑树添加节点后如何保持红黑规则**：
 
-<img src=".assets/Java-知识库笔记/media/image31.png" style="width:5.75in;height:2.72917in" />
+<img src="assets/Java-知识库笔记/media/image31.png" style="width:5.75in;height:2.72917in" />
 
 **2.Arrays类**
 
@@ -6625,7 +6625,7 @@ Arrays.sort(arr, (Integer o1, Integer o2) -&gt; o1 - o2);</td>
 
 **集合只能存引用数据类型**，如果要存基本数据类型，需要存对应的包装类。
 
-<img src=".assets/Java-知识库笔记/media/image32.png" style="width:5.75in;height:1.60417in" />
+<img src="assets/Java-知识库笔记/media/image32.png" style="width:5.75in;height:1.60417in" />
 
 *建议先学ArrayList再学其他，因为所有东西都是基于ArrayList举例的。*
 
@@ -7263,11 +7263,11 @@ size这个变量有两层含义：
 
 **添加一个元素时的扩容**：
 
-<img src=".assets/Java-知识库笔记/media/image33.png" style="width:5.75in;height:2.48958in" />
+<img src="assets/Java-知识库笔记/media/image33.png" style="width:5.75in;height:2.48958in" />
 
 **添加多个元素时的扩容**：
 
-<img src=".assets/Java-知识库笔记/media/image34.png" style="width:5.75in;height:2.3125in" />
+<img src="assets/Java-知识库笔记/media/image34.png" style="width:5.75in;height:2.3125in" />
 
 **LinkedList源码分析**
 
@@ -7281,7 +7281,7 @@ size这个变量有两层含义：
 
 添加第二个元素时，底层创建一个结点对象，第一个结点会记录第二个结点的地址值，last会记录新结点的地址值
 
-<img src=".assets/Java-知识库笔记/media/image35.png" style="width:5.75in;height:2.46875in" />
+<img src="assets/Java-知识库笔记/media/image35.png" style="width:5.75in;height:2.46875in" />
 
 **迭代器源码分析**
 
@@ -7293,7 +7293,7 @@ boolean hasNext()：断当前指向的位置是否有元素
 
 E next() ：取当前指向的元素并移动指针
 
-<img src=".assets/Java-知识库笔记/media/image36.png" style="width:5.75in;height:2.28125in" />
+<img src="assets/Java-知识库笔记/media/image36.png" style="width:5.75in;height:2.28125in" />
 
 **2.3 Set集合**
 
@@ -7379,7 +7379,7 @@ int index = (数组长度 - 1) &amp; 哈希值；</td>
 
 新元素存入数组，老元素挂在新元素下面：数组 + 链表
 
-<img src=".assets/Java-知识库笔记/media/image37.png" style="width:5.75in;height:1.91667in" />
+<img src="assets/Java-知识库笔记/media/image37.png" style="width:5.75in;height:1.91667in" />
 
 **JDK8以后**
 
@@ -7389,7 +7389,7 @@ int index = (数组长度 - 1) &amp; 哈希值；</td>
 
 节点个数多于8个：数组 + 红黑树
 
-<img src=".assets/Java-知识库笔记/media/image38.png" style="width:5.75in;height:1.9375in" />
+<img src="assets/Java-知识库笔记/media/image38.png" style="width:5.75in;height:1.9375in" />
 
 *HashSet集合存储自定义类型元素，要想实现元素的唯一，要求必须重写hashCode方法和equals方法*
 
@@ -7407,7 +7407,7 @@ Set接口的实现类
 
 无索引：不能使用普通for循环遍历
 
-<img src=".assets/Java-知识库笔记/media/image39.png" style="width:5.75in;height:1.76042in" />
+<img src="assets/Java-知识库笔记/media/image39.png" style="width:5.75in;height:1.76042in" />
 
 **2.3.4 TreeSet集合**
 
@@ -7755,7 +7755,7 @@ HashMap跟HashSet底层原理是一样的，都是哈希表结构
 
 **3.2.2 HashMap源码分析**
 
-<img src=".assets/Java-知识库笔记/media/image40.png" style="width:5.75in;height:2.55208in" />
+<img src="assets/Java-知识库笔记/media/image40.png" style="width:5.75in;height:2.55208in" />
 
 <table>
 <colgroup>
@@ -9569,7 +9569,7 @@ Java中，万物皆对象，所以某个异常本质上也是一个对象。
 
 异常的根类是java.lang.Throwable，其下有两个子类：java.lang.Error与java.lang.Exception，平常所说的异常指java.lang.Exception。
 
-<img src=".assets/Java-知识库笔记/media/image41.png" style="width:5.75in;height:3.28125in" />
+<img src="assets/Java-知识库笔记/media/image41.png" style="width:5.75in;height:3.28125in" />
 
 **Throwable体系**
 
@@ -9597,7 +9597,7 @@ Java中，万物皆对象，所以某个异常本质上也是一个对象。
 
 打印异常信息，结束JVM的执行。
 
-<img src=".assets/Java-知识库笔记/media/image42.png" style="width:5.75in;height:0.3125in" />
+<img src="assets/Java-知识库笔记/media/image42.png" style="width:5.75in;height:0.3125in" />
 
 **2.2 捕获异常try…catch**
 
@@ -10104,7 +10104,7 @@ I/O操作主要是指使用java.io包下的内容，进行数据的输入、输�
 
 *能用操作系统自带记事本打开并且能读懂的文件是纯文本文件，如txt、md、..ml、lrc文件等。*
 
-<img src=".assets/Java-知识库笔记/media/image43.png" style="width:5.75in;height:2.84375in" />
+<img src="assets/Java-知识库笔记/media/image43.png" style="width:5.75in;height:2.84375in" />
 
 **2.2 字节流**
 
@@ -10257,7 +10257,7 @@ GBK完全兼容ASCII字符集
 
 **Unicode字符集**
 
-<img src=".assets/Java-知识库笔记/media/image44.png" style="width:5.75in;height:2.55208in" />
+<img src="assets/Java-知识库笔记/media/image44.png" style="width:5.75in;height:2.55208in" />
 
 最常用的编码规则是UTF-8编码规则：用1~4位字节保存
 
@@ -10425,7 +10425,7 @@ public void flush()：清空缓冲区并把缓冲区的数据输出到文件中�
 
 **2.5 IO异常处理**
 
-<img src=".assets/Java-知识库笔记/media/image45.png" style="width:5.75in;height:2.30208in" />
+<img src="assets/Java-知识库笔记/media/image45.png" style="width:5.75in;height:2.30208in" />
 
 **JDK7以前**
 
@@ -10611,7 +10611,7 @@ public BufferedOutputStream(OutputStream out)： 把基本流包装成缓冲流�
 
 **原理**：底层自带了长度为8192个字节的缓冲区提高性能，输入流和和输出流会分别创建一个缓冲区，两个缓冲区不一样。
 
-<img src=".assets/Java-知识库笔记/media/image46.png" style="width:5.75in;height:1.55208in" />
+<img src="assets/Java-知识库笔记/media/image46.png" style="width:5.75in;height:1.55208in" />
 
 **成员方法**
 
@@ -10716,7 +10716,7 @@ br.close();<br />
 
 如果两个文件的编码方式不一样，使用普通流进行读取写入交互时就会出现乱码问题，这时可以使用转换流，在读和写的时候分别进行编码调整。
 
-<img src=".assets/Java-知识库笔记/media/image47.png" style="width:5.75in;height:1.57292in" />
+<img src="assets/Java-知识库笔记/media/image47.png" style="width:5.75in;height:1.57292in" />
 
 **2.8.1 InputStreamReader类**
 
@@ -10893,7 +10893,7 @@ public final Object readObject ()：把序列化到本地文件中的对象读�
 
 *idea自动生成serialVersionUID：*
 
-<img src=".assets/Java-知识库笔记/media/image48.png" style="width:5.75in;height:4.65625in" />
+<img src="assets/Java-知识库笔记/media/image48.png" style="width:5.75in;height:4.65625in" />
 
 **2.9.4 案例：序列化集合**
 
@@ -11516,7 +11516,7 @@ System.out.println(s);<br />
 
 **3.线程的声明周期**
 
-<img src=".assets/Java-知识库笔记/media/image49.png" style="width:5.75in;height:1.97917in" />
+<img src="assets/Java-知识库笔记/media/image49.png" style="width:5.75in;height:1.97917in" />
 
 **4.数据安全问题**
 
@@ -11776,7 +11776,7 @@ c.start();<br />
 
 **5.2.2 阻塞队列实现**
 
-<img src=".assets/Java-知识库笔记/media/image50.png" style="width:5.75in;height:1in" />
+<img src="assets/Java-知识库笔记/media/image50.png" style="width:5.75in;height:1in" />
 
 常见BlockingQueue\<E\>实现类：
 
@@ -11883,7 +11883,7 @@ c.start();<br />
 
 结束状态（TERMINATED）：全部代码运行完毕
 
-<img src=".assets/Java-知识库笔记/media/image51.png" style="width:5.75in;height:2.90625in" />
+<img src="assets/Java-知识库笔记/media/image51.png" style="width:5.75in;height:2.90625in" />
 
 **7.线程池**
 
@@ -11955,7 +11955,7 @@ pool1.shutdown();<br />
 
 **7.3.1 四种执行任务情况**
 
-<img src=".assets/Java-知识库笔记/media/image52.png" style="width:5.75in;height:2.375in" />
+<img src="assets/Java-知识库笔记/media/image52.png" style="width:5.75in;height:2.375in" />
 
 提交任务时，如果线程池中有相应线程，就调用线程池中的线程
 
@@ -11987,7 +11987,7 @@ public ThreadPoolExecutor(int corePoolSize, int maximumPoolSize, long keepAliveT
 
 假如有一个饭店，只能有三个核心员工，三个临时员工，如果 顾客数量 \> 核心员工数量，就会排队，如果队列也满了，就会招聘临时员工，临时员工空闲一段时间会被开除。这个饭店和参数的关系如下：
 
-<img src=".assets/Java-知识库笔记/media/image53.png" style="width:5.75in;height:1.77083in" />
+<img src="assets/Java-知识库笔记/media/image53.png" style="width:5.75in;height:1.77083in" />
 
 例如：
 
@@ -12043,7 +12043,7 @@ I/O密集型运算：读取文件、访问操作系统占比多的程序，运�
 
 最大并行数：例如 4核8线程 的电脑就是8，可以通过Runtime.getRuntime().availableProcessors()获取。
 
-<img src=".assets/Java-知识库笔记/media/image54.png" style="width:5.75in;height:1.20833in" />
+<img src="assets/Java-知识库笔记/media/image54.png" style="width:5.75in;height:1.20833in" />
 
 **8.多线程综合案例**
 
@@ -12661,13 +12661,13 @@ ss.close();</td>
 
 客户端创建对象并连接服务器,此时是通过**三次握手协议**,保证跟服务器之间的连接
 
-<img src=".assets/Java-知识库笔记/media/image55.png" style="width:5.75in;height:1.45833in" />
+<img src="assets/Java-知识库笔记/media/image55.png" style="width:5.75in;height:1.45833in" />
 
 客户端在关流的时候,还多了一个往服务器写结束标记的动作
 
 最后一步断开连接,通过**四次挥手协议**保证连接终止
 
-<img src=".assets/Java-知识库笔记/media/image56.png" style="width:5.75in;height:1.69792in" />
+<img src="assets/Java-知识库笔记/media/image56.png" style="width:5.75in;height:1.69792in" />
 
 **5.实用案例**
 

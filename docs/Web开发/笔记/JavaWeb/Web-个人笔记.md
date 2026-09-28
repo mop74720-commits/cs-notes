@@ -81,7 +81,7 @@ HTML 标签可以拥有属性
 
 **结构**
 
-<img src=".assets/Web-个人笔记/media/image1.png" style="width:5.75in;height:2.04167in" />
+<img src="assets/Web-个人笔记/media/image1.png" style="width:5.75in;height:2.04167in" />
 
 文档结构介绍：
 
@@ -309,7 +309,7 @@ color-颜色<br />
 
 **效果如下** ：
 
-<img src=".assets/Web-个人笔记/media/image2.png" style="width:5.75in;height:3.69792in" />
+<img src="assets/Web-个人笔记/media/image2.png" style="width:5.75in;height:3.69792in" />
 
 **图片标签**
 
@@ -400,7 +400,7 @@ target-跳转的方式(_self当前页面、_blank新标签页)<br />
 
 效果图：
 
-<img src=".assets/Web-个人笔记/media/image3.png" style="width:5.75in;height:4.94792in" />
+<img src="assets/Web-个人笔记/media/image3.png" style="width:5.75in;height:4.94792in" />
 
 **表单标签**
 
@@ -534,7 +534,7 @@ autocomplete：自动补全，规定表单或输入字段是否应该自动完�
 
 使用方式：以name属性值作为键，value属性值作为值，构成键值对提交到服务器，多个键值对浏览器使用 & 进行分隔。
 
-<img src=".assets/Web-个人笔记/media/image4.png" style="width:5.75in;height:2.51042in" />
+<img src="assets/Web-个人笔记/media/image4.png" style="width:5.75in;height:2.51042in" />
 
 **type属性**
 
@@ -629,7 +629,7 @@ autocomplete：自动补全，规定表单或输入字段是否应该自动完�
 </tbody>
 </table>
 
-<img src=".assets/Web-个人笔记/media/image5.png" style="width:5.75in;height:5.04167in" />
+<img src="assets/Web-个人笔记/media/image5.png" style="width:5.75in;height:5.04167in" />
 
 **选择控件**
 
@@ -703,7 +703,7 @@ cols-列数
 </tbody>
 </table>
 
-<img src=".assets/Web-个人笔记/media/image6.png" style="width:5.48958in;height:4.625in" />
+<img src="assets/Web-个人笔记/media/image6.png" style="width:5.48958in;height:4.625in" />
 
 **分组控件**
 
@@ -741,7 +741,7 @@ td：table data，表示表中一个单元格
 
 th：table header，表格单元格的表头，通常字体样式加粗居中
 
-<img src=".assets/Web-个人笔记/media/image7.png" style="width:5.75in;height:3.26042in" />
+<img src="assets/Web-个人笔记/media/image7.png" style="width:5.75in;height:3.26042in" />
 
 代码展示：
 
@@ -829,7 +829,7 @@ th：table header，表格单元格的表头，通常字体样式加粗居中
 
 效果图：
 
-<img src=".assets/Web-个人笔记/media/image8.png" style="width:5.75in;height:1.64583in" />
+<img src="assets/Web-个人笔记/media/image8.png" style="width:5.75in;height:1.64583in" />
 
 **表格结构**
 
@@ -915,7 +915,7 @@ background: url("../img/bg.png");<br />
 </tbody>
 </table>
 
-<img src=".assets/Web-个人笔记/media/image9.png" style="width:5.75in;height:3.69792in" />
+<img src="assets/Web-个人笔记/media/image9.png" style="width:5.75in;height:3.69792in" />
 
 背景重复
 
@@ -944,7 +944,7 @@ background-repeat: repeat-x;/*水平重复*/<br />
 </tbody>
 </table>
 
-<img src=".assets/Web-个人笔记/media/image10.png" style="width:5.75in;height:1.77083in" />
+<img src="assets/Web-个人笔记/media/image10.png" style="width:5.75in;height:1.77083in" />
 
 **div布局**
 
@@ -974,7 +974,7 @@ div{ border: 1px solid blue;}<br />
 </tbody>
 </table>
 
-<img src=".assets/Web-个人笔记/media/image11.png" style="width:5.75in;height:1.125in" />
+<img src="assets/Web-个人笔记/media/image11.png" style="width:5.75in;height:1.125in" />
 
 class值 可以设置宽度，浮动，背景
 
@@ -1105,7 +1105,7 @@ background: blue;<br />
 </tbody>
 </table>
 
-<img src=".assets/Web-个人笔记/media/image12.png" style="width:5.75in;height:2.52083in" />
+<img src="assets/Web-个人笔记/media/image12.png" style="width:5.75in;height:2.52083in" />
 
 **语义化标签**
 
@@ -1119,7 +1119,7 @@ background: blue;<br />
 | **article** | 文章元素 | 表示独立内容区域 | 标签定义的内容本身必须是有意义且必须独立于文档的其他部分 |
 | **footer**  | 页脚元素 | 表示页面的底部   | 块元素，文档中可以定义多个                               |
 
-<img src=".assets/Web-个人笔记/media/image13.jpeg" style="width:5.75in;height:2.86458in" />
+<img src="assets/Web-个人笔记/media/image13.jpeg" style="width:5.75in;height:2.86458in" />
 
 **HTML拓展**
 
@@ -1184,7 +1184,7 @@ background: blue;<br />
 </tbody>
 </table>
 
-<img src=".assets/Web-个人笔记/media/image14.png" style="width:5.75in;height:2.27083in" />
+<img src="assets/Web-个人笔记/media/image14.png" style="width:5.75in;height:2.27083in" />
 
 **回到顶部**
 
@@ -1267,7 +1267,7 @@ CSS是一门基于规则的语言—你能定义用于你的网页中 **特定�
 </tbody>
 </table>
 
-<img src=".assets/Web-个人笔记/media/image15.png" style="width:5.75in;height:1.95833in" />
+<img src="assets/Web-个人笔记/media/image15.png" style="width:5.75in;height:1.95833in" />
 
 **实现**
 
@@ -1845,7 +1845,7 @@ height: 150px;<br />
 </tbody>
 </table>
 
-<img src=".assets/Web-个人笔记/media/image16.png" style="width:5.75in;height:3.0625in" />
+<img src="assets/Web-个人笔记/media/image16.png" style="width:5.75in;height:3.0625in" />
 
 **边框轮廓**
 
@@ -1879,7 +1879,7 @@ outline: dotted;<br />
 </tbody>
 </table>
 
-<img src=".assets/Web-个人笔记/media/image17.png" style="width:5.75in;height:1.1875in" />
+<img src="assets/Web-个人笔记/media/image17.png" style="width:5.75in;height:1.1875in" />
 
 **盒子模型**
 
@@ -1887,7 +1887,7 @@ outline: dotted;<br />
 
 盒子模型是通过设置 **元素框** 与 **元素内容** 和 **外部元素** 的边距，而进行布局的方式。
 
-<img src=".assets/Web-个人笔记/media/image18.png" style="width:5.75in;height:5.35417in" />
+<img src="assets/Web-个人笔记/media/image18.png" style="width:5.75in;height:5.35417in" />
 
 element : 元素。
 
@@ -2042,7 +2042,7 @@ margin: 30px;/* 外边距 */<br />
 </tbody>
 </table>
 
-<img src=".assets/Web-个人笔记/media/image19.png" style="width:5.75in;height:5.10417in" />
+<img src="assets/Web-个人笔记/media/image19.png" style="width:5.75in;height:5.10417in" />
 
 增加内边距会增加元素框的总尺寸
 
@@ -2071,7 +2071,7 @@ height: 100px;<br />
 </tbody>
 </table>
 
-<img src=".assets/Web-个人笔记/media/image20.png" style="width:5.75in;height:5.40625in" />
+<img src="assets/Web-个人笔记/media/image20.png" style="width:5.75in;height:5.40625in" />
 
 **文本样式**
 
@@ -2135,7 +2135,7 @@ vertical-align: 50%; /*居中对齐*/<br />
 </tbody>
 </table>
 
-<img src=".assets/Web-个人笔记/media/image21.png" style="width:5.75in;height:1.64583in" />
+<img src="assets/Web-个人笔记/media/image21.png" style="width:5.75in;height:1.64583in" />
 
 **文本显示**
 
@@ -2463,7 +2463,7 @@ HTTP 和 HTTPS 的区别：
 
 HTTPS 工作流程：服务器端的公钥和私钥，用来进行非对称加密，客户端生成的随机密钥，用来进行对称加密
 
-<img src=".assets/Web-个人笔记/media/image22.png" style="width:5.75in;height:3.38542in" />
+<img src="assets/Web-个人笔记/media/image22.png" style="width:5.75in;height:3.38542in" />
 
 客户端向服务器发起 HTTPS 请求，连接到服务器的 443 端口，请求携带了浏览器支持的加密算法和哈希算法，协商加密算法
 
@@ -2497,7 +2497,7 @@ HTTPS 工作流程：服务器端的公钥和私钥，用来进行非对称加�
 
 POST
 
-<img src=".assets/Web-个人笔记/media/image23.png" style="width:5.75in;height:1.77083in" />
+<img src="assets/Web-个人笔记/media/image23.png" style="width:5.75in;height:1.77083in" />
 
 GET
 
@@ -2614,7 +2614,7 @@ POST /myApp/success.html HTTP/1.1</td>
 
 响应部分图：
 
-<img src=".assets/Web-个人笔记/media/image24.png" style="width:5.1875in;height:2.65625in" />
+<img src="assets/Web-个人笔记/media/image24.png" style="width:5.1875in;height:2.65625in" />
 
 响应行
 
@@ -2626,7 +2626,7 @@ OK：状态码描述
 
 响应状态码：
 
-<img src=".assets/Web-个人笔记/media/image25.png" style="width:5.75in;height:1.64583in" />
+<img src="assets/Web-个人笔记/media/image25.png" style="width:5.75in;height:1.64583in" />
 
 |         |                                                    |
 |---------|----------------------------------------------------|
@@ -2728,11 +2728,11 @@ Web，在计算机领域指网络。像我们接触的 WWW ，它是由 3 个单
 
 C/S结构：客户端—服务器的方式。其中C代表Client，S代表服务器。C/S结构的系统设计图如下：
 
-<img src=".assets/Web-个人笔记/media/image26.jpeg" style="width:5.75in;height:4.4375in" />
+<img src="assets/Web-个人笔记/media/image26.jpeg" style="width:5.75in;height:4.4375in" />
 
 B/S结构是浏览器—服务器的方式。B代表Browser，S代表服务器。B/S结构的系统设计图如下：
 
-<img src=".assets/Web-个人笔记/media/image27.jpeg" style="width:5.75in;height:4.4375in" />
+<img src="assets/Web-个人笔记/media/image27.jpeg" style="width:5.75in;height:4.4375in" />
 
 两种结构的区别及优劣
 
@@ -2776,7 +2776,7 @@ B/S：总体拥有成本低、维护方便、 分布性强、开发简单，可�
 
 目录结构详解：
 
-<img src=".assets/Web-个人笔记/media/image28.png" style="width:5.75in;height:4.34375in" />
+<img src="assets/Web-个人笔记/media/image28.png" style="width:5.75in;height:4.34375in" />
 
 **Linux安装**
 
@@ -2817,13 +2817,13 @@ Address already in use : JVM_Bind：端口被占用，找到占用该端口的�
 
 进程很重要：修改自己的端口号。修改的是 Tomcat 目录下 \conf\server.xml 中的配置。
 
-<img src=".assets/Web-个人笔记/media/image29.png" style="width:4.72917in;height:0.64583in" />
+<img src="assets/Web-个人笔记/media/image29.png" style="width:4.72917in;height:0.64583in" />
 
 **IDEA集成**
 
 Run -\> Edit Configurations -\> Templates -\> Tomcat Server -\> Local
 
-<img src=".assets/Web-个人笔记/media/image30.png" style="width:5.75in;height:3.77083in" />
+<img src="assets/Web-个人笔记/media/image30.png" style="width:5.75in;height:3.77083in" />
 
 **发布应用**
 
@@ -2865,11 +2865,11 @@ autoDeploy ：是否自动发布
 
 新建工程
 
-<img src=".assets/Web-个人笔记/media/image31.png" style="width:5.75in;height:5.21875in" />
+<img src="assets/Web-个人笔记/media/image31.png" style="width:5.75in;height:5.21875in" />
 
 发布工程
 
-<img src=".assets/Web-个人笔记/media/image32.png" style="width:5.75in;height:3.32292in" />
+<img src="assets/Web-个人笔记/media/image32.png" style="width:5.75in;height:3.32292in" />
 
 Run
 
@@ -2901,7 +2901,7 @@ Run
 
 Tomcat 核心组件架构图如下所示：
 
-<img src=".assets/Web-个人笔记/media/image33.png" style="width:5.75in;height:0.86458in" />
+<img src="assets/Web-个人笔记/media/image33.png" style="width:5.75in;height:0.86458in" />
 
 组件介绍：
 
@@ -3087,7 +3087,7 @@ Socket 是使用 TCP/IP 或者 UDP 协议在服务器与客户端之间进行传
 
 Tomcat 和 Servlet 的关系：Servlet 的运行环境叫做 Web 容器或 Servlet 服务器， **Tomcat 是 Web 应用服务器，是一个 Servlet/JSP 容器** 。Tomcat 作为 Servlet 容器，负责处理客户请求，把请求传送给 Servlet，并将 Servlet 的响应传送回给客户。而 Servlet 是一种运行在支持 Java 语言的服务器上的组件，Servlet 用来扩展 Java Web 服务器功能，提供非常安全的、可移植的、易于使用的 CGI 替代品
 
-<img src=".assets/Web-个人笔记/media/image34.png" style="width:5.75in;height:2.61458in" />
+<img src="assets/Web-个人笔记/media/image34.png" style="width:5.75in;height:2.61458in" />
 
 **基本介绍**
 
@@ -3103,19 +3103,19 @@ Servlet是一个运行在web服务端的java小程序，用于接收和响应客
 
 支持配置相关功能
 
-<img src=".assets/Web-个人笔记/media/image35.png" style="width:5.75in;height:3.05208in" />
+<img src="assets/Web-个人笔记/media/image35.png" style="width:5.75in;height:3.05208in" />
 
 **执行流程**
 
 创建 Web 工程 → 编写普通类继承 Servlet 相关类 → 重写方法
 
-<img src=".assets/Web-个人笔记/media/image36.png" style="width:5.75in;height:2.60417in" />
+<img src="assets/Web-个人笔记/media/image36.png" style="width:5.75in;height:2.60417in" />
 
 Servlet执行过程分析：
 
 通过浏览器发送请求，请求首先到达Tomcat服务器，由服务器解析请求URL，然后在部署的应用列表中找到应用。然后找到web.xml配置文件，在web.xml中找到FirstServlet的配置（/），找到后执行service方法，最后由FirstServlet响应客户浏览器。整个过程如下图所示：
 
-<img src=".assets/Web-个人笔记/media/image37.jpeg" style="width:5.75in;height:2.17708in" />
+<img src="assets/Web-个人笔记/media/image37.jpeg" style="width:5.75in;height:2.17708in" />
 
 **实现方式**
 
@@ -3133,7 +3133,7 @@ Servlet执行过程分析：
 
 Servlet 3.0 中的异步处理指的是允许Servlet重新发起一条新线程去调用 耗时业务方法，这样就可以避免等待
 
-<img src=".assets/Web-个人笔记/media/image38.png" style="width:2.8125in;height:2.4375in" />
+<img src="assets/Web-个人笔记/media/image38.png" style="width:2.8125in;height:2.4375in" />
 
 **生命周期**
 
@@ -3500,7 +3500,7 @@ doGet(req,resp);<br />
 
 效果：
 
-<img src=".assets/Web-个人笔记/media/image39.png" style="width:5.75in;height:3in" />
+<img src="assets/Web-个人笔记/media/image39.png" style="width:5.75in;height:3in" />
 
 **ServletContext**
 
@@ -3522,7 +3522,7 @@ Servlet 规范中，共有4个域对象，ServletContext 是其中一个，web �
 
 数据共享：
 
-<img src=".assets/Web-个人笔记/media/image40.png" style="width:5.75in;height:2.84375in" />
+<img src="assets/Web-个人笔记/media/image40.png" style="width:5.75in;height:2.84375in" />
 
 获取ServletContext：
 
@@ -3737,7 +3737,7 @@ String displayName() default "";<br />
 
 Web服务器收到客户端的http请求，会针对每一次请求，分别创建一个用于代表请求的request对象、和代表响应的response对象。
 
-<img src=".assets/Web-个人笔记/media/image41.png" style="width:5.75in;height:1.80208in" />
+<img src="assets/Web-个人笔记/media/image41.png" style="width:5.75in;height:1.80208in" />
 
 **请求对象**
 
@@ -3753,7 +3753,7 @@ Request 作用：
 
 作为域对象存数据
 
-<img src=".assets/Web-个人笔记/media/image42.png" style="width:5.75in;height:3.0625in" />
+<img src="assets/Web-个人笔记/media/image42.png" style="width:5.75in;height:3.0625in" />
 
 **请求路径**
 
@@ -4243,7 +4243,7 @@ Response 的作用：
 
 请求重定向
 
-<img src=".assets/Web-个人笔记/media/image43.png" style="width:5.25in;height:4.22917in" />
+<img src="assets/Web-个人笔记/media/image43.png" style="width:5.25in;height:4.22917in" />
 
 **操作响应行**
 
@@ -4434,7 +4434,7 @@ doGet(req,resp);<br />
 </tbody>
 </table>
 
-<img src=".assets/Web-个人笔记/media/image44.png" style="width:5.75in;height:3.42708in" />
+<img src="assets/Web-个人笔记/media/image44.png" style="width:5.75in;height:3.42708in" />
 
 **定时刷新**
 
@@ -4630,7 +4630,7 @@ System.out.println(username);<br />
 
 请求转发浏览器地址栏不变
 
-<img src=".assets/Web-个人笔记/media/image45.png" style="width:5.75in;height:4.95833in" />
+<img src="assets/Web-个人笔记/media/image45.png" style="width:5.75in;height:4.95833in" />
 
 **路径问题**
 
@@ -4718,7 +4718,7 @@ Cookie：客户端会话管理技术，把要共享的数据保存到了客户�
 
 作用：保存客户浏览器访问网站的相关内容（需要客户端不禁用 Cookie），从而在每次访问同一个内容时，先从本地缓存获取，使资源共享，提高效率。
 
-<img src=".assets/Web-个人笔记/media/image46.png" style="width:5.75in;height:1.41667in" />
+<img src="assets/Web-个人笔记/media/image46.png" style="width:5.75in;height:1.41667in" />
 
 **基本使用**
 
@@ -4873,7 +4873,7 @@ HttpServletRequest类获取Session：
 | HttpSession getSession()              | 获取HttpSession对象                       |
 | HttpSession getSession(boolean creat) | 获取HttpSession对象，未获取到是否自动创建 |
 
-<img src=".assets/Web-个人笔记/media/image47.png" style="width:5.75in;height:6.4375in" />
+<img src="assets/Web-个人笔记/media/image47.png" style="width:5.75in;height:6.4375in" />
 
 **常用API**
 
@@ -5101,7 +5101,7 @@ JSP部署在服务器上，可以处理客户端发送的请求，并根据请�
 
 客户端提交请求——Tomcat服务器解析请求地址——找到JSP页面——Tomcat将JSP页面翻译成Servlet的java文件——将翻译好的.java文件编译成.class文件——返回到客户浏览器上
 
-<img src=".assets/Web-个人笔记/media/image48.png" style="width:5.75in;height:2.73958in" />
+<img src="assets/Web-个人笔记/media/image48.png" style="width:5.75in;height:2.73958in" />
 
 溯源，打开JSP翻译后的Java文件
 
@@ -5109,7 +5109,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase ， p
 
 在文件中找到了输出页面的代码，本质都是用out.write()输出的JSP语句
 
-<img src=".assets/Web-个人笔记/media/image49.png" style="width:5.75in;height:1.89583in" />
+<img src="assets/Web-个人笔记/media/image49.png" style="width:5.75in;height:1.89583in" />
 
 总结： JSP它是一个特殊的Servlet，主要是用于展示动态数据。它展示的方式是用流把数据输出出来，而我们在使用JSP时，涉及HTML的部分，都与HTML的用法一致，这部分称为jsp中的模板元素，决定了页面的外观。
 
@@ -5353,7 +5353,7 @@ PageContextd对象是一个局部变量，它的生命周期随着JSP的创建�
 
 PageContext方法如下，页面域操作的方法定义在了PageContext的父类JspContext中
 
-<img src=".assets/Web-个人笔记/media/image50.png" style="width:5.75in;height:4.05208in" />
+<img src="assets/Web-个人笔记/media/image50.png" style="width:5.75in;height:4.05208in" />
 
 **四大域对象**
 
@@ -5369,7 +5369,7 @@ PageContext方法如下，页面域操作的方法定义在了PageContext的父�
 
 M : model， 通常用于封装数据，封装的是数据模型 V : view，通常用于展示数据。动态展示用jsp页面，静态数据展示用html C : controller，通常用于处理请求和响应，一般指的是Servlet
 
-<img src=".assets/Web-个人笔记/media/image51.png" style="width:5.75in;height:2.15625in" />
+<img src="assets/Web-个人笔记/media/image51.png" style="width:5.75in;height:2.15625in" />
 
 **EL**
 
@@ -5536,7 +5536,7 @@ EL表达式中运算符：
 
 关系运算符：
 
-<img src=".assets/Web-个人笔记/media/image52.png" style="width:5.75in;height:1.57292in" />
+<img src="assets/Web-个人笔记/media/image52.png" style="width:5.75in;height:1.57292in" />
 
 逻辑运算符：
 
@@ -5588,7 +5588,7 @@ ${empty arr} &lt;br&gt;<br />
 </tbody>
 </table>
 
-<img src=".assets/Web-个人笔记/media/image53.png" style="width:3.65625in;height:1.4375in" />
+<img src="assets/Web-个人笔记/media/image53.png" style="width:3.65625in;height:1.4375in" />
 
 **四大域数据**
 

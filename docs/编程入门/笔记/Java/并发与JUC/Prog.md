@@ -549,7 +549,7 @@ LockSupport 类在 同步 → park-un 详解
 
 两阶段终止模式图示：
 
-<img src=".assets/Prog/media/image1.png" style="width:5.75in;height:4.16667in" />
+<img src="assets/Prog/media/image1.png" style="width:5.75in;height:4.16667in" />
 
 打断线程可能在任何时间，所以需要考虑在任何时刻被打断的处理方法：
 
@@ -737,7 +737,7 @@ Java 提供了线程优先级的机制，优先级会提示（hint）调度器�
 | Timed Waiting （限期等待） | 有几个方法有超时参数，调用将进入 Timed Waiting 状态，这一状态将一直保持到超时期满或者接收到唤醒通知。带有超时参数的常用方法有 Thread.sleep 、Object.wait       |
 | Teminated（结束）          | run 方法正常退出而死亡，或者因为没有捕获的异常终止了 run 方法而死亡                                                                                            |
 
-<img src=".assets/Prog/media/image2.png" style="width:5.75in;height:4.15625in" />
+<img src="assets/Prog/media/image2.png" style="width:5.75in;height:4.15625in" />
 
 NEW → RUNNABLE：当调用 t.start() 方法时，由 NEW → RUNNABLE
 
@@ -1048,11 +1048,11 @@ Monitor 被翻译为监视器或管程
 
 Mark Word 结构：最后两位是 **锁标志位**
 
-<img src=".assets/Prog/media/image3.png" style="width:5.75in;height:2.28125in" />
+<img src="assets/Prog/media/image3.png" style="width:5.75in;height:2.28125in" />
 
 64 位虚拟机 Mark Word：
 
-<img src=".assets/Prog/media/image4.png" style="width:5.75in;height:2.29167in" />
+<img src="assets/Prog/media/image4.png" style="width:5.75in;height:2.29167in" />
 
 工作流程：
 
@@ -1060,7 +1060,7 @@ Mark Word 结构：最后两位是 **锁标志位**
 
 当 Thread-2 执行 synchronized(obj) 就会将 Monitor 的所有者 Owner 置为 Thread-2，Monitor 中只能有一个 Owner， **obj 对象的 Mark Word 指向 Monitor** ，把 **对象原有的 MarkWord 存入线程栈中的锁记录** 中（轻量级锁部分详解）
 
-<img src=".assets/Prog/media/image5.png" style="width:5.75in;height:3.05208in" />
+<img src="assets/Prog/media/image5.png" style="width:5.75in;height:3.05208in" />
 
 在 Thread-2 上锁的过程，Thread-3、Thread-4、Thread-5 也执行 synchronized(obj)，就会进入 EntryList BLOCKED（双向链表）
 
@@ -1070,7 +1070,7 @@ Thread-2 执行完同步代码块的内容，根据 obj 对象头中 Monitor 地
 
 WaitSet 中的 Thread-0，是以前获得过锁，但条件不满足进入 WAITING 状态的线程（wait-notify 机制）
 
-<img src=".assets/Prog/media/image6.png" style="width:5.75in;height:2.35417in" />
+<img src="assets/Prog/media/image6.png" style="width:5.75in;height:2.35417in" />
 
 注意：
 
@@ -1175,7 +1175,7 @@ https://www.bilibili.com/video/BV1S1Evz5EYC?spm_id_from=333.788.videopod.section
 
 当有另外一个线程去尝试获取这个锁对象时，偏向状态就宣告结束，此时撤销偏向（Revoke Bias）后恢复到未锁定或轻量级锁状态
 
-<img src=".assets/Prog/media/image4.png" style="width:5.75in;height:2.29167in" />
+<img src="assets/Prog/media/image4.png" style="width:5.75in;height:2.29167in" />
 
 一个对象创建时：
 
@@ -1236,13 +1236,13 @@ synchronized( obj ) {<br />
 
 创建锁记录（Lock Record）对象，每个线程的 **栈帧** 都会包含一个锁记录的结构，存储锁定对象的 Mark Word
 
-<img src=".assets/Prog/media/image7.png" style="width:5.75in;height:2.63542in" />
+<img src="assets/Prog/media/image7.png" style="width:5.75in;height:2.63542in" />
 
 让锁记录中 Object reference 指向锁住的对象，并尝试用 CAS 替换 Object 的 Mark Word，将 Mark Word 的值存入锁记录
 
 如果 CAS 替换成功，对象头中存储了锁记录地址和状态 00（轻量级锁） ，表示由该线程给对象加锁
 
-<img src=".assets/Prog/media/image8.png" style="width:5.75in;height:2.73958in" />
+<img src="assets/Prog/media/image8.png" style="width:5.75in;height:2.73958in" />
 
 如果 CAS 失败，有两种情况：
 
@@ -1250,7 +1250,7 @@ synchronized( obj ) {<br />
 
 如果是线程自己执行了 synchronized 锁重入，就添加一条 Lock Record 作为重入的计数
 
-<img src=".assets/Prog/media/image9.png" style="width:5.75in;height:2.73958in" />
+<img src="assets/Prog/media/image9.png" style="width:5.75in;height:2.73958in" />
 
 当退出 synchronized 代码块（解锁时）
 
@@ -1268,11 +1268,11 @@ synchronized( obj ) {<br />
 
 当 Thread-1 进行轻量级加锁时，Thread-0 已经对该对象加了轻量级锁
 
-<img src=".assets/Prog/media/image10.png" style="width:5.75in;height:2.32292in" />
+<img src="assets/Prog/media/image10.png" style="width:5.75in;height:2.32292in" />
 
 Thread-1 加轻量级锁失败，进入锁膨胀流程：为 Object 对象申请 Monitor 锁， **通过 Object 对象头获取到持锁线程** ，将 Monitor 的 Owner 置为 Thread-0，将 Object 的对象头指向重量级锁地址，然后自己进入 Monitor 的 EntryList BLOCKED
 
-<img src=".assets/Prog/media/image11.png" style="width:5.75in;height:2.08333in" />
+<img src="assets/Prog/media/image11.png" style="width:5.75in;height:2.08333in" />
 
 当 Thread-0 退出同步块解锁时，使用 CAS 将 Mark Word 的值恢复给对象头失败，这时进入重量级解锁流程，即按照 Monitor 地址找到 Monitor 对象，设置 Owner 为 null，唤醒 EntryList 中 BLOCKED 线程
 
@@ -1296,11 +1296,11 @@ Thread-1 加轻量级锁失败，进入锁膨胀流程：为 Object 对象申请
 
 自旋成功的情况：
 
-<img src=".assets/Prog/media/image12.png" style="width:5.75in;height:3.4375in" />
+<img src="assets/Prog/media/image12.png" style="width:5.75in;height:3.4375in" />
 
 自旋失败的情况：
 
-<img src=".assets/Prog/media/image13.png" style="width:5.75in;height:3.22917in" />
+<img src="assets/Prog/media/image13.png" style="width:5.75in;height:3.22917in" />
 
 自旋锁说明：
 
@@ -1655,7 +1655,7 @@ BLOCKED 线程会在 Owner 线程释放锁时唤醒
 
 WAITING 线程会在 Owner 线程调用 notify 或 notifyAll 时唤醒，唤醒后并不意味者立刻获得锁， **需要进入 EntryList 重新竞争**
 
-<img src=".assets/Prog/media/image6.png" style="width:5.75in;height:2.35417in" />
+<img src="assets/Prog/media/image6.png" style="width:5.75in;height:2.35417in" />
 
 **代码优化**
 
@@ -1798,7 +1798,7 @@ wait 会释放锁资源进入等待队列， **park 不会释放锁资源** ，�
 
 唤醒 \_cond 条件变量中的 Thread_0，Thread_0 恢复运行，设置 \_counter 为 0
 
-<img src=".assets/Prog/media/image14.png" style="width:5.125in;height:2.91667in" />
+<img src="assets/Prog/media/image14.png" style="width:5.125in;height:2.91667in" />
 
 先 unpark：
 
@@ -1808,7 +1808,7 @@ wait 会释放锁资源进入等待队列， **park 不会释放锁资源** ，�
 
 检查 \_counter ，本情况为 1，这时线程无需挂起，继续运行，设置 \_counter 为 0
 
-<img src=".assets/Prog/media/image15.png" style="width:5.125in;height:2.64583in" />
+<img src="assets/Prog/media/image15.png" style="width:5.125in;height:2.64583in" />
 
 **安全分析**
 
@@ -1892,7 +1892,7 @@ Guarded Suspension，用在一个线程等待另一个线程的执行结果
 
 JDK 中，join 的实现、Future 的实现，采用的就是此模式
 
-<img src=".assets/Prog/media/image16.png" style="width:5.75in;height:2.09375in" />
+<img src="assets/Prog/media/image16.png" style="width:5.75in;height:2.09375in" />
 
 <table>
 <colgroup>
@@ -1969,7 +1969,7 @@ lock.notifyAll();<br />
 
 多任务版保护性暂停：
 
-<img src=".assets/Prog/media/image17.png" style="width:5.75in;height:2.36458in" />
+<img src="assets/Prog/media/image17.png" style="width:5.75in;height:2.36458in" />
 
 <table>
 <colgroup>
@@ -2236,7 +2236,7 @@ shareData.decrement();<br />
 
 JDK 中各种阻塞队列，采用的就是这种模式
 
-<img src=".assets/Prog/media/image18.png" style="width:5.75in;height:1.41667in" />
+<img src="assets/Prog/media/image18.png" style="width:5.75in;height:1.41667in" />
 
 <table>
 <colgroup>
@@ -2377,7 +2377,7 @@ JMM 作用：
 
 根据 JMM 的设计，系统存在一个主内存（Main Memory），Java 中所有变量都存储在主存中，对于所有线程都是共享的；每条线程都有自己的工作内存（Working Memory），工作内存中保存的是主存中某些 **变量的拷贝** ，线程对所有变量的操作都是先对变量进行拷贝，然后在工作内存中进行，不能直接操作主内存中的变量；线程之间无法相互直接访问，线程间的通信（传递）必须通过主内存来完成
 
-<img src=".assets/Prog/media/image19.png" style="width:4.40625in;height:3.92708in" />
+<img src="assets/Prog/media/image19.png" style="width:4.40625in;height:3.92708in" />
 
 主内存和工作内存：
 
@@ -2447,7 +2447,7 @@ Java 内存模型定义了 8 个操作来完成主内存和工作内存的交互
 
 非原子协定：没有被 volatile 修饰的 long、double 外，默认按照两次 32 位的操作
 
-<img src=".assets/Prog/media/image20.png" style="width:5.75in;height:1.72917in" />
+<img src="assets/Prog/media/image20.png" style="width:5.75in;height:1.72917in" />
 
 lock：作用于主内存，将一个变量标识为被一个线程独占状态（对应 monitorenter）
 
@@ -2507,7 +2507,7 @@ run = false; // 线程t不会如预想的停下来<br />
 
 1 秒之后，main 线程修改了 run 的值，并同步至主存，而 t 是从自己工作内存中的高速缓存中读取这个变量的值，结果永远是旧值
 
-<img src=".assets/Prog/media/image21.png" style="width:5.75in;height:2.25in" />
+<img src="assets/Prog/media/image21.png" style="width:5.75in;height:2.25in" />
 
 **原子性**
 
@@ -2575,7 +2575,7 @@ CPU 的基本工作是执行存储的指令序列，即程序，程序的执行�
 
 CPU 处理器速度远远大于在主内存中的，为了解决速度差异，在它们之间架设了多级缓存，如 L1、L2、L3 级别的缓存，这些缓存离 CPU 越近就越快，将频繁操作的数据缓存到这里，加快访问速度
 
-<img src=".assets/Prog/media/image22.png" style="width:5.75in;height:3.375in" />
+<img src="assets/Prog/media/image22.png" style="width:5.75in;height:3.375in" />
 
 |           |                                   |
 |-----------|-----------------------------------|
@@ -2598,7 +2598,7 @@ CPU 处理器速度远远大于在主内存中的，为了解决速度差异，�
 
 缓存会造成数据副本的产生，即同一份数据会缓存在不同核心的缓存行中，CPU 要保证数据的一致性，需要做到某个 CPU 核心更改了数据，其它 CPU 核心对应的 **整个缓存行必须失效** ，这就是伪共享
 
-<img src=".assets/Prog/media/image23.png" style="width:5.75in;height:3.75in" />
+<img src="assets/Prog/media/image23.png" style="width:5.75in;height:3.75in" />
 
 解决方法：
 
@@ -2616,7 +2616,7 @@ Linux 查看 CPU 缓存行：
 
 缓存一致性：当多个处理器运算任务都涉及到同一块主内存区域的时候，将可能导致各自的缓存数据不一样
 
-<img src=".assets/Prog/media/image24.png" style="width:5.75in;height:1.94792in" />
+<img src="assets/Prog/media/image24.png" style="width:5.75in;height:1.94792in" />
 
 MESI（Modified Exclusive Shared Or Invalid）是一种广泛使用的 **支持写回策略的缓存一致性协议** ，CPU 中每个缓存行（caceh line）使用 4 种状态进行标记（使用额外的两位 bit 表示)：
 
@@ -2813,7 +2813,7 @@ r.r1 = 1;<br />
 </tbody>
 </table>
 
-<img src=".assets/Prog/media/image25.png" style="width:5.75in;height:3.29167in" />
+<img src="assets/Prog/media/image25.png" style="width:5.75in;height:3.29167in" />
 
 全能屏障：mfence（modify/mix Barrier），兼具 sfence 和 lfence 的功能
 
@@ -2859,7 +2859,7 @@ i++ 反编译后的指令：
 </tbody>
 </table>
 
-<img src=".assets/Prog/media/image26.png" style="width:5.75in;height:3.46875in" />
+<img src="assets/Prog/media/image26.png" style="width:5.75in;height:3.46875in" />
 
 **交互规则**
 
@@ -2972,7 +2972,7 @@ getInstance 方法对应的字节码为：
 
 当其他线程访问 INSTANCE 不为 null 时，由于 INSTANCE 实例未必已初始化，那么 t2 拿到的是将是一个未初始化完毕的单例返回，这就造成了线程安全的问题
 
-<img src=".assets/Prog/media/image27.png" style="width:5.75in;height:3.10417in" />
+<img src="assets/Prog/media/image27.png" style="width:5.75in;height:3.10417in" />
 
 **解决方法**
 
@@ -3550,11 +3550,11 @@ return UNSAFE.compareAndSwapLong(this, valueOffset, prev, next);<br />
 
 Cell 是数组形式， **在内存中是连续存储的** ，64 位系统中，一个 Cell 为 24 字节（16 字节的对象头和 8 字节的 value），每一个 cache line 为 64 字节，因此缓存行可以存下 2 个的 Cell 对象，当 Core-0 要修改 Cell\[0\]、Core-1 要修改 Cell\[1\]，无论谁修改成功都会导致当前缓存行失效，从而导致对方的数据失效，需要重新去主存获取，影响效率
 
-<img src=".assets/Prog/media/image28.png" style="width:5.75in;height:2.40625in" />
+<img src="assets/Prog/media/image28.png" style="width:5.75in;height:2.40625in" />
 
 @sun.misc.Contended：防止缓存行伪共享，在使用此注解的对象或字段的前后各增加 128 字节大小的 padding，使用 2 倍于大多数硬件缓存行让 CPU 将对象预读至缓存时 **占用不同的缓存行** ，这样就不会造成对方缓存行的失效
 
-<img src=".assets/Prog/media/image29.png" style="width:5.75in;height:2.29167in" />
+<img src="assets/Prog/media/image29.png" style="width:5.75in;height:2.29167in" />
 
 **源码解析**
 
@@ -4144,7 +4144,7 @@ return threadLocal.get().format(date);<br />
 
 JDK8 以前：每个 ThreadLocal 都创建一个 Map，然后用线程作为 Map 的 key，要存储的局部变量作为 Map 的 value，达到各个线程的局部变量隔离的效果。这种结构会造成 Map 结构过大和内存泄露，因为 Thread 停止后无法通过 key 删除对应的数据
 
-<img src=".assets/Prog/media/image30.png" style="width:5.75in;height:2.58333in" />
+<img src="assets/Prog/media/image30.png" style="width:5.75in;height:2.58333in" />
 
 JDK8 以后：每个 Thread 维护一个 ThreadLocalMap，这个 Map 的 key 是 ThreadLocal 实例本身，value 是真正要存储的值
 
@@ -4156,7 +4156,7 @@ Thread 内部的 Map 是由 ThreadLocal 维护的，由 ThreadLocal 负责向 ma
 
 对于不同的线程，每次获取副本值时，别的线程并不能获取到当前线程的副本值，形成副本的隔离，互不干扰
 
-<img src=".assets/Prog/media/image31.png" style="width:5.75in;height:2.53125in" />
+<img src="assets/Prog/media/image31.png" style="width:5.75in;height:2.53125in" />
 
 JDK8 前后对比：
 
@@ -4605,7 +4605,7 @@ cleanSomeSlots(expungeStaleEntry(slotToExpunge), len);<br />
 </tbody>
 </table>
 
-<img src=".assets/Prog/media/image32.png" style="width:5.75in;height:2.63542in" />
+<img src="assets/Prog/media/image32.png" style="width:5.75in;height:2.63542in" />
 
 <table>
 <colgroup>
@@ -4850,9 +4850,9 @@ return i;<br />
 </tbody>
 </table>
 
-<img src=".assets/Prog/media/image33.png" style="width:5.75in;height:3.3125in" />
+<img src="assets/Prog/media/image33.png" style="width:5.75in;height:3.3125in" />
 
-<img src=".assets/Prog/media/image34.png" style="width:5.75in;height:3.41667in" />
+<img src="assets/Prog/media/image34.png" style="width:5.75in;height:3.41667in" />
 
 启发式清理：向后循环扫描过期数据，发现过期数据调用探测式清理方法，如果连续几次的循环都没有发现过期数据，就停止扫描
 
@@ -4903,11 +4903,11 @@ Memory leak：内存泄漏是指程序中动态分配的堆内存由于某种原
 
 如果 key 使用强引用：使用完 ThreadLocal ，threadLocal Ref 被回收，但是 threadLocalMap 的 Entry 强引用了 threadLocal，造成 threadLocal 无法被回收，无法完全避免内存泄漏
 
-<img src=".assets/Prog/media/image35.png" style="width:5.75in;height:3.07292in" />
+<img src="assets/Prog/media/image35.png" style="width:5.75in;height:3.07292in" />
 
 如果 key 使用弱引用：使用完 ThreadLocal ，threadLocal Ref 被回收，ThreadLocalMap 只持有 ThreadLocal 的弱引用，所以threadlocal 也可以被回收，此时 Entry 中的 key = null。但没有手动删除这个 Entry 或者 CurrentThread 依然运行，依然存在强引用链，value 不会被回收，而这块 value 永远不会被访问到，也会导致 value 内存泄漏
 
-<img src=".assets/Prog/media/image36.png" style="width:5.75in;height:2.75in" />
+<img src="assets/Prog/media/image36.png" style="width:5.75in;height:2.75in" />
 
 两个主要原因：
 
@@ -5190,7 +5190,7 @@ last = last.next = node;<br />
 </tbody>
 </table>
 
-<img src=".assets/Prog/media/image37.png" style="width:5.75in;height:1.38542in" />
+<img src="assets/Prog/media/image37.png" style="width:5.75in;height:1.38542in" />
 
 再来一个节点入队 last = last.next = node
 
@@ -5224,11 +5224,11 @@ return x;<br />
 
 h = head → first = h.next
 
-<img src=".assets/Prog/media/image38.png" style="width:5.75in;height:2.16667in" />
+<img src="assets/Prog/media/image38.png" style="width:5.75in;height:2.16667in" />
 
 h.next = h → head = first
 
-<img src=".assets/Prog/media/image39.png" style="width:5.75in;height:2.23958in" />
+<img src="assets/Prog/media/image39.png" style="width:5.75in;height:2.23958in" />
 
 first.item = null ：当前节点置为 Dummy 节点
 
@@ -6266,7 +6266,7 @@ PinPoint：它使用了一个拒绝策略链，会逐一尝试策略链中每种
 
 工作原理：
 
-<img src=".assets/Prog/media/image40.png" style="width:5.75in;height:2.75in" />
+<img src="assets/Prog/media/image40.png" style="width:5.75in;height:2.75in" />
 
 创建线程池，这时没有创建线程（ **懒惰** ），等待提交过来的任务请求，调用 execute 方法才会创建线程
 
@@ -6366,7 +6366,7 @@ Executors.newSingleThreadExecutor() 线程个数始终为 1，不能修改。Fin
 
 Executors.newFixedThreadPool(1) 初始时为 1，可以修改。对外暴露的是 ThreadPoolExecutor 对象，可以强转后调用 setCorePoolSize 等方法进行修改
 
-<img src=".assets/Prog/media/image41.png" style="width:5.75in;height:2.52083in" />
+<img src="assets/Prog/media/image41.png" style="width:5.75in;height:2.52083in" />
 
 **开发要求**
 
@@ -6510,7 +6510,7 @@ private static final int CAPACITY = (1 &lt;&lt; COUNT_BITS) - 1;</td>
 </tbody>
 </table>
 
-<img src=".assets/Prog/media/image42.png" style="width:5.75in;height:1.97917in" />
+<img src="assets/Prog/media/image42.png" style="width:5.75in;height:1.97917in" />
 
 四种状态：
 
@@ -9255,7 +9255,7 @@ AQS 核心思想：
 
 CLH 是一种基于单向链表的 **高性能、公平的自旋锁** ，AQS 是将每条请求共享资源的线程封装成一个 CLH 锁队列的一个结点（Node）来实现锁的分配
 
-<img src=".assets/Prog/media/image43.png" style="width:5.75in;height:2.69792in" />
+<img src="assets/Prog/media/image43.png" style="width:5.75in;height:2.69792in" />
 
 **设计原理**
 
@@ -9393,7 +9393,7 @@ Node nextWaiter;<br />
 </tbody>
 </table>
 
-<img src=".assets/Prog/media/image44.png" style="width:5.75in;height:2.01042in" />
+<img src="assets/Prog/media/image44.png" style="width:5.75in;height:2.01042in" />
 
 条件变量来实现等待、唤醒机制，支持多个条件变量，类似于 Monitor 的 WaitSet， **条件队列是单向链表**
 
@@ -9692,7 +9692,7 @@ selfInterrupt();<br />
 </tbody>
 </table>
 
-<img src=".assets/Prog/media/image45.png" style="width:5.75in;height:2.47917in" />
+<img src="assets/Prog/media/image45.png" style="width:5.75in;height:2.47917in" />
 
 进入 tryAcquire 尝试获取锁逻辑，这时 state 已经是1，结果仍然失败（第二次），加锁成功有两种情况：
 
@@ -9812,7 +9812,7 @@ return t; // 返回当前 node 的前驱节点<br />
 </tbody>
 </table>
 
-<img src=".assets/Prog/media/image46.png" style="width:5.75in;height:1.95833in" />
+<img src="assets/Prog/media/image46.png" style="width:5.75in;height:1.95833in" />
 
 线程节点加入队列成功，进入 AbstractQueuedSynchronizer#acquireQueued 逻辑阻塞线程
 
@@ -9920,7 +9920,7 @@ return Thread.interrupted();<br />
 
 再有多个线程经历竞争失败后：
 
-<img src=".assets/Prog/media/image47.png" style="width:5.75in;height:1.22917in" />
+<img src="assets/Prog/media/image47.png" style="width:5.75in;height:1.22917in" />
 
 **解锁**
 
@@ -10049,7 +10049,7 @@ head 指向刚刚 Thread-1 所在的 Node，该 Node 会清空 Thread
 
 原本的 head 因为从链表断开，而可被垃圾回收（图中有错误，原来的头节点的 waitStatus 被改为 0 了）
 
-<img src=".assets/Prog/media/image48.png" style="width:5.75in;height:1.51042in" />
+<img src="assets/Prog/media/image48.png" style="width:5.75in;height:1.51042in" />
 
 如果这时有其它线程来竞争\*\*（非公平）\*\*，例如这时有 Thread-4 来了并抢占了锁
 
@@ -10057,7 +10057,7 @@ Thread-4 被设置为 exclusiveOwnerThread，state = 1
 
 Thread-1 再次进入 acquireQueued 流程，获取锁失败，重新进入 park 阻塞
 
-<img src=".assets/Prog/media/image49.png" style="width:5.75in;height:1.59375in" />
+<img src="assets/Prog/media/image49.png" style="width:5.75in;height:1.59375in" />
 
 **公平原理**
 
@@ -10734,7 +10734,7 @@ private static final int THROW_IE = -1;</td>
 </tbody>
 </table>
 
-<img src=".assets/Prog/media/image50.png" style="width:5.75in;height:2.19792in" />
+<img src="assets/Prog/media/image50.png" style="width:5.75in;height:2.19792in" />
 
 **创建新的 Node 状态为 -2（Node.CONDITION）** ，关联 Thread-0，加入等待队列尾部
 
@@ -10849,7 +10849,7 @@ node.waitStatus = Node.CANCELLED;<br />
 
 fullyRelease 中会 unpark AQS 队列中的下一个节点竞争锁，假设 Thread-1 竞争成功
 
-<img src=".assets/Prog/media/image51.png" style="width:5.75in;height:2in" />
+<img src="assets/Prog/media/image51.png" style="width:5.75in;height:2in" />
 
 Thread-0 进入 isOnSyncQueue 逻辑判断节点 **是否移动到阻塞队列** ，没有就 park 阻塞 Thread-0
 
@@ -11038,7 +11038,7 @@ return true;<br />
 </tbody>
 </table>
 
-<img src=".assets/Prog/media/image52.png" style="width:5.75in;height:2.0625in" />
+<img src="assets/Prog/media/image52.png" style="width:5.75in;height:2.0625in" />
 
 Thread-1 释放锁，进入 unlock 流程
 
@@ -11170,7 +11170,7 @@ r.unlock();<br />
 
 补充情况：查询线程 A 查询数据时恰好缓存数据由于时间到期失效，或是第一次查询
 
-<img src=".assets/Prog/media/image53.png" style="width:5.75in;height:2.41667in" />
+<img src="assets/Prog/media/image53.png" style="width:5.75in;height:2.41667in" />
 
 可以使用读写锁进行操作
 
@@ -11607,11 +11607,11 @@ cancelAcquire(node);<br />
 
 如果没有成功，在 doAcquireShared 内 for (;;) 循环一次，shouldParkAfterFailedAcquire 内把前驱节点的 waitStatus 改为 -1，再 for (;;) 循环一次尝试 tryAcquireShared，不成功在 parkAndCheckInterrupt() 处 park
 
-<img src=".assets/Prog/media/image54.png" style="width:5.75in;height:2.36458in" />
+<img src="assets/Prog/media/image54.png" style="width:5.75in;height:2.36458in" />
 
 这种状态下，假设又有 t3 r.lock，t4 w.lock，这期间 t1 仍然持有锁，就变成了下面的样子
 
-<img src=".assets/Prog/media/image55.png" style="width:5.75in;height:1.76042in" />
+<img src="assets/Prog/media/image55.png" style="width:5.75in;height:1.76042in" />
 
 **解锁原理**
 
@@ -11721,7 +11721,7 @@ break;<br />
 </tbody>
 </table>
 
-<img src=".assets/Prog/media/image56.png" style="width:5.75in;height:2.73958in" />
+<img src="assets/Prog/media/image56.png" style="width:5.75in;height:2.73958in" />
 
 下一个节点不是 shared 了，因此不会继续唤醒 t4 所在节点
 
@@ -11772,7 +11772,7 @@ return nextc == 0;<br />
 
 t4 在 acquireQueued 中 parkAndCheckInterrupt 处恢复运行，再次 for (;;) 这次自己是头节点的临节点，并且没有其他节点竞争，tryAcquire(1) 成功，修改头结点，流程结束
 
-<img src=".assets/Prog/media/image57.png" style="width:5.75in;height:2.32292in" />
+<img src="assets/Prog/media/image57.png" style="width:5.75in;height:2.32292in" />
 
 **Stamped**
 
@@ -12307,7 +12307,7 @@ this.barrierCommand = barrierAction;<br />
 </tbody>
 </table>
 
-<img src=".assets/Prog/media/image58.png" style="width:5.75in;height:3.15625in" />
+<img src="assets/Prog/media/image58.png" style="width:5.75in;height:3.15625in" />
 
 **成员方法**
 
@@ -12653,7 +12653,7 @@ doReleaseShared();<br />
 </tbody>
 </table>
 
-<img src=".assets/Prog/media/image59.png" style="width:5.75in;height:1.65625in" />
+<img src="assets/Prog/media/image59.png" style="width:5.75in;height:1.65625in" />
 
 这时 Thread-4 释放了 permits，状态如下
 
@@ -12695,7 +12695,7 @@ private void doReleaseShared() {<br />
 </tbody>
 </table>
 
-<img src=".assets/Prog/media/image60.png" style="width:5.75in;height:1.67708in" />
+<img src="assets/Prog/media/image60.png" style="width:5.75in;height:1.67708in" />
 
 接下来 Thread-0 竞争成功，permits 再次设置为 0，设置自己为 head 节点，并且 unpark 接下来的共享状态的 Thread-3 节点，但由于 permits 是 0，因此 Thread-3 在尝试不成功后再次进入 park 状态
 
@@ -12908,7 +12908,7 @@ ConcurrentHashMap、Hashtable **不允许 null 值** ，HashMap 允许 null 值
 
 ConcurrentHashMap、HashMap 的初始容量为 16，Hashtable 初始容量为11，填充因子默认都是 0.75，两种 Map 扩容是当前容量翻倍：capacity \* 2，Hashtable 扩容时是容量翻倍 + 1：capacity\*2 + 1
 
-<img src=".assets/Prog/media/image61.png" style="width:5.75in;height:2.0625in" />
+<img src="assets/Prog/media/image61.png" style="width:5.75in;height:2.0625in" />
 
 工作步骤：
 
@@ -14093,7 +14093,7 @@ advance = true;<br />
 
 链表处理的 LastRun 机制， **可以减少节点的创建**
 
-<img src=".assets/Prog/media/image62.png" style="width:5.75in;height:2.03125in" />
+<img src="assets/Prog/media/image62.png" style="width:5.75in;height:2.03125in" />
 
 helpTransfer()：帮助扩容机制
 
@@ -14503,7 +14503,7 @@ throw new UnsupportedOperationException();<br />
 
 弱一致性：系统并不保证进程或者线程的访问都会返回最新的更新过的值，也不会承诺多久之后可以读到
 
-<img src=".assets/Prog/media/image63.png" style="width:5.75in;height:2.52083in" />
+<img src="assets/Prog/media/image63.png" style="width:5.75in;height:2.52083in" />
 
 |        |                              |
 |--------|------------------------------|
@@ -14643,7 +14643,7 @@ ConcurrentSkipListMap 提供了一种线程安全的并发访问的排序映射�
 
 在高并发的情况下，保证整个平衡树的线程安全需要一个全局锁；对于跳表则只需要部分锁，拥有更好的性能
 
-<img src=".assets/Prog/media/image64.png" style="width:5.75in;height:1.71875in" />
+<img src="assets/Prog/media/image64.png" style="width:5.75in;height:1.71875in" />
 
 BaseHeader 存储数据，headIndex 存储索引，纵向上 **所有索引都指向链表最下面的节点**
 
@@ -14874,7 +14874,7 @@ r = d.right;// r 指向 q 的后续索引节点，此时(q.key &lt; key &lt; r.k
 </tbody>
 </table>
 
-<img src=".assets/Prog/media/image65.png" style="width:5.75in;height:2.41667in" />
+<img src="assets/Prog/media/image65.png" style="width:5.75in;height:2.41667in" />
 
 put()：添加数据
 
@@ -15271,7 +15271,7 @@ return null;<br />
 
 经过 findPredecessor() 中的 unlink() 后索引已经被删除
 
-<img src=".assets/Prog/media/image66.png" style="width:5.75in;height:1.98958in" />
+<img src="assets/Prog/media/image66.png" style="width:5.75in;height:1.98958in" />
 
 appendMarker()：添加删除标记节点
 
@@ -15495,11 +15495,11 @@ p = (p != t &amp;&amp; t != (t = tail)) ? t : q;<br />
 
 图解入队：
 
-<img src=".assets/Prog/media/image67.png" style="width:5.75in;height:2.04167in" />
+<img src="assets/Prog/media/image67.png" style="width:5.75in;height:2.04167in" />
 
-<img src=".assets/Prog/media/image68.png" style="width:5.75in;height:0.86458in" />
+<img src="assets/Prog/media/image68.png" style="width:5.75in;height:0.86458in" />
 
-<img src=".assets/Prog/media/image68.png" style="width:5.75in;height:0.86458in" />
+<img src="assets/Prog/media/image68.png" style="width:5.75in;height:0.86458in" />
 
 当 tail 节点和尾节点的距离 **大于等于 1** 时（每入队两次）更新 tail，可以减少 CAS 更新 tail 节点的次数，提高入队效率
 
@@ -15567,11 +15567,11 @@ h.lazySetNext(h);<br />
 
 在更新完 head 之后，会将旧的头结点 h 的 next 域指向为 h，图中所示的虚线也就表示这个节点的自引用，被移动的节点（item 为 null 的节点）会被 GC 回收
 
-<img src=".assets/Prog/media/image69.png" style="width:5.75in;height:2.3125in" />
+<img src="assets/Prog/media/image69.png" style="width:5.75in;height:2.3125in" />
 
-<img src=".assets/Prog/media/image70.png" style="width:5.75in;height:1.9375in" />
+<img src="assets/Prog/media/image70.png" style="width:5.75in;height:1.9375in" />
 
-<img src=".assets/Prog/media/image71.png" style="width:5.75in;height:1.46875in" />
+<img src="assets/Prog/media/image71.png" style="width:5.75in;height:1.46875in" />
 
 如果这时，有一个线程来添加元素，通过 tail 获取的 next 节点则仍然是它本身，这就出现了p == q 的情况，出现该种情况之后，则会触发执行 head 的更新，将 p 节点重新指向为 head
 
@@ -15814,7 +15814,7 @@ I/O 复用（select 和 poll）
 
 recvfrom() 用于 **接收 Socket 传来的数据，并复制到应用进程的缓冲区 buf 中** ，把 recvfrom() 当成系统调用
 
-<img src=".assets/Prog/media/image72.png" style="width:5.75in;height:2.40625in" />
+<img src="assets/Prog/media/image72.png" style="width:5.75in;height:2.40625in" />
 
 **非阻塞式**
 
@@ -15822,7 +15822,7 @@ recvfrom() 用于 **接收 Socket 传来的数据，并复制到应用进程的�
 
 由于 CPU 要处理更多的系统调用，因此这种模型的 CPU 利用率比较低
 
-<img src=".assets/Prog/media/image73.png" style="width:5.75in;height:2.72917in" />
+<img src="assets/Prog/media/image73.png" style="width:5.75in;height:2.72917in" />
 
 **信号驱动**
 
@@ -15830,7 +15830,7 @@ recvfrom() 用于 **接收 Socket 传来的数据，并复制到应用进程的�
 
 相比于非阻塞式 I/O 的轮询方式，信号驱动 I/O 的 CPU 利用率更高
 
-<img src=".assets/Prog/media/image74.png" style="width:5.75in;height:2.58333in" />
+<img src="assets/Prog/media/image74.png" style="width:5.75in;height:2.58333in" />
 
 **IO 复用**
 
@@ -15840,7 +15840,7 @@ IO 复用让单个进程具有处理多个 I/O 事件的能力，又被称为 Ev
 
 如果一个 Web 服务器没有 I/O 复用，那么每一个 Socket 连接都要创建一个线程去处理，如果同时有几万个连接，就需要创建相同数量的线程。相比于多进程和多线程技术，I/O 复用不需要进程线程创建和切换的开销，系统开销更小
 
-<img src=".assets/Prog/media/image75.png" style="width:5.75in;height:2.63542in" />
+<img src="assets/Prog/media/image75.png" style="width:5.75in;height:2.63542in" />
 
 **异步 IO**
 
@@ -15848,7 +15848,7 @@ IO 复用让单个进程具有处理多个 I/O 事件的能力，又被称为 Ev
 
 异步 I/O 与信号驱动 I/O 的区别在于，异步 I/O 的信号是通知应用进程 I/O 完成，而信号驱动 I/O 的信号是通知应用进程可以开始 I/O
 
-<img src=".assets/Prog/media/image76.png" style="width:5.75in;height:2.80208in" />
+<img src="assets/Prog/media/image76.png" style="width:5.75in;height:2.80208in" />
 
 **多路复用**
 
@@ -15970,7 +15970,7 @@ print(buffer);<br />
 
 select 调用流程图：
 
-<img src=".assets/Prog/media/image77.png" style="width:5.75in;height:3.34375in" />
+<img src="assets/Prog/media/image77.png" style="width:5.75in;height:3.34375in" />
 
 使用 copy_from_user 从用户空间拷贝 fd_set 到内核空间，进程阻塞
 
@@ -16235,7 +16235,7 @@ SYS_API 系统调用：如 read、write，系统调用就是 0X80 中断
 
 内核堆栈：\*\*系统调用函数也是要创建变量的，\*\*这些变量在内核堆栈上分配
 
-<img src=".assets/Prog/media/image78.png" style="width:5.75in;height:2.84375in" />
+<img src="assets/Prog/media/image78.png" style="width:5.75in;height:2.84375in" />
 
 **80中断**
 
@@ -16261,7 +16261,7 @@ SYS_API 系统调用：如 read、write，系统调用就是 0X80 中断
 
 最后恢复到用户态，通过 thread_info 恢复现场，用户态继续执行
 
-<img src=".assets/Prog/media/image79.png" style="width:5.75in;height:3.54167in" />
+<img src="assets/Prog/media/image79.png" style="width:5.75in;height:3.54167in" />
 
 参考视频：https://www.bilibili.com/video/BV19D4y1o797
 
@@ -16281,7 +16281,7 @@ DMA (Direct Memory Access) ：直接存储器访问，让外部设备不通过 C
 
 一个完整的 DMA 传输过程必须经历 DMA 请求、DMA 响应、DMA 传输、DMA 结束四个步骤：
 
-<img src=".assets/Prog/media/image80.png" style="width:5.75in;height:2.33333in" />
+<img src="assets/Prog/media/image80.png" style="width:5.75in;height:2.33333in" />
 
 DMA 方式是一种完全由硬件进行信息传送的控制方式，通常系统总线由 CPU 管理，在 DMA 方式中，CPU 的主存控制信号被禁止使用，CPU 把总线（地址总线、数据总线、控制总线）让出来由 DMA 控制器接管，用来控制传送的字节数、判断 DMA 是否结束、以及发出 DMA 结束信号，所以 DMA 控制器必须有以下功能：
 
@@ -16309,11 +16309,11 @@ JVM 处理代码逻辑并发送 write() 系统调用，OS 上下文切换到内�
 
 流程图中的箭头反过来也成立，可以从网卡获取数据
 
-<img src=".assets/Prog/media/image81.png" style="width:5.75in;height:3.44792in" />
+<img src="assets/Prog/media/image81.png" style="width:5.75in;height:3.44792in" />
 
 read 调用图示：read、write 都是系统调用指令
 
-<img src=".assets/Prog/media/image82.png" style="width:5.75in;height:4.64583in" />
+<img src="assets/Prog/media/image82.png" style="width:5.75in;height:4.64583in" />
 
 **mmap**
 
@@ -16327,7 +16327,7 @@ mmap（Memory Mapped Files）内存映射加 write 实现零拷贝， **零拷�
 
 发出 write 系统调用，将数据从内核缓冲区拷贝到内核 Socket 缓冲区；write 系统调用返回，DMA 将内核空间 Socket 缓冲区中的数据传递到协议引擎
 
-<img src=".assets/Prog/media/image83.png" style="width:5.75in;height:3.10417in" />
+<img src="assets/Prog/media/image83.png" style="width:5.75in;height:3.10417in" />
 
 原理：利用操作系统的 Page 来实现文件到物理内存的直接映射，完成映射后对物理内存的操作会 **被同步** 到硬盘上
 
@@ -16343,7 +16343,7 @@ sendfile 实现零拷贝，打开文件的文件描述符 fd 和 socket 的 fd �
 
 说明：零拷贝技术是不允许进程对文件内容作进一步的加工的，比如压缩数据再发送
 
-<img src=".assets/Prog/media/image84.png" style="width:5.75in;height:3.57292in" />
+<img src="assets/Prog/media/image84.png" style="width:5.75in;height:3.57292in" />
 
 sendfile2.4 之后，sendfile 实现了更简单的方式，文件到达内核缓冲区后，不必再将数据全部复制到 socket buffer 缓冲区，而是只 **将记录数据位置和长度相关等描述符信息** 保存到 socket buffer，DMA 根据 Socket 缓冲区中描述符提供的位置和偏移量信息直接将内核空间缓冲区中的数据拷贝到协议引擎上（2 次复制 2 次切换）
 
@@ -16547,9 +16547,9 @@ TCP 协议的使用场景：文件上传和下载、邮件发送和接收、远�
 
 注意： **TCP 不会为没有数据的 ACK 超时重传**
 
-<img src=".assets/Prog/media/image85.png" style="width:5.75in;height:3.6875in" />
+<img src="assets/Prog/media/image85.png" style="width:5.75in;height:3.6875in" />
 
-<img src=".assets/Prog/media/image86.jpeg" style="width:5.75in;height:3.96875in" />
+<img src="assets/Prog/media/image86.jpeg" style="width:5.75in;height:3.96875in" />
 
 推荐阅读：https://yuanrengu.com/2020/77eef79f.html
 
@@ -16595,7 +16595,7 @@ ServerSocket 类：
 
 三次握手后 TCP 连接建立成功，服务器内核会把连接从 SYN 半连接队列（一次握手时在服务端建立的队列）中移出，移入 accept 全连接队列，等待进程调用 accept 函数时把连接取出。如果进程不能及时调用 accept 函数，就会造成 accept 队列溢出，最终导致建立好的 TCP 连接被丢弃
 
-<img src=".assets/Prog/media/image87.png" style="width:5.75in;height:5.72917in" />
+<img src="assets/Prog/media/image87.png" style="width:5.75in;height:5.72917in" />
 
 **相当于** 客户端和服务器建立一个数据管道（虚连接，不是真正的物理连接），管道一般不用 close
 
@@ -16621,9 +16621,9 @@ ServerSocket 类：
 
 从字节输入流中读取客户端发来的数据
 
-<img src=".assets/Prog/media/image88.png" style="width:5.75in;height:2.40625in" />
+<img src="assets/Prog/media/image88.png" style="width:5.75in;height:2.40625in" />
 
-<img src=".assets/Prog/media/image89.png" style="width:5.75in;height:1.44792in" />
+<img src="assets/Prog/media/image89.png" style="width:5.75in;height:1.44792in" />
 
 如果输出缓冲区空间不够存放主机发送的数据，则会被阻塞，输入缓冲区同理
 
@@ -17067,7 +17067,7 @@ Selector 是一个 Java NIO 组件，能够检查一个或多个 NIO 通道，�
 
 NIO 的实现框架：
 
-<img src=".assets/Prog/media/image90.png" style="width:5.0625in;height:4.90625in" />
+<img src="assets/Prog/media/image90.png" style="width:5.0625in;height:4.90625in" />
 
 每个 Channel 对应一个 Buffer
 
@@ -17089,7 +17089,7 @@ Java NIO 系统的核心在于：通道和缓冲区，通道表示打开的 IO �
 
 缓冲区（Buffer）：缓冲区本质上是一个 **可以读写数据的内存块** ，用于特定基本数据类型的容器，用于与 NIO 通道进行交互，数据是从通道读入缓冲区，从缓冲区写入通道中的
 
-<img src=".assets/Prog/media/image91.png" style="width:5.75in;height:1.54167in" />
+<img src="assets/Prog/media/image91.png" style="width:5.75in;height:1.54167in" />
 
 **Buffer 底层是一个数组** ，可以保存多个相同类型的数据，根据数据类型不同 ，有以下 Buffer 常用子类：ByteBuffer、CharBuffer、ShortBuffer、IntBuffer、LongBuffer、FloatBuffer、DoubleBuffer
 
@@ -17105,7 +17105,7 @@ Java NIO 系统的核心在于：通道和缓冲区，通道表示打开的 IO �
 
 位置、限制、容量遵守以下不变式： **0 \<= position \<= limit \<= capacity**
 
-<img src=".assets/Prog/media/image92.png" style="width:5.75in;height:4.03125in" />
+<img src="assets/Prog/media/image92.png" style="width:5.75in;height:4.03125in" />
 
 **常用API**
 
@@ -17309,9 +17309,9 @@ Java 的 NIO 库允许 Java 程序使用直接内存，使用 native 函数直�
 
 JVM 直接内存图解：
 
-<img src=".assets/Prog/media/image68.png" style="width:5.75in;height:0.86458in" />
+<img src="assets/Prog/media/image68.png" style="width:5.75in;height:0.86458in" />
 
-<img src=".assets/Prog/media/image68.png" style="width:5.75in;height:0.86458in" />
+<img src="assets/Prog/media/image68.png" style="width:5.75in;height:0.86458in" />
 
 **通信原理**
 
@@ -17665,7 +17665,7 @@ Buffer
 
 使用上述两种方法
 
-<img src=".assets/Prog/media/image93.png" style="width:5.75in;height:0.82292in" />
+<img src="assets/Prog/media/image93.png" style="width:5.75in;height:0.82292in" />
 
 <table>
 <colgroup>
@@ -17788,7 +17788,7 @@ System.out.println("文件复制~~");<br />
 
 选择器（Selector） 是 SelectableChannle 对象的 **多路复用器** ，Selector 可以同时监控多个通道的状况，利用 Selector 可使一个单独的线程管理多个 Channel， **Selector 是非阻塞 IO 的核心**
 
-<img src=".assets/Prog/media/image94.png" style="width:5.75in;height:2.33333in" />
+<img src="assets/Prog/media/image94.png" style="width:5.75in;height:2.33333in" />
 
 Selector 能够检测多个注册的通道上是否有事件发生（多个 Channel 以事件的方式可以注册到同一个 Selector)，如果有事件发生，就获取事件然后针对每个事件进行相应的处理，就可以只用一个单线程去管理多个通道，也就是管理多个连接和请求
 
