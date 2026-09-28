@@ -161,6 +161,10 @@ nav:
       - 实用工具箱: "必学工具/tools.md"
       - 毕业论文: "必学工具/thesis.md"
       - 信息检索: "必学工具/信息检索.md"
+      - 我的笔记:
+          - Git 笔记: "必学工具/我的笔记/Git笔记.md"
+          - Linux 笔记: "必学工具/我的笔记/Linux笔记.md"
+          - 工具综合笔记: "必学工具/我的笔记/Tool.md"
   - 好书推荐: "好书推荐.md"
   - 数学基础:
       - 课程:
@@ -197,6 +201,16 @@ nav:
             - "Haskell MOOC": "编程入门/Functional/Haskell-MOOC.md"
       - 笔记:
           - 笔记总览: "编程入门/笔记/index.md"
+          - Java:
+              - 语言基础:
+                  - Java 个人笔记: "编程入门/笔记/Java/语言基础/Java-个人笔记.md"
+                  - Java 知识库笔记: "编程入门/笔记/Java/语言基础/Java-知识库笔记.md"
+                  - Java 面试: "编程入门/笔记/Java/语言基础/面试-Java.md"
+              - JVM:
+                  - JVM 与 GC 面试: "编程入门/笔记/Java/JVM/面试-JVM+GC.md"
+              - 并发与 JUC:
+                  - 并发学习笔记: "编程入门/笔记/Java/并发与JUC/Prog.md"
+                  - 线程、锁与并发安全: "编程入门/笔记/Java/并发与JUC/面试-JUM线程+锁+并发安全.md"
   - 数据结构与算法:
       - 课程:
           - 课程总览: "数据结构与算法/课程/index.md"
@@ -207,6 +221,7 @@ nav:
           - "UCB CS170: Efficient Algorithms and Intractable Problems": "数据结构与算法/CS170.md"
       - 笔记:
           - 笔记总览: "数据结构与算法/笔记/index.md"
+          - STL 容器总结: "数据结构与算法/笔记/面试-STL容器总结.md"
   - 数学进阶:
       - 课程:
           - 课程总览: "数学进阶/课程/index.md"
@@ -243,6 +258,7 @@ nav:
           - "HIT OS: Operating System": "操作系统/HITOS.md"
       - 笔记:
           - 笔记总览: "操作系统/笔记/index.md"
+          - 操作系统面试: "操作系统/笔记/面试-操作系统.md"
   - 计算机网络:
       - 课程:
           - 课程总览: "计算机网络/课程/index.md"
@@ -252,6 +268,7 @@ nav:
           - "Computer Networking: A Top-Down Approach": "计算机网络/topdown.md"
       - 笔记:
           - 笔记总览: "计算机网络/笔记/index.md"
+          - 计算机网络面试: "计算机网络/笔记/面试-网络.md"
   - 并行与分布式系统:
       - 课程:
           - 课程总览: "并行与分布式系统/课程/index.md"
@@ -259,6 +276,17 @@ nav:
           - "MIT 6.5840 (6.824): Distributed System": "并行与分布式系统/MIT6.824.md"
       - 笔记:
           - 笔记总览: "并行与分布式系统/笔记/index.md"
+          - 分布式基础:
+              - 分布式系统面试: "并行与分布式系统/笔记/分布式基础/面试-分布式系统.md"
+          - Spring Cloud:
+              - Spring Cloud 笔记: "并行与分布式系统/笔记/SpringCloud/SpringCloud笔记.md"
+          - 消息队列:
+              - MQ 面试: "并行与分布式系统/笔记/消息队列/面试-MQ消息队列.md"
+          - 中间件综合:
+              - 框架与中间件综合: "并行与分布式系统/笔记/中间件综合/Frame.md"
+          - 容器与编排:
+              - Docker 笔记: "并行与分布式系统/笔记/容器与编排/Docker笔记.md"
+              - K8s 与 Docker 面试: "并行与分布式系统/笔记/容器与编排/面试-K8s&Docker.md"
   - 计算机系统安全:
       - 课程:
           - 课程总览: "计算机系统安全/课程/index.md"
@@ -280,6 +308,14 @@ nav:
           - "CMU 15-799: Special Topics in Database Systems": "数据库系统/15799.md"
       - 笔记:
           - 笔记总览: "数据库系统/笔记/index.md"
+          - MySQL:
+              - MySQL 笔记: "数据库系统/笔记/MySQL/MySQL笔记.md"
+              - MySQL 面试: "数据库系统/笔记/MySQL/面试-MySQL数据库.md"
+          - Redis:
+              - Redis 笔记: "数据库系统/笔记/Redis/Redis笔记.md"
+              - Redis 面试: "数据库系统/笔记/Redis/面试-Redis.md"
+          - 数据库综合:
+              - DB 综合笔记: "数据库系统/笔记/数据库综合/DB.md"
   - 软件工程:
       - 课程:
           - 课程总览: "软件工程/课程/index.md"
@@ -297,6 +333,19 @@ nav:
           - "CS571 Building UI (React & React Native)": "Web开发/CS571.md"
       - 笔记:
           - 笔记总览: "Web开发/笔记/index.md"
+          - JavaWeb:
+              - JavaWeb 知识库笔记: "Web开发/笔记/JavaWeb/JavaWeb-知识库笔记.md"
+              - Web 个人笔记: "Web开发/笔记/JavaWeb/Web-个人笔记.md"
+          - Java 后端:
+              - Spring 与 SSM:
+                  - SSM 个人笔记: "Web开发/笔记/Java后端/Spring与SSM/SSM-个人笔记.md"
+                  - SSM 知识库笔记: "Web开发/笔记/Java后端/Spring与SSM/SSM-知识库笔记.md"
+              - Spring Boot:
+                  - Spring Boot 面试: "Web开发/笔记/Java后端/SpringBoot/面试-SpringBoot.md"
+              - MyBatis-Plus:
+                  - MyBatis-Plus 笔记: "Web开发/笔记/Java后端/MyBatisPlus/MyBatisPlus笔记.md"
+              - 综合面试:
+                  - 高频八股整理: "Web开发/笔记/Java后端/综合面试/高频八股整理.md"
   - 编译原理:
       - 课程:
           - 课程总览: "编译原理/课程/index.md"
