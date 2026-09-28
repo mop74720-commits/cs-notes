@@ -99,6 +99,20 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/Web%E5%BC%80%E5%8F%91/%E7%AC%94%E8%AE%B0/Java%E5%90%8E%E7%AB%AF/SpringBoot/%E9%9D%A2%E8%AF%95-SpringBoot/"/>
     </url>
     <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/Web%E5%BC%80%E5%8F%91/%E7%AC%94%E8%AE%B0/Java%E5%90%8E%E7%AB%AF/Spring%E4%B8%8ESSM/SSM-%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/Web%E5%BC%80%E5%8F%91/%E7%AC%94%E8%AE%B0/Java%E5%90%8E%E7%AB%AF/Spring%E4%B8%8ESSM/SSM-%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/Web%E5%BC%80%E5%8F%91/%E7%AC%94%E8%AE%B0/Java%E5%90%8E%E7%AB%AF/Spring%E4%B8%8ESSM/SSM-%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/Web%E5%BC%80%E5%8F%91/%E7%AC%94%E8%AE%B0/Java%E5%90%8E%E7%AB%AF/Spring%E4%B8%8ESSM/SSM-%E7%9F%A5%E8%AF%86%E5%BA%93%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/Web%E5%BC%80%E5%8F%91/%E7%AC%94%E8%AE%B0/Java%E5%90%8E%E7%AB%AF/Spring%E4%B8%8ESSM/SSM-%E7%9F%A5%E8%AF%86%E5%BA%93%E7%AC%94%E8%AE%B0/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/Web%E5%BC%80%E5%8F%91/%E7%AC%94%E8%AE%B0/Java%E5%90%8E%E7%AB%AF/Spring%E4%B8%8ESSM/SSM-%E7%9F%A5%E8%AF%86%E5%BA%93%E7%AC%94%E8%AE%B0/"/>
+    </url>
+    <url>
         <loc>https://mop74720-commits.github.io/cs-notes/Web%E5%BC%80%E5%8F%91/%E8%AF%BE%E7%A8%8B/</loc>
         <lastmod>2026-09-28</lastmod>
         <changefreq>daily</changefreq>
@@ -482,6 +496,27 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/MySQL/MySQL%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/MySQL/MySQL%E7%AC%94%E8%AE%B0/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/MySQL/MySQL%E7%AC%94%E8%AE%B0/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/MySQL/%E9%9D%A2%E8%AF%95-MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/MySQL/%E9%9D%A2%E8%AF%95-MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/MySQL/%E9%9D%A2%E8%AF%95-MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/Redis/Redis%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/Redis/Redis%E7%AC%94%E8%AE%B0/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/Redis/Redis%E7%AC%94%E8%AE%B0/"/>
     </url>
     <url>
         <loc>https://mop74720-commits.github.io/cs-notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E8%AF%BE%E7%A8%8B/</loc>
@@ -1457,6 +1492,20 @@
         <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/Web%E5%BC%80%E5%8F%91/%E7%AC%94%E8%AE%B0/Java%E5%90%8E%E7%AB%AF/SpringBoot/%E9%9D%A2%E8%AF%95-SpringBoot/"/>
     </url>
     <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/en/Web%E5%BC%80%E5%8F%91/%E7%AC%94%E8%AE%B0/Java%E5%90%8E%E7%AB%AF/Spring%E4%B8%8ESSM/SSM-%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/Web%E5%BC%80%E5%8F%91/%E7%AC%94%E8%AE%B0/Java%E5%90%8E%E7%AB%AF/Spring%E4%B8%8ESSM/SSM-%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/Web%E5%BC%80%E5%8F%91/%E7%AC%94%E8%AE%B0/Java%E5%90%8E%E7%AB%AF/Spring%E4%B8%8ESSM/SSM-%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/en/Web%E5%BC%80%E5%8F%91/%E7%AC%94%E8%AE%B0/Java%E5%90%8E%E7%AB%AF/Spring%E4%B8%8ESSM/SSM-%E7%9F%A5%E8%AF%86%E5%BA%93%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/Web%E5%BC%80%E5%8F%91/%E7%AC%94%E8%AE%B0/Java%E5%90%8E%E7%AB%AF/Spring%E4%B8%8ESSM/SSM-%E7%9F%A5%E8%AF%86%E5%BA%93%E7%AC%94%E8%AE%B0/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/Web%E5%BC%80%E5%8F%91/%E7%AC%94%E8%AE%B0/Java%E5%90%8E%E7%AB%AF/Spring%E4%B8%8ESSM/SSM-%E7%9F%A5%E8%AF%86%E5%BA%93%E7%AC%94%E8%AE%B0/"/>
+    </url>
+    <url>
         <loc>https://mop74720-commits.github.io/cs-notes/en/Web%E5%BC%80%E5%8F%91/%E8%AF%BE%E7%A8%8B/</loc>
         <lastmod>2026-09-28</lastmod>
         <changefreq>daily</changefreq>
@@ -1840,6 +1889,27 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/en/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/MySQL/MySQL%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/MySQL/MySQL%E7%AC%94%E8%AE%B0/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/MySQL/MySQL%E7%AC%94%E8%AE%B0/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/en/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/MySQL/%E9%9D%A2%E8%AF%95-MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/MySQL/%E9%9D%A2%E8%AF%95-MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/MySQL/%E9%9D%A2%E8%AF%95-MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    </url>
+    <url>
+        <loc>https://mop74720-commits.github.io/cs-notes/en/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/Redis/Redis%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mop74720-commits.github.io/cs-notes/en/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/Redis/Redis%E7%AC%94%E8%AE%B0/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://mop74720-commits.github.io/cs-notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/Redis/Redis%E7%AC%94%E8%AE%B0/"/>
     </url>
     <url>
         <loc>https://mop74720-commits.github.io/cs-notes/en/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E8%AF%BE%E7%A8%8B/</loc>
