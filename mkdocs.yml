@@ -1,0 +1,165 @@
+site_name: "Mo's CS Notes"
+site_url: https://mop74720-commits.github.io/cs-notes/
+site_author: "Mo"
+site_description: >-
+  Java Backend & Computer Science Notes
+
+repo_name: mop74720-commits/cs-notes
+repo_url: https://github.com/mop74720-commits/cs-notes/
+
+copyright: Copyright &copy; 2026-present Mo
+
+theme:
+  name: material
+  language: zh
+  static_templates:
+    - 404.html
+  include_search_page: false
+  search_index_only: true
+
+  features:
+    - header.autohide
+    - navigation.tracking
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+    - content.code.annotate
+
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: light blue
+      accent: deep purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: cyan
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+
+  font:
+    text: Roboto Slab
+    code: Roboto Mono
+
+  icon:
+    repo: fontawesome/brands/github
+
+  custom_dir: overrides
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - footnotes
+  - tables
+  - admonition
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+
+plugins:
+  - i18n:
+      languages:
+        - locale: zh
+          default: true
+          name: 简体中文
+          build: true
+        - locale: en
+          name: English
+          build: true
+          site_name: "Mo's CS Notes"
+          nav_translations:
+            前言: Foreword
+            Java: Java
+            Java 总览: Java Overview
+            Java 基础: Java Basics
+            面向对象: Object-Oriented Programming
+            集合框架: Collections
+            数据库: Databases
+            数据库总览: Database Overview
+            MySQL 总览: MySQL Overview
+            SQL 基础: SQL Basics
+            索引: Indexes
+            事务: Transactions
+            锁: Locks
+            Redis 总览: Redis Overview
+            计算机网络: Computer Networking
+            网络总览: Networking Overview
+            操作系统: Operating Systems
+            操作系统总览: OS Overview
+            项目: Projects
+            项目总览: Project Overview
+            标签: Tags
+
+  - search:
+      lang:
+        - zh
+        - en
+
+  - git-revision-date:
+
+  - minify:
+      minify_html: true
+
+  - open-in-new-tab:
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/mop74720-commits/cs-notes/
+
+nav:
+  - 前言: "index.md"
+
+  - Java:
+      - Java 总览: "java/index.md"
+      - Java 基础: "java/basics/index.md"
+      - 面向对象: "java/oop/index.md"
+      - 集合框架: "java/collections/index.md"
+      - JVM: "java/jvm/index.md"
+      - Spring: "java/spring/index.md"
+
+  - 数据库:
+      - 数据库总览: "database/index.md"
+      - MySQL:
+          - MySQL 总览: "database/mysql/index.md"
+          - SQL 基础: "database/mysql/sql.md"
+          - 索引: "database/mysql/indexes.md"
+          - 事务: "database/mysql/transactions.md"
+          - MVCC: "database/mysql/mvcc.md"
+          - 锁: "database/mysql/locks.md"
+      - Redis:
+          - Redis 总览: "database/redis/index.md"
+
+  - 计算机网络:
+      - 网络总览: "network/index.md"
+      - TCP/IP: "network/tcp-ip.md"
+      - HTTP: "network/http.md"
+
+  - 操作系统:
+      - 操作系统总览: "os/index.md"
+
+  - 项目:
+      - 项目总览: "projects/index.md"
+      - AERA-Lite: "projects/aera-lite.md"
+
+  - Blog:
+      - "blog/index.md"
+      - 标签: "blog/tags.md"
