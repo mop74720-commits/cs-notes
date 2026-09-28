@@ -3,32 +3,32 @@
     {
       zh: "数学基础",
       en: "Fundamental Mathematics",
-      labelZh: "基础阶段",
-      labelEn: "FOUNDATIONS"
+      labelZh: "基础与理论",
+      labelEn: "FOUNDATIONS & THEORY"
     },
     {
-      zh: "软件工程",
-      en: "Software Engineering",
-      labelZh: "CS 核心",
-      labelEn: "CS CORE"
+      zh: "计算机系统基础",
+      en: "Computer Systems Principles",
+      labelZh: "系统与架构",
+      labelEn: "SYSTEMS & ARCHITECTURE"
     },
     {
-      zh: "并行与分布式系统",
-      en: "Distributed Systems",
-      labelZh: "系统与工程进阶",
-      labelEn: "SYSTEMS & ENGINEERING"
-    },
-    {
-      zh: "计算机图形学",
-      en: "Computer Graphics",
-      labelZh: "专项方向",
-      labelEn: "SPECIALIZATIONS"
+      zh: "数据库系统",
+      en: "Database Systems",
+      labelZh: "软件与工程",
+      labelEn: "SOFTWARE & ENGINEERING"
     },
     {
       zh: "数据科学",
       en: "Data Science",
-      labelZh: "AI / 数据",
-      labelEn: "AI / DATA"
+      labelZh: "数据与智能",
+      labelEn: "DATA & INTELLIGENCE"
+    },
+    {
+      zh: "计算机图形学",
+      en: "Computer Graphics",
+      labelZh: "专项与交叉",
+      labelEn: "SPECIALIZATIONS & INTERDISCIPLINARY"
     }
   ];
 
