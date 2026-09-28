@@ -1,6 +1,6 @@
-# SSM笔记
+# SSM-知识库笔记
 
-> 原文图片保留在私有 `backend-study-notes`，本公开站当前同步文字内容；疑似凭据、令牌和密码示例在公开版本中已自动脱敏。
+**SSM笔记**
 
 由于这篇笔记牵扯到了**MyBatis**的内容，所以在学习Spring和SpringMVC之前需要先学习黑马程序员的MyBatis课程，课程地址如下：
 
@@ -26,6 +26,8 @@ Spring官网：
 
 Spring用以开发web、微服务以及分布式系统等，它并不是单一的一个技术，而是一个大家族。Spring发展到今天已经形成了一种开发的生态圈，提供了若干个项目，每个项目用于完成特定的功能，把这些个项目组合就是**全家桶**，如下图所示：
 
+<img src=".assets/SSM-知识库笔记/media/image1.png" style="width:5.75in;height:1.89583in" />
+
 我们只需要重点关注Spring Framework、SpringBoot和SpringCloud：
 
 Spring Framework：Spring框架，是Spring中最早最核心的技术，也是所有其他技术的基础
@@ -37,6 +39,8 @@ SpringCloud：这个是用来做分布式之微服务架构的相关开发
 除了上面的这三个技术外，还有很多其他的技术，如SpringData、SpringSecurity等，这些都可以被应用在项目中。
 
 **1.1.2 Spring发展史**
+
+<img src=".assets/SSM-知识库笔记/media/image2.png" style="width:5.75in;height:2.13542in" />
 
 IBM（IT公司-国际商业机器公司）在1997年提出了EJB思想，早期的JavaEE开发大都基于该思想。
 
@@ -64,7 +68,11 @@ Spring5.0已经全面支持JDK8，现在Spring最新的是5系列所以建议大
 
 Spring Framework是Spring生态圈中最基础的项目，是其他项目的根基，它的发展也经历了很多版本的变更，每个版本都有相应的调整：
 
+<img src=".assets/SSM-知识库笔记/media/image3.png" style="width:5.75in;height:2.25in" />
+
 Spring Framework的5版本目前没有最新的架构图，而最新的是4版本，所以接下来主要研究的是4的架构图：
+
+<img src=".assets/SSM-知识库笔记/media/image4.png" style="width:5.75in;height:2.57292in" />
 
 \(1\) 核心层
 
@@ -104,13 +112,19 @@ AOP的具体应用，事务管理
 
 IOC/DI的具体应用，整合Mybatis
 
+<img src=".assets/SSM-知识库笔记/media/image5.png" style="width:5.75in;height:2.97917in" />
+
 **1.3 Spring核心概念**
 
 **1.3.1 目前项目中的问题**
 
+<img src=".assets/SSM-知识库笔记/media/image6.png" style="width:5.75in;height:1.51042in" />
+
 目前的项目中，业务层需要调用数据层的方法，就需要在业务层new数据层的对象，如果数据层的实现类发生变化，那么业务层的代码也需要跟着改变，发生变更后，都需要进行编译打包和重部署，**耦合度偏高**。
 
 如果能把框中的内容给去掉就可以降低依赖，使用对象时，在程序中不要主动使用new产生对象，转换为由**外部**提供对象：
+
+<img src=".assets/SSM-知识库笔记/media/image7.png" style="width:5.75in;height:2.28125in" />
 
 **1.3.2 核心概念**
 
@@ -123,6 +137,8 @@ Spring提供了一个容器，称为**IOC容器**，用来充当IOC思想中的"
 但当IOC容器中创建好service和dao对象后，IOC容器中虽然有service和dao对象，但是service对象和dao对象没有任何关系，程序仍不能正确执行，需要把dao对象交给service，也就是说要绑定service和dao对象之间的关系，在容器中建立对象与对象之间的绑定关系就要用到DI。
 
 **DI（Dependency Injection）依赖注入**
+
+<img src=".assets/SSM-知识库笔记/media/image8.png" style="width:5.75in;height:1.48958in" />
 
 在容器中建立bean与bean之间的依赖关系的整个过程，称为依赖注入；依赖注入是一种思想，业务层要用数据层的类对象，由自己new转换为靠别人注入，这种思想就是依赖注入。
 
@@ -181,6 +197,8 @@ Spring框架提供相应的接口
 需求：将BookServiceImpl和BookDaoImpl交给Spring管理，并从容器中获取对应的bean对象进行方法调用。
 
 1、创建Maven项目
+
+<img src=".assets/SSM-知识库笔记/media/image9.png" style="width:4.83333in;height:1.98958in" />
 
 2、添加Spring的依赖jar包
 
@@ -244,6 +262,8 @@ bookDao.save();<br />
 4、添加spring配置文件
 
 resources下添加spring配置文件applicationContext.xml，并完成bean的配置
+
+<img src=".assets/SSM-知识库笔记/media/image10.png" style="width:5.75in;height:3.48958in" />
 
 5、在配置文件中完成bean的配置
 
@@ -322,6 +342,8 @@ bookService.save();<br />
 8、 运行程序
 
 测试结果为：
+
+<img src=".assets/SSM-知识库笔记/media/image11.png" style="width:5.75in;height:0.36458in" />
 
 **2.2 DI入门案例**
 
@@ -442,9 +464,13 @@ name="bookDao"中bookDao的作用是让Spring的IOC容器在获取到名称后�
 
 ref="bookDao"中bookDao的作用是让Spring能在IOC容器中找到id为bookDao的Bean对象给bookService进行注入
 
+<img src=".assets/SSM-知识库笔记/media/image12.png" style="width:5.75in;height:2.01042in" />
+
 4、运行程序
 
 运行，测试结果为：
+
+<img src=".assets/SSM-知识库笔记/media/image11.png" style="width:5.75in;height:0.36458in" />
 
 **3.IOC相关内容**
 
@@ -470,11 +496,17 @@ ref="bookDao"中bookDao的作用是让Spring能在IOC容器中找到id为bookDao
 
 其中，bean标签的功能、使用方式以及id和class属性的作用如下：
 
+<img src=".assets/SSM-知识库笔记/media/image13.png" style="width:5.75in;height:2.54167in" />
+
 **注意：**由于接口无法创建对象，所以class属性不能写接口如BookDao的类全名。
 
 bean的id属性必须唯一，这就说明可能由于命名习惯而产生分歧，要解决这个问题，需要准备下开发环境，内容和前面的案例是一样的，内容如下：
 
+<img src=".assets/SSM-知识库笔记/media/image14.png" style="width:3.63542in;height:5.01042in" />
+
 **3.1.2 bean的name属性**
+
+<img src=".assets/SSM-知识库笔记/media/image15.png" style="width:5.75in;height:1.47917in" />
 
 1、配置别名
 
@@ -530,17 +562,27 @@ bookService.save();<br />
 
 测试结果为：
 
+<img src=".assets/SSM-知识库笔记/media/image11.png" style="width:5.75in;height:0.36458in" />
+
 **注意事项**：
 
 bean依赖注入的ref属性指定的bean，必须在容器中存在
 
+<img src=".assets/SSM-知识库笔记/media/image16.png" style="width:5.75in;height:1.30208in" />
+
 如果不存在，则会报错，如下：
 
+<img src=".assets/SSM-知识库笔记/media/image17.png" style="width:5.75in;height:1.35417in" />
+
 这个错误大家需要特别关注下：
+
+<img src=".assets/SSM-知识库笔记/media/image18.png" style="width:5.75in;height:0.94792in" />
 
 获取bean无论是通过id还是name获取，如果无法获取到，将抛出异常**NoSuchBeanDefinitionException**
 
 **3.1.3 bean作用范围**
+
+<img src=".assets/SSM-知识库笔记/media/image19.png" style="width:5.75in;height:1.65625in" />
 
 **验证IOC容器中对象是否为单例**
 
@@ -574,6 +616,8 @@ System.out.println(bookDao2);<br />
 
 打印，观察控制台的打印结果
 
+<img src=".assets/SSM-知识库笔记/media/image20.png" style="width:5.75in;height:0.91667in" />
+
 通过结果可以看出，默认情况下Spring创建的bean对象都是单例的。
 
 **配置bean为非单例**
@@ -596,6 +640,8 @@ System.out.println(bookDao2);<br />
 
 运行AppForScope，打印看结果
 
+<img src=".assets/SSM-知识库笔记/media/image20.png" style="width:5.75in;height:0.91667in" />
+
 将scope设置为prototype
 
 <table>
@@ -611,6 +657,8 @@ System.out.println(bookDao2);<br />
 </table>
 
 运行AppForScope，打印看结果
+
+<img src=".assets/SSM-知识库笔记/media/image21.png" style="width:5.75in;height:1.02083in" />
 
 所以，使用bean的scope属性可以控制bean的创建是否为单例：
 
@@ -652,6 +700,8 @@ bean在容器中是单例的，会不会产生线程安全问题？
 
 **3.1.4 bean基础配置小结**
 
+<img src=".assets/SSM-知识库笔记/media/image22.png" style="width:5.75in;height:1.48958in" />
+
 **3.2 bean实例化**
 
 bean本质上就是对象，对象在new的时候会使用构造方法完成，那创建bean也是使用构造方法完成的。基于这个知识点来验证spring中bean的三种创建方式。
@@ -659,6 +709,8 @@ bean本质上就是对象，对象在new的时候会使用构造方法完成，�
 **3.2.1 环境准备**
 
 步骤和前面的都一致，最终项目的结构如下：
+
+<img src=".assets/SSM-知识库笔记/media/image23.png" style="width:4.78125in;height:2.03125in" />
 
 **3.2.2 构造方法实例化**
 
@@ -754,6 +806,8 @@ System.out.println("book dao save ...");<br />
 
 运行程序，如果控制台有打印构造函数中的输出，说明Spring容器在创建对象的时候也走的是构造函数
 
+<img src=".assets/SSM-知识库笔记/media/image24.png" style="width:5.75in;height:0.86458in" />
+
 5、将构造函数改成private测试
 
 <table>
@@ -776,6 +830,8 @@ System.out.println("book dao save ...");<br />
 </table>
 
 运行程序，能执行成功，说明内部走的依然是构造函数，能访问到类中的私有构造方法，显而易见Spring底层用的是反射
+
+<img src=".assets/SSM-知识库笔记/media/image24.png" style="width:5.75in;height:0.86458in" />
 
 6、构造函数中添加一个参数测试
 
@@ -800,6 +856,8 @@ System.out.println("book dao save ...");<br />
 </table>
 
 运行程序，程序会报错，说明Spring底层使用的是类的无参构造方法。
+
+<img src=".assets/SSM-知识库笔记/media/image25.png" style="width:5.75in;height:1.88542in" />
 
 **分析Spring的错误信息**
 
@@ -902,6 +960,8 @@ orderDao.save();<br />
 
 （4）运行后，可以查看到结果
 
+<img src=".assets/SSM-知识库笔记/media/image26.png" style="width:5.75in;height:1.41667in" />
+
 如果代码中对象是通过上面的这种方式来创建的，那么交给Spring管理的步骤为：
 
 （1）在spring的配置文件application.properties中添加以下内容：
@@ -921,6 +981,8 @@ orderDao.save();<br />
 class：工厂类的类全名
 
 factory-mehod：具体工厂类中创建对象的方法名
+
+<img src=".assets/SSM-知识库笔记/media/image27.png" style="width:5.75in;height:1.88542in" />
 
 （2）在AppForInstanceOrder运行类，使用从IOC容器中获取bean的方法进行运行测试
 
@@ -943,6 +1005,8 @@ orderDao.save();<br />
 </table>
 
 （3）运行后，可以查看到结果
+
+<img src=".assets/SSM-知识库笔记/media/image26.png" style="width:5.75in;height:1.41667in" />
 
 在工厂类中也是直接new对象的，和直接new没什么太大的区别，而且静态工厂的方式反而更复杂，这种方式的意义是什么？
 
@@ -968,6 +1032,8 @@ return new OrderDaoImpl();<br />
 </table>
 
 之前new对象的方式就无法添加其他的业务内容，重新运行，查看结果：
+
+<img src=".assets/SSM-知识库笔记/media/image28.png" style="width:5.75in;height:1.13542in" />
 
 静态工厂实例化一般是用来兼容早期的一些老系统，了解为主。
 
@@ -1040,6 +1106,8 @@ userDao.save();<br />
 
 （4）运行后，可以查看到结果
 
+<img src=".assets/SSM-知识库笔记/media/image29.png" style="width:5.75in;height:1.11458in" />
+
 对于上面这种实例工厂的方式如何交给Spring管理呢？
 
 **实例工厂实例化**
@@ -1069,7 +1137,7 @@ factory-bean：工厂的实例对象
 
 factory-method：工厂对象中的具体创建对象的方法名，对应关系如下：
 
-> 
+> <img src=".assets/SSM-知识库笔记/media/image30.png" style="width:5.75in;height:2.125in" />
 
 （2）在AppForInstanceUser运行类，使用从IOC容器中获取bean的方法进行运行测试
 
@@ -1092,6 +1160,8 @@ userDao.save();<br />
 </table>
 
 （3）运行后，可以查看到结果
+
+<img src=".assets/SSM-知识库笔记/media/image29.png" style="width:5.75in;height:1.11458in" />
 
 实例工厂实例化的方式就已经介绍完了，配置的过程还是比较复杂，所以Spring为了简化这种配置方式就提供了一种叫FactoryBean的方式来简化开发。
 
@@ -1135,6 +1205,8 @@ return UserDao.class;<br />
 </table>
 
 （3）AppForInstanceUser运行类不用做任何修改，直接运行
+
+<img src=".assets/SSM-知识库笔记/media/image29.png" style="width:5.75in;height:1.11458in" />
 
 这种方式在Spring去整合其他框架的时候会被用到，所以这种方式需要理解掌握。
 
@@ -1188,6 +1260,8 @@ System.out.println(userDao2);<br />
 
 打印结果，如下:
 
+<img src=".assets/SSM-知识库笔记/media/image31.png" style="width:5.75in;height:1.19792in" />
+
 通过验证，会发现默认是单例，如果想改成非单例，只需要将isSingleton()方法进行重写，修改返回为false，即可
 
 <table>
@@ -1218,6 +1292,8 @@ return false;<br />
 
 重新运行AppForInstanceUser，查看结果
 
+<img src=".assets/SSM-知识库笔记/media/image32.png" style="width:5.75in;height:0.94792in" />
+
 从结果中可以看出现在已经是非单例了，但是一般情况下都会采用单例，也就是采用默认即可。所以isSingleton()方法一般不需要进行重写。
 
 **3.2.5 bean实例化小结**
@@ -1247,6 +1323,8 @@ bean生命周期指一个bean对象从创建到销毁的整体过程。
 **3.3.1 环境准备**
 
 步骤和前面的都一致，快速拷贝即可，最终项目的结构如下:
+
+<img src=".assets/SSM-知识库笔记/media/image33.png" style="width:4.77083in;height:2.03125in" />
 
 （1）项目中添加BookDao、BookDaoImpl、BookService和BookServiceImpl类
 
@@ -1383,6 +1461,8 @@ System.out.println("destory...");<br />
 
 运行AppForLifeCycle打印结果为:
 
+<img src=".assets/SSM-知识库笔记/media/image34.png" style="width:5.75in;height:1.53125in" />
+
 从结果中可以看出，init方法执行了，但是destroy方法却未执行，这是为什么呢？
 
 Spring的IOC容器是运行在JVM中
@@ -1427,6 +1507,8 @@ ctx.close();</td>
 
 运行程序，就能执行destroy方法的内容
 
+<img src=".assets/SSM-知识库笔记/media/image35.png" style="width:5.75in;height:1.5in" />
+
 **3.3.4 注册钩子关闭容器**
 
 在容器未关闭之前，提前设置好回调函数，让JVM在退出之前回调此函数来关闭容器
@@ -1448,6 +1530,8 @@ ctx.registerShutdownHook();</td>
 **注意**：registerShutdownHook在ApplicationContext中也没有。
 
 运行后，查询打印结果
+
+<img src=".assets/SSM-知识库笔记/media/image35.png" style="width:5.75in;height:1.5in" />
 
 close和registerShutdownHook都能用来关闭容器，close()是在调用的时候关闭，registerShutdownHook()是在JVM退出前调用关闭。
 
@@ -1484,6 +1568,8 @@ System.out.println("service init");<br />
 
 重新运行AppForLifeCycle类：
 
+<img src=".assets/SSM-知识库笔记/media/image36.png" style="width:5.75in;height:1.77083in" />
+
 **小细节**
 
 对于InitializingBean接口中的afterPropertiesSet方法，翻译过来为属性设置之后。setBookDao方法是Spring的IOC容器为其注入属性的方法，那么afterPropertiesSet和setBookDao谁先执行？
@@ -1506,6 +1592,8 @@ this.bookDao = bookDao;<br />
 </table>
 
 重新运行AppForLifeCycle，打印结果如下：
+
+<img src=".assets/SSM-知识库笔记/media/image37.png" style="width:5.75in;height:1.375in" />
 
 可见**初始化方法会在类中属性设置之后执行**。
 
@@ -1611,6 +1699,8 @@ this.bookDao = bookDao;<br />
 **4.1.1 环境准备**
 
 步骤和前面的都一致，快速拷贝即可：
+
+<img src=".assets/SSM-知识库笔记/media/image38.png" style="width:4.75in;height:1.97917in" />
 
 （1）项目中添加BookDao、BookDaoImpl、UserDao、UserDaoImpl、BookService和BookServiceImpl类
 
@@ -1809,6 +1899,8 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 
 运行AppForDISet类，查看结果，说明userDao已经成功注入。
 
+<img src=".assets/SSM-知识库笔记/media/image39.png" style="width:5.75in;height:1.23958in" />
+
 **4.1.3 注入简单数据类型**
 
 引用类型使用ref属性进行依赖注入，简单数据类型使用value属性进行依赖注入。
@@ -1894,6 +1986,8 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 
 运行AppForDISet类，查看结果，说明userDao已经成功注入。
 
+<img src=".assets/SSM-知识库笔记/media/image40.png" style="width:5.75in;height:0.97917in" />
+
 **4.1.4 小结**
 
 对于引用数据类型使用的是\<property name="" ref=""/\>
@@ -1905,6 +1999,8 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 **4.2 构造器注入**
 
 **4.2.1 环境准备**
+
+<img src=".assets/SSM-知识库笔记/media/image41.png" style="width:4.80208in;height:2.01042in" />
 
 （1）项目中添加BookDao、BookDaoImpl、UserDao、UserDaoImpl、BookService和BookServiceImpl类
 
@@ -2062,6 +2158,8 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 
 运行AppForDIConstructor类，查看结果，说明bookDao已经成功注入。
 
+<img src=".assets/SSM-知识库笔记/media/image42.png" style="width:5.75in;height:1.45833in" />
+
 构造器还可以注入多个引用数据类型，例如，在BookServiceImpl使用构造函数注入多个引用数据类型的步骤如下：
 
 （1）提供多个属性的构造函数
@@ -2126,6 +2224,8 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 （3）运行程序
 
 运行AppForDIConstructor类，查看结果，说明userDao已经成功注入
+
+<img src=".assets/SSM-知识库笔记/media/image43.png" style="width:5.75in;height:1.66667in" />
 
 **4.2.3 注入简单数据类型**
 
@@ -2195,7 +2295,11 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 
 运行AppForDIConstructor类，查看结果
 
+<img src=".assets/SSM-知识库笔记/media/image44.png" style="width:5.75in;height:1.14583in" />
+
 虽然已经完成了构造函数注入的基本使用，但是当构造函数中方法的参数名发生变化后，配置文件中的name属性也需要跟着变，存在紧耦合：
+
+<img src=".assets/SSM-知识库笔记/media/image45.png" style="width:5.75in;height:0.86458in" />
 
 实际参数名发生变化的情况并不多，如果真的需要变化，可以使用type属性进行类型注入：
 
@@ -2340,6 +2444,8 @@ Spring框架倡导使用构造器，第三方框架内部大多数采用构造�
 **4.4.1 环境准备**
 
 步骤和前面的都一致，快速拷贝即可：
+
+<img src=".assets/SSM-知识库笔记/media/image46.png" style="width:4.125in;height:2.05208in" />
 
 （1）项目中添加BookDao、BookDaoImpl、BookService和BookServiceImpl类
 
@@ -2492,6 +2598,8 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 
 按照名称注入中的名称指的是什么？
 
+<img src=".assets/SSM-知识库笔记/media/image47.png" style="width:5.75in;height:1.73958in" />
+
 bookDao是private修饰的，外部类无法直接访问
 
 外部类只能通过属性的set方法进行访问
@@ -2523,6 +2631,8 @@ bookDao是private修饰的，外部类无法直接访问
 常见的集合类型有 数组、List、Set、Map、Properties 。
 
 **4.5.1 环境准备**
+
+<img src=".assets/SSM-知识库笔记/media/image48.png" style="width:4.80208in;height:1.97917in" />
 
 （1）项目中添加添加BookDao、BookDaoImpl类
 
@@ -2714,6 +2824,8 @@ bookDao.save();<br />
 
 配置完成后，运行下看结果：
 
+<img src=".assets/SSM-知识库笔记/media/image49.png" style="width:5.75in;height:1.61458in" />
+
 **说明：**
 
 property标签表示setter方式注入，构造方式注入constructor-arg标签内部也可以写\<array\>、\<list\>、\<set\>、\<map\>、\<props\>标签
@@ -2731,6 +2843,8 @@ List的底层也是通过数组实现的，所以\<list\>和\<array\>标签是�
 **5.1.1 环境准备**
 
 创建一个Maven项目
+
+<img src=".assets/SSM-知识库笔记/media/image50.png" style="width:4.54167in;height:1.52083in" />
 
 pom.xml添加依赖
 
@@ -2876,6 +2990,8 @@ System.out.println(dataSource);<br />
 
 打印如下结果，说明第三方bean对象已经被Spring的IOC容器进行管理
 
+<img src=".assets/SSM-知识库笔记/media/image51.png" style="width:5.75in;height:4.02083in" />
+
 **5.1.3 实现C3P0管理**
 
 完成了DruidDataSource的管理，接下来我们再来加深练习下管理C3P0数据源。
@@ -2932,6 +3048,8 @@ C3P0的四个属性和Druid的四个属性是不一样的
 
 程序会报错ClassNotFoundException，错误如下
 
+<img src=".assets/SSM-知识库笔记/media/image52.png" style="width:5.75in;height:1.89583in" />
+
 错误ClassNotFoundException翻译出来是 类没有发现的异常，具体的类为com.mysql.jdbc.Driver，错误的原因是缺少mysql的驱动包。
 
 在pom.xml把驱动包引入：
@@ -2953,6 +3071,8 @@ C3P0的四个属性和Druid的四个属性是不一样的
 </table>
 
 添加完mysql的驱动包以后，再次运行App，就可以打印出结果：
+
+<img src=".assets/SSM-知识库笔记/media/image53.png" style="width:5.75in;height:1.27083in" />
 
 **注意：**
 
@@ -2982,7 +3102,7 @@ resources下创建一个jdbc.properties文件，并添加对应的属性键值�
 jdbc.driver=com.mysql.jdbc.Driver<br />
 jdbc.url=jdbc:mysql://127.0.0.1:3306/spring_db<br />
 jdbc.username=root<br />
-jdbc.password=[REDACTED]</td>
+jdbc.password=root</td>
 </tr>
 </tbody>
 </table>
@@ -3011,6 +3131,8 @@ http://www.springframework.org/schema/context/spring-context.xsd"&gt;<br />
 </tr>
 </tbody>
 </table>
+
+<img src=".assets/SSM-知识库笔记/media/image54.png" style="width:5.75in;height:1.51042in" />
 
 （3）加载properties配置文件
 
@@ -3148,6 +3270,8 @@ bookDao.save();<br />
 </tbody>
 </table>
 
+<img src=".assets/SSM-知识库笔记/media/image55.png" style="width:5.75in;height:1.20833in" />
+
 读取properties配置文件中的内容就已经完成，但是使用时有些注意事项：
 
 问题一：**键值对的key为username引发的问题**
@@ -3196,6 +3320,8 @@ http://www.springframework.org/schema/context/spring-context.xsd"&gt;<br />
 </table>
 
 3、运行后，在控制台打印的却不是root666，而是自己电脑的用户名
+
+<img src=".assets/SSM-知识库笔记/media/image56.png" style="width:5.75in;height:0.91667in" />
 
 出现问题的原因是\<context:property-placeholder/\>标签会加载系统的环境变量，而且环境变量的值会被优先加载。
 
@@ -3258,7 +3384,7 @@ jdbc.properties
 jdbc.driver=com.mysql.jdbc.Driver<br />
 jdbc.url=jdbc:mysql://127.0.0.1:3306/spring_db<br />
 jdbc.username=root<br />
-jdbc.password=[REDACTED]</td>
+jdbc.password=root</td>
 </tr>
 </tbody>
 </table>
@@ -3321,6 +3447,8 @@ http://www.springframework.org/schema/context/spring-context.xsd"&gt;<br />
 **5.2.3 加载properties文件小结**
 
 1.如何开启context命名空间？
+
+<img src=".assets/SSM-知识库笔记/media/image57.png" style="width:5.75in;height:2.30208in" />
 
 2.如何加载properties配置文件？
 
@@ -3439,6 +3567,8 @@ bookDao.save();<br />
 
 最终项目结构如下：
 
+<img src=".assets/SSM-知识库笔记/media/image58.png" style="width:5.75in;height:3.09375in" />
+
 **6.2 容器**
 
 **6.2.1 容器的创建方式**
@@ -3474,6 +3604,8 @@ ApplicationContext ctx = new FileSystemXmlApplicationContext("applicationContext
 </table>
 
 使用这种方式，运行，会出现如下错误：
+
+<img src=".assets/SSM-知识库笔记/media/image59.png" style="width:5.75in;height:0.9375in" />
 
 从错误信息中能发现，这种方式是从项目所在路径下开始查找applicationContext.xml配置文件的，所以需要将其修改为：
 
@@ -3545,7 +3677,11 @@ BookDao bookDao = ctx.getBean(BookDao.class);</td>
 
 （1）在IDEA中双击shift，输入BeanFactory
 
+<img src=".assets/SSM-知识库笔记/media/image60.png" style="width:5.75in;height:2.4375in" />
+
 （2）点击进入BeanFactory类，ctrl+h，就能查看到如下结构的层次关系
+
+<img src=".assets/SSM-知识库笔记/media/image61.png" style="width:5.75in;height:1.90625in" />
 
 从图中可以看出，容器类也是从无到有根据需要一层层叠加上来的，重点理解下这种设计思想。
 
@@ -3666,7 +3802,11 @@ FileSystemXmlApplicationContext
 
 **6.3.2 bean相关**
 
+<img src=".assets/SSM-知识库笔记/media/image62.png" style="width:5.75in;height:2.41667in" />
+
 **6.3.3 依赖注入相关**
+
+<img src=".assets/SSM-知识库笔记/media/image63.png" style="width:5.75in;height:2.61458in" />
 
 **7.IOC/DI注解开发**
 
@@ -3776,6 +3916,8 @@ bookDao.save();<br />
 
 最终项目结构如下：
 
+<img src=".assets/SSM-知识库笔记/media/image64.png" style="width:4.22917in;height:2.02083in" />
+
 **7.2 注解开发定义bean**
 
 （1）删除原XML配置，将配置文件中的\<bean\>标签删除掉
@@ -3817,6 +3959,8 @@ System.out.println("book dao save ..." );<br />
 
 XML与注解配置的对应关系：
 
+<img src=".assets/SSM-知识库笔记/media/image65.png" style="width:5.75in;height:2.76042in" />
+
 （3）配置Spring的注解包扫描
 
 为了让Spring框架能够扫描到写在类上的注解，需要在配置文件上进行包扫描
@@ -3856,6 +4000,8 @@ base-package指定Spring框架扫描的包路径，它会扫描指定包及其�
 （4）运行程序
 
 运行App类查看打印结果
+
+<img src=".assets/SSM-知识库笔记/media/image66.png" style="width:5.75in;height:1.30208in" />
 
 （5）Service上添加注解
 
@@ -3912,6 +4058,8 @@ System.out.println(bookService);<br />
 
 打印观察结果，两个bean对象都已经打印到控制台
 
+<img src=".assets/SSM-知识库笔记/media/image67.png" style="width:5.75in;height:1.10417in" />
+
 BookServiceImpl类没有起名称，所以在App中是按照类型来获取bean对象
 
 @Component注解如果不起名称，会有一个默认值就是**当前类名首字母小写**，所以也可以按照名称获取，如
@@ -3938,6 +4086,8 @@ System.out.println(bookService);</td>
 @Repository：用于数据层类上
 
 通过查看源码会发现，这三个注解和@Component注解的作用是一样的，主要是用于区分出当前类是属于表现层、业务层还是数据层：
+
+<img src=".assets/SSM-知识库笔记/media/image68.png" style="width:5.75in;height:0.61458in" />
 
 **@Component**
 
@@ -4029,9 +4179,13 @@ System.out.println(bookService);<br />
 
 运行AppForAnnotation，可以看到两个对象依然被获取成功
 
+<img src=".assets/SSM-知识库笔记/media/image69.png" style="width:5.75in;height:1.04167in" />
+
 至此，纯注解开发的方式已经完成，主要内容包括：
 
 Java类替换Spring核心配置文件
+
+<img src=".assets/SSM-知识库笔记/media/image70.png" style="width:5.75in;height:1.625in" />
 
 @Configuration注解用于设定当前类为配置类
 
@@ -4187,9 +4341,13 @@ System.out.println(bookDao2);<br />
 
 最终项目结构如下：
 
+<img src=".assets/SSM-知识库笔记/media/image71.png" style="width:4.30208in;height:2.26042in" />
+
 **7.4.2 Bean的作用范围**
 
 （1）运行App类，在控制台打印两个一摸一样的地址，说明默认情况下bean是单例
+
+<img src=".assets/SSM-知识库笔记/media/image72.png" style="width:5.75in;height:1.3125in" />
 
 （2）要想将BookDaoImpl变成非单例，只需要在其类上添加@scope注解
 
@@ -4214,6 +4372,8 @@ System.out.println("book dao save ...");<br />
 </table>
 
 再次执行App类，打印结果：
+
+<img src=".assets/SSM-知识库笔记/media/image73.png" style="width:5.75in;height:1.23958in" />
 
 **@Scope**
 
@@ -4329,6 +4489,8 @@ ctx.close(); // 关闭容器<br />
 
 （4）运行App类，查看打印结果，证明init和destroy方法都被执行了
 
+<img src=".assets/SSM-知识库笔记/media/image74.png" style="width:5.75in;height:1.33333in" />
+
 **注意：**JDK9以后jdk中的javax.annotation包被移除了，所以@PostConstruct和@PreDestroy注解可能找不到，需要导入下面的jar包
 
 <table>
@@ -4368,6 +4530,8 @@ ctx.close(); // 关闭容器<br />
 | 属性 | 无                   |
 
 **小结**
+
+<img src=".assets/SSM-知识库笔记/media/image75.png" style="width:5.75in;height:1.70833in" />
 
 **7.5 依赖注入**
 
@@ -4474,7 +4638,11 @@ bookService.save();<br />
 
 最终项目结构如下:
 
+<img src=".assets/SSM-知识库笔记/media/image76.png" style="width:4.23958in;height:4.45833in" />
+
 环境准备好后，运行后会发现有问题
+
+<img src=".assets/SSM-知识库笔记/media/image77.png" style="width:5.75in;height:1.33333in" />
 
 出现问题的原因是，在BookServiceImpl类中添加了BookDao的属性，并提供了setter方法，但是目前是没有提供配置注入BookDao的，所以bookDao对象为Null，调用其save方法就会报控指针异常。
 
@@ -4541,6 +4709,8 @@ System.out.println("book dao save ...2");<br />
 
 这个时候再次运行App就会报错
 
+<img src=".assets/SSM-知识库笔记/media/image78.png" style="width:5.75in;height:0.92708in" />
+
 此时，按照类型注入就无法区分到底注入哪个对象，解决方案为按照名称注入。
 
 **7.5.3 按照名称注入**
@@ -4573,6 +4743,8 @@ System.out.println("book dao save ...2" );<br />
 此时就可以注入成功，原因是：@Autowired默认按照类型自动装配，如果IOC容器中同类的Bean找到多个，就按照变量名和Bean的名称匹配，变量名叫bookDao而容器中也有一个bookDao，所以可以成功注入。
 
 例如下面这种情况，按照类型会找到多个bean对象，此时会按照bookDao名称去找，因为IOC容器只有名称叫bookDao1和bookDao2，所以找不到，会报NoUniqueBeanDefinitionException。
+
+<img src=".assets/SSM-知识库笔记/media/image79.png" style="width:5.75in;height:1.55208in" />
 
 当根据类型在容器中找到多个bean，注入参数的属性名又和容器中bean的名称不一致，这时需要使用**@Qualifier**指定注入哪个名称的bean对象。
 
@@ -4705,6 +4877,8 @@ System.out.println("book dao save ..." + name);<br />
 </table>
 
 （4）运行App类，查看运行结果，说明配置文件中的内容已经被加载到
+
+<img src=".assets/SSM-知识库笔记/media/image80.png" style="width:5.75in;height:1.77083in" />
 
 **注意：**
 
@@ -4874,6 +5048,8 @@ AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(
 </table>
 
 最终项目结构如下：
+
+<img src=".assets/SSM-知识库笔记/media/image81.png" style="width:4.42708in;height:3.25in" />
 
 **8.2 注解开发管理第三方bean**
 
@@ -5350,9 +5526,13 @@ return ds;<br />
 
 （3）运行程序
 
+<img src=".assets/SSM-知识库笔记/media/image82.png" style="width:5.75in;height:2.55208in" />
+
 **9.注解开发总结**
 
 XML配置和注解的开发实现对比如下：
+
+<img src=".assets/SSM-知识库笔记/media/image83.png" style="width:5.75in;height:2.54167in" />
 
 **10.Spring整合**
 
@@ -5538,7 +5718,7 @@ resources目录下添加，用于配置数据库连接四要素
 jdbc.driver=com.mysql.jdbc.Driver<br />
 jdbc.url=jdbc:mysql://localhost:3306/spring_db?useSSL=false<br />
 jdbc.username=root<br />
-jdbc.password=[REDACTED]</td>
+jdbc.password=root</td>
 </tr>
 </tbody>
 </table>
@@ -5621,15 +5801,21 @@ sqlSession.close();<br />
 
 （9）运行程序
 
+<img src=".assets/SSM-知识库笔记/media/image84.png" style="width:5.75in;height:1.80208in" />
+
 **10.1.2 思路分析**
 
 Mybatis的基础环境准备好后，分析上述内容中哪些对象可以交给Spring来管理？
 
 Mybatis程序核心对象分析
 
+<img src=".assets/SSM-知识库笔记/media/image85.png" style="width:5.75in;height:2.51042in" />
+
 从图中可以获取到，真正需要交给Spring管理的是**SqlSessionFactory**。
 
 整合Mybatis，就是将Mybatis用到的内容交给Spring管理，分析下配置文件：
+
+<img src=".assets/SSM-知识库笔记/media/image86.png" style="width:5.75in;height:2.8125in" />
 
 第一行读取外部properties配置文件，Spring有提供具体的解决方案@PropertySource，需要交给Spring
 
@@ -5784,11 +5970,15 @@ return msc;<br />
 
 使用SqlSessionFactoryBean封装SqlSessionFactory需要的环境信息
 
+<img src=".assets/SSM-知识库笔记/media/image87.png" style="width:5.75in;height:2.73958in" />
+
 SqlSessionFactoryBean是前面讲解FactoryBean的一个子类，在该类中将SqlSessionFactory的创建进行了封装，简化对象的创建，我们只需要将其需要的内容设置即可。
 
 方法中有一个参数为dataSource，当前Spring容器中已经创建了Druid数据源，类型刚好是DataSource类型，此时在初始化SqlSessionFactoryBean这个对象的时候，发现需要使用DataSource对象，而容器中刚好有这么一个对象，就自动加载了DruidDataSource对象。
 
 使用MapperScannerConfigurer加载Dao接口，创建代理对象保存到IOC容器中
+
+<img src=".assets/SSM-知识库笔记/media/image88.png" style="width:5.75in;height:2.26042in" />
 
 这个MapperScannerConfigurer对象也是MyBatis提供的专用于整合的jar包中的类，用来处理原始配置文件中的mappers相关配置，加载数据层的Mapper接口类
 
@@ -5840,6 +6030,8 @@ System.out.println(ac);<br />
 
 （8）运行程序
 
+<img src=".assets/SSM-知识库笔记/media/image89.png" style="width:5.75in;height:1.04167in" />
+
 支持Spring与Mybatis的整合就已经完成了，其中主要用到的两个类分别是：
 
 SqlSessionFactoryBean
@@ -5853,6 +6045,8 @@ MapperScannerConfigurer
 **10.2.1 环境准备**
 
 直接使用Spring与Mybatis整合的环境即可，当然也可以重新创建一个，项目结构如下：
+
+<img src=".assets/SSM-知识库笔记/media/image90.png" style="width:4.26042in;height:5.51042in" />
 
 **10.2.2 整合Junit步骤**
 
@@ -6020,9 +6214,13 @@ System.out.println("book dao select ...");<br />
 
 save方法中有计算万次执行消耗的时间，当在App类中从容器中获取bookDao对象后，分别执行save、delete、update、select，结果如下：
 
+<img src=".assets/SSM-知识库笔记/media/image91.png" style="width:5.75in;height:1.28125in" />
+
 会发现，对于计算万次执行消耗的时间只有save方法有，但是delete和update方法也有，而select方法又没有？
 
 其实这里就使用了Spring的AOP，在不惊动（改动）原有设计（代码）的前提下，给某些代码添加功能，这个就是Spring的理念：无入侵式/无侵入式。基于这个案例来理解AOP的核心概念。
+
+<img src=".assets/SSM-知识库笔记/media/image92.png" style="width:5.75in;height:2.5in" />
 
 （1）Spring的AOP是对一个类的方法在不进行任何修改的前提下实现增强，例如BookServiceImpl中的save、update、delete、select方法，这些方法就叫**连接点**。
 
@@ -6153,6 +6351,8 @@ bookDao.save();<br />
 
 最终项目结构如下：
 
+<img src=".assets/SSM-知识库笔记/media/image93.png" style="width:4.3125in;height:3.25in" />
+
 **11.2.2 AOP实现**
 
 （1）添加依赖
@@ -6172,6 +6372,8 @@ bookDao.save();<br />
 </tr>
 </tbody>
 </table>
+
+<img src=".assets/SSM-知识库笔记/media/image94.png" style="width:5.46875in;height:1.51042in" />
 
 因为spring-context中已经导入了spring-aop，所以不需要再单独导入spring-aop
 
@@ -6252,6 +6454,8 @@ System.out.println(System.currentTimeMillis());<br />
 
 绑定切入点与通知关系，并指定通知添加到原始连接点的具体执行位置
 
+<img src=".assets/SSM-知识库笔记/media/image95.png" style="width:5.75in;height:1.71875in" />
+
 @Before翻译过来是之前，也就是说通知会在切入点方法执行之前执行，其他四种类型后面会讲。
 
 （6）将通知类配给容器并标识其为切面类
@@ -6318,6 +6522,8 @@ bookDao.update();<br />
 
 看到在执行update方法之前打印了系统时间戳，说明对原始方法进行了增强，AOP编程成功
 
+<img src=".assets/SSM-知识库笔记/media/image96.png" style="width:5.75in;height:2.3125in" />
+
 **@EnableAspectJAutoProxy**
 
 |      |                         |
@@ -6365,6 +6571,8 @@ bookDao.update();<br />
 
 流程2，读取所有切面配置中的切入点。下面例子中有两个切入点的配置，但是第一个ptx()并没有被使用，所以不会被读取
 
+<img src=".assets/SSM-知识库笔记/media/image97.png" style="width:5.75in;height:2.77083in" />
+
 流程3，初始化bean，判定bean对应的类中的方法是否匹配到任意切入点
 
 匹配失败，说明不需要增强，创建原始对象，如UserDao，直接调用原始对象的方法即可
@@ -6374,6 +6582,8 @@ bookDao.update();<br />
 对哪个类做增强，这个类对应的对象就叫做目标对象
 
 因为要对目标对象进行功能增强，而采用的技术是动态代理，所以会为其创建一个代理对象
+
+<img src=".assets/SSM-知识库笔记/media/image98.png" style="width:5.75in;height:3.375in" />
 
 流程4，获取bean执行方法
 
@@ -6438,6 +6648,8 @@ System.out.println(System.currentTimeMillis());<br />
 
 （3）运行程序
 
+<img src=".assets/SSM-知识库笔记/media/image99.png" style="width:5.75in;height:1.36458in" />
+
 （4）修改MyAdvice类，增强
 
 因为定义的切入点中被修改成update，所以BookDao中的update方法在执行的时候会被增强，容器中的对象应该是目标对象的代理对象
@@ -6466,6 +6678,8 @@ System.out.println(System.currentTimeMillis());<br />
 
 （5）运行程序
 
+<img src=".assets/SSM-知识库笔记/media/image100.png" style="width:5.75in;height:1.66667in" />
+
 **11.3.2 AOP核心概念**
 
 AOP的工作流程中提到了两个核心概念：
@@ -6485,6 +6699,8 @@ SpringAOP是在不改变原有设计(代码)的前提下对其进行增强的，
 **11.4.1 AOP切入点表达式**
 
 **语法格式**
+
+<img src=".assets/SSM-知识库笔记/media/image101.png" style="width:5.75in;height:1.4375in" />
 
 切入点：要进行增强的方法
 
@@ -6601,6 +6817,8 @@ execution(* *..*Service+.*(..))</td>
 
 **案例**
 
+<img src=".assets/SSM-知识库笔记/media/image102.png" style="width:5.75in;height:2.35417in" />
+
 <table>
 <colgroup>
 <col style="width: 100%" />
@@ -6683,6 +6901,8 @@ AOP通知描述了抽取的共性功能，根据共性功能抽取的位置不�
 返回后通知：追加功能到方法执行后，只有方法正常执行结束后才进行，类似于在代码3添加内容，如果方法执行抛出异常将不会被添加
 
 抛出异常后通知：追加功能到方法抛出异常后，只有方法执行出异常才进行，类似于在代码4添加内容，只有方法抛出异常后才会被添加
+
+<img src=".assets/SSM-知识库笔记/media/image103.png" style="width:5.75in;height:3.55208in" />
 
 为了更好理解这5种通知类型，先来准备一个环境：
 
@@ -6819,6 +7039,8 @@ bookDao.update();<br />
 
 6、最终项目结构如下：
 
+<img src=".assets/SSM-知识库笔记/media/image104.png" style="width:4.38542in;height:3.78125in" />
+
 **前置通知**
 
 修改MyAdvice，在before方法上添加@Before注解
@@ -6845,6 +7067,8 @@ System.out.println("before advice ...");<br />
 </tr>
 </tbody>
 </table>
+
+<img src=".assets/SSM-知识库笔记/media/image105.png" style="width:5.75in;height:1.67708in" />
 
 **后置通知**
 
@@ -6874,6 +7098,8 @@ System.out.println("after advice ...");<br />
 </tbody>
 </table>
 
+<img src=".assets/SSM-知识库笔记/media/image106.png" style="width:5.75in;height:1.91667in" />
+
 **环绕通知**
 
 <table>
@@ -6898,6 +7124,8 @@ System.out.println("around after advice ...");<br />
 </tr>
 </tbody>
 </table>
+
+<img src=".assets/SSM-知识库笔记/media/image107.png" style="width:5.75in;height:1.58333in" />
 
 可以看到，原始方法的内容却没有被执行，要想执行原始方法，就必须对原始方法进行调用：
 
@@ -6924,6 +7152,8 @@ System.out.println("around after advice ...");<br />
 </tr>
 </tbody>
 </table>
+
+<img src=".assets/SSM-知识库笔记/media/image108.png" style="width:5.75in;height:1.95833in" />
 
 如果原始方法有返回值，就需要根据原始方法的返回值来设置环绕通知的返回值，具体解决方案为：
 
@@ -6983,6 +7213,8 @@ System.out.println("afterReturning advice ...");<br />
 </tbody>
 </table>
 
+<img src=".assets/SSM-知识库笔记/media/image109.png" style="width:5.75in;height:1.85417in" />
+
 **注意：**返回后通知是需要在原始方法select正常执行后才会被执行，如果select()方法执行的过程中出现了异常，那么返回后通知是不会被执行。后置通知是不管原始方法有没有抛出异常都会被执行。
 
 **异常后通知**
@@ -7012,9 +7244,13 @@ System.out.println("afterThrowing advice ...");<br />
 </tbody>
 </table>
 
+<img src=".assets/SSM-知识库笔记/media/image110.png" style="width:5.75in;height:1.42708in" />
+
 **注意：**异常后通知是需要原始方法抛出异常，可以在select()方法中添加一行代码int i = 1/0即可，如果没有抛异常，异常后通知将不会被执行。
 
 因为环绕通知可以控制原始方法的执行，所以当把增强的代码写在调用原始方法的不同位置时就可以实现不同的通知类型的功能，如：
+
+<img src=".assets/SSM-知识库笔记/media/image111.png" style="width:5.75in;height:2.94792in" />
 
 **@After**
 
@@ -7219,7 +7455,7 @@ private Double money;<br />
 jdbc.driver=com.mysql.jdbc.Driver<br />
 jdbc.url=jdbc:mysql://localhost:3306/spring_db?useSSL=false<br />
 jdbc.username=root<br />
-jdbc.password=[REDACTED]</td>
+jdbc.password=root</td>
 </tr>
 </tbody>
 </table>
@@ -7314,6 +7550,8 @@ List&lt;Account&gt; all = accountService.findAll();<br />
 </table>
 
 6、最终项目结构如下：
+
+<img src=".assets/SSM-知识库笔记/media/image112.png" style="width:4.30208in;height:6.10417in" />
 
 **功能开发**
 
@@ -7420,6 +7658,8 @@ System.out.println("业务层接口万次执行时间: "+(end-start)+"ms");<br /
 
 （5）运行单元测试类
 
+<img src=".assets/SSM-知识库笔记/media/image113.png" style="width:5.75in;height:1.69792in" />
+
 *因为程序每次执行的时长是不一样的，所以运行多次最终的结果是不一样的。*
 
 （6）程序优化
@@ -7460,6 +7700,8 @@ System.out.println("万次执行：" + className + "." + methodName + "----&gt;"
 </tr>
 </tbody>
 </table>
+
+<img src=".assets/SSM-知识库笔记/media/image114.png" style="width:5.75in;height:0.9375in" />
 
 **11.4.4 AOP通知获取数据**
 
@@ -7620,6 +7862,8 @@ System.out.println(name);<br />
 
 6、最终项目结构如下：
 
+<img src=".assets/SSM-知识库笔记/media/image115.png" style="width:4.38542in;height:3.73958in" />
+
 **11.4.4.1 获取参数**
 
 **非环绕通知获取方式**
@@ -7653,6 +7897,8 @@ System.out.println("before advice ..." );<br />
 
 运行App类，可以获取如下内容，说明参数100已经被获取
 
+<img src=".assets/SSM-知识库笔记/media/image116.png" style="width:5.52083in;height:2.08333in" />
+
 *由于并不能确定方法的参数到底有几个，所以这里获取的会是一个数组。*
 
 **环绕通知获取方式**
@@ -7685,7 +7931,11 @@ return ret;<br />
 </tbody>
 </table>
 
+<img src=".assets/SSM-知识库笔记/media/image117.png" style="width:5.75in;height:2.14583in" />
+
 注意，pjp.proceed()方法有两个构造方法，分别是：
+
+<img src=".assets/SSM-知识库笔记/media/image118.png" style="width:5.75in;height:1.09375in" />
 
 调用无参数的proceed，当原始方法有参数，会在调用的过程中自动传入参数，所以调用这两个方法的任意一个都可以完成功能，但是当需要修改原始方法的参数时，就只能采用带有参数的方法，如下所示。
 
@@ -7782,9 +8032,15 @@ System.out.println("afterReturning advice ..."+ret);<br />
 
 （1）参数名的问题
 
+<img src=".assets/SSM-知识库笔记/media/image119.png" style="width:5.75in;height:0.73958in" />
+
 （2）afterReturning方法参数类型可以写成String，但是为了能匹配更多的参数类型，建议写成Object类型
 
 （3）afterReturning方法参数的顺序问题
+
+<img src=".assets/SSM-知识库笔记/media/image120.png" style="width:5.75in;height:0.85417in" />
+
+<img src=".assets/SSM-知识库笔记/media/image121.png" style="width:5.75in;height:1.92708in" />
 
 **11.4.4.3 获取异常**
 
@@ -7875,11 +8131,17 @@ return "itcast";<br />
 </tbody>
 </table>
 
+<img src=".assets/SSM-知识库笔记/media/image122.png" style="width:5.75in;height:0.66667in" />
+
 运行App后，查看控制台，就能看的异常信息被打印到控制台
+
+<img src=".assets/SSM-知识库笔记/media/image123.png" style="width:5.75in;height:1in" />
 
 **11.4.5 百度网盘密码数据兼容处理**
 
 当从别的地方复制提取码的时候，有时会多复制到一些空格，直接粘贴到百度的提取码输入框，如果不做处理，直接对比就会引发提取码不一致，这时就需要在业务方法执行之前对所有的输入参数进行格式处理，使用处理后的参数调用原始方法。
+
+<img src=".assets/SSM-知识库笔记/media/image124.png" style="width:5.75in;height:4.96875in" />
 
 **环境准备**
 
@@ -7985,6 +8247,8 @@ System.out.println(flag);<br />
 </table>
 
 最终项目结构如下：
+
+<img src=".assets/SSM-知识库笔记/media/image125.png" style="width:4.21875in;height:4.41667in" />
 
 **具体实现**
 
@@ -8120,6 +8384,8 @@ return password.equals("root");<br />
 
 需要注意的是：
 
+<img src=".assets/SSM-知识库笔记/media/image126.png" style="width:5.75in;height:2.77083in" />
+
 **11.5 AOP总结**
 
 **11.5.1 AOP的核心概念**
@@ -8230,7 +8496,11 @@ ProceedingJoinPoint：适用于环绕通知
 
 Spring为了管理事务，提供了一个平台事务管理器PlatformTransactionManager：
 
+<img src=".assets/SSM-知识库笔记/media/image127.png" style="width:5.75in;height:0.77083in" />
+
 commit是用来提交事务，rollback是用来回滚事务。但是PlatformTransactionManager只是一个接口，Spring还为其提供了一个具体的实现：
+
+<img src=".assets/SSM-知识库笔记/media/image128.png" style="width:5.75in;height:0.625in" />
 
 我们只需要给它一个DataSource对象，它就可以帮你去在业务层管理事务。其内部采用的是JDBC的事务，所以如果只要持久层采用的是JDBC相关的技术，就可以采用这个事务管理器来管理事务。而Mybatis内部采用的就是JDBC的事务，所以后期Spring整合Mybatis就采用的这个DataSourceTransactionManager事务管理器。
 
@@ -8408,7 +8678,7 @@ accountDao.inMoney(in,money);<br />
 jdbc.driver=com.mysql.jdbc.Driver<br />
 jdbc.url=jdbc:mysql://localhost:3306/spring_db?useSSL=false<br />
 jdbc.username=root<br />
-jdbc.password=[REDACTED]</td>
+jdbc.password=root</td>
 </tr>
 </tbody>
 </table>
@@ -8519,6 +8789,8 @@ accountService.transfer("Tom","Jerry",100D);<br />
 </table>
 
 最终项目结构如下：
+
+<img src=".assets/SSM-知识库笔记/media/image129.png" style="width:4.26042in;height:6in" />
 
 **12.2.2 事务管理**
 
@@ -8688,7 +8960,11 @@ public class SpringConfig {<br />
 
 未开启Spring事务之前：AccountDao的outMoney因为是修改操作，会开启一个事务T1；AccountDao的inMoney因为是修改操作，会开启一个事务T2；AccountService的transfer没有事务，运行过程中如果没有抛出异常，则T1和T2都正常提交，数据正确，如果在两个方法中间抛出异常，T1因为执行成功提交事务，T2因为抛异常不会被执行，就会导致数据出现错误。
 
+<img src=".assets/SSM-知识库笔记/media/image130.png" style="width:5.75in;height:2.67708in" />
+
 开启Spring的事务管理后：transfer上添加了@Transactional注解，在该方法上就会有一个事务T，AccountDao的outMoney方法的事务T1加入到transfer的事务T中，AccountDao的inMoney方法的事务T2加入到transfer的事务T中，这样就保证他们在同一个事务中，当业务层中出现异常，整个事务就会回滚，保证数据的准确性。
+
+<img src=".assets/SSM-知识库笔记/media/image131.png" style="width:5.75in;height:2.69792in" />
 
 通过分析，得到下面两个概念：
 
@@ -8701,6 +8977,8 @@ public class SpringConfig {<br />
 **12.4 Spring事务属性**
 
 **12.4.1 事务配置**
+
+<img src=".assets/SSM-知识库笔记/media/image132.png" style="width:5.75in;height:2.71875in" />
 
 上面这些属性都可以在@Transactional注解的参数上进行设置。
 
@@ -8907,6 +9185,8 @@ logService.log(out,in,money);<br />
 
 **12.4.3 事务传播行为**
 
+<img src=".assets/SSM-知识库笔记/media/image133.png" style="width:5.75in;height:2.26042in" />
+
 对于上述案例的分析：
 
 log方法、inMoney方法和outMoney方法都属于增删改，分别有事务T1，T2，T3
@@ -8947,6 +9227,8 @@ logDao.log("转账操作由"+out+"到"+in+",金额："+money);<br />
 
 **事务传播行为的可选值**
 
+<img src=".assets/SSM-知识库笔记/media/image134.png" style="width:5.75in;height:2.65625in" />
+
 对于开发实际中使用的话，因为默认值需要事务是常态的，根据开发过程选择其他的就可以了， 例如案例中需要新事务就需要手工配置，其实入账和出账操作上也有事务，采用的就是默认值。
 
 **SpringMVC**
@@ -8959,15 +9241,21 @@ logDao.log("转账操作由"+out+"到"+in+",金额："+money);<br />
 
 随着互联网的发展，上面的模式因为是同步调用，性能慢慢的跟不上需求，所以异步调用慢慢的走到前台。异步调用中，后端不需要返回view视图，将其去除，前端如果通过异步调用的方式进行交互，后台就需要将返回的数据转换成JSON格式进行返回。**SpringMVC**就是处于Web层的框架，主要作用是接收前端发过来的请求和数据然后经过处理并将处理的结果转换成JSON响应给前端，所以如何处理请求和响应是SpringMVC中非常重要的一块内容。
 
+<img src=".assets/SSM-知识库笔记/media/image135.png" style="width:5.75in;height:3.15625in" />
+
 **2.SpringMVC入门案例**
 
 **2.1 案例实现**
 
 （1）创建Maven项目
 
+<img src=".assets/SSM-知识库笔记/media/image136.png" style="width:5.75in;height:1.53125in" />
+
 （2）补全目录结构
 
 使用骨架创建的项目结构不完整，需要手动补全
+
+<img src=".assets/SSM-知识库笔记/media/image137.png" style="width:5.75in;height:1.3125in" />
 
 （3）导入jar包
 
@@ -9098,11 +9386,17 @@ return null;<br />
 
 （7）配置Tomcat环境
 
+<img src=".assets/SSM-知识库笔记/media/image138.png" style="width:5.75in;height:2.1875in" />
+
 （8）启动运行项目
+
+<img src=".assets/SSM-知识库笔记/media/image139.png" style="width:5.75in;height:1.34375in" />
 
 （9）浏览器访问
 
 浏览器输入http://localhost/save进行访问，会报如下错误，原因是后台没有指定返回的页面，目前只需要关注控制台看user save ...有没有被执行即可
+
+<img src=".assets/SSM-知识库笔记/media/image140.png" style="width:5.75in;height:1.63542in" />
 
 （10）修改Controller返回值解决上述问题
 
@@ -9130,6 +9424,8 @@ return "{'info':'springmvc'}";<br />
 
 再次重启tomcat服务器，然后重新通过浏览器测试访问，会发现还是会报错，这次的错是404
 
+<img src=".assets/SSM-知识库笔记/media/image141.png" style="width:5.75in;height:1.19792in" />
+
 原因是，如果方法直接返回字符串，springMVC会把字符串当成页面的名称在项目中进行查找返回，因为不存在对应返回值名称的页面，所以会报404错误，找不到资源，而希望直接返回的是json数据。
 
 （11）设置返回数据为json
@@ -9156,6 +9452,8 @@ return "{'info':'springmvc'}";<br />
 </table>
 
 再次重启tomcat服务器，然后重新通过浏览器测试访问，就能看到返回的结果数据
+
+<img src=".assets/SSM-知识库笔记/media/image142.png" style="width:5.75in;height:1.19792in" />
 
 **注意事项**
 
@@ -9225,6 +9523,8 @@ SpringMVC核心配置类（设置配置类，扫描controller包，加载Control
 
 为了更好地使用SpringMVC，将SpringMVC的使用过程分两个阶段分析，分别是 启动服务器初始化过程 和 单次请求过程。
 
+<img src=".assets/SSM-知识库笔记/media/image143.png" style="width:5.75in;height:3.98958in" />
+
 **启动服务器初始化过程**
 
 服务器启动，执行ServletContainersInitConfig类，初始化web容器，功能类似于以前的web.xml
@@ -9233,11 +9533,17 @@ SpringMVC核心配置类（设置配置类，扫描controller包，加载Control
 
 加载SpringMvcConfig配置类
 
+<img src=".assets/SSM-知识库笔记/media/image144.png" style="width:5.75in;height:1.21875in" />
+
 执行@ComponentScan，扫描指定包及其子包下所有类上的注解，如Controller类上的@Controller注解，加载对应的bean
 
 加载UserController，每个@RequestMapping的名称对应一个具体的方法，例如下面就建立了 /save 和 save方法的对应关系
 
+<img src=".assets/SSM-知识库笔记/media/image145.png" style="width:5.75in;height:2.61458in" />
+
 执行getServletMappings方法，设定SpringMVC拦截请求的路径规则，例如下面的/代表所拦截请求的路径规则，只有被拦截后才能交给SpringMVC来处理请求
+
+<img src=".assets/SSM-知识库笔记/media/image146.png" style="width:5.75in;height:0.76042in" />
 
 **单次请求过程**
 
@@ -9262,6 +9568,8 @@ web容器发现该请求满足SpringMVC拦截规则，将请求交给SpringMVC�
 思考这里入门案例中的配置类SpringMvcConfig和学习Spring时创建的配置类SpringConfig分别需要加载哪些内容？
 
 目前的项目结构：
+
+<img src=".assets/SSM-知识库笔记/media/image147.png" style="width:3.59375in;height:6.38542in" />
 
 config目录放的是配置类：
 
@@ -9291,7 +9599,11 @@ Spring控制业务bean（Service）和功能bean（DataSource、SqlSessionFactor
 
 在SpringMVC的配置类SpringMvcConfig中使用注解@ComponentScan，只需要将其扫描范围设置到controller即可：
 
+<img src=".assets/SSM-知识库笔记/media/image148.png" style="width:5.75in;height:1.23958in" />
+
 在Spring的配置类SpringConfig中使用注解@ComponentScan，当时扫描的范围中其实已经包含了controller：
+
+<img src=".assets/SSM-知识库笔记/media/image149.png" style="width:5.75in;height:0.8125in" />
 
 从包结构来看的话，Spring已经多把SpringMVC的controller类也给扫描到，所以接下来就是解决：因为功能不同，如何避免Spring错误加载到SpringMVC的bean？
 
@@ -9469,6 +9781,8 @@ private Integer age;<br />
 
 最终项目结构如下：
 
+<img src=".assets/SSM-知识库笔记/media/image150.png" style="width:5.75in;height:4.66667in" />
+
 **2.4.3 设置bean加载控制**
 
 方式一：修改Spring配置类，设定扫描范围为精准范围。
@@ -9548,6 +9862,8 @@ System.out.println(ctx.getBean(UserController.class));<br />
 </table>
 
 如果被排除了，该方法执行就会报bean未被定义的错误
+
+<img src=".assets/SSM-知识库笔记/media/image151.png" style="width:5.75in;height:0.73958in" />
 
 注意：测试的时候，需要把SpringMvcConfig配置类上的@ComponentScan注解注释掉，否则不会报错，原因是
 
@@ -9658,15 +9974,23 @@ PostMan是一款功能强大的网页调试与发送网页HTTP请求的Chrome插
 
 双击资料中的Postman-win64-8.3.1-Setup.exe即可自动安装，看到如下界面，就说明已经安装成功。
 
+<img src=".assets/SSM-知识库笔记/media/image152.png" style="width:5.75in;height:3.30208in" />
+
 需要注意的是，需要先关闭自己电脑的防火墙，否则Postman无法正常启动使用。
 
 **3.3 PostMan使用**
 
 创建WorkSpace工作空间
 
+<img src=".assets/SSM-知识库笔记/media/image153.png" style="width:5.75in;height:2.73958in" />
+
 发送请求
 
+<img src=".assets/SSM-知识库笔记/media/image154.png" style="width:5.75in;height:2.34375in" />
+
 保存当前请求
+
+<img src=".assets/SSM-知识库笔记/media/image155.png" style="width:5.75in;height:3.69792in" />
 
 第一次请求需要创建一个新的目录，后面就不需要创建新目录，直接保存到已经创建好的目录即可。
 
@@ -9801,7 +10125,11 @@ return "{'module':'book save'}";<br />
 
 最终项目结构如下：
 
+<img src=".assets/SSM-知识库笔记/media/image156.png" style="width:5.75in;height:3.02083in" />
+
 把环境准备好后，启动Tomcat服务器，后台会报错：
+
+<img src=".assets/SSM-知识库笔记/media/image157.png" style="width:5.75in;height:2.23958in" />
 
 从错误信息可以看出，UserController有一个save方法，访问路径为http://localhost/save，BookController也有一个save方法，访问路径为http://localhost/save，当访问http://localhost/saved时，访问路径冲突。
 
@@ -10026,9 +10354,13 @@ private int age;<br />
 
 最终项目结构如下：
 
+<img src=".assets/SSM-知识库笔记/media/image158.png" style="width:5.75in;height:3in" />
+
 **4.2.1 GET请求参数**
 
 **发送单个参数**
+
+<img src=".assets/SSM-知识库笔记/media/image159.png" style="width:5.75in;height:1.76042in" />
 
 <table>
 <colgroup>
@@ -10052,6 +10384,8 @@ return "{'module':'commonParam'}";<br />
 </table>
 
 **发送多个参数**
+
+<img src=".assets/SSM-知识库笔记/media/image160.png" style="width:5.75in;height:2.07292in" />
 
 接收参数：
 
@@ -10080,6 +10414,8 @@ return "{'module':'commonParam'}";<br />
 **GET请求中文乱码**
 
 如果传递的参数中有中文，例如http://localhost/commonParam?name=张三&age=18，会发现接收到的参数会出现中文乱码问题。
+
+<img src=".assets/SSM-知识库笔记/media/image161.png" style="width:5.75in;height:1.20833in" />
 
 出现乱码的原因为，Tomcat8.5以后的版本已经处理了中文乱码的问题，但是IDEA中的Tomcat插件目前只到Tomcat7，所以需要修改pom.xml来解决GET请求中文乱码问题
 
@@ -10110,6 +10446,8 @@ return "{'module':'commonParam'}";<br />
 
 **4.2.2 POST请求参数**
 
+<img src=".assets/SSM-知识库笔记/media/image162.png" style="width:5.75in;height:3.35417in" />
+
 接收参数和GET一致，不用做任何修改
 
 <table>
@@ -10136,7 +10474,11 @@ return "{'module':'commonParam'}";<br />
 
 **POST请求中文乱码**
 
+<img src=".assets/SSM-知识库笔记/media/image163.png" style="width:5.75in;height:3.84375in" />
+
 控制台打印，会发现有中文乱码问题
+
+<img src=".assets/SSM-知识库笔记/media/image164.png" style="width:5.75in;height:1.79167in" />
 
 解决方案就是配置过滤器
 
@@ -10192,6 +10534,8 @@ POJO类型参数
 
 普通参数：url地址传参，地址参数名与形参变量名相同，定义形参即可接收参数。
 
+<img src=".assets/SSM-知识库笔记/media/image165.png" style="width:5.75in;height:3.20833in" />
+
 如果形参与地址参数名不一致，例如使用username形参接收参数：
 
 <table>
@@ -10213,6 +10557,8 @@ return "{'module':'common param different name'}";<br />
 </table>
 
 因为前端给的是name，后台接收使用的是userName，两个名称对不上，导致接收数据失败。
+
+<img src=".assets/SSM-知识库笔记/media/image166.png" style="width:5.75in;height:1.84375in" />
 
 解决方案是使用**@RequestParam**注解：
 
@@ -10261,6 +10607,8 @@ private int age;<br />
 </table>
 
 发送请求和参数：
+
+<img src=".assets/SSM-知识库笔记/media/image167.png" style="width:5.75in;height:2.03125in" />
 
 后台接收参数：
 
@@ -10316,6 +10664,8 @@ private Address address;<br />
 
 发送请求和参数：
 
+<img src=".assets/SSM-知识库笔记/media/image168.png" style="width:5.75in;height:2.625in" />
+
 后台接收参数：
 
 <table>
@@ -10343,6 +10693,8 @@ return "{'module':'pojo param'}";<br />
 数组参数：请求参数名与形参对象属性名相同且请求参数为多个，定义数组类型即可接收参数。
 
 发送请求和参数：
+
+<img src=".assets/SSM-知识库笔记/media/image169.png" style="width:5.75in;height:2.23958in" />
 
 后台接收参数：
 
@@ -10387,6 +10739,8 @@ return "{'module':'list param'}";<br />
 </table>
 
 运行会报错：
+
+<img src=".assets/SSM-知识库笔记/media/image170.png" style="width:5.75in;height:1.10417in" />
 
 原因是SpringMVC将List看做是一个POJO对象来处理，将其创建一个对象并准备把前端的数据封装到对象中，但是List是一个接口无法创建对象，所以报错，解决方案是使用**@RequestParam**注解绑定参数关系：
 
@@ -10474,6 +10828,8 @@ SpringMVC默认使用的是jackson来处理json的转换，所以需要在pom.xm
 
 （2）PostMan发送JSON数据
 
+<img src=".assets/SSM-知识库笔记/media/image171.png" style="width:5.75in;height:1.88542in" />
+
 （3）开启SpringMVC注解支持
 
 在SpringMVC的配置类中开启SpringMVC的注解支持，这里面就包含了将JSON转换成对象的功能。
@@ -10517,9 +10873,13 @@ return "{'module':'list common for json param'}";<br />
 
 （5）启动运行程序
 
+<img src=".assets/SSM-知识库笔记/media/image172.png" style="width:5.75in;height:1.08333in" />
+
 **4.4.2 JSON对象数据**
 
 请求和数据的发送：
+
+<img src=".assets/SSM-知识库笔记/media/image173.png" style="width:5.75in;height:1.79167in" />
 
 后端接收数据：
 
@@ -10541,6 +10901,8 @@ return "{'module':'pojo for json param'}";<br />
 </table>
 
 启动程序访问测试：
+
+<img src=".assets/SSM-知识库笔记/media/image174.png" style="width:5.75in;height:0.96875in" />
 
 由于前端没有传递数据给后端，所以address为null，如果想要address也有数据，需求修改前端传递的数据内容：
 
@@ -10565,9 +10927,13 @@ return "{'module':'pojo for json param'}";<br />
 
 再次发送请求，就能看到address中的数据：
 
+<img src=".assets/SSM-知识库笔记/media/image175.png" style="width:5.75in;height:0.54167in" />
+
 **4.4.3 JSON对象数组**
 
 请求和数据的发送：
+
+<img src=".assets/SSM-知识库笔记/media/image176.png" style="width:5.75in;height:1.61458in" />
 
 后端接收数据：
 
@@ -10589,6 +10955,8 @@ return "{'module':'list pojo for json param'}";<br />
 </table>
 
 启动程序访问测试：
+
+<img src=".assets/SSM-知识库笔记/media/image177.png" style="width:5.75in;height:0.61458in" />
 
 **4.4.4 JSON数据参数总结**
 
@@ -10661,7 +11029,11 @@ return "{'module':'data param'}";<br />
 
 （2）启动Tomcat服务器，使用PostMan发送GET请求，并设置date参数
 
+<img src=".assets/SSM-知识库笔记/media/image178.png" style="width:5.75in;height:1.875in" />
+
 （3）查看控制台
+
+<img src=".assets/SSM-知识库笔记/media/image179.png" style="width:5.75in;height:1.28125in" />
 
 发现SpringMVC可以接收日期数据类型，并将其打印在控制台。
 
@@ -10687,6 +11059,8 @@ return "{'module':'data param'}";<br />
 </table>
 
 （6）使用PostMan发送请求，携带两个不同的日期格式
+
+<img src=".assets/SSM-知识库笔记/media/image180.png" style="width:5.75in;height:2.11458in" />
 
 发送请求和数据后，页面会报400，控制台报出如下错误：
 
@@ -10726,6 +11100,8 @@ return "{'module':'data param'}";<br />
 
 重新启动服务器，重新发送请求测试，SpringMVC可以正确的进行日期转换
 
+<img src=".assets/SSM-知识库笔记/media/image181.png" style="width:5.75in;height:1.21875in" />
+
 （7）携带时间的日期
 
 修改UserController类，添加第三个参数
@@ -10753,7 +11129,11 @@ return "{'module':'data param'}";<br />
 
 （8）使用PostMan发送请求，携带两个不同的日期格式
 
+<img src=".assets/SSM-知识库笔记/media/image182.png" style="width:5.75in;height:2.09375in" />
+
 （9）重新启动服务器，重新发送请求测试，SpringMVC就可以将日期时间的数据进行转换
+
+<img src=".assets/SSM-知识库笔记/media/image183.png" style="width:5.75in;height:1.32292in" />
 
 **@DateTimeFormat**
 
@@ -10793,6 +11173,8 @@ T convert(S source);<br />
 </table>
 
 框架中有提供很多对应Converter接口的实现类，用来实现不同数据类型之间的转换，例如HttpMessageConverter接口用于实现对象与JSON之间的转换工作。
+
+<img src=".assets/SSM-知识库笔记/media/image184.png" style="width:5.75in;height:1.61458in" />
 
 **注意：**SpringMVC的配置类把@EnableWebMvc当做标配配置上去，不要省略。
 
@@ -10967,6 +11349,8 @@ public class UserController {<br />
 
 最终项目结构如下：
 
+<img src=".assets/SSM-知识库笔记/media/image185.png" style="width:5.75in;height:3.65625in" />
+
 **4.6.2 响应页面**
 
 （1）设置返回页面
@@ -10999,6 +11383,8 @@ return "page.jsp";<br />
 
 打开浏览器，访问http://localhost/toJumpPage
 
+<img src=".assets/SSM-知识库笔记/media/image186.png" style="width:5.75in;height:1.54167in" />
+
 **4.6.3 返回文本数据**
 
 （1）设置返回文本内容
@@ -11030,6 +11416,8 @@ return "response text";<br />
 
 此使用PostMan进行测试，输入地址http://localhost/toText
 
+<img src=".assets/SSM-知识库笔记/media/image187.png" style="width:5.75in;height:3.1875in" />
+
 **4.6.4 响应JSON数据**
 
 **响应POJO对象**
@@ -11059,6 +11447,8 @@ return user;<br />
 </table>
 
 返回值为实体类对象，设置返回值为实体类类型，即可实现返回对应对象的json数据，需要依赖**@ResponseBody**注解和**@EnableWebMvc**注解。
+
+<img src=".assets/SSM-知识库笔记/media/image188.png" style="width:5.75in;height:3.27083in" />
 
 **响应POJO集合对象**
 
@@ -11097,6 +11487,8 @@ return userList;<br />
 </table>
 
 重新启动服务器，访问http://localhost/toJsonList
+
+<img src=".assets/SSM-知识库笔记/media/image189.png" style="width:5.75in;height:3.625in" />
 
 **@ResponseBody**
 
@@ -11400,6 +11792,8 @@ return "{'module':'book getAll'}";<br />
 
 最终项目结构如下：
 
+<img src=".assets/SSM-知识库笔记/media/image190.png" style="width:5.75in;height:3.63542in" />
+
 **5.2.2 修改RESTful风格**
 
 **新增**
@@ -11426,6 +11820,8 @@ return "{'module':'user save'}";<br />
 </table>
 
 访问该方法使用 POST方式http://localhost/users，属性限定该方法的访问方式为POST，如果发送的不是POST请求，比如发送GET请求则会报错
+
+<img src=".assets/SSM-知识库笔记/media/image191.png" style="width:5.75in;height:0.80208in" />
 
 **删除**
 
@@ -11477,6 +11873,8 @@ return "{'module':'user delete'}";<br />
 
 如果方法形参的名称和路径{}中的值不一致，就需要在@PathVariable注解后添加属性或保持形参名和路径中的变量名一致：
 
+<img src=".assets/SSM-知识库笔记/media/image192.png" style="width:5.75in;height:1.86458in" />
+
 如果有多个参数需要传递，例如请求http://localhost/users/1/tom中的1和tom就是传递的两个参数，此时后端获取参数，需要做如下修改：
 
 <table>
@@ -11524,6 +11922,8 @@ return "{'module':'user update'}";<br />
 </table>
 
 访问该方法使用 PUT方式http://localhost/users，访问并携带参数：
+
+<img src=".assets/SSM-知识库笔记/media/image193.png" style="width:5.75in;height:1.96875in" />
 
 **根据ID查询**
 
@@ -11638,6 +12038,8 @@ public String delete(@PathVariable Integer id) {<br />
 
 **5.3 RESTful快速开发**
 
+<img src=".assets/SSM-知识库笔记/media/image194.png" style="width:5.75in;height:2.25in" />
+
 问题1：每个方法的@RequestMapping注解中都定义了访问路径/books，重复性太高。
 
 解决方案：将@RequestMapping提到类上面，用来定义所有方法共同的访问路径
@@ -11730,7 +12132,11 @@ return "{'module':'book getAll'}";<br />
 
 图片列表查询：从后台返回数据，将数据展示在页面上
 
+<img src=".assets/SSM-知识库笔记/media/image195.png" style="width:5.75in;height:1.17708in" />
+
 新增图片：将新增图书的数据传递到后台，并在控制台打印
+
+<img src=".assets/SSM-知识库笔记/media/image196.png" style="width:5.75in;height:1.82292in" />
 
 此次案例的重点是在SpringMVC中如何使用RESTful实现前后台交互，所以本案例并没有和数据库进行交互，所有数据使用假数据来完成开发。
 
@@ -11874,6 +12280,8 @@ public class BookController {<br />
 
 最终项目结构如下：
 
+<img src=".assets/SSM-知识库笔记/media/image197.png" style="width:4.33333in;height:3.55208in" />
+
 **5.4.3 后台接口开发**
 
 （1）编写Controller类并使用RESTful进行配置
@@ -11930,7 +12338,11 @@ return bookList;<br />
 
 测试新增
 
+<img src=".assets/SSM-知识库笔记/media/image198.png" style="width:5.75in;height:2.73958in" />
+
 测试查询
+
+<img src=".assets/SSM-知识库笔记/media/image199.png" style="width:5.75in;height:3.78125in" />
 
 **5.4.4 页面访问处理**
 
@@ -11940,11 +12352,17 @@ return bookList;<br />
 
 将资料中的功能页面文件夹下所有内容拷贝到项目的webapp目录下
 
+<img src=".assets/SSM-知识库笔记/media/image200.png" style="width:5.75in;height:3.33333in" />
+
 （2）访问pages目录下的books.html
 
 打开浏览器访问http://localhost/pages/books.html
 
+<img src=".assets/SSM-知识库笔记/media/image201.png" style="width:5.75in;height:1.65625in" />
+
 会发现出现了404错误，原因是SpringMVC拦截了静态资源，根据/pages/books.html去controller找对应的方法，找不到所以会报404的错误
+
+<img src=".assets/SSM-知识库笔记/media/image202.png" style="width:5.75in;height:2.21875in" />
 
 所以SpringMVC需要将静态资源进行放行
 
@@ -12255,6 +12673,8 @@ SpringMvcConfig
 
 （1）创建Maven的web项目
 
+<img src=".assets/SSM-知识库笔记/media/image203.png" style="width:5.75in;height:5.95833in" />
+
 （2）添加依赖
 
 <table>
@@ -12358,6 +12778,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 </table>
 
 （3）创建项目包结构
+
+<img src=".assets/SSM-知识库笔记/media/image204.png" style="width:3.36458in;height:3.86458in" />
 
 config目录存放的是相关的配置类
 
@@ -12476,7 +12898,7 @@ return msc;<br />
 jdbc.driver=com.mysql.jdbc.Driver<br />
 jdbc.url=jdbc:mysql://localhost:3306/ssm_db<br />
 jdbc.username=root<br />
-jdbc.password=[REDACTED]</td>
+jdbc.password=root</td>
 </tr>
 </tbody>
 </table>
@@ -12701,6 +13123,8 @@ return bookDao.getAll();<br />
 
 bookDao在Service中注入的地方会提示一个红线，这时因为BookDao是一个接口，没有实现类，接口是不能创建对象的，所以最终注入的应该是代理对象，但是代理对象是由Spring的IOC容器来创建管理的，而IOC容器又是在Web服务器启动的时候才会创建，IDEA在检测依赖关系的时候，没有找到适合的类注入，所以会提示错误提示，但程序运行的时候，代理对象就会被创建，框架会使用DI进行注入，所以程序运行无影响，这个问题可以不用理会，或设置错误提示级别。
 
+<img src=".assets/SSM-知识库笔记/media/image205.png" style="width:5.75in;height:2.90625in" />
+
 （5）编写Contorller类
 
 <table>
@@ -12825,19 +13249,33 @@ System.out.println(all);<br />
 
 根据ID查询，测试的结果为：
 
+<img src=".assets/SSM-知识库笔记/media/image206.png" style="width:5.75in;height:0.72917in" />
+
 查询所有，测试的结果为：
+
+<img src=".assets/SSM-知识库笔记/media/image207.png" style="width:5.75in;height:1.22917in" />
 
 **6.5 PostMan测试**
 
 **新增**
 
+<img src=".assets/SSM-知识库笔记/media/image208.png" style="width:5.75in;height:4.90625in" />
+
 **修改**
+
+<img src=".assets/SSM-知识库笔记/media/image209.png" style="width:5.75in;height:4.375in" />
 
 **删除**
 
+<img src=".assets/SSM-知识库笔记/media/image210.png" style="width:5.75in;height:5.13542in" />
+
 **查询单个**
 
+<img src=".assets/SSM-知识库笔记/media/image211.png" style="width:5.75in;height:4.38542in" />
+
 **查询所有**
+
+<img src=".assets/SSM-知识库笔记/media/image212.png" style="width:5.75in;height:5.51042in" />
 
 **7.统一结果封装**
 
@@ -12848,6 +13286,8 @@ System.out.println(all);<br />
 封装返回的数据是何种操作及是否操作成功：封装操作结果到code属性中
 
 操作失败后封装返回的错误信息：封装特殊消息到message（msg）属性中
+
+<img src=".assets/SSM-知识库笔记/media/image213.png" style="width:5.75in;height:2.05208in" />
 
 根据分析，可以设置统一数据返回结果类Result：
 
@@ -12868,6 +13308,8 @@ private String msg;<br />
 </table>
 
 在进行代码实现统一结果封装前，先准备一个环境，只需要复用SSM整合的代码即可，项目结构如下：
+
+<img src=".assets/SSM-知识库笔记/media/image214.png" style="width:5.09375in;height:6.96875in" />
 
 （1）创建Result类
 
@@ -12989,6 +13431,8 @@ return new Result(code,bookList,msg);<br />
 
 （4）启动服务测试
 
+<img src=".assets/SSM-知识库笔记/media/image215.png" style="width:5.75in;height:6.48958in" />
+
 至此，返回结果就已经能以一种统一的格式返回给前端，前端根据返回的结果，先从中获取code，根据code判断，如果成功则取data属性的值，如果失败，则取msg中的值做提示。
 
 **8.统一异常处理**
@@ -13021,6 +13465,8 @@ return new Result(code,book,msg);<br />
 
 重新启动运行项目，使用PostMan发送请求，当传入的id为1，则会出现如下效果：
 
+<img src=".assets/SSM-知识库笔记/media/image216.png" style="width:5.75in;height:3.9375in" />
+
 前端接收到这个信息后和约定的格式不一致，这是业务出现异常导致的，异常的种类及出现异常的原因：
 
 框架内部抛出的异常：因使用不合规导致
@@ -13037,9 +13483,13 @@ return new Result(code,book,msg);<br />
 
 这些异常最终其实都会抛到表现层（Controller层），如果在每一个表现层的方法中都进行try会很繁琐，SpringMVC为我们提供了**异常处理器**，用于进行集中的、统一的处理项目中出现的异常。
 
+<img src=".assets/SSM-知识库笔记/media/image217.png" style="width:5.75in;height:1.35417in" />
+
 **8.2 异常处理器的使用**
 
 这里直接使用前面的项目进行异常处理器的使用，最终项目结构如下：
+
+<img src=".assets/SSM-知识库笔记/media/image218.png" style="width:4.57292in;height:7.44792in" />
 
 （1）创建异常处理器类，确保SpringMvcConfig能够扫描到异常处理器类
 
@@ -13088,6 +13538,8 @@ return new Result(code,book,msg);<br />
 
 （3）运行程序，测试
 
+<img src=".assets/SSM-知识库笔记/media/image219.png" style="width:5.75in;height:1.11458in" />
+
 说明异常已经被拦截并执行了doException方法。
 
 （4）异常处理器类返回结果给前端
@@ -13115,6 +13567,8 @@ return new Result(666,null,"嘿嘿,异常你哪里跑！");<br />
 
 （5）启动运行程序，测试
 
+<img src=".assets/SSM-知识库笔记/media/image220.png" style="width:5.75in;height:7.26042in" />
+
 **@RestControllerAdvice**
 
 |      |                                    |
@@ -13125,6 +13579,8 @@ return new Result(666,null,"嘿嘿,异常你哪里跑！");<br />
 | 作用 | 为Rest风格开发的控制器类做增强     |
 
 @RestControllerAdvice注解自带@ResponseBody注解与@Component注解，具备对应的功能。
+
+<img src=".assets/SSM-知识库笔记/media/image221.png" style="width:5.75in;height:3.15625in" />
 
 **@ExceptionHandler**
 
@@ -13149,13 +13605,13 @@ return new Result(666,null,"嘿嘿,异常你哪里跑！");<br />
 
 用户在页面输入内容的时候未按照指定格式进行数据填写，如在年龄框输入的是字符串
 
-> 
+> <img src=".assets/SSM-知识库笔记/media/image222.png" style="width:5.75in;height:1.5in" />
 
 不规范的用户行为操作产生的异常
 
 如用户故意传递错误数据
 
-> 
+> <img src=".assets/SSM-知识库笔记/media/image223.png" style="width:5.75in;height:0.90625in" />
 
 系统异常（SystemException）
 
@@ -13167,7 +13623,7 @@ return new Result(666,null,"嘿嘿,异常你哪里跑！");<br />
 
 编程人员未预期到的异常，如:用到的文件不存在
 
-> 
+> <img src=".assets/SSM-知识库笔记/media/image224.png" style="width:5.75in;height:1.1875in" />
 
 **8.3.2 异常解决方案**
 
@@ -13364,7 +13820,11 @@ return new Result(Code.SYSTEM_UNKNOW_ERR,null,"系统繁忙，请稍后再试！
 
 根据ID查询，如果传入的参数为1，会报BusinessException
 
+<img src=".assets/SSM-知识库笔记/media/image225.png" style="width:5.75in;height:5.97917in" />
+
 如果传入的是其他参数，会报SystemException
+
+<img src=".assets/SSM-知识库笔记/media/image226.png" style="width:5.75in;height:6.71875in" />
 
 此时不管后台哪一层抛出异常，都会以与前端约定好的方式进行返回，前端只需要把信息获取到，根据返回的正确与否来展示不同的内容即可。
 
@@ -13372,15 +13832,21 @@ return new Result(Code.SYSTEM_UNKNOW_ERR,null,"系统繁忙，请稍后再试！
 
 以后项目中的异常处理方式为：
 
+<img src=".assets/SSM-知识库笔记/media/image227.png" style="width:5.75in;height:3.375in" />
+
 **9.前后台协议联调**
 
 **9.1 环境准备**
 
 内容参考前面的项目或者直接使用前面的项目，最终项目结构如下：
 
+<img src=".assets/SSM-知识库笔记/media/image228.png" style="width:5.27083in;height:8.27083in" />
+
 **\[SSM功能页面.zip\]**
 
 将资料中SSM功能页面文件夹下的静态资源拷贝到webapp下：
+
+<img src=".assets/SSM-知识库笔记/media/image229.png" style="width:5.29167in;height:3.26042in" />
 
 因为添加了静态资源，SpringMVC会拦截，所有需要在SpringConfig的配置类中将静态资源进行放行。
 
@@ -13479,7 +13945,11 @@ this.dataList = res.data.data;<br />
 </tbody>
 </table>
 
+<img src=".assets/SSM-知识库笔记/media/image230.png" style="width:5.75in;height:2.53125in" />
+
 **9.3 添加功能**
+
+<img src=".assets/SSM-知识库笔记/media/image231.png" style="width:5.75in;height:2.47917in" />
 
 handleCreate打开新增面板
 
@@ -13635,6 +14105,8 @@ return bookDao.getAll();<br />
 
 4、测试错误情况，将图书类别长度设置超出范围即可
 
+<img src=".assets/SSM-知识库笔记/media/image232.png" style="width:5.75in;height:1.9375in" />
+
 新增成功后，再次点击新增按钮会发现之前的数据还存在，这个时候就需要在新增的时候将表单内容清空：
 
 <table>
@@ -13656,6 +14128,8 @@ this.resetForm();<br />
 </table>
 
 **9.4 修改功能**
+
+<img src=".assets/SSM-知识库笔记/media/image233.png" style="width:5.75in;height:2.04167in" />
 
 修改图书信息后，如果成功提示错误信息，关闭修改面板，重新查询数据，如果失败提示错误信息。
 
@@ -13735,6 +14209,8 @@ this.getAll();<br />
 </table>
 
 **9.5 删除功能**
+
+<img src=".assets/SSM-知识库笔记/media/image234.png" style="width:5.75in;height:1in" />
 
 删除后，如果返回成功，提示成功信息，并重新查询数据，如果返回失败，提示错误信息，并重新查询数据。
 
@@ -14023,6 +14499,8 @@ this.$message.info("取消删除操作");<br />
 
 **10.1 拦截器概念**
 
+<img src=".assets/SSM-知识库笔记/media/image235.png" style="width:5.75in;height:2.36458in" />
+
 浏览器发送一个请求会先到Tomcat的web服务器
 
 Tomcat服务器接收到请求以后，会去判断请求的是静态资源还是动态资源
@@ -14048,6 +14526,8 @@ Tomcat服务器接收到请求以后，会去判断请求的是静态资源还�
 归属不同：Filter属于Servlet技术，Interceptor属于SpringMVC技术
 
 拦截内容不同：Filter对所有访问进行增强，Interceptor仅针对SpringMVC的访问进行增强
+
+<img src=".assets/SSM-知识库笔记/media/image236.png" style="width:5.75in;height:1.83333in" />
 
 **10.2 拦截器入门案例**
 
@@ -14249,6 +14729,8 @@ return "{'module':'book getAll'}";<br />
 
 最终项目结构如下：
 
+<img src=".assets/SSM-知识库笔记/media/image237.png" style="width:4.54167in;height:4.09375in" />
+
 **10.2.2 拦截器开发**
 
 （1）创建拦截器类
@@ -14343,6 +14825,8 @@ public class SpringMvcConfig{<br />
 
 使用PostMan发送http://localhost/books
 
+<img src=".assets/SSM-知识库笔记/media/image238.png" style="width:5.75in;height:1.01042in" />
+
 发送http://localhost/books/100会发现拦截器没有被执行，原因是拦截器的addPathPatterns方法配置的拦截路径是/books，现在发送的是/books/100，所以没有匹配上，因此没有拦截，拦截器就不会执行。
 
 （5）修改拦截器拦截规则
@@ -14404,6 +14888,8 @@ registry.addInterceptor(projectInterceptor).addPathPatterns("/books","/books/*")
 </table>
 
 拦截器的执行流程：当有拦截器后，请求会先进入preHandle方法，如果方法返回true，则放行继续执行后面的handle（controller的方法）和后面的方法，如果返回false，则直接跳过后面方法的执行。
+
+<img src=".assets/SSM-知识库笔记/media/image239.png" style="width:5.75in;height:1.98958in" />
 
 **10.3 拦截器参数**
 
@@ -14595,6 +15081,8 @@ registry.addInterceptor(projectInterceptor2).addPathPatterns("/books","/books/*"
 
 （3）运行程序，观察顺序
 
+<img src=".assets/SSM-知识库笔记/media/image240.png" style="width:5.75in;height:1.39583in" />
+
 **10.4.2 拦截器的运行顺序**
 
 当配置多个拦截器时，形成拦截器链
@@ -14610,3 +15098,5 @@ afterCompletion：与配置顺序相反，可能不运行
 当拦截器中出现对原始处理器的拦截，后面的拦截器均终止运行
 
 当拦截器运行中断，仅运行配置在前面的拦截器的afterCompletion操作
+
+<img src=".assets/SSM-知识库笔记/media/image241.png" style="width:5.75in;height:2.79167in" />

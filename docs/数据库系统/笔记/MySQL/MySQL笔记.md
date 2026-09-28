@@ -1,7 +1,5 @@
 # MySQL笔记
 
-> 原文图片保留在私有 `backend-study-notes`，本公开站当前同步文字内容；疑似凭据、令牌和密码示例在公开版本中已自动脱敏。
-
 **一、MySQL概述**
 
 **1.数据库相关概念**
@@ -687,6 +685,8 @@ SELECT 字段列表 FROM 表名 LIMIT 起始索引,查询记录数;</td>
 
 **5.8 DQL-执行顺序**
 
+<img src=".assets/MySQL笔记/media/image1.png" style="width:5.75in;height:2.75in" />
+
 **6.数据控制语言DCL**
 
 **6.1 DCL-管理用户**
@@ -1367,6 +1367,12 @@ ROLLBACK;</td>
 | 不可重复读 | 一个事务先后读取同一条记录，但两次读取的数据不同                                       |
 | 幻读       | 一个事务按照条件查询数据时，没有对应的数据行，但是再插入数据时，又发现这行数据已经存在 |
 
+<img src=".assets/MySQL笔记/media/image2.png" style="width:5.75in;height:1.76042in" />
+
+<img src=".assets/MySQL笔记/media/image3.png" style="width:5.75in;height:1.29167in" />
+
+<img src=".assets/MySQL笔记/media/image4.png" style="width:5.75in;height:1.28125in" />
+
 **4.事务隔离级别**
 
 |                       |      |            |      |
@@ -1412,6 +1418,10 @@ SESSION 是会话级别，表示只针对当前会话有效，GLOBAL 表示对�
 **四、存储引擎**
 
 **1.MySQL体系结构**
+
+<img src=".assets/MySQL笔记/media/image5.png" style="width:5.75in;height:2.625in" />
+
+<img src=".assets/MySQL笔记/media/image6.png" style="width:5.75in;height:2.28125in" />
 
 存储引擎就是存储数据、建立索引、更新/查询数据等技术的实现方式。存储引擎是基于表而不是基于库的，所以存储引擎也可以被称为表引擎。
 
@@ -1495,6 +1505,8 @@ ibd2sdi 表名.ibd</td>
 </table>
 
 **3.3 InnoDB 逻辑存储结构**
+
+<img src=".assets/MySQL笔记/media/image7.png" style="width:5.75in;height:2.41667in" />
 
 **4.MyISAM**
 
@@ -1748,6 +1760,8 @@ EXPLAIN|DESC SELECT 字段列表 FROM 表名 HWERE 条件;</td>
 </tbody>
 </table>
 
+<img src=".assets/MySQL笔记/media/image8.png" style="width:5.75in;height:0.69792in" />
+
 **EXPLAIN 各字段含义:**
 
 **id**：select 查询的序列号，表示查询中执行 select 子句或者操作表的顺序（id相同，执行顺序从上到下（多表查询）；id不同，值越大越先执行（子查询））
@@ -1822,13 +1836,19 @@ all：扫描全表数据时出现
 
 **2.1 B+Tree**
 
+<img src=".assets/MySQL笔记/media/image9.png" style="width:5.75in;height:2.86458in" />
+
 二叉树的缺点可以用红黑树来解决：
+
+<img src=".assets/MySQL笔记/media/image10.png" style="width:5.75in;height:3.70833in" />
 
 红黑树也存在大数据量情况下，层级较深，检索速度慢的问题。
 
 **2.2 B-Tree（多路平衡查找树）**
 
 以一棵最大度数（max-degree，指一个节点的子节点个数）为5（5阶）的 b-tree 为例（每个节点最多存储4个key，5个指针）：
+
+<img src=".assets/MySQL笔记/media/image11.png" style="width:5.75in;height:1.76042in" />
 
 每一个节点都存储数据
 
@@ -1837,6 +1857,8 @@ all：扫描全表数据时出现
 **\[该类型的内容暂不支持下载\]**
 
 **2.3 B+Tree**
+
+<img src=".assets/MySQL笔记/media/image12.png" style="width:5.75in;height:1.79167in" />
 
 所有的数据都会出现在叶子节点
 
@@ -1848,11 +1870,15 @@ all：扫描全表数据时出现
 
 MySQL 索引数据结构对经典的 B+Tree 进行了优化。在原 B+Tree 的基础上，增加一个指向相邻叶子节点的链表指针，就形成了带有顺序指针的 B+Tree，提高区间访问的性能：
 
+<img src=".assets/MySQL笔记/media/image13.png" style="width:5.75in;height:1.84375in" />
+
 **2.4 Hash**
 
 哈希索引就是采用一定的hash算法，将键值换算成新的hash值，映射到对应的槽位上，然后存储在hash表中。
 
 如果两个（或多个）键值，映射到一个相同的槽位上，他们就产生了hash冲突（也称为hash碰撞），可以通过链表来解决
+
+<img src=".assets/MySQL笔记/media/image14.png" style="width:5.75in;height:2.02083in" />
 
 **特点**：
 
@@ -1897,6 +1923,10 @@ Hash索引只能用于对等比较（=、in），不支持范围查询（betwwn�
 | 二级索引(Secondary Index) | 将数据与索引分开存储，索引结构的叶子节点关联的是对应的主键 | 可以存在多个         |
 
 **3.2 演示图**
+
+<img src=".assets/MySQL笔记/media/image15.png" style="width:5.75in;height:2.92708in" />
+
+<img src=".assets/MySQL笔记/media/image16.png" style="width:5.75in;height:2.82292in" />
 
 **3.3 聚集索引选取规则**
 
@@ -2220,11 +2250,17 @@ load data local infile '/root/sql1.log' into table 'tb_user' fields terminated b
 
 按照顺序插入1,2,3,4,5,6,7,8,9,10,11,12,13,14
 
+<img src=".assets/MySQL笔记/media/image17.png" style="width:5.75in;height:0.55208in" />
+
 **2.1.2 主键乱序插入**
 
 当主键无序时，InnoDB需要找到合适的插入位置进行插入。如果目标页已满或剩余空间不足以插入这条记录，会触发页分裂，即从当前页中间处分裂成两个子页并维护双向指针建立页之间的联系，然后继续插入，依次类推，直到插入完毕
 
 插入50
+
+<img src=".assets/MySQL笔记/media/image18.png" style="width:5.75in;height:1.48958in" />
+
+<img src=".assets/MySQL笔记/media/image19.png" style="width:5.75in;height:0.59375in" />
 
 **2.1.3 应插入位置不在页末尾的情况**
 
@@ -3567,6 +3603,8 @@ insert、 update、 delete、 select ... for update</td>
 
 **2.4 AUTO-INC锁**
 
+<img src=".assets/MySQL笔记/media/image20.png" style="width:5.75in;height:5.80208in" />
+
 **3.行级锁**
 
 行级锁，每次操作**锁住对应的行数据**。锁定粒度最小，发生锁冲突的概率最低，并发度最高。应用在InnoDB存储引擎中
@@ -3655,6 +3693,8 @@ select object_schema,object_name,index_name,lock_type,lock_mode,lock_data from p
 
 **1.逻辑存储结构**
 
+<img src=".assets/MySQL笔记/media/image21.png" style="width:5.75in;height:2.9375in" />
+
 **表空间（ibd文件）**：一个mysql实例可以对应多个表空间，用于存储记录、索引等数据。
 
 **段**：分为数据段（Leaf node segment）、索引段（Non-leaf node segment）、回滚段（Rollback segment），InnoDB 是索引组织表，数据段就是B+树的叶子节点， 索引段即为B+树的非叶子节点。段用来管理多个Extent（区）。
@@ -3673,15 +3713,31 @@ Roll_pointer：每次对某条引记录进行改动时，都会把旧的版本�
 
 MySQL5.5 版本开始，默认使用InnoDB存储引擎，它擅长事务处理，具有崩溃恢复特性，在日常开发中使用非常广泛。下面是InnoDB架构图，左侧为内存结构，右侧为磁盘结构：
 
+<img src=".assets/MySQL笔记/media/image22.png" style="width:5.75in;height:4.03125in" />
+
 **2.1 内存架构**
+
+<img src=".assets/MySQL笔记/media/image23.png" style="width:5.75in;height:2.30208in" />
+
+<img src=".assets/MySQL笔记/media/image24.png" style="width:5.75in;height:2.79167in" />
+
+<img src=".assets/MySQL笔记/media/image25.png" style="width:5.75in;height:2.42708in" />
 
 adaptive_hash_index：控制是否启用自适应哈希索引，ON表示开启，OFF表示关闭，默认值是ON；具体操作参考系统变量。
 
+<img src=".assets/MySQL笔记/media/image26.png" style="width:5.75in;height:2.3125in" />
+
 **2.2 磁盘结构**
+
+<img src=".assets/MySQL笔记/media/image27.png" style="width:5.75in;height:2.67708in" />
 
 innodb_data_file_path：用于定义InnoDB的系统表空间（System Tablespace）的文件路径、大小和属性。
 
+<img src=".assets/MySQL笔记/media/image28.png" style="width:5.75in;height:1.22917in" />
+
 innodb_file_per_table：控制InnoDB是否为每个表创建独立的表空间文件，ON表示每个表都有自己的表空间文件，OFF表示所有表的数据和索引存储在系统表空间中，默认值是ON。
+
+<img src=".assets/MySQL笔记/media/image29.png" style="width:5.75in;height:2.28125in" />
 
 通用表空间：将多个表的数据存储在一个共享的文件中，方便管理和维护。
 
@@ -3751,11 +3807,17 @@ DROP TABLESPACE tablespace_name;</td>
 </tbody>
 </table>
 
+<img src=".assets/MySQL笔记/media/image30.png" style="width:5.75in;height:2.33333in" />
+
 **2.3 后台线程**
+
+<img src=".assets/MySQL笔记/media/image31.png" style="width:5.75in;height:2.78125in" />
 
 **3.事务原理**
 
 特性原理分类图：
+
+<img src=".assets/MySQL笔记/media/image32.png" style="width:5.75in;height:2.11458in" />
 
 原子性通过undo log日志实现，持久性通过redo log日志实现，一致性通过undo log和redo log两个日志实现，隔离性通过锁和MVCC实现
 
@@ -3766,6 +3828,8 @@ DROP TABLESPACE tablespace_name;</td>
 该日志文件由两部分组成:重做日志缓冲(redo log buffer)以及重做日志文件(redo log file)，前者是在内存中，后者在磁盘中。当事务提交之后会把所有修改信息都存到该日志文件中,用于在刷新脏页到磁盘,发生错误时,进行数据恢复使用。
 
 Buffer Pool在产生脏页数据的时候，会先将数据存储到 redo log buffer 再存储到 redo log 中进行磁盘持久化存储，在内存出现异常（比如突然断电）时，通过redo log中持久化的数据进行回滚。过程如下图：
+
+<img src=".assets/MySQL笔记/media/image33.png" style="width:5.75in;height:1.94792in" />
 
 当用户执行UPDATE或DELETE操作时，数据页会被加载到内存的Buffer Pool中进行修改，同时生成Redo Log记录并暂存于Redo Log Buffer中。事务提交时，Redo Log Buffer中的日志会先写入磁盘的Redo Log文件（ib_logfile0/1），确保事务的持久性，而数据页的修改则通过后台线程异步刷入磁盘的表空间文件（.ibd）。这种WAL机制保证了即使系统崩溃，也能通过Redo Log恢复未刷盘的数据变更，从而确保数据的一致性和持久性。
 
@@ -3803,6 +3867,8 @@ Serializable：快照读会退化为当前读
 
 每一张创建的表都有两个或三个隐藏字段：DB_TRX_ID、DB_ROOL_PRT、DB_ROW_ID（表没有主键时存在）
 
+<img src=".assets/MySQL笔记/media/image34.png" style="width:5.75in;height:2.19792in" />
+
 **3.3.3 undo log**
 
 回滚日志，在insert、update、delete的时候产生的便于数据回滚的日志。
@@ -3816,6 +3882,8 @@ Serializable：快照读会退化为当前读
 当所有依赖于该undo log的快照读取操作结束后，undo log才会被删除。这意味着如果有一个事务正在进行快照读取，并且依赖于某个undo log，那么这个undo log会一直保留直到该事务结束。
 
 **undo log版本链**：
+
+<img src=".assets/MySQL笔记/media/image35.png" style="width:5.75in;height:2.33333in" />
 
 **3.3.4 readview**
 
@@ -3831,7 +3899,11 @@ ReadView中包含了四个核心字段：
 | max_trx_id     | 预分配事务ID，当前最大事务ID+1（因为事务ID是自增的） |
 | creator_trx_id | ReadView创建者的事务ID                               |
 
+<img src=".assets/MySQL笔记/media/image36.png" style="width:5.75in;height:2.625in" />
+
 **READ COMMITTED**
+
+<img src=".assets/MySQL笔记/media/image37.png" style="width:5.75in;height:2.5625in" />
 
 针对事务5的两条查询语句，第一条查询语句：记录一次ReadView读视图，拿着当前事务id即DB_TRX_ID=4根据版本链数据访问规则依次判断，判断到第4条发现trx_id=4在集合m_ids中，在链表结构找到下一个DB_TRX_ID=3，再次进行判断，发现3仍然在集合m_ids中，再次在链表结构找到下一个DB_TRX_ID=2，发现满足第2条规则，所以查询到0x00002指向的记录（id: 30, age: 3, name: A30）;
 
@@ -4088,6 +4160,8 @@ show variables like '%log_bin%' -- log_bin</td>
 </tbody>
 </table>
 
+<img src=".assets/MySQL笔记/media/image38.png" style="width:5.75in;height:1.14583in" />
+
 **2.2 日志格式**
 
 MySQL服务器中提供了多种格式来记录二进制记录，具体格式及特点如下：
@@ -4261,9 +4335,13 @@ MySQL 复制的主要特点包含以下三个方面：
 
 可以在从库中执行备份，以避免备份期间影响主库服务
 
+<img src=".assets/MySQL笔记/media/image39.png" style="width:5.75in;height:2.45833in" />
+
 **2.原理**
 
 MySQL主从复制原理：
+
+<img src=".assets/MySQL笔记/media/image40.png" style="width:5.75in;height:1.82292in" />
 
 从上图来看，复制分成三步：
 
@@ -4277,9 +4355,21 @@ slave的SQL线程重做中继日志中的事件，即读取中继日志中的 SQ
 
 **3.1 主库配置**
 
+<img src=".assets/MySQL笔记/media/image41.png" style="width:5.75in;height:2.1875in" />
+
+<img src=".assets/MySQL笔记/media/image42.png" style="width:5.75in;height:2.35417in" />
+
+<img src=".assets/MySQL笔记/media/image43.png" style="width:5.75in;height:2.70833in" />
+
 **3.2 从库配置**
 
+<img src=".assets/MySQL笔记/media/image44.png" style="width:5.75in;height:1.92708in" />
+
 设置read_only=1后，超级管理员不是只读，如果想要让超级管理员也是只读，就需要额外配置super_read_only=1
+
+<img src=".assets/MySQL笔记/media/image45.png" style="width:5.75in;height:2.26042in" />
+
+<img src=".assets/MySQL笔记/media/image46.png" style="width:5.75in;height:3.23958in" />
 
 当Replica_IO_Running和Replica_SQL_Running都显示Yes时才表示配置正常，否则检查重新配置
 
@@ -4312,9 +4402,21 @@ insert into tb_user(id, name, sex) valurs (null, 'Tom', '1'), (null, 'Trigger', 
 
 **1.介绍**
 
+<img src=".assets/MySQL笔记/media/image47.png" style="width:5.75in;height:2.63542in" />
+
+<img src=".assets/MySQL笔记/media/image48.png" style="width:5.75in;height:2.23958in" />
+
+<img src=".assets/MySQL笔记/media/image49.png" style="width:5.75in;height:2.51042in" />
+
+<img src=".assets/MySQL笔记/media/image50.png" style="width:5.75in;height:2.69792in" />
+
+<img src=".assets/MySQL笔记/media/image51.png" style="width:5.75in;height:2.54167in" />
+
 **2.Mycat概述**
 
 Mycat是开源的、活跃的、基于Java语言编写的MySQL**数据库中间件**。可以像使用mysql一样来使用mycat，对于开发人员来说根本感觉 不到mycat的存在。
+
+<img src=".assets/MySQL笔记/media/image52.png" style="width:5.75in;height:5.375in" />
 
 优势：
 
@@ -4358,6 +4460,8 @@ logs：存放mycat的日志文件
 
 **2.3 概念介绍**
 
+<img src=".assets/MySQL笔记/media/image53.png" style="width:5.75in;height:2.875in" />
+
 Mycat本身不直接存储数据，只负责管理数据请求的路由和分发，而实际的数据存储由后端数据库完成
 
 **3.Mycat入门**
@@ -4366,19 +4470,27 @@ Mycat本身不直接存储数据，只负责管理数据请求的路由和分发
 
 以 tb_order 表为例：由于 tb_order 表中数据量很大，磁盘IO及容量都到达了瓶颈，现在需要对 tb_order 表进行数据分片，分为三个数据节点，每一个节点主机位于不同的服务器上。
 
+<img src=".assets/MySQL笔记/media/image54.png" style="width:5.75in;height:4.03125in" />
+
 **3.2 环境准备**
 
 关闭三台服务器的防火墙
 
 分别在三台服务器里创建数据库（分库、库名要一致）
 
+<img src=".assets/MySQL笔记/media/image55.png" style="width:5.75in;height:3.72917in" />
+
 **3.3 分片配置**
 
 **schema.xml**
 
+<img src=".assets/MySQL笔记/media/image56.png" style="width:5.75in;height:2.44792in" />
+
 **server.xml**
 
 配置mycat的用户及用户的权限信息：
+
+<img src=".assets/MySQL笔记/media/image57.png" style="width:5.75in;height:2.83333in" />
 
 **3.4 启动服务**
 
@@ -4403,6 +4515,10 @@ bin/mycat stop</td>
 
 启动完毕之后，可以查看logs目录下的启动日志，查看Mycat是否启动完成
 
+<img src=".assets/MySQL笔记/media/image58.png" style="width:5.75in;height:1.27083in" />
+
+<img src=".assets/MySQL笔记/media/image59.png" style="width:5.75in;height:2.64583in" />
+
 **3.5 分片测试**
 
 通过如下指令，就可以连接并登陆MyCat：
@@ -4421,6 +4537,8 @@ mysql -h 192.168.200.210 -P 8066 -uroot -p123456</td>
 
 然后就可以在MyCat中来创建表，并往表结构中插入数据，查看数据在MySQL中的分布情况
 
+<img src=".assets/MySQL笔记/media/image60.png" style="width:5.75in;height:2.51042in" />
+
 **4.Mycat配置**
 
 **4.1 schema.xml**
@@ -4435,6 +4553,8 @@ datanode标签
 
 datahost标签
 
+<img src=".assets/MySQL笔记/media/image61.png" style="width:5.75in;height:2.51042in" />
+
 **schema标签**
 
 schema 标签用于定义 MyCat实例中的逻辑库 , 一个MyCat实例中, 可以有多个逻辑库 , 可以通过 schema 标签来划分不同的逻辑库。MyCat中的逻辑库的概念，等同于MySQL中的database概念 , 需要操作某个逻辑库下的表时, 也需要切换逻辑库(use xxx)。
@@ -4446,6 +4566,8 @@ name：指定自定义的逻辑库库名
 checkSQLschema：在SQL语句操作时指定了数据库名称，执行时是否自动去除；true：自动去除，false：不自动去除
 
 sqlMaxLimit：如果未指定limit进行查询，列表查询模式查询多少条记录
+
+<img src=".assets/MySQL笔记/media/image62.png" style="width:5.75in;height:0.79167in" />
 
 table 标签定义了MyCat中逻辑库schema下的逻辑表 , 所有需要拆分的表都需要在table标签中定义 。
 
@@ -4461,6 +4583,8 @@ primaryKey：逻辑表对应真实表的主键
 
 type：逻辑表的类型，目前逻辑表只有全局表和普通表，如果未配置，就是普通表；全局表，配置为 global
 
+<img src=".assets/MySQL笔记/media/image63.png" style="width:5.75in;height:0.90625in" />
+
 **dataNode标签**
 
 dataNode标签中定义了MyCat中的数据节点, 也就是我们通常说的数据分片。一个dataNode标签就是一个独立的数据分片。
@@ -4472,6 +4596,8 @@ name：定义数据节点名
 dataHost：数据库实例主机名称，引用自 dataHost 标签中name属性
 
 database：定义分片所属数据库
+
+<img src=".assets/MySQL笔记/media/image64.png" style="width:5.75in;height:0.88542in" />
 
 **dataHost标签**
 
@@ -4489,6 +4615,8 @@ writeType：写操作分发方式（0：写操作转发到第一个writeHost，�
 
 dbDriver：数据库驱动，支持 native、jdbc
 
+<img src=".assets/MySQL笔记/media/image65.png" style="width:5.75in;height:0.80208in" />
+
 **4.2 rule.xml**
 
 rule.xml中定义所有拆分表的规则, 在使用过程中可以灵活的使用分片算法, 或者对同一个分片算法使用不同的参数, 它让分片过程可配 置化。
@@ -4498,6 +4626,8 @@ rule.xml中定义所有拆分表的规则, 在使用过程中可以灵活的使�
 tableRule
 
 Function
+
+<img src=".assets/MySQL笔记/media/image66.png" style="width:5.75in;height:2.45833in" />
 
 **4.3 server.xml**
 
@@ -4515,7 +4645,11 @@ user
 
 对应的系统配置项及其含义，参考[server系统配置信息含义](https://mcnerzykwkel.feishu.cn/sheets/JkgNsdO9Ch7H7ft8J6scJCPAnAf?from=from_copylink)：
 
+<img src=".assets/MySQL笔记/media/image67.png" style="width:5.75in;height:1.08333in" />
+
 **user标签**
+
+<img src=".assets/MySQL笔记/media/image68.png" style="width:5.75in;height:2.41667in" />
 
 **5.Mycat分片**
 
@@ -4523,27 +4657,47 @@ user
 
 在业务系统中, 涉及以下表结构 ,但是由于用户与订单每天都会产生大量的数据, 单台服务器的数据存储及处理能力是有限的, 可以对数据 库表进行拆分, 原有的数据库表如下：
 
+<img src=".assets/MySQL笔记/media/image69.png" style="width:5.75in;height:2.29167in" />
+
 **5.1.1 准备**
 
 分别在三台MySQL中创建数据库 shopping。
 
+<img src=".assets/MySQL笔记/media/image70.png" style="width:5.75in;height:3.48958in" />
+
 **5.1.2 配置**
+
+<img src=".assets/MySQL笔记/media/image71.png" style="width:5.75in;height:2.22917in" />
+
+<img src=".assets/MySQL笔记/media/image72.png" style="width:5.75in;height:3.53125in" />
 
 **5.1.3 测试**
 
+<img src=".assets/MySQL笔记/media/image73.png" style="width:5.75in;height:2.23958in" />
+
 **全局表配置**：对于第二个查询语句，省、市、区/县表tb_areas_provinces , tb_areas_city , tb_areas_region，是属于数据字典表，只能在本子数据库中可以使用，但是在多个业务模块中都可能会遇到，可以将其设置为全局表，利于业务操作：
+
+<img src=".assets/MySQL笔记/media/image74.png" style="width:5.75in;height:2.26042in" />
 
 **5.2 水平拆分**
 
 在业务系统中, 有一张表(日志表), 业务系统每天都会产生大量的日志数据 , 单台服务器的数据存储及处理能力是有限的, 可以对数据库表 进行拆分。
 
+<img src=".assets/MySQL笔记/media/image75.png" style="width:5.75in;height:2.20833in" />
+
 **5.2.1 准备**
 
 分别在三台MySQL中创建数据库 itcast。
 
+<img src=".assets/MySQL笔记/media/image76.png" style="width:5.75in;height:3.84375in" />
+
 **5.2.2 配置**
 
+<img src=".assets/MySQL笔记/media/image77.png" style="width:5.75in;height:2.46875in" />
+
 **5.2.3 测试**
+
+<img src=".assets/MySQL笔记/media/image78.png" style="width:5.75in;height:2.10417in" />
 
 在Mycat中创建表、插入数据后分表会自动创建和插入相应的数据，不需要像垂直分表那样手动创建表
 
@@ -4553,9 +4707,17 @@ user
 
 根据指定的字段及其配置的范围与数据节点的对应情况， 来决定该数据属于哪一个分片。
 
+<img src=".assets/MySQL笔记/media/image79.png" style="width:5.75in;height:3.40625in" />
+
+<img src=".assets/MySQL笔记/media/image80.png" style="width:5.75in;height:2.60417in" />
+
 **5.3.2 分片规则-取模**
 
 根据指定的字段值与节点数量进行求模运算，根据运算结果， 来决定该数据属于哪一个分片。
+
+<img src=".assets/MySQL笔记/media/image81.png" style="width:5.75in;height:3.67708in" />
+
+<img src=".assets/MySQL笔记/media/image82.png" style="width:5.75in;height:2.85417in" />
 
 范围分片和取模分片只适用于数字，其他如字符串就不适用了
 
@@ -4563,33 +4725,63 @@ user
 
 所谓一致性哈希， 相同的哈希因子计算值总是被划分到相同的分区表中，不会因为分区节点的增加而改变原来数据的分区位置。
 
+<img src=".assets/MySQL笔记/media/image83.png" style="width:5.75in;height:3.77083in" />
+
+<img src=".assets/MySQL笔记/media/image84.png" style="width:5.75in;height:3.04167in" />
+
 **5.3.4 分片规则-枚举**
 
 通过在配置文件中配置可能的枚举值, 指定数据分布到不同数据节点上, 本规则适用于按照身份、性别、状态拆分数据等业务 。
+
+<img src=".assets/MySQL笔记/media/image85.png" style="width:5.75in;height:3.82292in" />
+
+<img src=".assets/MySQL笔记/media/image86.png" style="width:5.75in;height:2.53125in" />
 
 **5.3.5 分片规则-应用指定**
 
 运行阶段由应用自主决定路由到那个分片 , 直接根据字符子串（必须是数字）计算分片号。
 
+<img src=".assets/MySQL笔记/media/image87.png" style="width:5.75in;height:3.95833in" />
+
+<img src=".assets/MySQL笔记/media/image88.png" style="width:5.75in;height:2.88542in" />
+
 **5.3.6 分片规则-固定分片hash算法**
 
 该算法类似于十进制的求模运算，但是为二进制的操作，例如，取 id 的二进制低 10 位 与 1111111111 进行位 & 运算。
+
+<img src=".assets/MySQL笔记/media/image89.png" style="width:5.75in;height:2.35417in" />
+
+<img src=".assets/MySQL笔记/media/image90.png" style="width:5.75in;height:2.45833in" />
 
 **5.3.7 分片规则-字符串hash解析**
 
 截取字符串中的指定位置的子字符串, 进行hash算法， 算出分片。
 
+<img src=".assets/MySQL笔记/media/image91.png" style="width:5.75in;height:3.98958in" />
+
+<img src=".assets/MySQL笔记/media/image92.png" style="width:5.75in;height:2.625in" />
+
 **5.3.8 分片规则-按（天）日期分片**
+
+<img src=".assets/MySQL笔记/media/image93.png" style="width:5.75in;height:3.41667in" />
+
+<img src=".assets/MySQL笔记/media/image94.png" style="width:5.75in;height:2.57292in" />
 
 **5.3.9 分片规则-自然月**
 
 使用场景为按照月份来分片, 每个自然月为一个分片。
+
+<img src=".assets/MySQL笔记/media/image95.png" style="width:5.75in;height:3.88542in" />
+
+<img src=".assets/MySQL笔记/media/image96.png" style="width:5.75in;height:2.88542in" />
 
 **6.Mycat管理及监控**
 
 **6.1 Mycat原理**
 
 Mycat从客户端接收到信息后，会先进行SQL语句解析，进行分片分析和路由分析，根据分片规则将 SQL 路由到相应的数据库节点，Mycat 支持读写分离，将写操作发往主库，读操作发往从库，服务器处理运行Mycat路由过来的SQL后，将运行结果返回给Mycat，Mycat从各节点获取数据后，在中间件层进行结果合并和聚合处理，如果SQL语句有排序操作和分页操作，会对聚合后的数据进行排序处理和分页处理，最后把最终结果返回给客户端。
+
+<img src=".assets/MySQL笔记/media/image97.png" style="width:5.75in;height:2.5in" />
 
 **6.2 Mycat管理**
 
@@ -4637,6 +4829,8 @@ Mycat-eye运行过程中需要依赖zookeeper，因此需要先安装zookeeper�
 
 配置：
 
+<img src=".assets/MySQL笔记/media/image98.png" style="width:5.75in;height:3.8125in" />
+
 **十七、读写分离**
 
 **1.介绍**
@@ -4647,9 +4841,13 @@ Mycat-eye运行过程中需要依赖zookeeper，因此需要先安装zookeeper�
 
 通过MyCat即可轻易实现上述功能，不仅可以支持MySQL，也可以支持Oracle和SQL Server。
 
+<img src=".assets/MySQL笔记/media/image99.png" style="width:5.75in;height:2.6875in" />
+
 **2.一主一从**
 
 MySQL的主从复制，是基于二进制日志（binlog）实现的。
+
+<img src=".assets/MySQL笔记/media/image100.png" style="width:5.75in;height:2.78125in" />
 
 **环境准备**：
 
@@ -4666,6 +4864,10 @@ MySQL的主从复制，是基于二进制日志（binlog）实现的。
 **3.1 配置**
 
 MyCat控制后台数据库的读写分离和负载均衡由schema.xml文件datahost标签的balance属性控制。
+
+<img src=".assets/MySQL笔记/media/image101.png" style="width:5.75in;height:2.08333in" />
+
+<img src=".assets/MySQL笔记/media/image102.png" style="width:5.75in;height:1.02083in" />
 
 |        |                                                                                      |
 |--------|--------------------------------------------------------------------------------------|
@@ -4684,6 +4886,8 @@ MyCat控制后台数据库的读写分离和负载均衡由schema.xml文件datah
 **4.双主双从**
 
 一个主机 Master1 用于处理所有写请求，它的从机 Slave1 和另一台主机 Master2 还有它的从机 Slave2 负责所有读请求。当 Master1 主机宕机后，Master2 主机负责写请求，Master1 、Master2 互为备机：
+
+<img src=".assets/MySQL笔记/media/image103.png" style="width:5.75in;height:2.27083in" />
 
 **4.1 准备工作**
 
@@ -4706,21 +4910,35 @@ systemctl disable firewalld
 
 **4.2 主库配置（ Master1-192.168.200.211 ）**
 
+<img src=".assets/MySQL笔记/media/image104.png" style="width:5.75in;height:2.03125in" />
+
 **4.3 主库配置（ Master2-192.168.200.213 ）**
+
+<img src=".assets/MySQL笔记/media/image105.png" style="width:5.75in;height:2.05208in" />
 
 **4.4 两台主库创建账户并授权**
 
+<img src=".assets/MySQL笔记/media/image106.png" style="width:5.75in;height:1.88542in" />
+
 **4.5 从库配置（ Slave1-192.168.200.212 ）**
+
+<img src=".assets/MySQL笔记/media/image107.png" style="width:5.75in;height:1.64583in" />
 
 **4.6 从库配置（ Slave2-192.168.200.214 ）**
 
+<img src=".assets/MySQL笔记/media/image108.png" style="width:5.75in;height:1.65625in" />
+
 **4.7 两台从库配置关联的主库**
+
+<img src=".assets/MySQL笔记/media/image109.png" style="width:5.75in;height:1.57292in" />
 
 MASTER_HOST跟从库所关联的主库IP，MASTER_USER跟用户名，MASTER_PASSWORD跟用户密码，MASTER_LOG_FILE和MASTER_LOG_POS可以在对应主库中通过show master status获得
 
 两台从库 2 和 4 都要配置
 
 **4.8 两台主库相互复制**
+
+<img src=".assets/MySQL笔记/media/image110.png" style="width:5.75in;height:1.57292in" />
 
 **4.9 测试**
 
@@ -4756,6 +4974,10 @@ insert into tb user(id,name,sex) values(6,'erry','1');</td>
 **5.1 配置**
 
 MyCat控制后台数据库的读写分离和负载均衡由schema.xml文件datahost标签的balance属性控制，通过writeType及switchType来完成失败自动切换。
+
+<img src=".assets/MySQL笔记/media/image111.png" style="width:5.75in;height:2.01042in" />
+
+<img src=".assets/MySQL笔记/media/image112.png" style="width:5.75in;height:2.48958in" />
 
 **5.2 测试**
 

@@ -1,6 +1,4 @@
-# MQ消息队列
-
-> 疑似凭据、令牌和密码示例在公开版本中已自动脱敏。
+# 面试-MQ消息队列
 
 *🔗 原文链接： [⁣⁢⁣⁣⁡MQ消息队列](https://my.feishu.cn/wiki/DgtgwvRZJiEraHkSbe6cURw1nQc)*
 

@@ -1,7 +1,5 @@
 # SpringCloud笔记
 
-> 原文图片保留在私有 `backend-study-notes`，本公开站当前同步文字内容；疑似凭据、令牌和密码示例在公开版本中已自动脱敏。
-
 **一、认识微服务和项目导入**
 
 **1.导入黑马商城项目**
@@ -120,6 +118,8 @@ docker ps</td>
 
 最后，使用MySQL的客户端工具连接MySQL就可以看到如下内容：
 
+<img src=".assets/SpringCloud笔记/media/image1.png" style="width:5.75in;height:1.67708in" />
+
 **1.2 后端项目导入**
 
 **\[hmall.zip\]**
@@ -128,11 +128,19 @@ docker ps</td>
 
 添加项目启动项服务：
 
+<img src=".assets/SpringCloud笔记/media/image2.png" style="width:5.75in;height:1.375in" />
+
 选择Spring Boot，点击后会在services中出现hmall的启动项：
+
+<img src=".assets/SpringCloud笔记/media/image3.png" style="width:5.75in;height:1.19792in" />
 
 可以看到项目配置文件有三个，其中application是主配置项，所有配置都在这里，application-dev是项目上线后使用的配置，application-local是开发环境为了测试使用的配置。
 
+<img src=".assets/SpringCloud笔记/media/image4.png" style="width:5.75in;height:1.17708in" />
+
 为了使idea识别加载application-local配置文件，需要对服务启动项做简单配置：
+
+<img src=".assets/SpringCloud笔记/media/image5.png" style="width:5.75in;height:0.97917in" />
 
 最后右键启动HMallApplication服务，在浏览器访问http://localhost:8080/hi，检测项目是否导入成功！
 
@@ -173,6 +181,8 @@ nginx.exe -s restart</td>
 
 单体架构就是整个项目中所有功能模块都在一个工程中开发，项目部署时需要对所有模块一起编译、打包，项目的架构设计、开发模式都非常简单：
 
+<img src=".assets/SpringCloud笔记/media/image6.png" style="width:5.75in;height:1.30208in" />
+
 一开始时项目基本都是单体架构，但随着业务逐渐复杂，功能逐渐增多，单体架构的缺点也就展现出来：
 
 **团队协作成本高**：所有人集中开发同一个项目，不同模块间的物理边界慢慢模糊，最终合并模块到同一个分支很容易陷入冲突
@@ -199,6 +209,8 @@ nginx.exe -s restart</td>
 
 例如，黑马商城项目就可以把商品、用户、购物车、交易等模块拆分，交给不同的团队开发，并独立部署：
 
+<img src=".assets/SpringCloud笔记/media/image7.png" style="width:5.75in;height:2.27083in" />
+
 将原有项目每个模块拆分为单个服务，仅1~3个人员就能开发，而且每个服务都有自己的服务器资源，即使变更只用打包部署该服务即可，并且不消耗其他服务资源，从而解决单体架构的各种问题。因此微服务特别适合大型互联网项目的开发。
 
 *分布式就是服务拆分的过程，所以其实微服务架构就是分布式架构的一种最佳实践方案*
@@ -210,6 +222,8 @@ nginx.exe -s restart</td>
 **2.3 SpringCloud**
 
 微服务虽然解决了单体架构的问题，但也引入了新的问题，比如跨服务业务的处理、请求访问哪个服务、服务间隔离的实现等，SpringCloud提供了各种组件解决各种问题，可以说SpringCloud框架是目前Java领域最全面的微服务组件的集合：
+
+<img src=".assets/SpringCloud笔记/media/image8.png" style="width:5.75in;height:1.84375in" />
 
 SpringCloud官网：
 
@@ -273,6 +287,8 @@ SpringCloud官网：
 
 黑马商城项目的基本结构：
 
+<img src=".assets/SpringCloud笔记/media/image9.png" style="width:5.75in;height:2.0625in" />
+
 修改application-local.yaml中的数据库连接参数：
 
 <table>
@@ -294,7 +310,11 @@ pw: 123 # 修改为docker中的MySQL密码</td>
 
 登录业务流程如下：
 
+<img src=".assets/SpringCloud笔记/media/image10.png" style="width:5.75in;height:2.23958in" />
+
 通过浏览器访问http://localhost:18080/，单击登录按钮，输入用户名jack和密码123进行登录测试，登录成功：
+
+<img src=".assets/SpringCloud笔记/media/image11.png" style="width:5.75in;height:0.97917in" />
 
 登录入口在com.hmall.controller.UserController中的login方法。
 
@@ -302,13 +322,19 @@ pw: 123 # 修改为docker中的MySQL密码</td>
 
 在首页搜索框输入关键字，点击搜索即可进入搜索列表页面：
 
+<img src=".assets/SpringCloud笔记/media/image12.png" style="width:5.75in;height:2.83333in" />
+
 该页面会调用接口/search/list，对应的服务端入口在com.hmall.controller.SearchController中的search方法。
 
 **1.3 购物车**
 
 在搜索到的商品列表中，点击按钮加入购物车，即可将商品加入购物车：
 
+<img src=".assets/SpringCloud笔记/media/image13.png" style="width:5.75in;height:1.84375in" />
+
 加入成功后即可进入购物车列表页，查看自己购物车商品列表：
+
+<img src=".assets/SpringCloud笔记/media/image14.png" style="width:5.75in;height:1.375in" />
 
 查看数据库的cart表就能看到一条购物车记录，复制item_id字段（这里是8533120）并查询修改item表的price字段：
 
@@ -324,9 +350,15 @@ select * from item where id = 8533120;</td>
 </tbody>
 </table>
 
+<img src=".assets/SpringCloud笔记/media/image15.png" style="width:5.75in;height:1.10417in" />
+
 刷新前端页面可以看到浏览器显示便宜了300：
 
+<img src=".assets/SpringCloud笔记/media/image16.png" style="width:5.75in;height:1.07292in" />
+
 之所以前端会显示便宜了多少，是因为查询购物车列表时还查询商品信息，获取商品最新价格和状态：
+
+<img src=".assets/SpringCloud笔记/media/image17.png" style="width:5.75in;height:2.21875in" />
 
 相关功能全部在com.hmall.controller.CartController中。当然，购物车还可以进行删除选中的商品、结算等操作。
 
@@ -334,11 +366,15 @@ select * from item where id = 8533120;</td>
 
 在购物车页面点击结算按钮，会进入订单结算页面：
 
+<img src=".assets/SpringCloud笔记/media/image18.png" style="width:5.75in;height:2.375in" />
+
 服务端会创建一个新的订单、扣减商品库存、清理购物车中商品，业务入口在com.hmall.controller.OrderController中的createOrder方法。
 
 **1.5 支付**
 
 下单完成后会跳转到支付页面，目前只支持余额支付，选择余额支付，输入密码123：
+
+<img src=".assets/SpringCloud笔记/media/image19.png" style="width:5.75in;height:0.79167in" />
 
 之后会发起请求到服务端，服务端会立刻创建一个支付流水单，并返回支付流水单号到前端，请求入口在com.hmall.controller.PayController中：
 
@@ -411,6 +447,8 @@ select * from item where id = 8533120;</td>
 **3.1 商品服务**
 
 在hmall项目下新建一个item-service模块，并指定JDK版本为11：
+
+<img src=".assets/SpringCloud笔记/media/image20.png" style="width:5.75in;height:2.47917in" />
 
 从hm-service模块的pom文件中拷贝dependencies和build到item.service模块的pom文件，并删除不必要的依赖：
 
@@ -522,7 +560,7 @@ datasource:<br />
 url: jdbc:mysql://${hm.db.host}:3306/hm-item?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;serverTimezone=Asia/Shanghai<br />
 driver-class-name: com.mysql.cj.jdbc.Driver<br />
 username: root<br />
-password: [REDACTED]<br />
+password: ${hm.db.pw}<br />
 mybatis-plus:<br />
 configuration:<br />
 default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler<br />
@@ -558,7 +596,11 @@ api-rule-resources:<br />
 
 然后拷贝hm-service中与商品管理有关的代码到item-service：
 
+<img src=".assets/SpringCloud笔记/media/image21.png" style="width:5.75in;height:3.23958in" />
+
 这里有一个地方的代码需要改动，就是ItemServiceImpl中的deductStock方法：
+
+<img src=".assets/SpringCloud笔记/media/image22.png" style="width:5.75in;height:0.71875in" />
 
 然后在自己docker数据库连接客户端执行下面的hm-item.sql脚本，得到hm-item数据表。
 
@@ -566,11 +608,15 @@ api-rule-resources:<br />
 
 最后刷新maven配置ItemApplication服务的激活配置为local：
 
+<img src=".assets/SpringCloud笔记/media/image23.png" style="width:5.75in;height:1.32292in" />
+
 启动ItemApplication服务，在浏览器访问http://localhost:8081/doc.html，测试根据id批量查询商品即可。
 
 **3.2 购物车服务**
 
 在hmall项目下新建一个cart-service模块，并制定JDK版本为11：
+
+<img src=".assets/SpringCloud笔记/media/image24.png" style="width:5.75in;height:2.39583in" />
 
 从hm-service模块的pom文件中拷贝dependencies和build到cart.service模块的pom文件，并删除不必要的依赖：
 
@@ -683,7 +729,7 @@ datasource:<br />
 url: jdbc:mysql://${hm.db.host}:3306/hm-cart?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;serverTimezone=Asia/Shanghai<br />
 driver-class-name: com.mysql.cj.jdbc.Driver<br />
 username: root<br />
-password: [REDACTED]<br />
+password: ${hm.db.pw}<br />
 mybatis-plus:<br />
 configuration:<br />
 default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler<br />
@@ -719,7 +765,11 @@ api-rule-resources:<br />
 
 最后，把hm-service中的与购物车有关功能拷贝过来，最终的项目结构如下：
 
+<img src=".assets/SpringCloud笔记/media/image25.png" style="width:5.75in;height:3.13542in" />
+
 但是com.hmall.cart.service.impl.CartServiceImpl中有两个地方需要处理：
+
+<img src=".assets/SpringCloud笔记/media/image26.png" style="width:5.75in;height:2.51042in" />
 
 先将这部分代码做以下修改，保证不报错：
 
@@ -792,6 +842,8 @@ v.setStock(item.getStock());<br />
 
 最后刷新maven配置CartApplication服务的激活配置为local：
 
+<img src=".assets/SpringCloud笔记/media/image27.png" style="width:5.75in;height:1.125in" />
+
 启动CartApplication服务，在浏览器访问http://localhost:8082/doc.html，测试查询购物车列表即可。
 
 **3.3 服务调用**
@@ -801,6 +853,8 @@ v.setStock(item.getStock());<br />
 **3.3.1 RestTemplate**
 
 Spring提供了一个RestTemplate的API，可以方便的实现Http请求的发送，其中提供了大量的方法用于发送Http请求：
+
+<img src=".assets/SpringCloud笔记/media/image28.png" style="width:5.75in;height:2.125in" />
 
 可以看到常见的Get、Post、Put、Delete请求都支持，如果请求参数比较复杂，还可以使用exchange方法来构造请求。
 
@@ -900,6 +954,8 @@ v.setStock(item.getStock());<br />
 
 大型微服务项目中服务提供者的数量会非常多，为了管理这些服务就引入了注册中心的概念。注册中心、服务提供者、服务消费者三者间关系如下：
 
+<img src=".assets/SpringCloud笔记/media/image29.png" style="width:5.75in;height:2.19792in" />
+
 服务调用的流程如下：
 
 服务启动时会注册自己的服务信息（服务名、IP、端口）到注册中心
@@ -938,6 +994,8 @@ Nacos官网：
 
 **\[nacos.sql\]**
 
+<img src=".assets/SpringCloud笔记/media/image30.png" style="width:5.75in;height:1.96875in" />
+
 然后，找到资料中的nacos文件夹，修改nacos/custom.env文件中的MYSQL_SERVICE_HOST为自己的虚拟机地址，其他配置也需要修改为自己对应的配置。
 
 **\[nacos.zip\]**
@@ -964,6 +1022,8 @@ nacos/nacos-server:v2.1.0-slim</td>
 </table>
 
 安装成功后通过浏览器访问http://192.168.150.101:8848/nacos/，注意将192.168.150.101替换为自己的虚拟机IP地址。首次访问会跳转到登录页，账号密码都是nacos，输入后登录就进入nacos主页面：
+
+<img src=".assets/SpringCloud笔记/media/image31.png" style="width:5.75in;height:1.82292in" />
 
 **3.服务注册**
 
@@ -1012,9 +1072,15 @@ server-addr: 192.168.150.101:8848 # nacos地址,使用自己的虚拟机IP</td>
 
 为了测试一个服务多个实例的情况，我们再配置一个item-service的部署实例：
 
+<img src=".assets/SpringCloud笔记/media/image32.png" style="width:5.75in;height:2.07292in" />
+
 重启item-service的两个实例ItemApplication、ItemApplication2后，访问nacos控制台，可以发现服务注册成功：
 
+<img src=".assets/SpringCloud笔记/media/image33.png" style="width:5.75in;height:1.44792in" />
+
 点击详情，可以查看到item-service服务的两个实例信息：
+
+<img src=".assets/SpringCloud笔记/media/image34.png" style="width:5.75in;height:0.76042in" />
 
 **4.服务发现**
 
@@ -1350,7 +1416,11 @@ enabled: true # 开启OKHttp功能</td>
 
 在org.springframework.cloud.openfeign.loadbalancer.FeignBlockingLoadBalancerClient中的execute方法中打断点：
 
+<img src=".assets/SpringCloud笔记/media/image35.png" style="width:5.75in;height:0.82292in" />
+
 以debug方式启动CartApplication服务（记得启动商品服务），请求一次查询购物车列表接口，可以看到底层的实现已经改为OkHttpClient：
+
+<img src=".assets/SpringCloud笔记/media/image36.png" style="width:5.75in;height:1.0625in" />
 
 **3.最佳实践**
 
@@ -1362,9 +1432,13 @@ enabled: true # 开启OKHttp功能</td>
 
 **方案一**：每个微服务都分为三个模块，dto模块用来放所有的DTO实体类，api模块用来放Client客户端，biz模块是真正的写业务代码的模块，其他服务只需要引入dto和api模块就能调用这个微服务内部的接口。
 
+<img src=".assets/SpringCloud笔记/media/image37.png" style="width:5.75in;height:2.64583in" />
+
 这种方案耦合度低，但工程结构复杂化，适合完全解耦的项目结构。
 
 **方案二**：将所有的DTO、Client封装到一个api模块中，由这个模块管理所有的远程调用客户端，其他微服务只需要引入api模块就可以远程调用。
+
+<img src=".assets/SpringCloud笔记/media/image38.png" style="width:5.75in;height:2.11458in" />
 
 这种方案实现简单，但是耦合度偏高，比较适合Maven聚合的项目结构。
 
@@ -1373,6 +1447,8 @@ enabled: true # 开启OKHttp功能</td>
 **3.2 抽取Feign客户端**
 
 在hmall下定义一个新的module，命名为hm-api：
+
+<img src=".assets/SpringCloud笔记/media/image39.png" style="width:5.75in;height:1.9375in" />
 
 为hm-api模块添加如下依赖，最后pom文件如下：
 
@@ -1427,6 +1503,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 </table>
 
 把ItemDTO和ItemClient都剪切过来（购物车服务中原有的ItemDTO和ItemClient不需要了），最终结构如下：
+
+<img src=".assets/SpringCloud笔记/media/image40.png" style="width:5.75in;height:1.79167in" />
 
 **3.3 扫描包**
 
@@ -1575,6 +1653,8 @@ return Logger.Level.FULL;<br />
 
 在hmall下新建一个模块，命名为user-service：
 
+<img src=".assets/SpringCloud笔记/media/image41.png" style="width:5.75in;height:1.82292in" />
+
 **1.2 引入依赖**
 
 <table>
@@ -1677,7 +1757,7 @@ datasource:<br />
 url: jdbc:mysql://${hm.db.host}:3306/hm-user?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;serverTimezone=Asia/Shanghai<br />
 driver-class-name: com.mysql.cj.jdbc.Driver<br />
 username: root<br />
-password: [REDACTED]<br />
+password: ${hm.db.pw}<br />
 cloud:<br />
 nacos:<br />
 server-addr: 192.168.150.101:8848 # nacos<br />
@@ -1714,13 +1794,15 @@ hm:<br />
 jwt:<br />
 location: classpath:hmall.jks<br />
 alias: hmall<br />
-password: [REDACTED]<br />
+password: hmall123<br />
 tokenTTL: 30m</td>
 </tr>
 </tbody>
 </table>
 
 将hm-service下的hmall.jks文件拷贝到user-service下的resources目录，这是JWT加密的秘钥文件：
+
+<img src=".assets/SpringCloud笔记/media/image42.png" style="width:5.75in;height:0.97917in" />
 
 **1.4 启动类**
 
@@ -1754,6 +1836,8 @@ SpringApplication.run(UserApplication.class, args);<br />
 
 复制hm-service中所有与user、address、jwt有关的代码到user-service：
 
+<img src=".assets/SpringCloud笔记/media/image43.png" style="width:5.75in;height:2.64583in" />
+
 **1.6 数据库**
 
 **\[hm-user.sql\]**
@@ -1764,6 +1848,8 @@ SpringApplication.run(UserApplication.class, args);<br />
 
 刷新user-service的maven配置，给user-service配置启动项，设置profile为local：
 
+<img src=".assets/SpringCloud笔记/media/image44.png" style="width:5.75in;height:1.46875in" />
+
 **1.8 测试**
 
 启动UserApplication，访问http://localhost:8084/doc.html，测试用户登录接口（用户名Jack，密码123）。
@@ -1773,6 +1859,8 @@ SpringApplication.run(UserApplication.class, args);<br />
 **2.1 创建项目**
 
 在hmall下新建一个模块，命名为trade-service：
+
+<img src=".assets/SpringCloud笔记/media/image45.png" style="width:5.75in;height:1.78125in" />
 
 **2.2 引入依赖**
 
@@ -1872,7 +1960,7 @@ datasource:<br />
 url: jdbc:mysql://${hm.db.host}:3306/hm-trade?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;serverTimezone=Asia/Shanghai<br />
 driver-class-name: com.mysql.cj.jdbc.Driver<br />
 username: root<br />
-password: [REDACTED]<br />
+password: ${hm.db.pw}<br />
 cloud:<br />
 nacos:<br />
 server-addr: 192.168.150.101:8848 # nacos<br />
@@ -1949,6 +2037,8 @@ SpringApplication.run(TradeApplication.class, args);<br />
 
 复制hm-service中所有与trade有关的代码到trade-service：
 
+<img src=".assets/SpringCloud笔记/media/image46.png" style="width:5.75in;height:2.53125in" />
+
 在交易服务中，用户下单时需要根据id查询商品、计算商品总价并保存订单、扣减库存、清空购物车商品。其中，查询商品、扣减库存是与商品有关的业务，相关功能在item-service中；清理购物车商品是购物车业务，相关功能在cart-service中，所以需要再hm-api中编写相关客户端。
 
 **2.5.2 抽取ItemClient接口**
@@ -1956,6 +2046,8 @@ SpringApplication.run(TradeApplication.class, args);<br />
 查询商品的远程调用接口已经实现，现在需要定义**扣减库存**的调用接口。
 
 先将接口参数的OrderDetailDTO抽取到hm-api模块的com.hmall.api.dto包下：
+
+<img src=".assets/SpringCloud笔记/media/image47.png" style="width:5.75in;height:1.04167in" />
 
 将扣减库存的接口添加到hm-api模块的com.hmall.api.client.ItemClient中：
 
@@ -2160,6 +2252,8 @@ return details;<br />
 
 刷新tradeservice的maven配置，给trade-service配置启动项，设置profile为local：
 
+<img src=".assets/SpringCloud笔记/media/image48.png" style="width:5.75in;height:1.39583in" />
+
 **2.8 测试**
 
 启动TradeApplication，访问http://localhost:8085/doc.html，测试根据id查询订单接口，id为1654779387523936258，测试通过。
@@ -2169,6 +2263,8 @@ return details;<br />
 **3.1 创建项目**
 
 在hmall下新建一个模块，命名为pay-service：
+
+<img src=".assets/SpringCloud笔记/media/image49.png" style="width:5.75in;height:1.79167in" />
 
 **3.2 引入依赖**
 
@@ -2299,7 +2395,7 @@ datasource:<br />
 url: jdbc:mysql://${hm.db.host}:3306/hm-pay?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;serverTimezone=Asia/Shanghai<br />
 driver-class-name: com.mysql.cj.jdbc.Driver<br />
 username: root<br />
-password: [REDACTED]<br />
+password: ${hm.db.pw}<br />
 cloud:<br />
 nacos:<br />
 server-addr: 192.168.150.101:8848 # nacos<br />
@@ -2344,6 +2440,8 @@ enabled: true # 开启OKHttp</td>
 **3.4.1 基础代码**
 
 复制hm-service中所有与pay有关的代码到pay-service：
+
+<img src=".assets/SpringCloud笔记/media/image50.png" style="width:5.75in;height:2.09375in" />
 
 在支付服务中，基于用户余额支付时需要扣减用户余额、标记支付状态为已支付、标记订单状态为已支付。其中，**扣减用户余额**是在user-service中有相关功能；**标记订单状态**则是在trade-service中有相关功能。因此交易服务要调用他们，必须通过OpenFeign远程调用。
 
@@ -2560,6 +2658,8 @@ return lambdaQuery()<br />
 
 刷新payservice的maven配置，给pay-service配置启动项，设置profile为local：
 
+<img src=".assets/SpringCloud笔记/media/image51.png" style="width:5.75in;height:1.4375in" />
+
 **3.7 测试**
 
 在支付服务的PayController中添加一个接口方便测试：
@@ -2594,6 +2694,8 @@ return BeanUtils.copyList(payOrderService.list(), PayOrderVO.class);<br />
 
 通过认证后，网关再根据请求判断应该访问哪个微服务，将请求转发过去
 
+<img src=".assets/SpringCloud笔记/media/image52.png" style="width:5.75in;height:1.90625in" />
+
 在SpringCloud当中，提供了两种网关实现方案：
 
 Netflix Zuul：早期实现，目前已经淘汰
@@ -2619,6 +2721,8 @@ SpringCloudGateway官网：
 **2.1 创建项目**
 
 在hmall下创建一个新的module，命名为hm-gateway，作为网关微服务：
+
+<img src=".assets/SpringCloud笔记/media/image53.png" style="width:5.75in;height:2.09375in" />
 
 **2.2 引入依赖**
 
@@ -2834,6 +2938,8 @@ SpringCloudGateway中支持的断言类型有很多：
 
 由于网关会拦截所有请求进行路由，所以可以在网关进行登录校验，秘钥只需要在网关和登录业务各放一份，此时登录校验流程如下：
 
+<img src=".assets/SpringCloud笔记/media/image54.png" style="width:5.75in;height:1.5625in" />
+
 这时就面临三个问题：
 
 网关路由是配置的，请求转发时gateway内部代码，<u>怎么在转发前做登录校验？</u>
@@ -2857,6 +2963,8 @@ WebHandler则会加载当前路由下需要执行的过滤器链（**Filter chai
 微服务返回结果后，再倒序执行Filter的post逻辑
 
 最终把响应结果返回
+
+<img src=".assets/SpringCloud笔记/media/image55.png" style="width:5.75in;height:2.61458in" />
 
 最终请求转发是由NettyRoutingFilter过滤器执行的，这个过滤器是整个过滤器链中最后一个，所以可以定义一个过滤器，在其中实现登录校验逻辑，并且将过滤器执行顺序定义到NettyRoutingFilter之前，从而实现登录校验。
 
@@ -3173,6 +3281,8 @@ return 0;<br />
 
 登录校验需要用到JWT，而且JWT的加密需要密钥和加密工具，这些在hm-service中已经有了，直接拷贝过来：
 
+<img src=".assets/SpringCloud笔记/media/image56.png" style="width:5.75in;height:1.88542in" />
+
 AuthProperties：配置登录校验需要拦截的路径，因为不是所有的路径都需要登录才能访问
 
 JwtProperties：定义与JWT工具有关的属性，比如秘钥文件位置
@@ -3196,7 +3306,7 @@ hm:<br />
 jwt:<br />
 location: classpath:hmall.jks # 秘钥地址<br />
 alias: hmall # 秘钥别名<br />
-password: [REDACTED] # 秘钥文件密码<br />
+password: hmall123 # 秘钥文件密码<br />
 tokenTTL: 30m # 登录有效期<br />
 auth:<br />
 excludePaths: # 无需登录校验的路径<br />
@@ -3254,10 +3364,10 @@ if(isExclude(request.getPath().toString())){<br />
 return chain.filter(exchange);<br />
 }<br />
 //3.获取请求头中的token<br />
-String token = [REDACTED]<br />
+String token = null;<br />
 List&lt;String&gt; headers = request.getHeaders().get("authorization");<br />
 if(!CollUtils.isEmpty(headers)){<br />
-token = [REDACTED]<br />
+token = headers.get(0);<br />
 }<br />
 //4.校验并解析token<br />
 Long userId = null;<br />
@@ -3299,6 +3409,8 @@ return 0;<br />
 **5.微服务获取用户**
 
 要把用户信息携带到下游微服务，只需要把用户信息放到HTTP请求头中，在微服务端可以定义一个SpringMVC的拦截器从请求头中获取用户信息并存入ThreadLocal，供后续使用，整体流程如下：
+
+<img src=".assets/SpringCloud笔记/media/image57.png" style="width:5.75in;height:2.38542in" />
 
 **5.1 保存用户到请求头**
 
@@ -3457,6 +3569,8 @@ return vos;<br />
 
 微服务之间也会有相互调用，这个调用不经过网关，所以无法传递用户信息，比如用户下单时，订单服务会调用商品服务扣减库存、调用购物车服务清空购物车：
 
+<img src=".assets/SpringCloud笔记/media/image58.png" style="width:5.75in;height:2.15625in" />
+
 所以需要在微服务发起调用时把用户信息放入请求头，但是微服务间的调用是由OpenFeign发起的，所以可以借助Feign中提供的拦截器接口feign.RequestInterceptor：
 
 <table>
@@ -3562,6 +3676,8 @@ requestTemplate.header("user-info", userId.toString());<br />
 
 Nacos不仅仅具备注册中心功能，也具备配置管理的功能：
 
+<img src=".assets/SpringCloud笔记/media/image59.png" style="width:5.75in;height:2.08333in" />
+
 **1.配置共享**
 
 **1.1 添加共享配置**
@@ -3583,7 +3699,7 @@ datasource:<br />
 url: jdbc:mysql://${hm.db.host}:3306/hm-cart?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;serverTimezone=Asia/Shanghai<br />
 driver-class-name: com.mysql.cj.jdbc.Driver<br />
 username: root<br />
-password: [REDACTED]<br />
+password: ${hm.db.pw}<br />
 mybatis-plus:<br />
 configuration:<br />
 default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler<br />
@@ -3627,7 +3743,11 @@ api-rule-resources:<br />
 
 在 配置管理 -\> 配置列表 中点击+新建一个配置：
 
+<img src=".assets/SpringCloud笔记/media/image60.png" style="width:5.75in;height:1.4375in" />
+
 在弹出的表单中填写信息：
+
+<img src=".assets/SpringCloud笔记/media/image61.png" style="width:5.75in;height:1.84375in" />
 
 <table>
 <colgroup>
@@ -3641,7 +3761,7 @@ datasource:<br />
 url: jdbc:mysql://${hm.db.host:192.168.150.101}:${hm.db.port:3306}/${hm.db.database}?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;serverTimezone=Asia/Shanghai<br />
 driver-class-name: com.mysql.cj.jdbc.Driver<br />
 username: ${hm.db.un:root}<br />
-password: [REDACTED]<br />
+password: ${hm.db.pw:123}<br />
 mybatis-plus:<br />
 configuration:<br />
 default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler<br />
@@ -3716,6 +3836,8 @@ api-rule-resources:<br />
 **1.2 拉取共享配置**
 
 项目在启动时会加载两个上下文，分别是SpringCloud上下文和SpringBoot上下文，其中，拉取Nacos配置在SpringCloud上下文，而SpringCloud上下文先被拉取，但是nacos地址在SpringBoot上下文中，为了获取nacos地址读取nacos配置，SpringCloud上下文加载时会先加载bootstrap.yaml（或bootstrap.properties）配置文件，然后再加载Nacos配置，如下：
+
+<img src=".assets/SpringCloud笔记/media/image62.png" style="width:5.75in;height:1.96875in" />
 
 如果将nacos地址配置到bootstrap.yaml中，那么在项目引导阶段就可以读取nacos中的配置了，具体配置步骤如下：
 
@@ -3807,6 +3929,8 @@ database: hm-cart</td>
 **2.1 添加配置到Nacos**
 
 在nacos中添加一个配置文件，将购物车的上限数量添加到配置中：
+
+<img src=".assets/SpringCloud笔记/media/image63.png" style="width:5.75in;height:1.23958in" />
 
 Data ID的格式必须遵守如下规则：
 
@@ -3974,7 +4098,11 @@ return null;<br />
 
 由于我们引入了spring-cloud-starter-alibaba-nacos-config依赖，所以项目启动时com.alibaba.cloud.nacos.NacosConfigAutoConfiguration会自动创建ConfigService：
 
+<img src=".assets/SpringCloud笔记/media/image64.png" style="width:5.75in;height:2.58333in" />
+
 NacosConfigManager是负责管理Nacos的ConfigService的，所以只要拿到NacosConfigManager就等于拿到了ConfigService：
+
+<img src=".assets/SpringCloud笔记/media/image65.png" style="width:5.75in;height:2.90625in" />
 
 项目启动时不仅需要添加监听器，还要先读取配置，因此建议使用的API是这个：
 
@@ -4144,7 +4272,7 @@ hm:<br />
 jwt:<br />
 location: classpath:hmall.jks # 秘钥地址<br />
 alias: hmall # 秘钥别名<br />
-password: [REDACTED] # 秘钥文件密码<br />
+password: hmall123 # 秘钥文件密码<br />
 tokenTTL: 30m # 登录有效期<br />
 auth:<br />
 excludePaths: # 无需登录校验的路径<br />
@@ -4243,6 +4371,8 @@ routeIds.add(routeDefinition.getId());<br />
 
 此时重启后还无法访问后端服务，因为nacos缺少路由配置gateway-routes.json，我们添加上去即可：
 
+<img src=".assets/SpringCloud笔记/media/image66.png" style="width:5.75in;height:1.57292in" />
+
 配置内容如下：
 
 <table>
@@ -4309,6 +4439,8 @@ routeIds.add(routeDefinition.getId());<br />
 
 对于微服务群来说，如果一个微服务因为某个原因阻塞，由于微服务的相互调用，调用这个微服务的微服务服务会等待请求响应，从而也发生阻塞，而被迫阻塞的微服务也可能被其他微服务调用，这时其他微服务也会阻塞，这种由于一个微服务阻塞导致大量微服务阻塞的现象就是级联失败导致的**雪崩问题**，微服务保护就是用来解决雪崩问题的。
 
+<img src=".assets/SpringCloud笔记/media/image67.png" style="width:5.75in;height:2.02083in" />
+
 **1.服务保护方案**
 
 微服务保护的方案有很多，比如：
@@ -4325,11 +4457,15 @@ routeIds.add(routeDefinition.getId());<br />
 
 当突然有大量请求访问同一服务时，服务就可能发生阻塞或故障，从而引发雪崩问题，请求限流就是**利用限流器限制或控制接口访问的并发量**，使请求处于服务可接受范围内，避免服务因流量激增而出现故障：
 
+<img src=".assets/SpringCloud笔记/media/image68.png" style="width:5.75in;height:2.05208in" />
+
 **1.2 线程隔离**
 
 请求限流只是限制了作用在服务提供者上的请求流量，但是服务消费者（服务调用者）仍然可能面临高并发，在高并发下，服务消费者的线程资源可能会被耗尽，如果高并发都是调用服务提供者A，此时由于A的阻塞调用服务提供者B的业务就会没有线程资源可用，也就是说服务提供者A的阻塞导致服务消费者线程资源被耗尽，从而影响服务消费者调用其他微服务的效率。
 
 线程隔离的思想是为每个业务限定线程数量，这个业务线程使用完了，也不会使用其他业务的线程，而是响应一个错误或特殊处理，从而**将业务隔离起来**，保证同一个微服务多个业务间不会影响：
+
+<img src=".assets/SpringCloud笔记/media/image69.png" style="width:5.75in;height:2.01042in" />
 
 **1.3 服务熔断**
 
@@ -4338,6 +4474,8 @@ routeIds.add(routeDefinition.getId());<br />
 **编写服务降级逻辑**：服务调用失败后的处理逻辑，根据业务场景，可以抛出异常，也可以返回友好提示或默认数据
 
 **异常统计和熔断**：统计服务提供方的异常比例，当比例过高表明该接口会影响其它服务，应拒绝调用该接口，直接走降级逻辑
+
+<img src=".assets/SpringCloud笔记/media/image70.png" style="width:5.75in;height:2.11458in" />
 
 **2.Sentinel**
 
@@ -4389,6 +4527,8 @@ java -Dserver.port=8090 -Dcsp.sentinel.dashboard.server=localhost:8090 -Dproject
 
 访问http://localhost:8090页面，输入用户名和密码（默认都是sentinel）就能进入控制台，默认监控sentinel-dashboard服务本身：
 
+<img src=".assets/SpringCloud笔记/media/image71.png" style="width:5.75in;height:2.375in" />
+
 **2.2 微服务整合**
 
 这里在cart-service模块中整合sentinel，连接sentinel-dashboard控制台，其他模块类似。
@@ -4435,9 +4575,13 @@ dashboard: localhost:8090 #sentinel地址</td>
 
 重启cart-service，打开前端页面http://localhost:18080/，向购物车添加、查询、删除若干数据，sentinel的客户端会将服务访问的信息提交到sentinel-dashboard控制台并展示出统计信息：
 
+<img src=".assets/SpringCloud笔记/media/image72.png" style="width:5.75in;height:2.48958in" />
+
 **2.2.4 簇点链路**
 
 簇点链路就是单机调用链路，即一次请求进入服务后经过的每一个被Sentinel监控的资源。默认情况下Sentinel会监控SpringMVC的每一个Endpoint（接口），例如/carts这个接口路径就是其中一个簇点，可以对其进行限流、熔断、隔离等保护措施。
+
+<img src=".assets/SpringCloud笔记/media/image73.png" style="width:5.75in;height:2.10417in" />
 
 但是SpringMVC接口通常是按照Restful风格设计的，购物车的查询、删除、修改都是/carts路径，只是请求方式不一样。默认Sentinel把请求路径作为簇点资源名称，无法区分不同请求方式，可以选择打开Sentinel的请求方式前缀，把请求方式 + 请求路径作为簇点资源名，只需要在配置文件中添加spring.cloud.sentinel.http-method-specify为true即可：
 
@@ -4464,7 +4608,11 @@ http-method-specify: true #开启簇点资源的请求方式前缀</td>
 
 请求限流不需要书写代码，只需要在Sentinel的控制台进行设置即可：
 
+<img src=".assets/SpringCloud笔记/media/image74.png" style="width:5.75in;height:2.03125in" />
+
 如果想要把查询购物车簇点资源的QPS控制为6，即每秒最多向服务器发送6条请求，就可以在流控菜单下配置：
+
+<img src=".assets/SpringCloud笔记/media/image75.png" style="width:5.75in;height:1.80208in" />
 
 **测试**
 
@@ -4472,9 +4620,13 @@ http-method-specify: true #开启簇点资源的请求方式前缀</td>
 
 利用Jemeter做限流测试，找到资料中的雪崩测试.jmx，在jmeter打开，进行限流测试。
 
+<img src=".assets/SpringCloud笔记/media/image76.png" style="width:5.75in;height:0.91667in" />
+
 上图配置表明发送1000次请求请求，100秒内发完，且只请求1次，平均QPS为1000/100 = 10，代表平均每1秒有10个查询购物车请求。
 
 启动雪崩测试线程组，在Sentinel可以看到通过的QPS基本都是6，符合设定的流控规则最大QPS为6：
+
+<img src=".assets/SpringCloud笔记/media/image77.png" style="width:5.75in;height:2.1875in" />
 
 *被拒绝的请求响应状态码是429，通过jmeter的结果树就可以看到。*
 
@@ -4522,11 +4674,17 @@ max-connections: 100 # 允许的最大连接，超过100个并发请求拒绝或
 
 重启cart-service服务，可以看到查询商品的FeignClient自动变成了一个簇点资源：
 
+<img src=".assets/SpringCloud笔记/media/image78.png" style="width:5.75in;height:1.69792in" />
+
 **4.2 配置线程隔离**
 
 现成隔离也是在对应的簇点资源后面的流控按钮设置的：
 
+<img src=".assets/SpringCloud笔记/media/image79.png" style="width:5.75in;height:1.89583in" />
+
 然后配置并发线程数为5，即这个远程调用查询接口最多使用5个线程：
+
+<img src=".assets/SpringCloud笔记/media/image80.png" style="width:5.75in;height:1.875in" />
 
 这里只是最多使用5个线程，而不是QPS为5，如果查询商品的接口限流QPS为2，即每秒处理两个请求，则实际QPS在10左右，超出的请求将被拒接。
 
@@ -4550,9 +4708,15 @@ ThreadUtil.sleep(500);</td>
 
 **\[雪崩测试.jmx\]**
 
+<img src=".assets/SpringCloud笔记/media/image81.png" style="width:5.75in;height:0.8125in" />
+
+<img src=".assets/SpringCloud笔记/media/image82.png" style="width:5.75in;height:3.3125in" />
+
 可以看到，查询购物车的QPS要高于远程调用查询商品的QPS（这是因为查询商品线程耗尽其余请求直接被拒绝，从而响应500），且查询商品的QPS在10左右。
 
 当尝试在高并发下修改购物车时，能够修改成功，但是却查询购物车失败，这说明线程隔离起作用导致线程耗尽但修改购物车不受影响：
+
+<img src=".assets/SpringCloud笔记/media/image83.png" style="width:5.75in;height:2.79167in" />
 
 **5.服务熔断**
 
@@ -4691,11 +4855,17 @@ enabled: true # 开启feign对sentinel的支持</td>
 
 重新进行线程隔离测试，可以看到异常比例为0，idea控制台输出了远程调用异常错误，说明虽然请求被限流，但是不会再响应异常了：
 
+<img src=".assets/SpringCloud笔记/media/image84.png" style="width:5.75in;height:0.47917in" />
+
+<img src=".assets/SpringCloud笔记/media/image85.png" style="width:5.75in;height:0.97917in" />
+
 **5.2 服务熔断**
 
 **5.2.1 状态机**
 
 当已经知道有一定比例的调用响应速度慢后，就能推断出服务提供者故障或阻塞了，这时应及时熔断接口，后面的请求不用再调用服务提供者，而是直接走fallback逻辑，服务熔断由状态机来进行控制：
+
+<img src=".assets/SpringCloud笔记/media/image86.png" style="width:5.75in;height:2.01042in" />
 
 状态机包括三个状态：
 
@@ -4713,6 +4883,10 @@ enabled: true # 开启feign对sentinel的支持</td>
 
 可以在控制台通过点击簇点后的熔断按钮来配置熔断策略：
 
+<img src=".assets/SpringCloud笔记/media/image87.png" style="width:5.75in;height:1.86458in" />
+
+<img src=".assets/SpringCloud笔记/media/image88.png" style="width:5.75in;height:2.14583in" />
+
 熔断规则解析：熔断策略可以根据慢调用比例、异常比例、异常数来判断，这里以慢调用比例为例
 
 最大RT：即最大响应时长（单位ms），当请求响应时长超过200ms就认为是慢调用
@@ -4727,17 +4901,29 @@ enabled: true # 开启feign对sentinel的支持</td>
 
 配置完成后，重新进行线程隔离测试，会发现一开始查询商品可以通过，但是后面查询商品通过QPS变成了0，说明服务熔断了，但是jmeter的异常比例为0，说明熔断后走的fallback逻辑，所以平均响应时长也会缩短：
 
+<img src=".assets/SpringCloud笔记/media/image89.png" style="width:5.75in;height:2.92708in" />
+
+<img src=".assets/SpringCloud笔记/media/image90.png" style="width:5.75in;height:0.82292in" />
+
 **十、分布式事务**
 
 **1.问题分析**
 
 在下单业务中，交易服务需要调用购物车服务清空购物车和库存服务扣减库存，每个服务都有自己的事务，即**分支事务**，而此时交易服务创建订单就构成了**全局事务**，当购物车服务成功提交后，库存服务如果出现异常导致分支事务回滚，此时购物车服务已经提交，导致全局事务的ACID特性被破坏，导致数据不一致，这就是**分布式事务数据不一致问题**。
 
+<img src=".assets/SpringCloud笔记/media/image91.png" style="width:5.75in;height:1.90625in" />
+
 向购物车中添加几件商品，然后进行结算但不要提交订单，此时购物车表中会有几条数据：
+
+<img src=".assets/SpringCloud笔记/media/image92.png" style="width:5.75in;height:0.60417in" />
 
 修改其中一个商品的库存为0，这里以第一个item_id=100001511821为例（记得提交）：
 
+<img src=".assets/SpringCloud笔记/media/image93.png" style="width:5.75in;height:1.27083in" />
+
 然后进行提交订单操作，会发现购物车数据被清空但是商品服务扣减库存出错：
+
+<img src=".assets/SpringCloud笔记/media/image94.png" style="width:5.75in;height:1.48958in" />
 
 这说明出现了数据不一致。
 
@@ -4758,6 +4944,8 @@ Seata官网：
 **TM (Transaction Manager) - 事务管理器**：定义全局事务的范围、开始全局事务、提交或回滚全局事务
 
 **RM (Resource Manager) - 资源管理器**：管理分支事务，与TC交谈以注册分支事务和报告分支事务的状态，并驱动分支事务提交或回滚
+
+<img src=".assets/SpringCloud笔记/media/image95.png" style="width:5.75in;height:2.375in" />
 
 **TM**和**RM**可以理解为Seata的客户端部分，引入到参与事务的微服务依赖中即可，将来**TM**和**RM**就会协助微服务，实现本地分支事务与**TC**之间交互，实现事务的提交或回滚。而**TC**服务则是事务协调中心，是一个独立的微服务，需要单独部署。
 
@@ -4871,6 +5059,8 @@ docker ps</td>
 
 在nacos上添加一个共享的seata配置，命名为shared-seata.yaml：
 
+<img src=".assets/SpringCloud笔记/media/image96.png" style="width:5.75in;height:1.47917in" />
+
 配置内容如下：
 
 <table>
@@ -4889,7 +5079,7 @@ namespace: "" # namespace，默认为空<br />
 group: DEFAULT_GROUP # 分组，默认是DEFAULT_GROUP<br />
 application: seata-server # seata服务名称<br />
 username: nacos<br />
-password: [REDACTED]<br />
+password: nacos<br />
 tx-service-group: hmall # 事务组名称<br />
 service:<br />
 vgroup-mapping: # 事务组与tc集群的映射关系<br />
@@ -4957,6 +5147,8 @@ database: hm-trade</td>
 
 seata的客户端在解决分布式事务的时候需要记录一些中间数据，保存在数据库中。将资料中的seata-at.sql分别文件导入hm-trade、hm-cart、hm-item三个数据库中：
 
+<img src=".assets/SpringCloud笔记/media/image97.png" style="width:5.75in;height:2.73958in" />
+
 **4.4 测试**
 
 在trade-service模块下的OrderServiceImpl类中的createOrder方法上的@Transactional注解改为Seata提供的**@GlobalTransactional**注解，代表这是一个全局事务。
@@ -4989,7 +5181,11 @@ A是规范，目前主流数据库都实现了这种规范，实现的原理都�
 
 **正常情况**：
 
+<img src=".assets/SpringCloud笔记/media/image98.png" style="width:5.75in;height:2.27083in" />
+
 **异常情况**：
+
+<img src=".assets/SpringCloud笔记/media/image99.png" style="width:5.75in;height:2.14583in" />
 
 一阶段：
 
@@ -5008,6 +5204,8 @@ A是规范，目前主流数据库都实现了这种规范，实现的原理都�
 **5.1.2 Seata的XA模型**
 
 Seata对原始的**XA模式**做了简单的封装和改造，以适应自己的事务模型，基本架构如图：
+
+<img src=".assets/SpringCloud笔记/media/image100.png" style="width:5.75in;height:2.84375in" />
 
 当业务方法开始执行时，TM会先开启全局事务报告给TC，然后执行业务方法，当执行到第一个远程调用业务（如清理购物车），RM会注册分支事务到TC，然后执行完远程业务后报告事务状态给TC，但是不提交事务，持有数据库锁，其他远程调用RM也是这样，当最后一个远程调用RM执行完（如扣减库存）后，报告事务状态给TC，当业务方法（如下单）执行完后，TM向TC报备，此时TC会检查TM内所有RM的事务状态，如果都成功就发送提交指令给TC内的所有RM，RM提交事务释放数据库锁，如果有一个RM执行失败，TC就会发送回滚指令给TC内的所有RM，RM回滚事务释放数据库锁。
 
@@ -5042,6 +5240,8 @@ data-source-proxy-mode: XA</td>
 
 利用@GlobalTransactional注解标记分布式事务的入口方法：
 
+<img src=".assets/SpringCloud笔记/media/image101.png" style="width:5.75in;height:1.53125in" />
+
 |                                                                                                          |
 |----------------------------------------------------------------------------------------------------------|
 | **注意**：业务远程调用的接口方法可以加上@Transactional注解保证分支事务一致性，当然不加全局事务也会生效。 |
@@ -5051,6 +5251,8 @@ data-source-proxy-mode: XA</td>
 XA模式虽然保证了数据强一致，但如果后面接口调用耗时过长，前面的分支事务数据库锁就会一直不释放，导致其他线程无法操作数据库，而**AT模式**就能避免锁一直占用问题。
 
 **Seata的AT模型**基本架构：
+
+<img src=".assets/SpringCloud笔记/media/image102.png" style="width:5.75in;height:2.84375in" />
 
 当业务方法开始执行时，TM会先开启全局事务报告给TC，然后执行业务方法，当执行到第一个远程调用业务（如清理购物车），RM会注册分支事务到TC，然后根据SQL解析查询出更新前的快照记录到undo-log，然后执行业务SQL并提交，在查询出更新后的快照记录到undo-log，之后向TC报告事务状态，其他远程调用RM也是这样，TM执行完后向TC报备，TC会检查TM内所有RM的事务状态，如果都成功就发送提交指令给TC内的所有RM，RM删除undo-log，如果有一个RM执行失败，TC就会发送回滚指令给TC内的所有RM，RM根据undo_log恢复数据并删除undo-log。
 
@@ -5109,6 +5311,8 @@ data-source-proxy-mode: AT #可以不配置，默认就是AT模式</td>
 
 和XA模式一样，AT模式也需要利用@GlobalTransactional注解标记分布式事务的入口方法：
 
+<img src=".assets/SpringCloud笔记/media/image101.png" style="width:5.75in;height:1.53125in" />
+
 **十一、MQ**
 
 **1.初识MQ**
@@ -5123,6 +5327,8 @@ data-source-proxy-mode: AT #可以不配置，默认就是AT模式</td>
 
 级联失败：如果通知服务、积分服务出现异常，此时用户已经支付，此时所有服务都会回滚，级联失败，到手的钱又丢了😭
 
+<img src=".assets/SpringCloud笔记/media/image103.png" style="width:5.75in;height:1.77083in" />
+
 **1.2 异步调用**
 
 异步调用是基于消息通知的方式，一般包含三个角色：
@@ -5134,6 +5340,8 @@ data-source-proxy-mode: AT #可以不配置，默认就是AT模式</td>
 消息接收者：接收和处理消息的人，就是原来的服务提供方
 
 在异步调用中，发送者不直接同步调用接收者的业务接口，而是发送一条消息投递给消息Broker，接收者根据自己的需求从消息Broker订阅消息。每当发送方发送消息接受者都能获取消息并处理，例如支付服务只需要处理必须的扣减余额和更新交易流水，然后发送一条消息到Broker就结束了，其他调用逻辑全部取消，其他服务事先从Broker订阅消息，消息发送到Broker后会被分发给每一个订阅了的微服务，微服务接收到消息后处理各自的业务，即使又有短信通知、积分更新需求，只需要让对应的服务订阅消息即可：
+
+<img src=".assets/SpringCloud笔记/media/image104.png" style="width:5.75in;height:1.60417in" />
 
 可以看到，异步调用的优势如下：
 
@@ -5228,7 +5436,11 @@ rabbitmq:3.8-management</td>
 
 安装完成后访问http://192.168.150.101:15672并输入用户名itheima和密码123321就可以看到RabbitMQ提供的控制台页面：
 
+<img src=".assets/SpringCloud笔记/media/image105.png" style="width:5.75in;height:2.46875in" />
+
 RabbitMQ对应的架构图：
+
+<img src=".assets/SpringCloud笔记/media/image106.png" style="width:5.75in;height:2.38542in" />
 
 **publisher**：生产者，也就是发送消息的一方
 
@@ -5246,7 +5458,11 @@ RabbitMQ对应的架构图：
 
 在控制台页面，Exchanges选项卡就是交换机页面：
 
+<img src=".assets/SpringCloud笔记/media/image107.png" style="width:5.75in;height:2.42708in" />
+
 点击进入任一交换机（如amp.fanout）的详情页，通过publish message发送一条消息：
+
+<img src=".assets/SpringCloud笔记/media/image108.png" style="width:5.75in;height:2.51042in" />
 
 这里没有消费者，所以消息最终会丢失，说明交换机没有存储消息的能力。
 
@@ -5254,21 +5470,35 @@ RabbitMQ对应的架构图：
 
 打开Queues选项卡，新建一个队列：
 
+<img src=".assets/SpringCloud笔记/media/image109.png" style="width:5.75in;height:2.28125in" />
+
 再以相同的方式，创建一个队列，命名为hello.queue2，最终队列列表如下：
+
+<img src=".assets/SpringCloud笔记/media/image110.png" style="width:5.75in;height:1.20833in" />
 
 **2.2.3 绑定关系**
 
 点击Exchanges选项卡，点击amq.fanout交换机，进入交换机详情页，然后点击Bindings菜单，在表单中填写要绑定的队列名称：
 
+<img src=".assets/SpringCloud笔记/media/image111.png" style="width:5.75in;height:2.20833in" />
+
 相同的方式，将hello.queue2也绑定到该交换机，最终绑定结果如下：
+
+<img src=".assets/SpringCloud笔记/media/image112.png" style="width:5.75in;height:1.85417in" />
 
 **2.2.4 发送消息**
 
 再次回到exchange页面，找到刚刚绑定的amq.fanout，点击进入详情页，再次发送一条消息：
 
+<img src=".assets/SpringCloud笔记/media/image108.png" style="width:5.75in;height:2.51042in" />
+
 回到Queues页面，可以发现hello.queue中已经有一条消息了：
 
+<img src=".assets/SpringCloud笔记/media/image113.png" style="width:5.75in;height:1.17708in" />
+
 点击队列名称，进入详情页，查看队列详情，点击get message获取消息，就可以在下面看到消息了：
+
+<img src=".assets/SpringCloud笔记/media/image114.png" style="width:5.75in;height:2.36458in" />
 
 此时如果有消费者监听了MQ的hello.queue1或hello.queue2队列，消费者就能拿到消息处理了。
 
@@ -5277,6 +5507,8 @@ RabbitMQ对应的架构图：
 **2.3.1 用户管理**
 
 点击Admin选项卡，首先会看到RabbitMQ控制台的用户管理界面：
+
+<img src=".assets/SpringCloud笔记/media/image115.png" style="width:5.75in;height:2.26042in" />
 
 这里的用户都是RabbitMQ的管理或运维人员，目前只有安装RabbitMQ时添加的itheima这个用户。
 
@@ -5296,21 +5528,37 @@ Can access virtual host： /，可以访问的virtual host，这里的/是默认
 
 比如，这里给黑马商城创建一个新的用户，命名为hmall，设置密码为123：
 
+<img src=".assets/SpringCloud笔记/media/image116.png" style="width:5.75in;height:2.26042in" />
+
 但此时hmall用户没有任何virtual host的访问权限：
+
+<img src=".assets/SpringCloud笔记/media/image117.png" style="width:5.75in;height:1.34375in" />
 
 **2.3.2 virtual host**
 
 退出登录：
 
+<img src=".assets/SpringCloud笔记/media/image118.png" style="width:5.75in;height:1.65625in" />
+
 切换到刚刚创建的hmall用户登录，然后点击Virtual Hosts菜单，进入virtual host管理页：
+
+<img src=".assets/SpringCloud笔记/media/image119.png" style="width:5.75in;height:1.95833in" />
 
 可以看到目前只有一个默认的virtual host为 /。我们给黑马商城项目创建一个单独的virtual host，而不是使用默认的/。
 
+<img src=".assets/SpringCloud笔记/media/image120.png" style="width:5.75in;height:1.54167in" />
+
 创建完后可以看到：
+
+<img src=".assets/SpringCloud笔记/media/image121.png" style="width:5.75in;height:0.875in" />
 
 由于是登录hmall账户后创建的virtual host，因此回到users菜单会发现当前用户已经具备了对/hmall这个virtual host的访问权限：
 
+<img src=".assets/SpringCloud笔记/media/image122.png" style="width:5.75in;height:1.3125in" />
+
 此时，点击页面右上角的virtual host下拉菜单，切换virtual host为/hmall，可以看到之前的队列都不见了：
+
+<img src=".assets/SpringCloud笔记/media/image123.png" style="width:5.75in;height:1.51042in" />
 
 这就是基于virtual host的隔离效果。
 
@@ -5334,13 +5582,19 @@ SpringAMQP提供了三个功能：
 
 为了测试方便，这里直接跳过了交换机，使用简单模型，即Publisher发布消息到Queue，消费者监听并处理Queue中的消息：
 
+<img src=".assets/SpringCloud笔记/media/image124.png" style="width:5.75in;height:0.53125in" />
+
 先在控制台新建一个队列simple.queue：
+
+<img src=".assets/SpringCloud笔记/media/image125.png" style="width:5.75in;height:2.04167in" />
 
 **3.1.1 导入Demo工程**
 
 **\[mq-demo.zip\]**
 
 在IDEA中打开资料中提供的mq-demo项目，项目结构如下：
+
+<img src=".assets/SpringCloud笔记/media/image126.png" style="width:5.75in;height:2.07292in" />
 
 mq-demo：父工程，管理项目依赖
 
@@ -5422,7 +5676,7 @@ host: 192.168.88.131 # 虚拟主机IP<br />
 port: 5672 # 端口号<br />
 virtual-host: /hmall # 虚拟主机<br />
 username: hmall # 用户名<br />
-password: [REDACTED] # 密码</td>
+password: 123 # 密码</td>
 </tr>
 </tbody>
 </table>
@@ -5464,6 +5718,8 @@ rabbitTemplate.convertAndSend(queueName, message);<br />
 
 打开控制台，可以看到消息已经发送到队列中：
 
+<img src=".assets/SpringCloud笔记/media/image127.png" style="width:5.75in;height:2.40625in" />
+
 **3.1.3 消息接收**
 
 首先配置MQ地址，在consumer服务的application.yml中添加配置：
@@ -5481,7 +5737,7 @@ host: 192.168.88.131 # 虚拟主机IP<br />
 port: 5672 # 端口号<br />
 virtual-host: /hmall # 虚拟主机<br />
 username: hmall # 用户名<br />
-password: [REDACTED] # 密码</td>
+password: 123 # 密码</td>
 </tr>
 </tbody>
 </table>
@@ -5518,11 +5774,15 @@ System.out.println("spring 消费者接收到消息：【" + msg + "】");<br />
 
 启动consumer服务，然后在publisher服务中运行测试代码，发送MQ消息，最终consumer收到消息：
 
+<img src=".assets/SpringCloud笔记/media/image128.png" style="width:5.75in;height:0.9375in" />
+
 **3.2 WorkQueues模型**
 
 有时，生产者生产的速度要快于消费者消费的速度，就会造成消息堆积，WorkQueues模型就是让**多个消费者绑定到一个队列，共同消费队列中的消息**，从而提高消息被消费的速度。
 
 为了模拟消息这个场景，需要创建一个队列work.queue：
+
+<img src=".assets/SpringCloud笔记/media/image129.png" style="width:5.75in;height:2in" />
 
 **3.2.1 消息发送**
 
@@ -5742,6 +6002,8 @@ prefetch: 1 # 每次只能获取一条消息，处理完成才能获取下一个
 
 引入交换机后，原有的消费模型就发生了很大的变化：
 
+<img src=".assets/SpringCloud笔记/media/image130.png" style="width:5.73958in;height:2.01042in" />
+
 过程如下：
 
 **Publisher**：生产者，不再发送消息到队列中，而是发给交换机
@@ -5772,9 +6034,13 @@ prefetch: 1 # 每次只能获取一条消息，处理完成才能获取下一个
 
 Fanout交换机就是广播模式的交换机，工作流程如下：
 
+<img src=".assets/SpringCloud笔记/media/image131.png" style="width:5.75in;height:1.4375in" />
+
 生产者把消息发送到Fanout交换机后，Fanout交换机将消息转发给所有与其绑定队列，每个队列的消费者都能拿到消息。
 
 **案例**：
+
+<img src=".assets/SpringCloud笔记/media/image132.png" style="width:5.75in;height:1.20833in" />
 
 创建一个名为hmall.fanout的交换机，类型是Fanout
 
@@ -5784,11 +6050,19 @@ Fanout交换机就是广播模式的交换机，工作流程如下：
 
 在控制台创建队列fanout.queue1：
 
+<img src=".assets/SpringCloud笔记/media/image133.png" style="width:5.75in;height:1.51042in" />
+
 再创建一个队列fanout.queue2：
+
+<img src=".assets/SpringCloud笔记/media/image134.png" style="width:5.75in;height:1.53125in" />
 
 然后再创建一个交换机：
 
+<img src=".assets/SpringCloud笔记/media/image135.png" style="width:5.75in;height:1.64583in" />
+
 然后绑定两个队列到交换机：
+
+<img src=".assets/SpringCloud笔记/media/image136.png" style="width:5.75in;height:2.05208in" />
 
 **3.4.2 消息发送**
 
@@ -5844,6 +6118,8 @@ System.out.println("消费者2接收到消息：【" + msg + "】");<br />
 
 在Fanout模式中，一条消息，会被所有订阅的队列都消费，但在某些场景下，希望不同的消息被不同的队列消费，这时就要用到Direct类型的Exchange：
 
+<img src=".assets/SpringCloud笔记/media/image137.png" style="width:5.75in;height:1.72917in" />
+
 在Direct模型下：
 
 队列与交换机的绑定，不能是任意绑定，而是要指定一个RoutingKey（路由key）
@@ -5853,6 +6129,8 @@ System.out.println("消费者2接收到消息：【" + msg + "】");<br />
 Exchange不再把消息交给每一个绑定的队列，而是根据消息的Routing Key进行判断，只有队列的Routingkey与消息的 Routing key完全一致，才会接收到消息
 
 **案例**：
+
+<img src=".assets/SpringCloud笔记/media/image138.png" style="width:5.75in;height:2.11458in" />
 
 声明一个名为hmall.direct的交换机
 
@@ -5868,11 +6146,21 @@ Exchange不再把消息交给每一个绑定的队列，而是根据消息的Rou
 
 首先在控制台声明两个队列direct.queue1和direct.queue2，这里不再展示过程：
 
+<img src=".assets/SpringCloud笔记/media/image139.png" style="width:5.75in;height:1.45833in" />
+
 然后声明一个direct类型的交换机，命名为hmall.direct：
+
+<img src=".assets/SpringCloud笔记/media/image140.png" style="width:5.75in;height:1.4375in" />
 
 然后使用red和blue作为key，绑定direct.queue1到hmall.direct：
 
+<img src=".assets/SpringCloud笔记/media/image141.png" style="width:5.75in;height:1.53125in" />
+
+<img src=".assets/SpringCloud笔记/media/image142.png" style="width:5.75in;height:1.6875in" />
+
 同理，使用red和yellow作为key，绑定direct.queue2到hmall.direct，最终结果：
+
+<img src=".assets/SpringCloud笔记/media/image143.png" style="width:5.75in;height:1.79167in" />
 
 **3.5.2 消息接收**
 
@@ -5924,6 +6212,8 @@ rabbitTemplate.convertAndSend(exchangeName, "red", message);<br />
 
 由于使用的red这个key，所以两个消费者都收到了消息：
 
+<img src=".assets/SpringCloud笔记/media/image144.png" style="width:5.75in;height:0.34375in" />
+
 再切换为blue这个key：
 
 <table>
@@ -5948,6 +6238,8 @@ rabbitTemplate.convertAndSend(exchangeName, "blue", message);<br />
 
 会发现只有消费者1收到了消息：
 
+<img src=".assets/SpringCloud笔记/media/image145.png" style="width:5.75in;height:0.19792in" />
+
 **3.6 Topic交换机**
 
 Topic类型的Exchange与Direct相比，都是可以根据RoutingKey把消息路由到不同的队列，只不过Topic类型Exchange可以让队列在绑定BindingKey 的时候使用通配符。
@@ -5960,6 +6252,8 @@ BindingKey一般由一个或多个单词组成，多个单词之间以.分割，
 
 **案例**：
 
+<img src=".assets/SpringCloud笔记/media/image146.png" style="width:5.75in;height:1.48958in" />
+
 topic.queue1：绑定china.#，凡是以china.开头的routing key都可以匹配，例如china.news、china.weather
 
 topic.queue2：绑定#.news，凡是以.news结尾的routing key都可以匹配，例如china.news、japan.news
@@ -5968,9 +6262,15 @@ topic.queue2：绑定#.news，凡是以.news结尾的routing key都可以匹配�
 
 首先在控制台声明两个队列topic.queue1和topic.queue2，这里不再展示过程：
 
+<img src=".assets/SpringCloud笔记/media/image147.png" style="width:5.75in;height:1.44792in" />
+
 然后声明一个topic类型的交换机，命名为hmall.topic：
 
+<img src=".assets/SpringCloud笔记/media/image148.png" style="width:5.75in;height:1.32292in" />
+
 最后使用通配符绑定队列和交换机：
+
+<img src=".assets/SpringCloud笔记/media/image149.png" style="width:5.75in;height:2.0625in" />
 
 **3.6.2 消息发送**
 
@@ -6028,11 +6328,19 @@ System.out.println("消费者2接收到topic.queue2的消息：【" + msg + "】
 
 SpringAMQP提供了一个Queue类，用来创建队列：
 
+<img src=".assets/SpringCloud笔记/media/image150.png" style="width:5.75in;height:1.46875in" />
+
 SpringAMQP还提供了一个Exchange接口，来表示所有不同类型的交换机：
+
+<img src=".assets/SpringCloud笔记/media/image151.png" style="width:5.75in;height:1.61458in" />
 
 可以通过new的方式创建队列和交换机，还可以通过ExchangeBuilder来简化这个过程：
 
+<img src=".assets/SpringCloud笔记/media/image152.png" style="width:5.75in;height:2.15625in" />
+
 而在绑定队列和交换机时，则需要使用BindingBuilder来创建Binding对象：
+
+<img src=".assets/SpringCloud笔记/media/image153.png" style="width:5.75in;height:1.27083in" />
 
 **3.7.2 fanout示例**
 
@@ -6266,6 +6574,8 @@ return new Queue("object.queue");<br />
 
 重启consumer服务该队列就会被自动创建：
 
+<img src=".assets/SpringCloud笔记/media/image154.png" style="width:5.75in;height:1.5625in" />
+
 在publisher模块的SpringAmqpTest中新增一个消息发送的代码，发送一个Map对象：
 
 <table>
@@ -6289,6 +6599,8 @@ rabbitTemplate.convertAndSend("object.queue", message);<br />
 </table>
 
 发送消息后查看控制台，可以看到消息是采用的JDK序列化，可读性非常差：
+
+<img src=".assets/SpringCloud笔记/media/image155.png" style="width:5.75in;height:2.47917in" />
 
 **3.8.2 配置JSON转换器**
 
@@ -6339,9 +6651,13 @@ return jackson2JsonMessageConverter;<br />
 
 到MQ控制台**删除**object.queue中的旧的消息：
 
+<img src=".assets/SpringCloud笔记/media/image156.png" style="width:5.75in;height:1.65625in" />
+
 *Purge Messages按钮用于删除队列中的所有消息。*
 
 然后再次执行刚才的消息发送的代码，到MQ的控制台查看消息结构：
+
+<img src=".assets/SpringCloud笔记/media/image157.png" style="width:5.75in;height:2.21875in" />
 
 **3.8.3 消费者接收Object**
 
@@ -6367,6 +6683,8 @@ System.out.println("消费者接收到消息：【" + msg + "】");<br />
 需求：改造余额支付功能，将支付成功后基于OpenFeign的交易服务的更新订单状态接口的同步调用，改为基于RabbitMQ的异步通知。
 
 这里只需要关注交易服务即可，因为其他服务没有实现，具体步骤：
+
+<img src=".assets/SpringCloud笔记/media/image158.png" style="width:5.75in;height:2.70833in" />
 
 定义direct类型交换机，命名为pay.direct
 
@@ -6415,7 +6733,7 @@ host: 192.168.150.101 # 你的虚拟机IP<br />
 port: 5672 # 端口<br />
 virtual-host: /hmall # 虚拟主机<br />
 username: hmall # 用户名<br />
-password: [REDACTED] # 密码</td>
+password: 123 # 密码</td>
 </tr>
 </tbody>
 </table>
@@ -6502,6 +6820,8 @@ log.error("支付成功的消息发送失败，支付单id：{}， 交易单id�
 </table>
 
 **5.发送者的可靠性**
+
+<img src=".assets/SpringCloud笔记/media/image159.png" style="width:5.75in;height:2.01042in" />
 
 消息从生产者到消费者的每一步都可能导致消息丢失：
 
@@ -6601,6 +6921,8 @@ MQ内部处理消息的进程发生了异常
 
 具体如图所示：
 
+<img src=".assets/SpringCloud笔记/media/image160.png" style="width:5.75in;height:1.75in" />
+
 总结如下：
 
 当消息投递到MQ，但是路由失败时，通过**Publisher Return**返回异常信息，同时返回ack的确认信息，代表投递成功
@@ -6698,6 +7020,8 @@ log.debug("replyText：{}", returnedMessage.getReplyText());<br />
 
 由于每个消息发送时的处理逻辑不一定相同，因此ConfirmCallback需要在每次发消息时定义，具体来说，是在调用RabbitTemplate中的convertAndSend方法时，多传递一个参数：
 
+<img src=".assets/SpringCloud笔记/media/image161.png" style="width:5.75in;height:1.09375in" />
+
 这里的CorrelationData中包含两个核心的东西：
 
 id：消息的唯一标示，MQ对不同的消息的回执以此做判断，避免混淆
@@ -6705,6 +7029,8 @@ id：消息的唯一标示，MQ对不同的消息的回执以此做判断，避�
 SettableListenableFuture：回执结果的Future对象
 
 将来MQ的回执就会通过这个Future来返回，可以提前给CorrelationData中的Future添加回调函数来处理消息回执：
+
+<img src=".assets/SpringCloud笔记/media/image162.png" style="width:5.75in;height:1.22917in" />
 
 新建一个测试，向系统自带的交换机发送消息，并且添加ConfirmCallback：
 
@@ -6764,6 +7090,8 @@ root: DEBUG # 全局日志级别设为DEBUG</td>
 </tbody>
 </table>
 
+<img src=".assets/SpringCloud笔记/media/image163.png" style="width:5.75in;height:1.15625in" />
+
 可以看到，由于传递的RoutingKey是错误的，路由失败后触发了return callback，同时也收到了ack。当修改为正确的RoutingKey以后，就不会触发return callback了，只收到ack。而如果连交换机都是错误的，则只会收到nack。
 
 <table>
@@ -6798,6 +7126,8 @@ root: DEBUG # 全局日志级别设为DEBUG</td>
 **6.1.1 交换机持久化**
 
 在控制台的Exchanges页面，添加交换机时可以配置交换机的Durability参数：
+
+<img src=".assets/SpringCloud笔记/media/image164.png" style="width:5.75in;height:1.625in" />
 
 设置为Durable就是持久化模式，Transient就是临时模式。
 
@@ -6834,6 +7164,8 @@ key = {"red", "blue"}<br />
 
 在控制台的Queues页面，添加队列时，同样可以配置队列的Durability参数：
 
+<img src=".assets/SpringCloud笔记/media/image165.png" style="width:5.75in;height:1.5625in" />
+
 使用java代码实现队列持久化：
 
 <table>
@@ -6866,6 +7198,8 @@ key = {"red", "yellow"}<br />
 **6.1.3 消息持久化**
 
 在控制台发送消息的时候，可以添加很多参数，而消息的持久化是要配置一个properties（Persistent代表持久化）：
+
+<img src=".assets/SpringCloud笔记/media/image166.png" style="width:5.75in;height:1.86458in" />
 
 MQ发送消息，默认是持久化的，如果要发送非持久化的消息，要自定义构建器：
 
@@ -6929,6 +7263,8 @@ rabbitTemplate.convertAndSend("simple.queue", message);<br />
 **6.2.1 控制台配置Lazy模式**
 
 在添加队列的时候，添加x-queue-mod=lazy参数即可设置队列为Lazy模式：
+
+<img src=".assets/SpringCloud笔记/media/image167.png" style="width:5.75in;height:1.63542in" />
 
 |                                                                                                       |
 |-------------------------------------------------------------------------------------------------------|
@@ -7024,6 +7360,8 @@ Lazy ：策略名称，可以自定义
 --apply-to queues：策略的作用对象，是所有的队列
 
 当然，也可以在控制台配置policy，进入在控制台的Admin页面，点击Policies，即可添加配置：
+
+<img src=".assets/SpringCloud笔记/media/image168.png" style="width:5.75in;height:2.45833in" />
 
 **7.消费者的可靠性**
 
@@ -7123,7 +7461,11 @@ log.info("消息处理完成");<br />
 
 把确认机制修改为auto，在异常位置打断点，再次发送消息，程序卡在断点时，可以发现此时消息状态为unacked（未确定状态）：
 
+<img src=".assets/SpringCloud笔记/media/image169.png" style="width:5.75in;height:0.53125in" />
+
 放行以后，由于抛出的是**消息转换异常**，因此Spring会自动返回reject，所以消息依然会被删除：
+
+<img src=".assets/SpringCloud笔记/media/image170.png" style="width:5.75in;height:0.53125in" />
 
 将异常改为RuntimeException类型：
 
@@ -7148,13 +7490,19 @@ log.info("消息处理完成");<br />
 
 在异常位置打断点，然后再次发送消息测试，程序卡在断点时，可以发现此时消息状态为unacked（未确定状态）：
 
+<img src=".assets/SpringCloud笔记/media/image169.png" style="width:5.75in;height:0.53125in" />
+
 放行以后，由于抛出的是业务异常，所以Spring返回nack，最终消息恢复至Ready状态，并且没有被RabbitMQ删除：
+
+<img src=".assets/SpringCloud笔记/media/image171.png" style="width:5.75in;height:0.60417in" />
 
 当把配置改为auto时，消息处理失败后，会回到RabbitMQ，并重新投递到消费者。
 
 **7.2 失败重试机制**
 
 当消费者出现异常后，消息会不断requeue（重入队）到队列，再重新发送给消费者。如果消费者再次执行依然出错，消息会再次requeue到队列，再次投递，直到消息处理成功为止，极端情况就是消费者一直无法执行成功，那么消息requeue就会无限循环，导致mq的消息处理飙升，带来不必要的压力：
+
+<img src=".assets/SpringCloud笔记/media/image172.png" style="width:5.75in;height:0.54167in" />
 
 为了应对上述情况Spring又提供了消费者失败重试机制，在消费者出现异常时利用本地重试，而不是无限制的requeue到mq队列。
 
@@ -7336,6 +7684,8 @@ return jackson2JsonMessageConverter;<br />
 
 之前配置消息转换器时其实已经设置了消息ID功能，所以发送一条消息，可以在控制台看到消息ID：
 
+<img src=".assets/SpringCloud笔记/media/image173.png" style="width:5.75in;height:2.4375in" />
+
 要在代码中获取消息ID，需要把参数从原来的对象类型（这里是String）修改为Message类型：
 
 <table>
@@ -7417,6 +7767,8 @@ lambdaUpdate()<br />
 
 虽然利用各种机制尽可能增加了消息的可靠性，但也不能保证消息100%可靠。兜底方案能够确保订单的支付状态一致，其思想很简单：既然MQ通知不一定发送到交易服务，那么交易服务就必须自己**主动去查询**支付状态，这样即便支付服务的MQ通知失败，依然能通过主动查询来保证订单状态的一致：
 
+<img src=".assets/SpringCloud笔记/media/image174.png" style="width:5.75in;height:2.67708in" />
+
 图中黄色线圈起来的部分就是MQ通知失败后的兜底处理方案，由交易服务自己主动去查询支付状态。
 
 不过需要注意的是，交易服务并不知道用户会在什么时候支付，如果查询的时机不正确（比如查询的时候用户正在支付中），可能查询到的支付状态也不正确。
@@ -7456,6 +7808,8 @@ lambdaUpdate()<br />
 消息是一个过期消息（达到了队列或消息本身设置的过期时间），超时无人消费
 
 要投递的队列消息满了，无法投递
+
+<img src=".assets/SpringCloud笔记/media/image175.png" style="width:5.75in;height:1.25in" />
 
 如果一个队列中的消息已经成为死信，并且这个队列通过**dead-letter-exchange属性指定了一个交换机，那么队列中的死信就会投递到这个交换机中，而这个交换机就称为死信交换机**。此时若有队列与死信交换机绑定，则死信最终就会被投递到这个队列中。
 
@@ -7545,6 +7899,8 @@ System.out.println("消费者接收到dlx.queue的消息：【" + msg + "】");<
 
 启动consumer服务，得到两个队列和死信交换机：
 
+<img src=".assets/SpringCloud笔记/media/image176.png" style="width:5.75in;height:1.0625in" />
+
 在publisher编写发送定时消息的方法：
 
 <table>
@@ -7571,6 +7927,8 @@ return message;<br />
 
 发送消息，由于normal.queue没有绑定消费者，所以可以看到一开始消息在 normal.queue 中，超时后被转发到 dlx.queue：
 
+<img src=".assets/SpringCloud笔记/media/image177.png" style="width:5.75in;height:1.79167in" />
+
 **8.2 延迟交换机**
 
 **8.2.1 认识延迟消息和延迟交换机**
@@ -7579,13 +7937,19 @@ return message;<br />
 
 **延迟交换机**是RabbitMQ中实现延迟消息的核心组件，它本身不直接存储延迟消息，而是通过插件（如rabbitmq_delayed_message_exchange）实现的特殊交换机类型。当消息到达时，它会根据消息头中指定的延迟时间将消息暂存在内存中，待延迟期满后再路由到目标队列。
 
+<img src=".assets/SpringCloud笔记/media/image178.png" style="width:5.75in;height:0.95833in" />
+
 例如用户下单后，系统发送一条30分钟后处理的消息到延迟交换机，消息在RabbitMQ内部暂存30分钟后，自动进入处理队列，交易服务判断用户是否已经支付，再决定是更新订单状态还是取消订单。
 
 **8.2.2 基于死信交换机实现延迟消息**
 
 如图，有一组绑定的交换机（ttl.fanout）和队列（ttl.queue），但是ttl.queue没有消费者监听，而是设定了死信交换机hmall.direct，而队列direct.queue1则与死信交换机绑定，RoutingKey是blue：
 
+<img src=".assets/SpringCloud笔记/media/image179.png" style="width:5.75in;height:1.72917in" />
+
 假如现在发送一条消息到ttl.fanout，RoutingKey为blue，并设置消息的**有效期**为5000毫秒：
+
+<img src=".assets/SpringCloud笔记/media/image180.png" style="width:5.75in;height:1.5in" />
 
 消息被投递到ttl.queue之后，由于没有消费者，因此消息无人消费，5秒之后，消息的有效期到期，成为**死信**，死信被再次投递到死信交换机hmall.direct，并**沿用之前的RoutingKey**，也就是blue，由于direct.queue1与hmall.direct绑定的key是blue，因此最终消息被成功路由到direct.queue1，如果此时有消费者与direct.queue1绑定， 也就能成功消费消息了，但此时已经是5秒钟以后了。也就是说，publisher发送的消息需要经过5秒钟才能到达队列direct.queue并投递给消费者，从而模拟了**延迟消息**。
 
@@ -7658,6 +8022,8 @@ docker exec -it mq rabbitmq-plugins enable rabbitmq_delayed_message_exchange</td
 </table>
 
 执行结果出现enable就表示安装成功，安装成功后在控制台就可以看到交换机多了一种x-delayed-message类型：
+
+<img src=".assets/SpringCloud笔记/media/image181.png" style="width:5.75in;height:1.61458in" />
 
 **8.2.4 声明延迟交换机**
 
@@ -7759,6 +8125,8 @@ return message;<br />
 
 接下来就在交易服务中利用延迟消息实现订单超时取消功能，大概思路如下：
 
+<img src=".assets/SpringCloud笔记/media/image182.png" style="width:5.75in;height:2.36458in" />
+
 假如订单超时支付时间为30分钟，理论上应该在下单时发送一条延迟消息，延迟时间为30分钟，在接收到消息时检验订单支付状态，关闭未支付订单。
 
 **8.3.1 定义常量**
@@ -7818,7 +8186,7 @@ host: 192.168.150.101 # 虚拟主机IP<br />
 port: 5672 # 端口号<br />
 virtual-host: /hmall # 虚拟主机<br />
 username: hmall # 用户名<br />
-password: [REDACTED] # 密码</td>
+password: 123 # 密码</td>
 </tr>
 </tbody>
 </table>
@@ -8226,6 +8594,8 @@ elasticsearch:7.12.1</td>
 
 安装完成后，访问9200端口，即可看到响应的Elasticsearch服务的基本信息：
 
+<img src=".assets/SpringCloud笔记/media/image183.png" style="width:5.75in;height:1.65625in" />
+
 **1.1.2 安装Kibana**
 
 将资料中的kibana.tar上传到Linux虚拟机中，通过如下命令加载Kibana的镜像（可跳过）：
@@ -8263,7 +8633,11 @@ kibana:7.12.1</td>
 
 安装完成后，直接访问5601端口，选择Explore on my own后即可看到控制台页面：
 
+<img src=".assets/SpringCloud笔记/media/image184.png" style="width:5.75in;height:2.71875in" />
+
 然后选中Dev tools，进入开发工具页面：
+
+<img src=".assets/SpringCloud笔记/media/image185.png" style="width:5.75in;height:1.8125in" />
 
 **1.2 倒排索引**
 
@@ -8285,6 +8659,8 @@ kibana:7.12.1</td>
 其中的id字段已经创建了索引，由于索引底层采用了B+树结构，因此根据id搜索的速度会非常快。但是其他字段例如title，只在叶子节点上存在，因此要根据title搜索的时候只能遍历树中的每一个叶子节点，判断title数据是否符合要求。
 
 对于SQL语句：select \* from tb_goods where title like '%手机%';，其流程如下：
+
+<img src=".assets/SpringCloud笔记/media/image186.png" style="width:5.75in;height:2.11458in" />
 
 检查到搜索条件为like '%手机%'，需要找到title中包含手机的数据
 
@@ -8318,7 +8694,11 @@ kibana:7.12.1</td>
 
 此时形成的这张以词条为索引的表，就是倒排索引表，两者对比如下：
 
+<img src=".assets/SpringCloud笔记/media/image187.png" style="width:5.75in;height:1.85417in" />
+
 倒排索引的**搜索流程**如下（以搜索"华为手机"为例）：
+
+<img src=".assets/SpringCloud笔记/media/image188.png" style="width:5.75in;height:2.28125in" />
 
 用户输入条件"华为手机"进行搜索
 
@@ -8416,6 +8796,8 @@ elasticsearch是面向**文档（Document）**存储的，可以是数据库中�
 **1.3.2 索引和映射**
 
 随着业务发展，需要在es中存储的文档也会越来越多，比如有商品的文档、用户的文档、订单文档等等：
+
+<img src=".assets/SpringCloud笔记/media/image189.png" style="width:5.75in;height:2.08333in" />
 
 所有文档散乱存放，非常混乱，不方便管理，因此，要将类型相同的文档集中在一起管理，称为**索引（Index）**，例如：
 
@@ -8522,6 +8904,8 @@ mysql与elasticsearch的概念对比：
 | Schema | Mapping       | Mapping（映射）是索引中文档的约束，例如字段类型约束。类似数据库的表结构（Schema） |
 | SQL    | DSL           | DSL是elasticsearch提供的JSON风格的请求语句，用来操作elasticsearch，实现CRUD       |
 
+<img src=".assets/SpringCloud笔记/media/image190.png" style="width:5.75in;height:2.64583in" />
+
 两者虽然相似，但各有所长，因此在企业中，往往是两者结合使用：
 
 对安全性要求较高的写操作，使用mysql实现
@@ -8569,6 +8953,8 @@ docker volume inspect es-plugins</td>
 </tr>
 </tbody>
 </table>
+
+<img src=".assets/SpringCloud笔记/media/image191.png" style="width:5.75in;height:1.54167in" />
 
 可以看到elasticsearch的插件挂载到了/var/lib/docker/volumes/es-plugins/\_data这个目录。
 
@@ -8900,6 +9286,8 @@ cd /root/analysis-ik</td>
 执行后可以看到本地/root目录下多了一个analysis-ik目录，cd进去即可。
 
 3）修改analysis-ik目录下的IKAnalyzer.cfg.xml配置文件，添加自己的扩展字典：
+
+<img src=".assets/SpringCloud笔记/media/image192.png" style="width:5.75in;height:1.32292in" />
 
 4）在IK分词器的analysis-ik目录新建一个 ext.dic文件，并添加如下词典：
 
@@ -9955,7 +10343,11 @@ client.close();<br />
 
 由于要实现对商品搜索，所以需要将商品添加到Elasticsearch中，不过需要根据搜索业务的需求来设定索引库结构，而不是一股脑的把MySQL数据写入Elasticsearch。
 
+<img src=".assets/SpringCloud笔记/media/image193.png" style="width:5.75in;height:2.34375in" />
+
 对应的商品表结构如下，索引库无关字段已经划掉：
+
+<img src=".assets/SpringCloud笔记/media/image194.png" style="width:5.75in;height:2.36458in" />
 
 结合数据库表结构，以上字段对应的mapping映射属性如下：
 
@@ -10037,6 +10429,8 @@ PUT /items<br />
 **4.2.1 创建索引**
 
 创建索引库的API如下：
+
+<img src=".assets/SpringCloud笔记/media/image195.png" style="width:5.75in;height:2.59375in" />
 
 代码分为三步：
 
@@ -10372,6 +10766,8 @@ POST /{索引库名}/_doc/1<br />
 
 对应的JavaAPI如下：
 
+<img src=".assets/SpringCloud笔记/media/image196.png" style="width:5.75in;height:1.44792in" />
+
 可以看到与索引库操作的API非常类似，同样是三步走：
 
 1）创建Request对象，这里是IndexRequest，因为添加文档就是创建倒排索引的过程
@@ -10463,6 +10859,8 @@ GET /{索引库名}/_doc/{id}</td>
 发送请求
 
 不过查询的目的是得到结果，解析为ItemDTO，还要再加一步对结果的解析：
+
+<img src=".assets/SpringCloud笔记/media/image197.png" style="width:5.75in;height:2.04167in" />
 
 可以看到，响应结果是一个JSON，其中文档放在一个_source属性中，因此解析就是拿到_source，反序列化为Java对象即可。
 
@@ -10584,6 +10982,8 @@ POST /{索引库名}/_update/{id}<br />
 </tbody>
 </table>
 
+<img src=".assets/SpringCloud笔记/media/image198.png" style="width:5.75in;height:1.8125in" />
+
 与之前类似，也是三步走：
 
 1）准备Request对象，这次是修改，所以是UpdateRequest
@@ -10655,6 +11055,8 @@ BulkRequest本身其实并没有请求参数，其本质就是将多个普通的
 批量删除，就是创建N个DeleteRequest请求，然后封装到BulkRequest，一起发出
 
 因此BulkRequest中提供了add方法，用以添加其它CRUD的请求：
+
+<img src=".assets/SpringCloud笔记/media/image199.png" style="width:5.75in;height:2.17708in" />
 
 可以看到，能添加的请求有：
 
@@ -10810,6 +11212,8 @@ GET /items/_search<br />
 </table>
 
 由于match_all无条件，所以条件位置不写即可，执行结果如下：
+
+<img src=".assets/SpringCloud笔记/media/image200.png" style="width:5.75in;height:2.98958in" />
 
 虽然是match_all，但是响应结果中并不会包含索引库中的所有文档，而是仅有10条。这是因为出于安全考虑，elasticsearch设置了默认的查询页数。
 
@@ -11278,9 +11682,15 @@ dis_max
 
 例如，搜索 "手机"，结果如下：
 
+<img src=".assets/SpringCloud笔记/media/image201.png" style="width:5.75in;height:3.55208in" />
+
 从elasticsearch5.1开始，采用的相关性打分算法是BM25算法，公式如下：
 
+<img src=".assets/SpringCloud笔记/media/image202.png" style="width:5.75in;height:1.03125in" />
+
 基于这套公式，就可以判断出某个文档与用户搜索的关键字之间的关联度，还是比较准确的，但在实际业务需求中，常常会有竞价排名的功能，不是相关度越高排名越靠前，而是掏的钱多的排名靠前。例如在百度中搜索Java培训，排名靠前的就是广告推广：
+
+<img src=".assets/SpringCloud笔记/media/image203.png" style="width:5.75in;height:1.38542in" />
 
 要想人为控制相关性算分，就需要利用elasticsearch中的function score 查询。
 
@@ -11420,6 +11830,8 @@ GET /items/_search<br />
 </table>
 
 出于性能考虑，与搜索关键字无关的查询尽量采用must_not或filter逻辑运算，避免参与相关性算分，例如黑马商城的搜索页面：
+
+<img src=".assets/SpringCloud笔记/media/image204.png" style="width:5.75in;height:1.46875in" />
 
 其中输入框的搜索条件肯定要参与相关性算分，可以采用match，但是价格范围过滤、品牌过滤、分类过滤等尽量采用filter，不要参与相关性算分。
 
@@ -11585,6 +11997,8 @@ GET /items/_search<br />
 
 如图：
 
+<img src=".assets/SpringCloud笔记/media/image205.png" style="width:5.75in;height:2.19792in" />
+
 假如要查询的是第999页数据，也就是要找第9990~10000的数据，就需要把每个分片中的前10000名数据都查询出来，汇总在一起，在内存中排序？如果查询的分页深度更深，需要一次检索的数据会更多，由此可知，当查询分页深度较大时，汇总数据过多，对内存和CPU会产生非常大的压力。因此elasticsearch会禁止from+ size超过10000的请求。
 
 针对深度分页，elasticsearch提供了两种解决方案：
@@ -11612,6 +12026,8 @@ scroll：原理将排序后的文档id形成快照，保存下来，基于快照
 高亮响应结果与搜索的文档结果不在一起，需要单独解析
 
 首先来看高亮条件构造，其DSL和JavaAPI的对比如图：
+
+<img src=".assets/SpringCloud笔记/media/image206.png" style="width:5.75in;height:2.45833in" />
 
 <table>
 <colgroup>
@@ -11645,6 +12061,8 @@ handleResponse(response);<br />
 </table>
 
 结果解析的文档解析的部分不变，主要是高亮内容需要单独解析出来，其DSL和JavaAPI的对比如图：
+
+<img src=".assets/SpringCloud笔记/media/image207.png" style="width:5.75in;height:2.39583in" />
 
 代码解读：
 
@@ -11854,9 +12272,13 @@ select category, count(1) as doc_count from item group by category order by doc_
 
 查询结果如下：
 
+<img src=".assets/SpringCloud笔记/media/image208.png" style="width:5.75in;height:2.5in" />
+
 **7.1.2 带条件聚合**
 
 默认情况下，Bucket聚合是对索引库的所有文档做聚合，例如我们统计商品中所有的品牌，结果如下：
+
+<img src=".assets/SpringCloud笔记/media/image209.png" style="width:5.75in;height:2.11458in" />
 
 可以看到统计出的品牌非常多，但真实场景下，用户会输入搜索条件，因此聚合必须是对搜索结果聚合，那么聚合必须添加限定条件。
 
@@ -12036,7 +12458,11 @@ field：聚合字段，这里选择price，统计价格
 
 结果如下：
 
+<img src=".assets/SpringCloud笔记/media/image210.png" style="width:5.75in;height:2.64583in" />
+
 还可以让聚合按照每个品牌的价格平均值排序：
+
+<img src=".assets/SpringCloud笔记/media/image211.png" style="width:5.75in;height:2.30208in" />
 
 **7.1.4 总结**
 
@@ -12066,7 +12492,11 @@ field：指定聚合字段
 
 DSL与JavaAPI的语法对比如下：
 
+<img src=".assets/SpringCloud笔记/media/image212.png" style="width:5.75in;height:2.51042in" />
+
 聚合结果与搜索文档同一级别，因此需要单独获取和解析，具体解析语法如下：
+
+<img src=".assets/SpringCloud笔记/media/image213.png" style="width:5.75in;height:2.88542in" />
 
 完整代码如下：
 
@@ -12143,9 +12573,15 @@ Consistency（一致性）：用户访问分布式系统中的任意节点，得
 
 比如现在包含两个节点，其中的初始数据是一致的：
 
+<img src=".assets/SpringCloud笔记/media/image214.png" style="width:5.75in;height:1.76042in" />
+
 当修改其中一个节点的数据时，两者的数据产生了差异：
 
+<img src=".assets/SpringCloud笔记/media/image215.png" style="width:5.75in;height:1.58333in" />
+
 要想保证一致性，就必须实现node01 到 node02的数据同步：
+
+<img src=".assets/SpringCloud笔记/media/image216.png" style="width:5.75in;height:1.5in" />
 
 **1.1.2 可用性**
 
@@ -12154,6 +12590,8 @@ Availability （可用性）：用户访问分布式系统时，读或写操作�
 **1.1.3 分区容错**
 
 Partition，就是分区，就是当分布式系统节点之间出现网络故障导致节点之间无法通信的情况：
+
+<img src=".assets/SpringCloud笔记/media/image217.png" style="width:5.75in;height:1.59375in" />
 
 如上图，node01和node02之间网关畅通，但是与node03之间网络断开，于是node03成为一个独立的网络分区，node01和node02在一个网络分区。
 
@@ -12164,6 +12602,8 @@ Tolerance，就是容错，即便是系统出现网络分区，整个系统也�
 在分布式系统中，网络不能100%保证畅通，也就是说网络分区的情况一定会存在，而系统必须要持续运行，对外提供服务，所以分区容错性（P）是硬性指标，所有分布式系统都要满足。而在设计分布式系统时要取舍的就是一致性（C）和可用性（A）了。
 
 假如现在出现了网络分区，如图：
+
+<img src=".assets/SpringCloud笔记/media/image218.png" style="width:5.75in;height:1.63542in" />
 
 由于网络故障，当把数据写入node01时，可以与node02完成数据同步，但是无法同步给node03，现在有两种选择：
 
@@ -12205,15 +12645,23 @@ AT模式分为两个阶段：
 
 如果有任意分支事务失败，则需要根据快照恢复到更新前数据，然后删除快照
 
+<img src=".assets/SpringCloud笔记/media/image219.png" style="width:5.75in;height:2.95833in" />
+
 这种模式在大多数情况下不会有问题，但在极端情况特别是多线程并发访问AT模式的分布式事务时，有可能出现脏写问题：
+
+<img src=".assets/SpringCloud笔记/media/image220.png" style="width:5.75in;height:3in" />
 
 假设初始时id为1的用户余额为100，事务1第一阶段执行完SQL扣减余额10元，提交数据库事务释放DB锁，此时数据库为90，第二阶段还未执行时事务2成功获取DB锁，此时事务1无法获取DB锁恢复数据（假设事务1提交事务后有异常导致需要恢复），就一直等待直到事务2第1阶段结束，此时数据库为80，然后事务1获取DB锁成功根据快照恢复数据，恢复后数据库变成100，此时就出现数据不一致，少扣了10元。
 
 解决思路就是引入全局锁的概念，在释放DB锁之前，先拿到全局锁，避免同一时刻有另外一个事务来操作当前数据：
 
+<img src=".assets/SpringCloud笔记/media/image221.png" style="width:5.75in;height:2.875in" />
+
 事务1执行完SQL后先获取全局锁，然后提交事务释放DB锁，此时数据库为90，第二阶段还未执行时事务2成功获取DB锁，此时事务1无法获取DB锁恢复数据，就一直等待事务2释放DB锁，事务2执行完SQL后也尝试获取全局锁，但是此时全局锁在事务1中还未释放，而事务1又等待事务2释放DB锁，产生死锁，为了避免死锁一直等待，全局锁获取失败会不断重试，默认30次，间隔10ms，300ms后，事务2获取全局锁失败任务超时，回滚SQL并释放DB锁，然后事务1获取DB锁成功根据快照恢复数据为100。
 
 虽然引入全局锁解决了多线程并发下的脏写问题，但是这是在事务2被seata全局事务管理的情况下，如果事务2未被全局事务管理，仍然可能出现脏写：
+
+<img src=".assets/SpringCloud笔记/media/image222.png" style="width:5.75in;height:2.83333in" />
 
 由于事务2没有被seata全局事务管理，所以提交事务前不需要获取全局锁，这时当事务2的DB锁释放后，事务1眼中的数据库为90，事务2眼中的数据库为80，然后事务1根据快照恢复数据为100，这时仍会导致少扣10元，数据不一致，所以，seata在保存快照时，保存了两份，一份是更新前的数据用于恢复数据（100），一份是更新后的数据（90）用于判断事务一在阶段1和阶段2这个过程中是否有其他事务操作过这个数据，经过对比更新后的数据快照90和此时数据库中的数据80不一致，则seata无法根据快照恢复数据，记录异常，由人工介入。
 
@@ -12233,15 +12681,23 @@ cancel：预留资源释放，可以理解为try的反向操作
 
 **阶段一（ Try ）**：检查余额是否充足，如果充足则冻结金额增加30元，可用余额扣除30
 
+<img src=".assets/SpringCloud笔记/media/image223.png" style="width:5.75in;height:0.47917in" />
+
 此时，总金额 = 冻结金额 + 可用金额，数量依然是100不变，事务直接提交无需等待其它事务。
 
 **阶段二（Confirm)**：假如要提交，之前可用金额已经扣减，并转移到冻结金额，因此可用金额不变，直接冻结金额扣减30即可：
+
+<img src=".assets/SpringCloud笔记/media/image224.png" style="width:5.75in;height:0.45833in" />
 
 此时，总金额 = 冻结金额 + 可用金额 = 0 + 70 = 70元。
 
 **阶段二(Canncel)**：如果要回滚，则释放之前冻结的金额，也就是冻结金额扣减30，可用余额增加30
 
+<img src=".assets/SpringCloud笔记/media/image225.png" style="width:5.75in;height:0.44792in" />
+
 **1.4.2 TCC模型**
+
+<img src=".assets/SpringCloud笔记/media/image226.png" style="width:5.75in;height:2.60417in" />
 
 第一阶段：开启全局事务，然后调用并注册分支事务，执行try方法做资源预留，执行完try方法RM向TC报告自己的事务执行状态
 
@@ -12255,7 +12711,11 @@ cancel：预留资源释放，可以理解为try的反向操作
 
 假如一个分布式事务中包含两个分支事务，try阶段，一个分支成功执行，另一个分支事务**阻塞**：
 
+<img src=".assets/SpringCloud笔记/media/image227.png" style="width:5.75in;height:2.94792in" />
+
 如果阻塞时间太长，可能导致全局事务超时而触发二阶段的cancel操作，两个分支事务都会执行cancel操作：
+
+<img src=".assets/SpringCloud笔记/media/image228.png" style="width:5.75in;height:3.0625in" />
 
 要知道，其中一个分支是未执行try操作的，直接执行了cancel操作，反而会导致数据错误。这种情况下，尽管cancel方法要执行，但其中不能做任何回滚操作，这就是**空回滚**。
 
@@ -12291,6 +12751,8 @@ TCC的缺点是什么？
 
 最大努力通知是一种最终一致性的分布式事务解决方案，顾名思义，就是通过消息通知的方式来通知事务参与者完成业务执行，如果执行失败会多次通知，无需任何分布式事务组件介入。说白了，最大努力通知其实就是基于消息队列的异步调用，尽最大可能将事件 / 消息通知到目标服务，但不保证 100% 送达。
 
+<img src=".assets/SpringCloud笔记/media/image229.png" style="width:5.75in;height:1.98958in" />
+
 **2.注册中心**
 
 **2.1 环境隔离**
@@ -12298,6 +12760,8 @@ TCC的缺点是什么？
 企业实际开发中，往往会搭建多个运行环境，例如开发环境、测试环境、预发布环境、生产环境，这些不同环境之间的服务和数据之间需要隔离。还有的企业中，会开发多个项目，共享nacos集群，此时，这些项目之间也需要把服务和数据隔离。
 
 因此，Nacos提供了基于namespace的环境隔离功能，具体的隔离层次如图所示：
+
+<img src=".assets/SpringCloud笔记/media/image230.png" style="width:5.75in;height:2.04167in" />
 
 Nacos中可以配置多个namespace，相互之间完全隔离，默认的namespace名为public
 
@@ -12309,11 +12773,19 @@ group之下就是服务和配置了
 
 nacos提供了一个默认的namespace，叫做public，默认所有服务和配置都属于这个namespace，也可以自己创建新的namespace：
 
+<img src=".assets/SpringCloud笔记/media/image231.png" style="width:5.75in;height:1.39583in" />
+
 然后填写表单：
+
+<img src=".assets/SpringCloud笔记/media/image232.png" style="width:5.75in;height:2.34375in" />
 
 添加完成后，可以在页面看到我们新建的namespace，并且Nacos为我们自动生成了一个命名空间id：
 
+<img src=".assets/SpringCloud笔记/media/image233.png" style="width:5.75in;height:1.10417in" />
+
 切换到配置列表页，你会发现dev这个命名空间下没有任何配置：
+
+<img src=".assets/SpringCloud笔记/media/image234.png" style="width:5.75in;height:1.28125in" />
 
 切换到public命名空间后就能看到我们之前添加的所有配置。
 
@@ -12345,11 +12817,19 @@ namespace: 39c0551e-b17b-46fd-8012-0c11c5cc5d6c # 设置namespace，必须用id<
 
 启动item-service，查看服务列表，会发现item-service出现在dev下：
 
+<img src=".assets/SpringCloud笔记/media/image235.png" style="width:5.75in;height:1.44792in" />
+
 而其它服务则出现在public下：
+
+<img src=".assets/SpringCloud笔记/media/image236.png" style="width:5.75in;height:1.625in" />
 
 此时访问http://localhost:8082/doc.html，基于swagger做测试：
 
+<img src=".assets/SpringCloud笔记/media/image237.png" style="width:5.75in;height:2.38542in" />
+
 会发现查询结果中缺少商品的最新价格信息，查看服务运行日志：
+
+<img src=".assets/SpringCloud笔记/media/image238.png" style="width:5.75in;height:0.60417in" />
 
 会发现cart-service服务在远程调用item-service时，并没有找到可用的实例，这证明不同namespace之间确实是相互隔离的，不可访问。把namespace切换回public，或者统一都是以dev时访问恢复正常。
 
@@ -12367,6 +12847,8 @@ namespace: 39c0551e-b17b-46fd-8012-0c11c5cc5d6c # 设置namespace，必须用id<
 
 Nacos中提供了集群（cluster）的概念，来对应不同机房，也就是说，一个服务（service）下可以有很多集群（cluster），而一个集群（cluster）中下又可以包含很多实例（instance）
 
+<img src=".assets/SpringCloud笔记/media/image239.png" style="width:5.75in;height:2.64583in" />
+
 结合namespace命名空间，任何一个微服务的实例在注册到Nacos时，都会生成以下几个信息，用来确认当前实例的身份，从外到内依次是：
 
 namespace：命名空间
@@ -12383,7 +12865,11 @@ instance：实例，包含ip和端口
 
 在Nacos内部会有一个服务实例的注册表，是基于Map实现的，其结构与分级模型的对应关系如下：
 
+<img src=".assets/SpringCloud笔记/media/image240.png" style="width:5.75in;height:2.39583in" />
+
 查看nacos控制台，会发现默认情况下所有服务的集群都是DEFAULT：
+
+<img src=".assets/SpringCloud笔记/media/image241.png" style="width:5.75in;height:2.79167in" />
 
 要修改服务所在集群，只需要修改bootstrap.yml即可：
 
@@ -12405,7 +12891,11 @@ cluster-name: BJ # 集群名称，自定义</td>
 
 修改item-service的bootstrap.yml，然后重新创建一个实例：
 
+<img src=".assets/SpringCloud笔记/media/image242.png" style="width:5.75in;height:1.20833in" />
+
 再次查看nacos，发现8084这个新的实例确实属于BJ这个集群了：
+
+<img src=".assets/SpringCloud笔记/media/image243.png" style="width:5.75in;height:2.88542in" />
 
 **2.3 Eureka**
 
@@ -12417,6 +12907,8 @@ Eureka是Netflix公司开源的一个服务注册中心组件，早期版本的S
 
 用IDEA打开资料中提供的cloud-demo项目，项目结构如下：
 
+<img src=".assets/SpringCloud笔记/media/image244.png" style="width:5.75in;height:1.0625in" />
+
 eureka-server：Eureka的服务端，也就是注册中心，没错，Eureka服务端要自己创建项目
 
 order-service：订单服务，是一个服务调用者，查询订单的时候要查询用户
@@ -12424,6 +12916,8 @@ order-service：订单服务，是一个服务调用者，查询订单的时候�
 user-service：用户服务，是一个服务提供者，对外暴露查询用户的接口
 
 启动以后，访问http://localhost:10086即可查看到Eureka的控制台，相对于Nacos来说简陋了很多：
+
+<img src=".assets/SpringCloud笔记/media/image245.png" style="width:5.75in;height:3.0625in" />
 
 **2.3.2 微服务集成Eureka**
 
@@ -12474,7 +12968,11 @@ defaultZone: http://127.0.0.1:10086/eureka</td>
 
 启动这两个服务后就能看到Eureka控制台中多了两个实例：
 
+<img src=".assets/SpringCloud笔记/media/image246.png" style="width:5.75in;height:0.85417in" />
+
 进行接口测试也发现没有问题：
+
+<img src=".assets/SpringCloud笔记/media/image247.png" style="width:5.75in;height:2.375in" />
 
 **2.4 Eureka和Nacos对比**
 
@@ -12534,25 +13032,43 @@ Eureka和Nacos都支持集群，而且默认都是AP模式
 
 首先，在com.hmall.cart.service.impl.CartServiceImpl中的queryMyCarts方法中打一个断点，然后在swagger页面请求购物车列表接口，进入断点后，观察ItemClient这个接口：
 
+<img src=".assets/SpringCloud笔记/media/image248.png" style="width:5.75in;height:2.90625in" />
+
 会发现ItemClient是一个代理对象，而代理的处理器则是SentinelInvocationHandler，这是因为项目中引入了Sentinel导致，进入SentinelInvocationHandler类中的invoke方法：
+
+<img src=".assets/SpringCloud笔记/media/image249.png" style="width:5.75in;height:1.67708in" />
 
 可以看到这里是先获取被代理的方法的处理器MethodHandler，接着，Sentinel就会开启对簇点资源的监控：
 
+<img src=".assets/SpringCloud笔记/media/image250.png" style="width:5.75in;height:2.0625in" />
+
 开启Sentinel的簇点资源监控后，就可以调用处理器了，我们尝试跟入，会发现有两种实现：
 
+<img src=".assets/SpringCloud笔记/media/image251.png" style="width:5.75in;height:1.67708in" />
+
 这其实就是OpenFeign远程调用的处理器了，继续跟入会进入SynchronousMethodHandler这个实现类：
+
+<img src=".assets/SpringCloud笔记/media/image252.png" style="width:5.75in;height:4.35417in" />
 
 在上述方法中，会循环尝试调用executeAndDecode()方法，直到成功或者是重试次数达到Retryer中配置的上限。
 
 继续跟入executeAndDecode()方法：
 
+<img src=".assets/SpringCloud笔记/media/image253.png" style="width:5.75in;height:3.65625in" />
+
 executeAndDecode()方法最终会利用client去调用execute()方法，发起远程调用。
 
 这里的client的类型是feign.Client接口，其下有很多实现类：
 
+<img src=".assets/SpringCloud笔记/media/image254.png" style="width:5.75in;height:1.5625in" />
+
 由于项目中整合了seata，所以这里client对象的类型是SeataFeignBlockingLoadBalancerClient，内部实现如下：
 
+<img src=".assets/SpringCloud笔记/media/image255.png" style="width:5.75in;height:1.48958in" />
+
 这里直接调用了其父类，也就是FeignBlockingLoadBalancerClient的execute方法，来看一下：
+
+<img src=".assets/SpringCloud笔记/media/image256.png" style="width:5.75in;height:2.63542in" />
 
 整段代码中核心的有4步：
 
@@ -12566,9 +13082,15 @@ executeAndDecode()方法最终会利用client去调用execute()方法，发起�
 
 所以负载均衡的关键就是这里的loadBalancerClient，类型是org.springframework.cloud.client.loadbalancer.LoadBalancerClient，这是Spring-Cloud-Common模块中定义的接口，只有一个实现类：
 
+<img src=".assets/SpringCloud笔记/media/image257.png" style="width:5.75in;height:0.39583in" />
+
 而这里的org.springframework.cloud.client.loadbalancer.BlockingLoadBalancerClient正是Spring-Cloud-LoadBalancer模块下的一个类：
 
+<img src=".assets/SpringCloud笔记/media/image258.png" style="width:5.75in;height:2in" />
+
 继续跟入其BlockingLoadBalancerClient#choose()方法：
+
+<img src=".assets/SpringCloud笔记/media/image259.png" style="width:5.75in;height:2.83333in" />
 
 图中代码的核心逻辑如下：
 
@@ -12578,7 +13100,11 @@ executeAndDecode()方法最终会利用client去调用execute()方法，发起�
 
 ReactiveLoadBalancer是Spring-Cloud-Common组件中定义的负载均衡器接口规范，而Spring-Cloud-Loadbalancer组件给出了两个实现：
 
+<img src=".assets/SpringCloud笔记/media/image260.png" style="width:5.75in;height:1.10417in" />
+
 默认的实现是RoundRobinLoadBalancer，即**轮询**负载均衡器，负载均衡器的核心逻辑如下：
+
+<img src=".assets/SpringCloud笔记/media/image261.png" style="width:5.75in;height:3.28125in" />
 
 核心流程就是两步：
 
@@ -12588,7 +13114,11 @@ ReactiveLoadBalancer是Spring-Cloud-Common组件中定义的负载均衡器接�
 
 这里的ServiceInstanceListSupplier有很多实现：
 
+<img src=".assets/SpringCloud笔记/media/image262.png" style="width:5.75in;height:2.14583in" />
+
 其中CachingServiceInstanceListSupplier采用了装饰模式，加了服务实例列表缓存，避免每次都要去注册中心拉取服务实例列表，而其内部是基于DiscoveryClientServiceInstanceListSupplier来实现的，在这个类的构造函数中，就会异步的基于DiscoveryClient去拉取服务的实例列表：
+
+<img src=".assets/SpringCloud笔记/media/image263.png" style="width:5.75in;height:1.75in" />
 
 **3.1.2 流程梳理**
 
@@ -12622,9 +13152,13 @@ RandomLoadBalancer：基于随机算法实现了ReactiveLoadBalancer
 
 这样一来，整体思路就非常清楚了，流程图如下：
 
+<img src=".assets/SpringCloud笔记/media/image264.png" style="width:5.75in;height:2.5625in" />
+
 **3.2 NacosRule**
 
 之前分析源码的时候发现负载均衡的算法是由ReactiveLoadBalancer来定义的，它的实现类有三个：
+
+<img src=".assets/SpringCloud笔记/media/image265.png" style="width:5.75in;height:1.10417in" />
 
 其中RoundRobinLoadBalancer和RandomLoadBalancer是由Spring-Cloud-Loadbalancer模块提供的，而NacosLoadBalancer则是由Nacos-Discorvery模块提供的。
 
@@ -12632,7 +13166,11 @@ RandomLoadBalancer：基于随机算法实现了ReactiveLoadBalancer
 
 查看源码会发现，Spring-Cloud-Loadbalancer模块中有一个自动配置类：
 
+<img src=".assets/SpringCloud笔记/media/image266.png" style="width:5.75in;height:2.13542in" />
+
 其中定义了默认的负载均衡器：
+
+<img src=".assets/SpringCloud笔记/media/image267.png" style="width:5.75in;height:1.91667in" />
 
 这个Bean上添加了@ConditionalOnMissingBean注解，也就是说如果自定义了这个类型的bean，则负载均衡的策略就会被改变。
 
@@ -12709,13 +13247,19 @@ properties);<br />
 
 这里选择全局配置：
 
+<img src=".assets/SpringCloud笔记/media/image268.png" style="width:5.75in;height:1.15625in" />
+
 DEBUG重启后测试，会发现负载均衡器的类型确实切换成功：
+
+<img src=".assets/SpringCloud笔记/media/image269.png" style="width:5.75in;height:3in" />
 
 **3.2.2 集群优先**
 
 RoundRobinLoadBalancer是轮询算法，RandomLoadBalancer是随机算法，那么NacosLoadBalancer是什么负载均衡算法呢？
 
 我们通过源码来分析一下，先看第一部分：
+
+<img src=".assets/SpringCloud笔记/media/image270.png" style="width:5.75in;height:4.26042in" />
 
 这部分代码的大概流程如下：
 
@@ -12726,6 +13270,8 @@ RoundRobinLoadBalancer是轮询算法，RandomLoadBalancer是随机算法，那�
 然后利用stream的filter过滤找到被调用的服务实例中与当前服务实例clusterName一致的，简单来说就是**服务调用者与服务提供者要在一个集群**
 
 为什么？假如现在有两个机房，都部署有item-service和cart-service服务：
+
+<img src=".assets/SpringCloud笔记/media/image271.png" style="width:5.75in;height:1.55208in" />
 
 假如这些服务实例全部都注册到了同一个Nacos，现在杭州机房的cart-service要调用item-service，会拉取到所有机房的item-service的实例，调用时会出现两种情况：
 
@@ -12745,7 +13291,11 @@ item-service的8088所在集群是BJ
 
 cart-service访问item-service时，应该优先访问8081和8082，重启cart-service，测试一下：
 
+<img src=".assets/SpringCloud笔记/media/image272.png" style="width:5.75in;height:2.63542in" />
+
 可以看到原本是3个实例，经过筛选后还剩下2个实例，查看Debug控制台：
+
+<img src=".assets/SpringCloud笔记/media/image273.png" style="width:5.75in;height:2.28125in" />
 
 同集群的实例还剩下两个，接下来就需要做负载均衡了。
 
@@ -12753,9 +13303,15 @@ cart-service访问item-service时，应该优先访问8081和8082，重启cart-s
 
 继续跟踪NacosLoadBalancer源码：
 
+<img src=".assets/SpringCloud笔记/media/image274.png" style="width:5.75in;height:1.96875in" />
+
 打开nacos控制台，进入item-service的服务详情页，可以看到每个实例后面都有一个**编辑**按钮：
 
+<img src=".assets/SpringCloud笔记/media/image275.png" style="width:5.75in;height:0.95833in" />
+
 点击，可以看到一个编辑表单：
+
+<img src=".assets/SpringCloud笔记/media/image276.png" style="width:5.75in;height:4.63542in" />
 
 将这里的权重修改为5，访问10次购物车接口，可以发现大多数请求都访问到了8083这个实例。
 
@@ -12785,6 +13341,8 @@ cart-service访问item-service时，应该优先访问8081和8082，重启cart-s
 
 场景：底扇出
 
+<img src=".assets/SpringCloud笔记/media/image277.png" style="width:5.75in;height:3.23958in" />
+
 面试题：Sentinel的线程隔离与Hystix的线程隔离有什么差别？
 
 答：Hystix默认是基于线程池实现的线程隔离，每一个被隔离的业务都要创建一个独立的线程池，线程过多会带来额外的CPU开销，性能一般，但是隔离性更强，更在意安全性和隔离性。Sentinel则是基于信号量隔离的原理，这种方式不用创建线程池，性能较好，但是隔离性一般，更在意整体的资源消耗性能。
@@ -12797,6 +13355,8 @@ cart-service访问item-service时，应该优先访问8081和8082，重启cart-s
 
 要了解滑动窗口计数算法，必须先知道固定窗口计数算法，其基本原理如图：
 
+<img src=".assets/SpringCloud笔记/media/image278.png" style="width:5.75in;height:1.53125in" />
+
 将时间划分为多个窗口，窗口时间跨度称为Interval，本例中为1000ms
 
 每个窗口维护1个计数器，每有1次请求就将计数器+1。限流就是设置计数器阈值，本例为3，图中红线标记
@@ -12805,11 +13365,15 @@ cart-service访问item-service时，应该优先访问8081和8082，重启cart-s
 
 示例：
 
+<img src=".assets/SpringCloud笔记/media/image279.png" style="width:5.75in;height:1.51042in" />
+
 第1、2秒，请求数量都小于3，没问题
 
 第3秒，请求数量为5，超过阈值，超出的请求被拒绝
 
 考虑一种特殊场景：
+
+<img src=".assets/SpringCloud笔记/media/image280.png" style="width:5.75in;height:1.51042in" />
 
 假如在第5、6秒，请求数量都为3，没有超过阈值，全部放行
 
@@ -12831,6 +13395,8 @@ cart-service访问item-service时，应该优先访问8081和8082，重启cart-s
 
 如图所示：
 
+<img src=".assets/SpringCloud笔记/media/image281.png" style="width:5.75in;height:1.46875in" />
+
 限流阈值依然为3，绿色小块就是请求，上面的数字是其currentTime值
 
 在第1300ms时接收到一个请求，其所在时区就是1000~1500
@@ -12841,9 +13407,15 @@ cart-service访问item-service时，应该优先访问8081和8082，重启cart-s
 
 若第1400ms又来一个请求，会落在1000~1500时区，虽然该时区请求总数是3，但滑动窗口内总数已经达到4，因此该请求会被拒绝：
 
+<img src=".assets/SpringCloud笔记/media/image282.png" style="width:5.75in;height:1.47917in" />
+
 假如第1600ms又来的一个请求，处于1500~2000时区，根据算法，滑动窗口位置应该是1000~1500和1500~2000这两个时区，也就是向后移动：
 
+<img src=".assets/SpringCloud笔记/media/image283.png" style="width:5.75in;height:1.46875in" />
+
 细心的人会发现，900~1600时间段只有700ms，不到1s，但是这700ms却有4个请求通过检测，超时了上限，解决办法是将区间划分的更小，如1秒钟划分为4个区间，即一个区间的时间为250ms：
+
+<img src=".assets/SpringCloud笔记/media/image284.png" style="width:5.75in;height:1.54167in" />
 
 这时滑动窗口区间750~1750之间就能统计到超过3个请求，从而拒绝了1600秒的请求。
 
@@ -12852,6 +13424,8 @@ cart-service访问item-service时，应该优先访问8081和8082，重启cart-s
 **4.3 令牌桶算法**
 
 限流的另一种常见算法是令牌桶算法，Sentinel中的热点参数限流正是基于令牌桶算法实现的，其基本思路如图：
+
+<img src=".assets/SpringCloud笔记/media/image285.png" style="width:5.75in;height:2.4375in" />
 
 以固定的速率生成令牌，存入令牌桶中，如果令牌桶满了以后，多余令牌丢弃
 
@@ -12875,6 +13449,8 @@ cart-service访问item-service时，应该优先访问8081和8082，重启cart-s
 
 如图：
 
+<img src=".assets/SpringCloud笔记/media/image286.png" style="width:5.75in;height:2.41667in" />
+
 将每个请求视作"水滴"放入"漏桶"进行存储
 
 "漏桶"以固定速率向外"漏"出请求来执行，如果"漏桶"空了则停止"漏水”
@@ -12884,6 +13460,8 @@ cart-service访问item-service时，应该优先访问8081和8082，重启cart-s
 漏桶的优势就是**流量整型**，桶就像是一个大坝，请求就是水，并发量不断波动，就如同水流时大时小，但都会被大坝拦住，而后大坝按照固定的速度放水，避免下游被洪水淹没。
 
 因此，不管并发量如何波动，经过漏桶处理后的请求一定是相对平滑的曲线：
+
+<img src=".assets/SpringCloud笔记/media/image287.png" style="width:5.75in;height:1.28125in" />
 
 sentinel中的限流中的排队等待功能正是基于漏桶算法实现的。
 

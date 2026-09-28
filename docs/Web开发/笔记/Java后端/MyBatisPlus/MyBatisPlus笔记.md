@@ -1,6 +1,6 @@
-# MybatisPlus笔记
+# MyBatisPlus笔记
 
-> 原文图片保留在私有 `backend-study-notes`，本公开站当前同步文字内容；疑似凭据、令牌和密码示例在公开版本中已自动脱敏。
+**MybatisPlus笔记**
 
 在日常开发中，单表的CRUD操作重复率很高，也没有难度。但是这部分代码量比较大，开发费时。
 
@@ -14,7 +14,11 @@ MybatisPlus组件就是用来简化或省略单表的CRUD开发工作，它不�
 
 **\[mp-demo.zip\]**
 
+<img src=".assets/MyBatisPlus笔记/media/image1.png" style="width:5.75in;height:2.69792in" />
+
 配置项目的JDK版本为JDK11：
+
+<img src=".assets/MyBatisPlus笔记/media/image2.png" style="width:5.75in;height:2.3125in" />
 
 执行以下mp.sql脚本，得到两个数据库表adress和user：
 
@@ -34,7 +38,7 @@ datasource:<br />
 url: jdbc:mysql://127.0.0.1:3306/mp?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;serverTimezone=Asia/Shanghai<br />
 driver-class-name: com.mysql.cj.jdbc.Driver<br />
 username: root<br />
-password: [REDACTED]<br />
+password: MySQL123<br />
 logging:<br />
 level:<br />
 com.itheima: debug<br />
@@ -104,6 +108,8 @@ MybatisPlus提供起步依赖，包含对mybatis的自动装配和MybatisPlus的
 **2.2 定义Mapper**
 
 MybatisPlus提供了一个基础的BaseMapper接口，其中已经实现了单表的CRUD：
+
+<img src=".assets/MyBatisPlus笔记/media/image3.png" style="width:5.75in;height:3.84375in" />
 
 因此自定义的Mapper只要实现了BaseMapper，就无需自己实现单表CRUD了。
 
@@ -211,7 +217,7 @@ userMapper.deleteById(5L);<br />
 11:05:02 DEBUG 15524 --- [ main] c.i.mp.mapper.UserMapper.selectById : ==&gt; Preparing: SELECT id,username,password,phone,info,status,balance,create_time,update_time FROM user WHERE id=?<br />
 11:05:02 DEBUG 15524 --- [ main] c.i.mp.mapper.UserMapper.selectById : ==&gt; Parameters: 5(Long)<br />
 11:05:02 DEBUG 15524 --- [ main] c.i.mp.mapper.UserMapper.selectById : &lt;== Total: 1<br />
-user = User(id=5, username=Lucy, password=[REDACTED] phone=18688990011, info={"age": 21}, status=1, balance=20000, createTime=Fri Jun 30 11:02:30 CST 2023, updateTime=Fri Jun 30 11:02:30 CST 2023)</td>
+user = User(id=5, username=Lucy, password=123, phone=18688990011, info={"age": 21}, status=1, balance=20000, createTime=Fri Jun 30 11:02:30 CST 2023, updateTime=Fri Jun 30 11:02:30 CST 2023)</td>
 </tr>
 </tbody>
 </table>
@@ -511,6 +517,8 @@ classpath\*:/mapper/\*\*/\*.xml就是说只要把mapper.xml文件放置在mapper
 
 例如，新建一个UserMapper.xml文件：
 
+<img src=".assets/MyBatisPlus笔记/media/image4.png" style="width:5.75in;height:1.38542in" />
+
 然后在其中定义一个方法：
 
 <table>
@@ -555,13 +563,23 @@ System.out.println("user = " + user);<br />
 
 BaseMapper中提供的方法除了以id作为where条件以外，还支持更加复杂的where条件：
 
+<img src=".assets/MyBatisPlus笔记/media/image5.png" style="width:5.75in;height:1.97917in" />
+
 Wrapper参数为条件构造的抽象类，其下有很多实现：
+
+<img src=".assets/MyBatisPlus笔记/media/image6.png" style="width:5.75in;height:1.77083in" />
 
 Wrapper的子类AbstractWrapper提供了where中包含的所有条件构造方法：
 
+<img src=".assets/MyBatisPlus笔记/media/image7.png" style="width:5.75in;height:4.60417in" />
+
 QueryWrapper在AbstractWrapper的基础上拓展了一个select方法，允许指定查询字段：
 
+<img src=".assets/MyBatisPlus笔记/media/image8.png" style="width:5.75in;height:0.6875in" />
+
 UpdateWrapper在AbstractWrapper的基础上拓展了一个set方法，允许指定SQL中的SET部分：
+
+<img src=".assets/MyBatisPlus笔记/media/image9.png" style="width:5.75in;height:0.66667in" />
 
 **1.1 QueryWrapper**
 
@@ -675,6 +693,8 @@ users.forEach(System.out::println);<br />
 **2.1 基本用法**
 
 将id为1,2,4的用户余额扣除200的案例中，把SQL语句写在了业务层，但是在实际开发中，我们希望SQL语句被定义在持久层：
+
+<img src=".assets/MyBatisPlus笔记/media/image10.png" style="width:5.75in;height:0.57292in" />
 
 MybatisPlus提供了自定义SQL功能，可以让我们利用Wrapper生成查询条件，再结合Mapper.xml编写SQL：
 
@@ -809,6 +829,8 @@ page：分页查询
 
 **新增**：
 
+<img src=".assets/MyBatisPlus笔记/media/image11.png" style="width:5.75in;height:1.375in" />
+
 save是新增单个元素
 
 saveBatch是批量新增
@@ -818,6 +840,8 @@ saveOrUpdate是根据id判断，如果数据存在就更新，不存在则新增
 saveOrUpdateBatch是批量的新增或修改
 
 **删除**：
+
+<img src=".assets/MyBatisPlus笔记/media/image12.png" style="width:5.75in;height:2.01042in" />
 
 removeById：根据id删除
 
@@ -831,6 +855,8 @@ removeBatchByIds：暂不支持
 
 **修改**：
 
+<img src=".assets/MyBatisPlus笔记/media/image13.png" style="width:5.75in;height:2.13542in" />
+
 updateById：根据id修改
 
 update(Wrapper\<T\>)：根据UpdateWrapper修改，Wrapper中包含set和where部分
@@ -841,6 +867,8 @@ updateBatchById：根据id批量修改
 
 **Get**：
 
+<img src=".assets/MyBatisPlus笔记/media/image14.png" style="width:5.75in;height:1.34375in" />
+
 getById：根据id查询1条数据
 
 getOne(Wrapper\<T\>)：根据Wrapper查询1条数据
@@ -848,6 +876,8 @@ getOne(Wrapper\<T\>)：根据Wrapper查询1条数据
 getBaseMapper：获取Service内的BaseMapper实现，某些时候需要直接调用Mapper内的自定义SQL时可以用这个方法获取到Mapper
 
 **List**：
+
+<img src=".assets/MyBatisPlus笔记/media/image15.png" style="width:5.75in;height:1.80208in" />
 
 listByIds：根据id批量查询
 
@@ -857,11 +887,15 @@ list()：查询所有
 
 **Count**：
 
+<img src=".assets/MyBatisPlus笔记/media/image16.png" style="width:5.75in;height:0.60417in" />
+
 count()：统计所有数量
 
 count(Wrapper\<T\>)：统计符合Wrapper条件的数据数量
 
 **getBaseMapper**：
+
+<img src=".assets/MyBatisPlus笔记/media/image17.png" style="width:5.75in;height:0.46875in" />
 
 getBaseMapper()：在service中调用Mapper中自定义SQL时，通过它获取service对应的Mapper
 
@@ -915,6 +949,8 @@ public class UserServiceImpl extends ServiceImpl&lt;UserMapper, User&gt; impleme
 </table>
 
 项目结构如下：
+
+<img src=".assets/MyBatisPlus笔记/media/image18.png" style="width:5.75in;height:0.78125in" />
 
 接下来，快速实现下面4个接口：
 
@@ -1521,7 +1557,7 @@ datasource:<br />
 url: jdbc:mysql://127.0.0.1:3306/mp?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;serverTimezone=Asia/Shanghai&amp;rewriteBatchedStatements=true<br />
 driver-class-name: com.mysql.cj.jdbc.Driver<br />
 username: root<br />
-password: [REDACTED]</td>
+password: MySQL123</td>
 </tr>
 </tbody>
 </table>
@@ -1540,23 +1576,35 @@ password: [REDACTED]</td>
 
 在Idea的plugins市场中搜索并安装MyBatisPlus插件，然后重启idea：
 
+<img src=".assets/MyBatisPlus笔记/media/image19.png" style="width:5.70833in;height:1.10417in" />
+
 **1.2 使用**
 
 以生成address表对应的实体和mapper等基础代码为例学习使用MyBatisPlus插件。
 
 配置数据库地址，在Idea顶部菜单中，找到other，选择Config Database：
 
+<img src=".assets/MyBatisPlus笔记/media/image20.png" style="width:5.75in;height:0.78125in" />
+
 填写数据库连接的基本信息：
+
+<img src=".assets/MyBatisPlus笔记/media/image21.png" style="width:5.75in;height:2.36458in" />
 
 点击OK后，再次点击Idea顶部菜单中的other，然后选择Code Generator:
 
+<img src=".assets/MyBatisPlus笔记/media/image22.png" style="width:5.75in;height:0.53125in" />
+
 在弹出的表单中填写信息：
+
+<img src=".assets/MyBatisPlus笔记/media/image23.png" style="width:5.75in;height:1.98958in" />
 
 最后查看项目就会发现相应的代码就已经生成了。
 
 **2.静态工具**
 
 有时Service之间也会相互调用，为了避免出现循环依赖问题，MybatisPlus提供一个静态工具类：Db，其中的一些静态方法与IService中方法签名基本一致，也可以帮助我们实现CRUD功能：
+
+<img src=".assets/MyBatisPlus笔记/media/image24.png" style="width:5.75in;height:4.09375in" />
 
 示例：
 
@@ -1649,6 +1697,8 @@ private String notes;<br />
 </table>
 
 然后，改造原来的UserVO，添加一个地址属性：
+
+<img src=".assets/MyBatisPlus笔记/media/image25.png" style="width:5.75in;height:0.86458in" />
 
 接下来，修改UserController中根据id查询用户的业务接口：
 
@@ -1758,6 +1808,8 @@ alter table address add deleted bit default b'0' null comment '逻辑删除';</t
 
 然后给Address实体添加deleted字段：
 
+<img src=".assets/MyBatisPlus笔记/media/image26.png" style="width:5.75in;height:0.98958in" />
+
 接下来，在application.yml中配置逻辑删除字段：
 
 <table>
@@ -1799,6 +1851,8 @@ addressService.removeById(59L);<br />
 
 方法与普通删除一模一样，但是底层的SQL逻辑变了：
 
+<img src=".assets/MyBatisPlus笔记/media/image27.png" style="width:5.75in;height:0.4375in" />
+
 查询一下试试：
 
 <table>
@@ -1818,6 +1872,8 @@ list.forEach(System.out::println);<br />
 </table>
 
 会发现id为59的确实没有查询出来，而且SQL中也对逻辑删除字段做了判断：
+
+<img src=".assets/MyBatisPlus笔记/media/image28.png" style="width:5.75in;height:0.23958in" />
 
 |                                                                                                                                                                             |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1864,9 +1920,13 @@ this.desc = desc;<br />
 
 把User类中的status字段改为UserStatus 类型：
 
+<img src=".assets/MyBatisPlus笔记/media/image29.png" style="width:5.75in;height:0.73958in" />
+
 要让MybatisPlus处理枚举与数据库类型自动转换，必须告诉MybatisPlus，枚举中的哪个字段的值作为数据库值。
 
 MybatisPlus提供了@EnumValue注解来标记枚举属性：
+
+<img src=".assets/MyBatisPlus笔记/media/image30.png" style="width:5.75in;height:0.64583in" />
 
 **4.2 配置枚举处理器**
 
@@ -1906,11 +1966,19 @@ list.forEach(System.out::println);<br />
 
 最终，查询出的User类的status字段会是枚举类型：
 
+<img src=".assets/MyBatisPlus笔记/media/image31.png" style="width:5.75in;height:1.83333in" />
+
 为了使前端页面查询结果也是枚举格式，我们需要修改UserVO中的status属性（这一步可有可无）：
+
+<img src=".assets/MyBatisPlus笔记/media/image32.png" style="width:5.75in;height:0.35417in" />
 
 并且，在UserStatus枚举中通过@JsonValue注解标记JSON序列化时展示的字段：
 
+<img src=".assets/MyBatisPlus笔记/media/image33.png" style="width:5.75in;height:0.51042in" />
+
 最终，前端得到的结果如下：
+
+<img src=".assets/MyBatisPlus笔记/media/image34.png" style="width:5.75in;height:0.53125in" />
 
 **5.JSON类型处理器**
 
@@ -1947,11 +2015,17 @@ private String gender;<br />
 
 将User类的info字段修改为UserInfo类型，并声明类型处理器：
 
+<img src=".assets/MyBatisPlus笔记/media/image35.png" style="width:5.75in;height:0.66667in" />
+
 同时，在User类上添加一个注解，声明自动映射：
+
+<img src=".assets/MyBatisPlus笔记/media/image36.png" style="width:5.75in;height:0.51042in" />
 
 测试可以发现，所有数据都正确封装到UserInfo当中了。
 
 同时，为了让页面返回的结果也以对象格式返回，我们要修改UserVO中的info字段：
+
+<img src=".assets/MyBatisPlus笔记/media/image37.png" style="width:5.75in;height:0.46875in" />
 
 **6.配置加密**
 
@@ -1987,7 +2061,7 @@ String username = AES.encrypt("root", randomKey);<br />
 System.out.println("username = " + username);<br />
 <br />
 // 利用密钥对密码加密<br />
-String password = [REDACTED]"MySQL123", randomKey);<br />
+String password = AES.encrypt("MySQL123", randomKey);<br />
 System.out.println("password = " + password);<br />
 <br />
 }<br />
@@ -2007,7 +2081,7 @@ System.out.println("password = " + password);<br />
 <td>Plain Text<br />
 randomKey = 6234633a66fb399f<br />
 username = px2bAbnUfiY8K/IgsKvscg==<br />
-password = [REDACTED]</td>
+password = FGvCSEaOuga3ulDAsxw68Q==</td>
 </tr>
 </tbody>
 </table>
@@ -2028,7 +2102,7 @@ datasource:<br />
 url: jdbc:mysql://127.0.0.1:3306/mp?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;serverTimezone=Asia/Shanghai&amp;rewriteBatchedStatements=true<br />
 driver-class-name: com.mysql.cj.jdbc.Driver<br />
 username: mpw:px2bAbnUfiY8K/IgsKvscg== # 密文要以 mpw:开头<br />
-password: [REDACTED] # 密文要以 mpw:开头</td>
+password: mpw:FGvCSEaOuga3ulDAsxw68Q== # 密文要以 mpw:开头</td>
 </tr>
 </tbody>
 </table>
@@ -2036,6 +2110,8 @@ password: [REDACTED] # 密文要以 mpw:开头</td>
 **6.3 测试**
 
 把刚才生成的秘钥添加到启动参数中，模版：--mpw.key=6234633a66fb399f
+
+<img src=".assets/MyBatisPlus笔记/media/image38.png" style="width:5.75in;height:1.71875in" />
 
 随意运行一个单元测试，可以发现数据库查询正常。
 
@@ -2136,6 +2212,8 @@ records.forEach(System.out::println);<br />
 </table>
 
 运行的SQL如下：
+
+<img src=".assets/MyBatisPlus笔记/media/image39.png" style="width:5.75in;height:2.6875in" />
 
 这里用到了分页参数，Page，即可以支持分页参数，也可以支持排序参数。常见的API如下：
 
@@ -2631,3 +2709,5 @@ return vo;<br />
 </table>
 
 最终查询的结果如下：
+
+<img src=".assets/MyBatisPlus笔记/media/image40.png" style="width:5.75in;height:3.79167in" />

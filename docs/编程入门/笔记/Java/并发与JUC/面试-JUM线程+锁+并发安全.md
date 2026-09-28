@@ -1,6 +1,4 @@
-# JUM线程+锁+并发安全
-
-> 疑似凭据、令牌和密码示例在公开版本中已自动脱敏。
+# 面试-JUM线程+锁+并发安全
 
 *🔗 原文链接： [⁣⁢⁣⁣⁡JUM线程+锁+并发安全](https://my.feishu.cn/wiki/PldRwJJvliA0PqkrgSgcsNmKnje)*
 

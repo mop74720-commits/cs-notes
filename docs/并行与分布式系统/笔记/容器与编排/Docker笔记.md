@@ -1,7 +1,5 @@
 # Docker笔记
 
-> 原文图片保留在私有 `backend-study-notes`，本公开站当前同步文字内容；疑似凭据、令牌和密码示例在公开版本中已自动脱敏。
-
 **一、基础概念篇**
 
 Docker 是一个开源的应用容器引擎，它允许开发者将应用程序及其所有依赖项打包成一个可移植的容器，然后发布到任何支持 Docker 的环境中运行。这种 “一次构建，到处运行” 的特性，解决了传统开发和部署过程中环境不一致的问题，极大地提高了开发、测试和部署的效率
@@ -226,6 +224,8 @@ docker官方镜像仓库网址：
 国内可能访问不了这个网址，可以用国内提供的如轩辕镜像站代替：
 
 **\[该类型的内容暂不支持下载\]**
+
+<img src=".assets/Docker笔记/media/image1.png" style="width:5.75in;height:1.85417in" />
 
 <table>
 <colgroup>
@@ -972,6 +972,8 @@ Dockerfile 是一个文本文件，包含一系列构建指令，用于**自动�
 
 例如，从零开始部署一个Java应用，分为 准备Linux服务（如CentOS）、安装并配置JDK、上传jar包、运行jar包 四个步骤，那么打包镜像就是 准备Linux运行环境、安装并配置JDK、拷贝jar包、配置启动脚本 四个操作，每一次操作就是生产一些文件，即镜像就是文件的集合。但是，镜像文件不是随意堆放的，而是按照操作步骤分层叠加而成，每一层形成的文件都会单独打包并标记一个唯一id，称为**Layer**（**层**），如果构建时用到的某些层其他人已经制作过，就可以直接拷贝使用这些层，而不用重复制作。
 
+<img src=".assets/Docker笔记/media/image2.png" style="width:5.75in;height:3.14583in" />
+
 由于制作镜像的过程中，需要逐层处理和打包，比较复杂，所以Docker就提供了自动打包镜像的功能。我们只需要将打包的过程，每一层要做的事情用固定的语法写下来，交给Docker去执行即可。这种记录镜像结构的文件就称为**Dockerfile**。
 
 **Dockerfile的作用**：
@@ -1680,12 +1682,12 @@ CMD ["./myapp"]</td>
 <tr class="odd">
 <td>Dockerfile<br />
 # 错误：硬编码密钥<br />
-ENV API_KEY=[REDACTED]<br />
+ENV API_KEY=123456<br />
 <br />
 # 正确：构建时传入（不写入镜像）<br />
 ARG API_KEY<br />
 <br />
-# 或运行时通过 -e 传入：docker run -e API_KEY=[REDACTED] myapp</td>
+# 或运行时通过 -e 传入：docker run -e API_KEY=123456 myapp</td>
 </tr>
 </tbody>
 </table>
@@ -1876,6 +1878,8 @@ hm-service：业务模块
 
 执行package生命周期进行项目打包，结果如下：
 
+<img src=".assets/Docker笔记/media/image3.png" style="width:5.75in;height:3.47917in" />
+
 将hm-service目录下的Dockerfile和hm-service/target目录下的hm-service.jar一起上传到虚拟机的root目录，其中Dockerfile文件内容如下：
 
 <table>
@@ -1971,6 +1975,8 @@ nginx</td>
 </table>
 
 测试，通过浏览器访问http://你的虚拟机ip:18080，最终看到如下页面：
+
+<img src=".assets/Docker笔记/media/image4.png" style="width:5.75in;height:2.75in" />
 
 **2.Docker Compose**
 

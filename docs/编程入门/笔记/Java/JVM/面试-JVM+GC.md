@@ -1,6 +1,4 @@
-# JVM+GC
-
-> 原文图片保留在私有 `backend-study-notes`，本公开站当前同步文字内容；疑似凭据、令牌和密码示例在公开版本中已自动脱敏。
+# 面试-JVM+GC
 
 *🔗 原文链接： [⁣⁢⁣⁣⁡JVM+GC](https://my.feishu.cn/wiki/LN7vwLCa6ibFjMkb4RmcMzXwnLb)*
 
@@ -888,6 +886,8 @@ G1：初始标记 → 2. 并发标记 → 3. 最终标记 → 4. 筛选回收（
 **调优**
 
 **JVM 调优**
+
+<img src=".assets/面试-JVM+GC/media/image1.png" style="width:5.75in;height:2.26042in" />
 
 **增大堆内存** ：如果 **Full GC** 或 **STW** 时间较长，考虑增加堆内存，以减少垃圾回收的次数。可以通过 -Xmx 和 -Xms 来设置。
 

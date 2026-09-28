@@ -1,6 +1,6 @@
-# JavaWeb笔记
+# JavaWeb-知识库笔记
 
-> 原文图片保留在私有 `backend-study-notes`，本公开站当前同步文字内容；疑似凭据、令牌和密码示例在公开版本中已自动脱敏。
+**JavaWeb笔记**
 
 **一、Web开发介绍**
 
@@ -16,6 +16,8 @@
 
 浏览器拿到后台返回的数据后，然后将数据展示在前端资源也就是**网页**上，然后我们就看到了完整的网页内容
 
+<img src=".assets/JavaWeb-知识库笔记/media/image1.png" style="width:5.75in;height:2.88542in" />
+
 **2.网站的开发模式**
 
 **2.1 前后端分离**
@@ -24,9 +26,13 @@
 
 后端人员开发后端程序，后端程序单独部署到后端服务器上
 
+<img src=".assets/JavaWeb-知识库笔记/media/image2.png" style="width:5.75in;height:2.58333in" />
+
 **2.2 混合开发**
 
 前端人员开发的代码和后端人员开发的代码在同一个项目中，一起打包部署。
+
+<img src=".assets/JavaWeb-知识库笔记/media/image3.png" style="width:5.75in;height:2.57292in" />
 
 **二、HTML+CSS**
 
@@ -358,6 +364,8 @@ controls: 显示播放控件
 盒子模型组成：内容区域（content）、内边距区域（padding）、边框区域（border）、外边距区域（margin）
 
 盒子的大小，其实就包括三个部分： border、padding、content，而margin外边距是不包括在盒子之内的
+
+<img src=".assets/JavaWeb-知识库笔记/media/image4.png" style="width:5.75in;height:3.54167in" />
 
 **1.2.5.2 布局标签**
 
@@ -1010,6 +1018,8 @@ JSON对象：**J**ava**S**cript **O**bject **N**otation，JavaScript对象标记
 
 JSON对象经常用来作为前后台交互的数据载体。如下图所示：前后台交互时，我们需要传输数据，但是java中的对象我们该怎么去描述呢？我们可以使用如图所示的xml格式，可以清晰的描述java中需要传递给前端的java对象。
 
+<img src=".assets/JavaWeb-知识库笔记/media/image5.png" style="width:5.75in;height:2.65625in" />
+
 但是xml格式存在如下问题：
 
 标签需要编写双份，占用带宽，浪费资源
@@ -1017,6 +1027,8 @@ JSON对象经常用来作为前后台交互的数据载体。如下图所示：�
 解析繁琐
 
 所以我们可以使用json来替代，如下图所示：
+
+<img src=".assets/JavaWeb-知识库笔记/media/image6.png" style="width:5.75in;height:1.40625in" />
 
 <table>
 <colgroup>
@@ -1074,6 +1086,8 @@ BOM中提供了如下5个对象：
 | Screen    | 屏幕对象       |
 | History   | 历史记录对象   |
 | Location  | 地址栏对象     |
+
+<img src=".assets/JavaWeb-知识库笔记/media/image7.png" style="width:5.75in;height:2.67708in" />
 
 **4.2.1 Window对象**
 
@@ -1277,6 +1291,8 @@ Model：数据模型，特指前端中通过请求从后台获取的数据，可
 View：视图，用于展示数据的页面，可以理解成我们的html+css搭建的页面，但是没有数据，可以通过ElementUI框架来替代HTML+CSS更加方便的搭建View
 
 ViewModel：数据绑定到视图，负责将数据（Model）通过JavaScript的DOM技术，将数据展示到视图（View）上，可以通过Vue框架用替代DOM操作，让数据展示到视图的代码开发变得更加的简单
+
+<img src=".assets/JavaWeb-知识库笔记/media/image8.png" style="width:5.75in;height:2.59375in" />
 
 **2.快速入门**
 
@@ -1562,6 +1578,8 @@ vue的生命周期：指的是vue对象从创建到销毁的过程。vue的生�
 | beforeDestroy | 销毁前   |
 | destroyed     | 销毁后   |
 
+<img src=".assets/JavaWeb-知识库笔记/media/image9.png" style="width:5.75in;height:3.05208in" />
+
 我们需要重点关注的是**mounted**，其他的我们了解即可
 
 mounted：挂载完成，Vue初始化成功，HTML页面渲染成功，**一般用于页面初始化自动的Ajax请求后台数据**
@@ -1601,6 +1619,8 @@ Ajax: 全称Asynchronous JavaScript And XML，异步的JavaScript和XML，其作
 同步请求：在服务器处理请求的过程中，浏览器页面不能做其他的操作。只能等到服务器响应结束后才能继续做其他的操作。
 
 异步请求：在服务器处理请求的过程中，浏览器页面还可以做其他的操作。
+
+<img src=".assets/JavaWeb-知识库笔记/media/image10.png" style="width:5.75in;height:2.13542in" />
 
 **2.原生Ajax**
 
@@ -1869,6 +1889,8 @@ console.log(result.data);<br />
 
 前后端分离开发中，要有一套同一的规范统一前后端的规范，这一规范就是**接口文档**。
 
+<img src=".assets/JavaWeb-知识库笔记/media/image11.png" style="width:5.75in;height:2.65625in" />
+
 前后台分离开发的模式流程：
 
 需求分析：首先我们需要阅读需求文档，分析需求，理解需求
@@ -1957,21 +1979,29 @@ vue ui</td>
 
 然后来到如下界面，进行vue项目的创建
 
+<img src=".assets/JavaWeb-知识库笔记/media/image12.png" style="width:5.75in;height:6.29167in" />
+
 然后预设模板选择手动
 
 然后在功能页面开启路由功能Router
 
 然后再配置页面选择语言版本和语法检查规范，如下图所示：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image13.png" style="width:5.75in;height:3.08333in" />
+
 然后创建项目，不保存预设，等待1分钟左右即可
 
 **2.2 vue项目目录结构**
+
+<img src=".assets/JavaWeb-知识库笔记/media/image14.png" style="width:5.75in;height:2.57292in" />
 
 我们平时开发代码就是在**src目录**下开发。
 
 **2.3 运行vue项目**
 
 **第一种方式**：通过VS Code提供的图形化界面（注意：NPM脚本窗口默认不显示），项目是运行在本地服务的8080端口的
+
+<img src=".assets/JavaWeb-知识库笔记/media/image15.png" style="width:5.75in;height:1.38542in" />
 
 其实此时访问的是 **src/App.vue**这个根组件，我们可以打开这个组件修改代码，修改后，只要保存文件，网页内容也跟着改变。
 
@@ -2036,6 +2066,8 @@ script：js代码区域，主要是通过js代码来控制模板的数据来源�
 
 style：css样式部分，主要通过css样式控制模板的页面效果得
 
+<img src=".assets/JavaWeb-知识库笔记/media/image16.png" style="width:5.75in;height:5.125in" />
+
 **八、Vue组件库Element**
 
 官网地址：
@@ -2077,6 +2109,8 @@ Vue.use(ElementUI);</td>
 </tbody>
 </table>
 
+<img src=".assets/JavaWeb-知识库笔记/media/image17.png" style="width:5.75in;height:3.07292in" />
+
 按照vue项目的开发规范，在**src/views**目录下创建一个vue组件文件，注意组件名称后缀是.vue，例如element/ElementView.vue，并且在组件文件中编写之前介绍过的基本组件语法
 
 <table>
@@ -2104,6 +2138,8 @@ export default {<br />
 </table>
 
 去ElementUI的官网，找到组件库，然后找到喜欢的组件，复制组件代码到我们的vue组件文件
+
+<img src=".assets/JavaWeb-知识库笔记/media/image18.png" style="width:5.75in;height:2.29167in" />
 
 在默认访问的根组件**src/App.vue**中引入我们自定义的组件
 
@@ -2150,6 +2186,8 @@ prop: 定义列的数据应该绑定data中定义的具体的数据模型
 label: 定义列的标题
 
 width: 定义列的宽度
+
+<img src=".assets/JavaWeb-知识库笔记/media/image19.png" style="width:5.75in;height:1.73958in" />
 
 PS：Element组件的所有属性都可以在官方组件页面的最下方找到
 
@@ -2219,6 +2257,8 @@ console.log(`当前页: ${val}`);<br />
 
 visible.sync：是否显示 Dialog
 
+<img src=".assets/JavaWeb-知识库笔记/media/image20.png" style="width:5.75in;height:1.26042in" />
+
 visible属性绑定的dialogTableVisble属性一开始默认是false，所以对话框隐藏；然后我们点击按钮，触发事件，修改属性值为true，然后对话框visible属性值为true，所以对话框呈现出来。
 
 **2.4 Form表单**
@@ -2229,11 +2269,15 @@ visible属性绑定的dialogTableVisble属性一开始默认是false，所以对
 
 参考[talias智能学习辅助系统](https://mcnerzykwkel.feishu.cn/wiki/FaLgwpJgUiHJT2kbIGbcMjVhn4b)，最终效果如下：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image21.png" style="width:5.75in;height:2.61458in" />
+
 **Vue路由**
 
 我们希望tlias智能学习辅助系统综合案例中，点击侧边栏的部门管理，显示部门管理的信息，点击员工管理，显示员工管理的信息，这就需要借助vue的路由功能。
 
 前端路由：URL中的hash(#号之后的内容）与组件之间的对应关系，如下图所示：
+
+<img src=".assets/JavaWeb-知识库笔记/media/image22.png" style="width:5.75in;height:1.8125in" />
 
 当我们点击左侧导航栏时，浏览器的地址栏会发生变化，路由自动更新显示与url所对应的vue组件。
 
@@ -2244,6 +2288,8 @@ VueRouter：路由器类，根据路由请求在路由视图中动态渲染选�
 \<router-link\>：请求链接组件，浏览器会解析成\<a\>
 
 \<router-view\>：动态视图组件，用来渲染展示与路由路径对应的组件
+
+<img src=".assets/JavaWeb-知识库笔记/media/image23.png" style="width:5.75in;height:1.22917in" />
 
 首先VueRouter根据我们配置的url的hash片段和路由的组件关系去维护一张路由表;
 
@@ -2267,6 +2313,8 @@ VueRouter：路由器类，根据路由请求在路由视图中动态渲染选�
 
 直接通过VS Code的NPM脚本中提供的build按钮来完整：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image24.png" style="width:5.75in;height:1.375in" />
+
 然后会在工程目录下生成一个dist目录，用于存放需要发布的前端资源。
 
 **2-部署前端工程**
@@ -2276,6 +2324,8 @@ VueRouter：路由器类，根据路由请求在路由视图中动态渲染选�
 Nginx是一款轻量级的Web服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。其特点是占有内存少，并发能力强，在各大型互联网公司都有非常广泛的使用。
 
 nginx的解压目录以及目录结构说明：
+
+<img src=".assets/JavaWeb-知识库笔记/media/image25.png" style="width:5.75in;height:2.41667in" />
 
 **我们如果要发布，直接将资源放入到html目录中**
 
@@ -2288,6 +2338,8 @@ nginx的解压目录以及目录结构说明：
 然后通过双击nginx下得nginx.exe文件来启动nginx
 
 nginx服务器的端口号是80，所以启动成功之后，我们浏览器直接访问 http://localhost:80 即可，其中80端口可以省略，如果80端口被占用，我们需要通过**conf/nginx.conf**配置文件来修改端口号：
+
+<img src=".assets/JavaWeb-知识库笔记/media/image26.png" style="width:5.75in;height:1.85417in" />
 
 **九、Maven**
 
@@ -2340,11 +2392,15 @@ Maven是Apache旗下的一个开源项目，是一款用于管理和构建java�
 
 统一的项目结构：提供标准、统一的项目结构，解决不同开发工具的项目结构不一致问题
 
+<img src=".assets/JavaWeb-知识库笔记/media/image27.png" style="width:5.75in;height:2.78125in" />
+
 标准的项目构建流程：标准跨平台（Linux、Windows、MacOS）的自动化项目构建方式。我们开发一套系统需要进行编译、测试、打包、发布，这些操作如果需要反复进行就显得特别麻烦，Maven提供了一套简单的命令来完成项目构建
 
 **1.2 Maven模型**
 
 项目对象模型 (Project Object Model)：将我们自己的项目抽象成一个对象模型，有自己专属的坐标，通过坐标可以定位到所需资源(jar包)位置
+
+<img src=".assets/JavaWeb-知识库笔记/media/image28.png" style="width:5.75in;height:2.35417in" />
 
 依赖管理模型(Dependency)：使用坐标来描述当前项目依赖哪些第三方jar包，通过在pom.xml文件中自定义的坐标自动从本地仓库下载导入相关的jar包
 
@@ -2449,6 +2505,8 @@ version：定义当前项目版本号
 
 如下图就是使用坐标表示一个项目：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image29.png" style="width:5.75in;height:2.40625in" />
+
 <table>
 <colgroup>
 <col style="width: 100%" />
@@ -2516,6 +2574,8 @@ version：定义当前项目版本号
 间接依赖：被依赖的资源如果依赖其他资源，当前项目间接依赖其他资源
 
 例如对于projectA 来说，projectB 就是直接依赖，projectC就是间接依赖：
+
+<img src=".assets/JavaWeb-知识库笔记/media/image30.png" style="width:5.75in;height:2.01042in" />
 
 **排除依赖**
 
@@ -2596,6 +2656,8 @@ default：核心工作。如：编译、测试、打包、安装、部署等
 
 site：生成报告、发布站点等
 
+<img src=".assets/JavaWeb-知识库笔记/media/image31.png" style="width:5.75in;height:2.60417in" />
+
 常使用的5个阶段含义：
 
 • clean：移除上一次构建生成的文件
@@ -2624,6 +2686,8 @@ site：生成报告、发布站点等
 
 运行命令mvn 阶段名
 
+<img src=".assets/JavaWeb-知识库笔记/media/image32.png" style="width:5.75in;height:2.47917in" />
+
 **3.5 清理maven仓库**
 
 从私服下载jar包时，可能由于网络的原因，jar包下载不完全，这些不完整的jar包都是以lastUpdated结尾，maven不会再重新下载，需要手动删除这些以lastUpdated结尾的文件，然后maven才会再次自动下载这些jar包。
@@ -2650,7 +2714,11 @@ pause</td>
 
 1). 定义批处理文件del_lastUpdated.bat (直接创建一个文本文件，命名为del_lastUpdated，后缀名直接改为bat即可 )
 
+<img src=".assets/JavaWeb-知识库笔记/media/image33.png" style="width:5.75in;height:0.27083in" />
+
 2). 在上面的bat文件上**右键 --\> 编辑**，修改文件：
+
+<img src=".assets/JavaWeb-知识库笔记/media/image34.png" style="width:5.75in;height:0.86458in" />
 
 修改完毕后，运行即可删除maven仓库中的残留文件
 
@@ -2664,9 +2732,13 @@ SpringBoot最大的特点有两个：简化配置和快速开发
 
 基于SpringBoot的方式开发一个web应用，浏览器发起请求/hello后，给浏览器返回字符串 “Hello World ~”：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image35.png" style="width:5.75in;height:0.79167in" />
+
 **1.1 创建SpringBoot工程（需要联网）**
 
 基于Spring官方骨架，创建SpringBoot工程。
+
+<img src=".assets/JavaWeb-知识库笔记/media/image36.png" style="width:5.75in;height:5.11458in" />
 
 之后选上Spring Web即可。
 
@@ -2703,6 +2775,8 @@ return "Hello World ~";<br />
 打开浏览器，输入http://localhost:8080/hello，出现Hello World~即表示成功。
 
 **1.4 Web分析**
+
+<img src=".assets/JavaWeb-知识库笔记/media/image37.png" style="width:5.75in;height:1.91667in" />
 
 浏览器：
 
@@ -2817,6 +2891,8 @@ HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器</t
 
 **2.1.1 GET方式的请求协议**
 
+<img src=".assets/JavaWeb-知识库笔记/media/image38.png" style="width:5.75in;height:1.13542in" />
+
 请求行 ：HTTP请求中的第一行数据。由：请求方式、资源路径、协议/版本组成（之间使用空格分隔）
 
 请求方式：GET
@@ -2877,6 +2953,8 @@ GET请求的请求参数在请求行中，故不需要设置请求体
 
 **2.1.2 POST方式的请求协议**
 
+<img src=".assets/JavaWeb-知识库笔记/media/image39.png" style="width:5.75in;height:1.91667in" />
+
 请求行(以上图中红色部分)：包含请求方式、资源路径、协议/版本
 
 请求方式：POST
@@ -2927,6 +3005,8 @@ GET请求和POST请求的区别：
 **2.2 HTTP-响应协议**
 
 与HTTP的请求一样，HTTP响应的数据也分为3部分：**响应行**、**响应头** 、**响应体**。
+
+<img src=".assets/JavaWeb-知识库笔记/media/image40.png" style="width:5.75in;height:1.5625in" />
 
 响应行(以上图中红色部分)：响应数据的第一行。响应行由协议及版本、响应状态码、状态码描述组成
 
@@ -3111,6 +3191,8 @@ writer.flush();<br />
 
 启动ServerSocket程序：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image41.png" style="width:5.75in;height:2.85417in" />
+
 浏览器输入：http://localhost:8080就会访问到ServerSocket程序
 
 ServerSocket程序，会读取服务器上html/a.html文件，并把文件数据发送给浏览器
@@ -3147,6 +3229,8 @@ Web服务器是一个应用程序(软件)，对HTTP协议的操作进行封装�
 
 **\[该类型的内容暂不支持下载\]**
 
+<img src=".assets/JavaWeb-知识库笔记/media/image42.png" style="width:5.75in;height:4.52083in" />
+
 Tomcat软件类型说明：
 
 tar.gz文件，是linux和mac操作系统下的压缩版本
@@ -3156,6 +3240,8 @@ zip文件，是window操作系统下压缩版本
 直接解压到不含中文和空格的目录下即安装，卸载直接删除这个文件夹即可。
 
 **3.1.1 目录结构**
+
+<img src=".assets/JavaWeb-知识库笔记/media/image43.png" style="width:5.75in;height:3.91667in" />
 
 bin：目录下有两类文件，一种是以.bat结尾的，是Windows系统的可执行文件，一种是以.sh结尾的，是Linux系统的可执行文件。
 
@@ -3172,6 +3258,8 @@ Tomcat的默认端口为8080，所以在浏览器的地址栏输入http://127.0.
 |                                                                                                    |
 |----------------------------------------------------------------------------------------------------|
 | **注意**：Tomcat启动的过程中，遇到控制台有中文乱码时，通常可以修改conf/logging.pro perties文件解决 |
+
+<img src=".assets/JavaWeb-知识库笔记/media/image44.png" style="width:5.75in;height:0.38542in" />
 
 **关闭**：
 
@@ -3191,6 +3279,8 @@ Tomcat的默认端口为8080，所以在浏览器的地址栏输入http://127.0.
 
 修改Tomcat启动的端口号，需要修改 conf/server.xml 文件
 
+<img src=".assets/JavaWeb-知识库笔记/media/image45.png" style="width:5.75in;height:0.90625in" />
+
 *注: HTTP协议默认端口号为80，如果将Tomcat端口号改为80，则将来访问Tomcat时，将不用输入端口号。*
 
 **3.2 入门程序解析**
@@ -3199,11 +3289,17 @@ Tomcat的默认端口为8080，所以在浏览器的地址栏输入http://127.0.
 
 Spring官方骨架，可以理解为Spring官方为程序员提供一个搭建项目的模板。之前创建项目就是使用的官方骨架：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image46.png" style="width:5.75in;height:1.26042in" />
+
 可以通过访问如下网址进入到官方骨架页面：
 
 **\[该类型的内容暂不支持下载\]**
 
+<img src=".assets/JavaWeb-知识库笔记/media/image47.png" style="width:5.75in;height:3.20833in" />
+
 SpringBoot项目需要依赖Spring Web
+
+<img src=".assets/JavaWeb-知识库笔记/media/image48.png" style="width:5.75in;height:3.22917in" />
 
 SpringBoot项目创建成功后，会下载到本地，解压缩后就可以得到一个Spring Boot项目文件夹
 
@@ -3227,6 +3323,8 @@ spring-boot-starter-test：包含了单元测试所需要的常见依赖
 
 每一个SpringBoot工程，都有一个父工程。依赖的版本号，在父工程中统一管理，所以不用指定依赖的版本号：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image49.png" style="width:5.75in;height:1.48958in" />
+
 **3.2.4 内嵌Tomcat**
 
 spring-boot-starter-web起步依赖内部已经集成了内置的Tomcat服务器，所以不用部署springboot项目也能运行。
@@ -3239,9 +3337,13 @@ spring-boot-starter-web起步依赖内部已经集成了内置的Tomcat服务器
 
 浏览器发送请求请求web服务器 （也就是内置的Tomcat），被部署在Tomcat中的控制器类Controller接收，Controller再给浏览器一个响应，整个过程遵守http协议。但是Tomcat不识别自定义的Controller，可以识别 Servlet程序。所以Tomcat内置了一个核心的Servlet程序 DispatcherServlet（核心控制器）,负责接收页面发送的请求，然后根据执行规则将请求再转发给请求处理器Controller，请求处理器处理完请求后再由DispatcherServlet给浏览器响应数据
 
+<img src=".assets/JavaWeb-知识库笔记/media/image50.png" style="width:5.75in;height:1.64583in" />
+
 BS架构：Browser/Server，浏览器/服务器架构模式。客户端只需要浏览器，应用程序的逻辑和数据都存储在服务端
 
 Tomcat接收到浏览器发送的数据后，会先解析这些请求数据，然后将解析后的请求数据传递给Servlet程序的HttpServletRequest对象，Tomcat还会给Servlet程序传递一个参数 HttpServletResponse用以给浏览器设置响应数据。
+
+<img src=".assets/JavaWeb-知识库笔记/media/image51.png" style="width:5.75in;height:1.52083in" />
 
 **2.请求**
 
@@ -3255,11 +3357,29 @@ Postman工具是后端开发员用来测试自己所开发的程序的，可以�
 
 登录完成之后，可以创建工作空间：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image52.png" style="width:5.75in;height:3.16667in" />
+
+<img src=".assets/JavaWeb-知识库笔记/media/image53.png" style="width:5.75in;height:4.45833in" />
+
 创建请求：
+
+<img src=".assets/JavaWeb-知识库笔记/media/image54.png" style="width:5.75in;height:1.38542in" />
 
 点击"Save"，保存当前请求
 
+<img src=".assets/JavaWeb-知识库笔记/media/image55.png" style="width:5.75in;height:2.57292in" />
+
+<img src=".assets/JavaWeb-知识库笔记/media/image56.png" style="width:5.75in;height:2.55208in" />
+
+<img src=".assets/JavaWeb-知识库笔记/media/image57.png" style="width:5.75in;height:1.07292in" />
+
+<img src=".assets/JavaWeb-知识库笔记/media/image58.png" style="width:5.75in;height:3.42708in" />
+
+<img src=".assets/JavaWeb-知识库笔记/media/image59.png" style="width:5.75in;height:2.59375in" />
+
 **2.2 简单参数**
+
+<img src=".assets/JavaWeb-知识库笔记/media/image60.png" style="width:5.75in;height:0.4375in" />
 
 后端程序接收浏览器传递过来的普通参数数据有两种方式：原始方式、SpringBoot方式
 
@@ -3619,6 +3739,8 @@ return "OK";<br />
 
 Postman发送JSON格式数据：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image61.png" style="width:5.75in;height:1.75in" />
+
 服务端Controller方法接收JSON格式数据：
 
 传递json格式的参数，在Controller中会使用实体类进行封装
@@ -3693,6 +3815,8 @@ return "OK";<br />
 前端：通过请求URL直接传递参数
 
 后端：使用{…}来标识该路径参数，**需要使用@PathVariable获取路径参数**
+
+<img src=".assets/JavaWeb-知识库笔记/media/image62.png" style="width:5.75in;height:1.80208in" />
 
 **传递单个路径参数：**
 
@@ -3837,6 +3961,8 @@ return new Result(0,msg,null);<br />
 
 加载并解析xml文件中的数据，完成数据处理，并在页面展示
 
+<img src=".assets/JavaWeb-知识库笔记/media/image63.png" style="width:5.75in;height:1.47917in" />
+
 **4.2 准备工作**
 
 **\[解析xml的SpringBoot案例资源.zip\]**
@@ -3893,9 +4019,15 @@ classpath：代表的是类路径，在maven的项目中，其实指的就是 sr
 
 引入资料中提供的：解析XML的工具类XMLParserUtils、实体类Emp、XML文件emp.xml
 
+<img src=".assets/JavaWeb-知识库笔记/media/image64.png" style="width:5.75in;height:1.84375in" />
+
 引入资料中提供的静态页面文件，放在resources下的static目录下
 
+<img src=".assets/JavaWeb-知识库笔记/media/image65.png" style="width:5.75in;height:1.98958in" />
+
 创建EmpController类，编写Controller程序，处理请求，响应数据
+
+<img src=".assets/JavaWeb-知识库笔记/media/image66.png" style="width:5.75in;height:2.83333in" />
 
 **4.4 代码实现**
 
@@ -3949,6 +4081,8 @@ return Result.success(empList);<br />
 
 打开浏览器，在浏览器地址栏输入： http://localhost:8080/emp.html
 
+<img src=".assets/JavaWeb-知识库笔记/media/image67.png" style="width:5.75in;height:2.61458in" />
+
 **5.分层解耦**
 
 **5.1 三层架构**
@@ -3956,6 +4090,8 @@ return Result.success(empList);<br />
 **5.1.1 介绍**
 
 在进行程序设计以及程序开发时，尽可能让每一个接口、类、方法的职责更单一些（单一职责原则）。
+
+<img src=".assets/JavaWeb-知识库笔记/media/image68.png" style="width:5.75in;height:4in" />
 
 案例中的Contriller代码，从组成上看可以分为三个部分：
 
@@ -3975,6 +4111,8 @@ return Result.success(empList);<br />
 
 三层架构的程序执行流程：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image69.png" style="width:5.75in;height:1.30208in" />
+
 前端发起的请求，由Controller层接收（Controller响应数据给前端）
 
 Controller层调用Service层来进行逻辑处理（Service层处理完后，把处理结果返回给Controller层）
@@ -3990,6 +4128,8 @@ Dao层操作文件中的数据（Dao拿到的数据会返回给Service层）
 业务逻辑层包名：xxxx.service
 
 数据访问层包名：xxxx.dao（更多的实际是xxxx.mapper）
+
+<img src=".assets/JavaWeb-知识库笔记/media/image70.png" style="width:5.75in;height:5.27083in" />
 
 **控制层**：接收前端发送的请求，对请求进行处理，并响应数据
 
@@ -4112,6 +4252,8 @@ return empList;<br />
 </tbody>
 </table>
 
+<img src=".assets/JavaWeb-知识库笔记/media/image71.png" style="width:5.75in;height:2.70833in" />
+
 **5.2 分层解耦**
 
 **5.2.1 耦合问题**
@@ -4155,6 +4297,8 @@ IOC容器中创建、管理的对象，称之为bean对象。
 第3步：为Controller及Service注入运行时依赖的对象
 
 使用Spring提供的注解：**@Autowired** ，就可以实现程序运行时IOC容器自动注入需要的依赖对象
+
+<img src=".assets/JavaWeb-知识库笔记/media/image72.png" style="width:5.75in;height:1.11458in" />
 
 **5.3.2 IOC详解**
 
@@ -4215,9 +4359,15 @@ bean想要生效，需要被组件扫描。扫描注解@ComponentScan用来扫�
 
 方式一：使用@Primary注解：当存在多个相同类型的Bean注入时，加上@Primary注解，来确定默认的实现
 
+<img src=".assets/JavaWeb-知识库笔记/media/image73.png" style="width:5.75in;height:1.5625in" />
+
 方式二：使用@Qualifier注解：指定当前要注入的bean对象。 在@Qualifier的value属性中，指定注入的bean的名称
 
+<img src=".assets/JavaWeb-知识库笔记/media/image74.png" style="width:5.75in;height:1.14583in" />
+
 方式三：使用@Resource注解：是按照bean的名称进行注入。通过name属性指定要注入的bean的名称
+
+<img src=".assets/JavaWeb-知识库笔记/media/image75.png" style="width:5.75in;height:0.95833in" />
 
 <table>
 <colgroup>
@@ -4305,6 +4455,8 @@ SQL语句根据其功能被分为四大类：DDL、DML、DQL、DCL
 **2.数据库设计-DDL**
 
 **2.1 项目开发流程**
+
+<img src=".assets/JavaWeb-知识库笔记/media/image76.png" style="width:5.75in;height:2.59375in" />
 
 数据库设计阶段
 
@@ -4422,9 +4574,15 @@ DataGrip是JetBrains旗下的一款数据库管理工具，是管理和开发MyS
 
 1、打开IDEA自带的Database
 
+<img src=".assets/JavaWeb-知识库笔记/media/image77.png" style="width:5.75in;height:1.34375in" />
+
 2、配置MySQL
 
+<img src=".assets/JavaWeb-知识库笔记/media/image78.png" style="width:5.75in;height:2.375in" />
+
 3、输入相关信息并下载MySQL连接驱动
+
+<img src=".assets/JavaWeb-知识库笔记/media/image79.png" style="width:5.75in;height:3.60417in" />
 
 4、测试数据库连接：点击Text Connection即可
 
@@ -5171,6 +5329,8 @@ select * from tb_emp , tb_dept;</td>
 
 笛卡尔积：笛卡尔乘积是指在数学中，两个集合(A集合和B集合)的所有组合情况。
 
+<img src=".assets/JavaWeb-知识库笔记/media/image80.png" style="width:5.75in;height:2.35417in" />
+
 在多表查询时，需要消除无效的笛卡尔积，只保留表关联部分的数据，只需要给多表查询加上连接查询的条件即可：
 
 <table>
@@ -5192,6 +5352,8 @@ select * from tb_emp , tb_dept where tb_emp.dept_id = tb_dept.id ;</td>
 连接查询
 
 内连接：相当于查询A、B交集部分数据
+
+<img src=".assets/JavaWeb-知识库笔记/media/image81.png" style="width:5.75in;height:1.67708in" />
 
 外连接
 
@@ -5458,6 +5620,10 @@ MyBatis是一款优秀的 **持久层** **框架**，用于简化JDBC的开发�
 
 **创建springboot工程**：创建springboot工程，并导入 mybatis的起步依赖、MySQL的驱动包。
 
+<img src=".assets/JavaWeb-知识库笔记/media/image82.png" style="width:5.75in;height:4.69792in" />
+
+<img src=".assets/JavaWeb-知识库笔记/media/image83.png" style="width:5.75in;height:6.92708in" />
+
 项目工程创建完成后，会自动在pom.xml文件中，导入Mybatis依赖和MySQL驱动依赖
 
 <table>
@@ -5534,6 +5700,8 @@ private String phone; //手机号<br />
 
 **1.2 配置Mybatis**
 
+<img src=".assets/JavaWeb-知识库笔记/media/image84.png" style="width:5.75in;height:3.64583in" />
+
 从上图可以看出连接数据库的四大参数：
 
 MySQL驱动类
@@ -5560,7 +5728,7 @@ spring.datasource.url=jdbc:mysql://localhost:3306/mybatis<br />
 #连接数据库的用户名<br />
 spring.datasource.username=root<br />
 #连接数据库的密码<br />
-spring.datasource.password=[REDACTED]</td>
+spring.datasource.password=123456</td>
 </tr>
 </tbody>
 </table>
@@ -5568,6 +5736,8 @@ spring.datasource.password=[REDACTED]</td>
 **1.3 编写SQL语句**
 
 在创建出来的springboot工程中，在引导类所在包下，在创建一个包 mapper。在mapper包下创建一个接口 UserMapper ，这是一个持久层接口（Mybatis的持久层接口规范一般都叫 XxxMapper）。
+
+<img src=".assets/JavaWeb-知识库笔记/media/image85.png" style="width:5.75in;height:1.91667in" />
 
 UserMapper：
 
@@ -5636,11 +5806,15 @@ System.out.println(user);<br />
 
 如果想让idea给我们提示对应的SQL语句，我们需要在IDEA中配置与MySQL数据库的链接。
 
+<img src=".assets/JavaWeb-知识库笔记/media/image86.png" style="width:5.75in;height:1.78125in" />
+
 如果idea不识别表名，就需要建立连接。
 
 **2.JDBC介绍(了解)**
 
 java语言操作数据库只能通过sun公司提供的 JDBC 规范。Mybatis框架，就是对原始的JDBC程序的封装。
+
+<img src=".assets/JavaWeb-知识库笔记/media/image87.png" style="width:5.75in;height:3.32292in" />
 
 本质：
 
@@ -5669,7 +5843,7 @@ Class.forName("com.mysql.cj.jdbc.Driver");<br />
 //2. 获取数据库连接<br />
 String url="jdbc:mysql://127.0.0.1:3306/mybatis";<br />
 String username = "root";<br />
-String password = "[REDACTED]";<br />
+String password = "1234";<br />
 Connection connection = DriverManager.getConnection(url, username, password);<br />
 <br />
 //3. 执行SQL<br />
@@ -5808,7 +5982,7 @@ Druid（德鲁伊）：阿里巴巴开源的数据库连接池项目，功能强
 spring.datasource.druid.driver-class-name=com.mysql.cj.jdbc.Driver<br />
 spring.datasource.druid.url=jdbc:mysql://localhost:3306/mybatis<br />
 spring.datasource.druid.username=root<br />
-spring.datasource.druid.password=[REDACTED]</td>
+spring.datasource.druid.password=1234</td>
 </tr>
 </tbody>
 </table>
@@ -5825,7 +5999,7 @@ spring.datasource.druid.password=[REDACTED]</td>
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver<br />
 spring.datasource.url=jdbc:mysql://localhost:3306/mybatis<br />
 spring.datasource.username=root<br />
-spring.datasource.password=[REDACTED]</td>
+spring.datasource.password=1234</td>
 </tr>
 </tbody>
 </table>
@@ -5996,6 +6170,8 @@ public interface EmpMapper {<br />
 </tbody>
 </table>
 
+<img src=".assets/JavaWeb-知识库笔记/media/image88.png" style="width:5.75in;height:2.82292in" />
+
 **5.2 删除**
 
 根据主键删除数据：
@@ -6055,7 +6231,7 @@ mybatis.configuration.log-impl=org.apache.ibatis.logging.stdout.StdOutImpl</td>
 
 通过操作输入的数据来修改事先定义好的SQL语句，以达到执行代码对服务器进行攻击的方法。
 
-例如登录页面（用户名和密码），本质是执行查询语句select count(\*) from emp where username = '输入的用户名' and password = '[REDACTED]';，不法分子可以修改密码为' or '1' = '1从而进入系统，原理是' or '1' = '1替换输入的密码可以得到
+例如登录页面（用户名和密码），本质是执行查询语句select count(\*) from emp where username = '输入的用户名' and password = '输入的密码';，不法分子可以修改密码为' or '1' = '1从而进入系统，原理是' or '1' = '1替换输入的密码可以得到
 
 select count(\*) from emp where username = '输入的用户名' and password = '' or '1' = '1';，由于'1' = '1'始终成立，所以可以登陆成功。而通过预编译就可以避免SQL注入。
 
@@ -6271,6 +6447,8 @@ public List&lt;Emp&gt; list(String name, Short gender, LocalDate begin, LocalDat
 
 在springBoot的1.x版本：编译时生成的字节码文件不再保留原方法形参名，默认是var1、var2 ...，可以通过@Param注解保留形参名：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image89.png" style="width:5.75in;height:0.875in" />
+
 **6.Mybatis的XML配置文件**
 
 如果需要实现复杂的SQL功能，注解将会非常繁琐，可以通过XML文件存放SQL语句。
@@ -6282,6 +6460,8 @@ XML映射文件的名称与Mapper接口名称一致，并且将XML映射文件�
 XML映射文件的namespace属性与Mapper接口全限定个名一致
 
 XML映射文件中sql语句的id与Mapper接口中的方法名一致，并保持返回类型一致
+
+<img src=".assets/JavaWeb-知识库笔记/media/image90.png" style="width:5.75in;height:1.71875in" />
 
 *\<select\>标签：就是用于编写select查询语句的。*
 
@@ -6511,6 +6691,8 @@ delete from emp where id in<br />
 
 在xml映射文件中配置的SQL，有时可能会存在很多重复的片段，此时就会存在很多冗余的代码
 
+<img src=".assets/JavaWeb-知识库笔记/media/image91.png" style="width:5.75in;height:3.78125in" />
+
 \<sql\>：定义可重用的SQL片段
 
 \<include\>：通过属性refid，指定包含的SQL片段
@@ -6648,6 +6830,8 @@ return new Result(0,msg,null);<br />
 **1.3 开发流程**
 
 在进行功能开发时，都是根据如下流程进行：
+
+<img src=".assets/JavaWeb-知识库笔记/media/image92.png" style="width:5.75in;height:0.55208in" />
 
 *接口文档一般由后端程序员书写。*
 
@@ -6792,6 +6976,8 @@ PageHelper是Mybatis的一款功能强大、方便易用的分页插件，支持
 
 2、代码改造
 
+<img src=".assets/JavaWeb-知识库笔记/media/image93.png" style="width:5.75in;height:2.65625in" />
+
 分页插件执行过程：
 
 先获取到要执行的SQL语句：select \* from emp
@@ -6869,6 +7055,8 @@ PageHelper是Mybatis的一款功能强大、方便易用的分页插件，支持
 
 设置form表单标签中enctype属性值为multipart/form-data，在控制台查看文件传输情况：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image94.png" style="width:5.75in;height:3.76042in" />
+
 *如果使用enctype的默认属性值或不指定enctype属性，会看不到文件中的数据，只能看到文件名（带后缀）。*
 
 **6.1.2 后端部分**
@@ -6884,6 +7072,8 @@ PageHelper是Mybatis的一款功能强大、方便易用的分页插件，支持
 文件： MultipartFile image
 
 Spring中提供了一个API：MultipartFile，使用这个API就可以来接收到上传的文件
+
+<img src=".assets/JavaWeb-知识库笔记/media/image95.png" style="width:5.75in;height:1.375in" />
 
 如果表单项的名字和方法中形参名不一致，可以使用@RequestParam注解解决。
 
@@ -6946,6 +7136,8 @@ return Result.success();<br />
 
 利用postman测试：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image96.png" style="width:5.75in;height:2.39583in" />
+
 由于上传的文件名可能重名，可以使用UUID获取唯一文件名进行本地存储：
 
 <table>
@@ -7005,15 +7197,27 @@ Bucket：存储空间是用户用于存储对象（Object，就是文件）的�
 
 **使用步骤**：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image97.png" style="width:5.75in;height:0.58333in" />
+
 注册登录阿里云后，点击右上角的控制台，点击对象存储OSS：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image98.png" style="width:4in;height:1.125in" />
+
 点击左侧的 "Bucket列表"，创建一个Bucket：
+
+<img src=".assets/JavaWeb-知识库笔记/media/image99.png" style="width:5.75in;height:6.85417in" />
 
 **6.3.2 入门**
 
 首先需要来打开阿里云OSS的官方文档，在官方文档中找到 SDK 的示例代码：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image100.png" style="width:5.75in;height:2.88542in" />
+
+<img src=".assets/JavaWeb-知识库笔记/media/image101.png" style="width:5.75in;height:2.86458in" />
+
 *在实际开发当中，我们是需要从前往后仔细的去阅读这一份文档，这里只说重点。*
+
+<img src=".assets/JavaWeb-知识库笔记/media/image102.png" style="width:5.75in;height:2.65625in" />
 
 <table>
 <colgroup>
@@ -7086,6 +7290,8 @@ objectName：对象名称，在Bucket中存储的对象的名称
 filePath：文件路径
 
 AccessKey获取方式：
+
+<img src=".assets/JavaWeb-知识库笔记/media/image103.png" style="width:5.75in;height:1.22917in" />
 
 运行以上程序后，会把本地的文件上传到阿里云OSS服务器上，点击文件列表就可以查看了。
 
@@ -7230,7 +7436,7 @@ yml文件中常见的数据格式：
 user:<br />
 name: zhangsan #:后必须要有一个空格<br />
 age: 18<br />
-password: [REDACTED]</td>
+password: 123456</td>
 </tr>
 </tbody>
 </table>
@@ -7261,6 +7467,8 @@ hobby:<br />
 将实体类交给Spring的IOC容器管理，成为IOC容器当中的bean对象（@Component）
 
 在实体类上添加@ConfigurationProperties注解，并通过perfect属性来指定配置参数项的前缀
+
+<img src=".assets/JavaWeb-知识库笔记/media/image104.png" style="width:5.75in;height:1.34375in" />
 
 如果出现警告，表明需要添加一个依赖自动识别被@ConfigurationProperties注解标识的bean对象（可选项）：
 
@@ -7321,6 +7529,8 @@ Spring提供的interceptor拦截器
 
 会话的一方连接断开，整个会话就结束
 
+<img src=".assets/JavaWeb-知识库笔记/media/image105.png" style="width:5.75in;height:1.5in" />
+
 会话跟踪：一种维护浏览器状态的方法，服务器需要识别多次请求是否来自于同一浏览器，以便在同一次会话的多次请求间共享数据，例如上图的1和3是否属于同一会话（是），3和5是否属于同一会话（否）。
 
 共享数据：HTTP协议是无状态协议，需要共享数据记录上一次请求的内容，进行登录校验。
@@ -7379,7 +7589,11 @@ return Result.success();<br />
 
 打开浏览器，访问c1接口，http://localhost:8080/c1：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image106.png" style="width:5.75in;height:1.94792in" />
+
 访问c2接口http://localhost:8080/c2，此时浏览器会自动将Cookie携带到服务端，是通过**请求头Cookie**携带的：
+
+<img src=".assets/JavaWeb-知识库笔记/media/image107.png" style="width:5.75in;height:1.80208in" />
 
 优点：HTTP协议中支持的技术
 
@@ -7392,6 +7606,8 @@ return Result.success();<br />
 Cookie不能跨域
 
 跨域介绍：前后端分离开发中，前端部署在一台服务器上（假设是192.168.150.200），后端部署在另一台服务器上（假设是192.168.150.100）上，打开浏览器直接访问前端工程http://192.168.150.200/login.html，在该页面发起请求到服务端http://192.168.150.100:8080/login接口，此时就会出现跨域
+
+<img src=".assets/JavaWeb-知识库笔记/media/image108.png" style="width:5.75in;height:2.125in" />
 
 区分跨域的维度：
 
@@ -7446,7 +7662,11 @@ return Result.success(loginUser);<br />
 
 访问 s1 接口，http://localhost:8080/s1，就可以通过Set-Cookie看到JSESSIONID：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image109.png" style="width:5.75in;height:2.04167in" />
+
 访问 s2 接口，http://localhost:8080/s2，就可以通过Cookie看到Session数据：
+
+<img src=".assets/JavaWeb-知识库笔记/media/image110.png" style="width:5.75in;height:1.63542in" />
 
 优点：Session是存储在服务端的，安全
 
@@ -7465,6 +7685,8 @@ Session 底层是基于Cookie实现的会话跟踪，如果Cookie不可用，则
 集群环境为何无法使用Session？
 
 在企业开发中，最终部署时会采用集群部署，即同一个项目部署在多个服务器中，用户访问时，会先访问到负载均衡服务器（将前端发起的请求均匀的分发给后面的这三台服务器）。假如通过 session 进行会话跟踪，若第一次分发到第一台服务器，第二次分发到第二台服务器，这时第二台服务器中没有对应Session对象，就会重新构建一个会话对象，这样两次请求就不是同一个会话。
+
+<img src=".assets/JavaWeb-知识库笔记/media/image111.png" style="width:5.75in;height:1.4375in" />
 
 **方案三：令牌技术（最常用）**：
 
@@ -7503,6 +7725,8 @@ Session 底层是基于Cookie实现的会话跟踪，如果Cookie不可用，则
 第三部分：Signature(签名），防止Token被篡改、确保安全性。将header、payload，并加入指定秘钥，通过指定签名算法计算而来。
 
 一旦jwt令牌当中任何一个部分、任何一个字符被篡改了，整个令牌在校验的时候都会失败，这正是签名保证的。
+
+<img src=".assets/JavaWeb-知识库笔记/media/image112.png" style="width:5.75in;height:0.38542in" />
 
 JWT是如何将原始的JSON格式数据，转变为字符串的呢？
 
@@ -7562,6 +7786,8 @@ System.out.println(jwt);<br />
 
 **\[该类型的内容暂不支持下载\]**
 
+<img src=".assets/JavaWeb-知识库笔记/media/image113.png" style="width:5.75in;height:3.35417in" />
+
 *第三部分由于是有签名算法得出来的，所以不会解码。*
 
 解析生成的令牌代码实现：
@@ -7577,7 +7803,7 @@ System.out.println(jwt);<br />
 public void parseJwt(){<br />
 Claims claims = Jwts.parser()<br />
 .setSigningKey("itheima")//指定签名密钥（必须保证和生成令牌时使用相同的签名密钥）<br />
-.parseClaimsJws("[REDACTED]")<br />
+.parseClaimsJws("eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZXhwIjoxNjcyNzI5NzMwfQ.fHi0Ub8npbyt71UqLXDdLyipptLgxBUg_mSuGJtXtBk")<br />
 .getBody();<br />
 <br />
 System.out.println(claims);<br />
@@ -7681,6 +7907,8 @@ SpringApplication.run(TliasWebManagementApplication.class, args);<br />
 
 **执行流程**：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image114.png" style="width:5.75in;height:1.84375in" />
+
 当拦截到一个请求后，要有FilterChain对象当中的doFilter()方法放行，放行后执行相应的逻辑，逻辑执行完毕后会到doFilter方法中执行放行后的逻辑，如果放行后没有逻辑，就结束方法响应。
 
 **拦截路径**：
@@ -7695,6 +7923,8 @@ SpringApplication.run(TliasWebManagementApplication.class, args);<br />
 **过滤器链**：
 
 在一个web应用程序当中，可以配置多个过滤器，多个过滤器就形成了一个过滤器链：
+
+<img src=".assets/JavaWeb-知识库笔记/media/image115.png" style="width:5.75in;height:1.875in" />
 
 接收到请求后，先执行Filter1的放行前逻辑和放行，放行后进入Fileter2拦截器，执行相应逻辑后放行，执行完路径的逻辑后先返回到Filter2逻辑中，Filter2中剩余逻辑执行完毕后再执行Filter1中的逻辑。
 
@@ -7797,6 +8027,8 @@ addPathPatterns("要拦截路径")指定要拦截哪些路径；excludePathPatte
 
 **执行流程**
 
+<img src=".assets/JavaWeb-知识库笔记/media/image116.png" style="width:5.75in;height:1.96875in" />
+
 浏览器发送一个请求后，先被Filter过滤器拦截，Filter过滤器执行放行前逻辑并放行，此时进入Spring环境要访问controller
 
 由于Tomcat识别Servlet而不识别controller，所以请求会先到DispatcherServlet（前端控制器），再将请求转给Controller
@@ -7822,6 +8054,8 @@ Mapper接口出错了，此时异常会往上抛(谁调用Mapper就抛给谁)，
 service 中也存在异常了，会抛给controller
 
 而在controller当中，没有做任何的异常处理，所以最终异常会再往上抛。最终抛给框架之后，框架就会返回一个JSON格式的数据，里面封装的就是错误的信息，但是框架返回的JSON格式的数据并不符合开发规范
+
+<img src=".assets/JavaWeb-知识库笔记/media/image117.png" style="width:5.75in;height:2.44792in" />
 
 **解决方案**
 
@@ -7998,6 +8232,8 @@ empMapper.deleteByDeptId(id);<br />
 
 当一个事务方法被另一个事务方法调用，此时会出现事务的传播。例如，两个事务方法，A方法和B方法，在A方法当中又调用了B方法。
 
+<img src=".assets/JavaWeb-知识库笔记/media/image118.png" style="width:5.75in;height:0.98958in" />
+
 此时是事务B加入到事务A中还是新建一个事务B，就涉及到事务的传播行为，事务的传播行为由propagation属性决定：
 
 |                  |                                                                    |
@@ -8102,6 +8338,8 @@ AOP：面向切面编程、面向方面编程，即面向指定的一个或多�
 
 现在需要统计业务层所有方法的执行时间进行优化，如果在每个方法前后都记录时间，相减得到运行时间会非常繁琐，此时就可以使用AOP设计一个模版方法，方法运行前记录开始时间，方法运行后记录结束时间，中间运行原始业务方法：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image119.png" style="width:5.75in;height:1.09375in" />
+
 例如当需要运行list方法时，不会立即执行list，而是跳转到模版方法中执行：
 
 记录方法运行开始时间
@@ -8181,17 +8419,29 @@ AOP常见运用场景：
 
 **1. 连接点：JoinPoint**，可以被AOP控制的方法（暗含方法执行时的相关信息），入门程序当中所有业务方法都是连接点
 
+<img src=".assets/JavaWeb-知识库笔记/media/image120.png" style="width:5.75in;height:5.01042in" />
+
 **2. 通知：Advice**，指哪些重复的逻辑，也就是共性功能（最终体现为一个方法）
+
+<img src=".assets/JavaWeb-知识库笔记/media/image121.png" style="width:5.75in;height:2.21875in" />
 
 **3. 切入点：PointCut**，匹配连接点的条件，通知仅会在切入点方法执行时被应用
 
+<img src=".assets/JavaWeb-知识库笔记/media/image122.png" style="width:5.75in;height:2.29167in" />
+
 **4. 切面：Aspect**，描述通知与切入点的对应关系（通知+切入点）
+
+<img src=".assets/JavaWeb-知识库笔记/media/image123.png" style="width:5.75in;height:2.77083in" />
 
 切面所在的类，我们一般称为**切面类**（被@Aspect注解标识的类）
 
 **5. 目标对象：Target**，通知所应用的对象
 
+<img src=".assets/JavaWeb-知识库笔记/media/image124.png" style="width:5.75in;height:5.48958in" />
+
 通知是如何与目标对象结合在一起，对目标对象当中的方法进行功能增强的？
+
+<img src=".assets/JavaWeb-知识库笔记/media/image125.png" style="width:5.75in;height:2.6875in" />
 
 答：Spring的AOP底层是基于动态代理技术来实现的，即在程序运行的时候，会自动的基于动态代理技术为目标对象生成一个对应的代理对象。在代理对象当中就会对目标对象当中的原始方法进行功能的增强。
 
@@ -8548,11 +8798,15 @@ Java系统属性配置（格式： -Dkey=value），例如-Dserver.port=9000
 
 命令行参数（格式：--key=value），例如--server.port=10010
 
+<img src=".assets/JavaWeb-知识库笔记/media/image126.png" style="width:5.75in;height:3.95833in" />
+
 *Springboot项目进行打包时，需要引入插件 spring-boot-maven-plugin (基于官网骨架创建项目，会自动添加该插件)*
 
 如果项目已经打包上线，通过命令行方式设置Java系统属性和命令行参数：
 
 执行maven打包指令package，把项目打成jar文件
+
+<img src=".assets/JavaWeb-知识库笔记/media/image127.png" style="width:5.75in;height:3.22917in" />
 
 在jar包所在文件夹下使用命令运行jar文件
 
@@ -8792,6 +9046,8 @@ SpringBoot框架就解决了这个问题，是因为它底层提供了两个非�
 
 SpringBoot的自动配置就是当Spring容器启动后，一些配置类、bean对象就自动存入到了IOC容器中，不需要手动声明，从而简化了开发，省去了繁琐的配置操作。
 
+<img src=".assets/JavaWeb-知识库笔记/media/image128.png" style="width:5.75in;height:1.1875in" />
+
 *@Configuration注解的底层就是@Component，所以除了配置类中Bean外，还有一个Bean commonConfig。*
 
 Bean对象gson的类型是com.google.gson.Gson，是谷歌中提供的用于处理JSON格式数据的类，这个Gson类是自动配置的。
@@ -8987,6 +9243,10 @@ SpringApplication.run(SpringbootWebConfig2Application.class, args);<br />
 
 **3.2.2.1 源码分析**
 
+<img src=".assets/JavaWeb-知识库笔记/media/image129.png" style="width:5.75in;height:1.59375in" />
+
+<img src=".assets/JavaWeb-知识库笔记/media/image130.png" style="width:5.75in;height:2.05208in" />
+
 自动配置原理源码入口就是@SpringBootApplication注解，在这个注解中封装了3个注解，分别是：
 
 @SpringBootConfiguration：声明当前类是一个配置类
@@ -9120,7 +9380,11 @@ autoconfigure模块：自动配置，定义自动配置的相关Bean类
 
 aliyun-oss-spring-boot-starter模块
 
+<img src=".assets/JavaWeb-知识库笔记/media/image131.png" style="width:5.75in;height:3.69792in" />
+
 删除多余的文件，最终保留内容如下：
+
+<img src=".assets/JavaWeb-知识库笔记/media/image132.png" style="width:5.75in;height:0.48958in" />
 
 删除pom.xml文件中多余的内容后：
 
@@ -9165,7 +9429,11 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;<br />
 
 aliyun-oss-spring-boot-autoconfigure模块：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image133.png" style="width:5.75in;height:3.53125in" />
+
 创建完starter模块后，删除多余的文件，最终保留内容如下：
+
+<img src=".assets/JavaWeb-知识库笔记/media/image134.png" style="width:5.75in;height:1.625in" />
 
 删除pom.xml文件中多余的内容后：
 
@@ -9387,6 +9655,8 @@ com.aliyun.oss.AliOSSAutoConfiguration</td>
 
 最终项目结构如下：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image135.png" style="width:5.75in;height:1.92708in" />
+
 **3.3.4 测试**
 
 新建一个SpringBoot项目并引入阿里云starter依赖：
@@ -9477,11 +9747,15 @@ return url;<br />
 
 其他的业务代码，放在tlias-web-management这个模块中，在该模块中需要用到实体类pojo、工具类utils，直接引入对应的依赖即可
 
+<img src=".assets/JavaWeb-知识库笔记/media/image136.png" style="width:5.75in;height:2.35417in" />
+
 **1.1.2 实现**
 
 创建maven模块tlias-pojo，存放实体类
 
 创建一个正常的**Maven模块**（注意不是springboot项目），模块名tlias-pojo：
+
+<img src=".assets/JavaWeb-知识库笔记/media/image137.png" style="width:5.75in;height:2.6875in" />
 
 在 tlias-pojo 模块的pom.xml文件中引入依赖：
 
@@ -9505,6 +9779,8 @@ return url;<br />
 
 将原来案例项目 tlias-web-management 中的pojo包下的实体类，复制到tlias-pojo模块中：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image138.png" style="width:5.75in;height:2.23958in" />
+
 删除原有案例项目tlias-web-management的pojo包，然后在pom.xml中引入tlias-pojo的依赖：
 
 <table>
@@ -9526,6 +9802,8 @@ return url;<br />
 创建Maven模块tlias-utils，存放相关工具类
 
 创建一个正常的Maven模块，模块名tlias-utils：
+
+<img src=".assets/JavaWeb-知识库笔记/media/image139.png" style="width:5.75in;height:2.44792in" />
 
 在 tlias-utils 模块的pom.xml文件中引入依赖：
 
@@ -9583,6 +9861,8 @@ return url;<br />
 
 将原来案例项目 tlias-web-management 中的utils包下的实体类，复制到tlias-utils模块中：
 
+<img src=".assets/JavaWeb-知识库笔记/media/image140.png" style="width:5.75in;height:1.57292in" />
+
 删除原有案例项目tlias-web-management的utils包，然后在pom.xml中引入tlias-utils的依赖：
 
 <table>
@@ -9636,9 +9916,13 @@ Maven不支持多继承，一个maven项目只能继承一个父工程，默认�
 
 在案例中，创建一个父工程 tlias-parent，配置lombok依赖，三个子工程继承这个父工程，就可以只配置一次lombok了。
 
+<img src=".assets/JavaWeb-知识库笔记/media/image141.png" style="width:5.75in;height:2.20833in" />
+
 **2.1.1.2 实现**
 
 创建**maven模块** tlias-parent ，该工程为父工程，**设置打包方式pom**(默认jar)：
+
+<img src=".assets/JavaWeb-知识库笔记/media/image142.png" style="width:5.75in;height:2.17708in" />
 
 父工程pom文件：
 
@@ -9828,6 +10112,8 @@ relativePath指定父工程的pom文件的相对位置（如果不指定，将�
 
 **2.2 聚合**
 
+<img src=".assets/JavaWeb-知识库笔记/media/image143.png" style="width:5.75in;height:3.39583in" />
+
 在案例中，tlias-web-management 模块的父工程是 tlias-parent，该模块又依赖了tlias-pojo、tlias-utils模块。
 
 在项目打包时，maven会从本地仓库和远程仓库中寻找项目的所有父工程及依赖项的包，如果没有，就会出错。如果想要打包tlias-web-management模块，就需要先打包另外三个模块，很繁琐。
@@ -9893,7 +10179,11 @@ relativePath指定父工程的pom文件的相对位置（如果不指定，将�
 
 注意事项：往往一个项目/企业只需要一个私服就可以了。
 
+<img src=".assets/JavaWeb-知识库笔记/media/image144.png" style="width:5.75in;height:2.375in" />
+
 **3.2 资源上传与下载**
+
+<img src=".assets/JavaWeb-知识库笔记/media/image145.png" style="width:5.75in;height:1.53125in" />
 
 私服仓库说明：
 
@@ -10019,6 +10309,8 @@ SNAPSHOT(快照版本)：功能不稳定、尚处于开发中的版本，即快�
 **3.3 测试**
 
 在tlias-parent中执行**deploy**生命周期，将项目发布到私服仓库中，成功后打开私服查看：
+
+<img src=".assets/JavaWeb-知识库笔记/media/image146.png" style="width:5.75in;height:1.4375in" />
 
 **3.4 私服获取**
 

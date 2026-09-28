@@ -1,6 +1,4 @@
-# Redis
-
-> 疑似凭据、令牌和密码示例在公开版本中已自动脱敏。
+# 面试-Redis
 
 *🔗 原文链接： [⁣⁢⁣⁣⁡Redis](https://my.feishu.cn/wiki/ZSe6weRdVieA6nkmtlkcI6W4nVf)*
 

@@ -1,6 +1,6 @@
-# MYSQL数据库
+# 面试-MySQL数据库
 
-> 疑似凭据、令牌和密码示例在公开版本中已自动脱敏。
+**MYSQL数据库**
 
 *🔗 原文链接： [⁣⁢⁣⁣⁡MYSQL数据库](https://my.feishu.cn/wiki/YocrwR8XkiwK7LkObCsciQkUnyb)*
 

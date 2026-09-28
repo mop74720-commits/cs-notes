@@ -1,7 +1,5 @@
 # Tool
 
-> 原文图片保留在私有 `backend-study-notes`，本公开站当前同步文字内容；疑似凭据、令牌和密码示例在公开版本中已自动脱敏。
-
 *🔗 原文链接： [⁣⁢⁣⁣⁡Tool](https://my.feishu.cn/wiki/OOXEwusNmiWR7HkF7EpcR6KsnUd)*
 
 *⏰ 剪存时间：2026-03-13 17:23:04*
@@ -111,11 +109,15 @@ cd ~/.ssh（查看是否生成过 SSH 公钥）user 目录下
 
 **工作过程**
 
+<img src=".assets/Tool/media/image1.png" style="width:5.75in;height:2.10417in" />
+
 版本库：.git 隐藏文件夹就是版本库，版本库中存储了很多配置信息、日志信息和文件版本信息等
 
 工作目录（工作区）：包含 .git 文件夹的目录就是工作目录，主要用于存放开发的代码
 
 暂存区：.git 文件夹中有很多文件，其中有一个 index 文件就是暂存区，也可以叫做 stage，暂存区是一个临时保存修改文件的地方
+
+<img src=".assets/Tool/media/image2.png" style="width:4.21875in;height:1.65625in" />
 
 **文件操作**
 
@@ -198,6 +200,8 @@ pull = fetch + merge
 
 fetch 是从远程仓库更新到本地仓库，pull是从远程仓库直接更新到工作空间中
 
+<img src=".assets/Tool/media/image3.png" style="width:5.75in;height:0.86458in" />
+
 **查看仓库**
 
 git remote：显示所有远程仓库的简写
@@ -234,6 +238,8 @@ git push ：上传本地指定分支到远程仓库
 
 **版本管理**
 
+<img src=".assets/Tool/media/image4.png" style="width:5.40625in;height:3.52083in" />
+
 命令：git reset --hard 版本唯一索引值
 
 **分支管理**
@@ -265,6 +271,8 @@ git checkout branch-name：切换到 branch-name 分支
 git merge branch-name：合并指定分支到当前分支
 
 有时候合并操作不会如此顺利。 如果你在两个不同的分支中，对同一个文件的同一个部分进行了不同的修改，Git 就没办法合并它们，同时会提示文件冲突。此时需要我们打开冲突的文件并修复冲突内容，最后执行 git add 命令来标识冲突已解决
+
+<img src=".assets/Tool/media/image5.png" style="width:4.95833in;height:0.875in" />
 
 **删除分支**
 
@@ -330,9 +338,17 @@ File → Settings 打开设置窗口，找到 Version Control 下的 git 选项
 
 版本对比
 
+<img src=".assets/Tool/media/image6.png" style="width:4.35417in;height:3.41667in" />
+
 版本切换方式一：控制台 Version Control → Log → 右键 Reset Current Branch → Reset，这种切换会抛弃原来的提交记录
 
+<img src=".assets/Tool/media/image7.png" style="width:5.75in;height:2.52083in" />
+
 版本切换方式二：控制台 Version Control → Log → Revert Commit → Merge → 处理代码 → commit，这种切换会当成一个新的提交记录，之前的提交记录也都保留
+
+<img src=".assets/Tool/media/image8.png" style="width:5.75in;height:2.625in" />
+
+<img src=".assets/Tool/media/image9.png" style="width:5.75in;height:3.21875in" />
 
 **分支管理**
 
@@ -350,9 +366,13 @@ VCS → Git → Push → 点击 master Define remote
 
 将远程仓库的 url 路径复制过来 → Push
 
+<img src=".assets/Tool/media/image10.png" style="width:5.75in;height:2.45833in" />
+
 **克隆仓库**
 
 File → Close Project → Checkout from Version Control → Git → 指定远程仓库的路径 → 指定本地存放的路径 → clone
+
+<img src=".assets/Tool/media/image11.png" style="width:5.75in;height:1.67708in" />
 
 **Linux**
 
@@ -362,13 +382,19 @@ File → Close Project → Checkout from Version Control → Git → 指定远�
 
 操作系统作为接口的示意图：
 
+<img src=".assets/Tool/media/image12.png" style="width:5.75in;height:3.83333in" />
+
 移动设备操作系统：
+
+<img src=".assets/Tool/media/image13.png" style="width:5.75in;height:3.48958in" />
 
 **Linux系统**
 
 **系统介绍**
 
 从内到位依次是硬件 → 内核层 → Shell 层 → 应用层 → 用户
+
+<img src=".assets/Tool/media/image14.png" style="width:4.16667in;height:3.01042in" />
 
 内核层：核心和基础，附着在硬件平台上，控制和管理系统内的各种资源，有效的组织进程的运行，扩展硬件的功能，提高资源利用效率，为用户提供安全可靠的应用环境。
 
@@ -378,6 +404,8 @@ Shell 层：与用户直接交互的界面。用户可以在提示符下输入�
 
 Linux 文件系统目录结构和熟知的 windows 系统有较大区别，没有各种盘符的概念。根目录只有一个/，采用层级式的树状目录结构。
 
+<img src=".assets/Tool/media/image15.png" style="width:5.75in;height:1.76042in" />
+
 **远程连接**
 
 **设置IP**
@@ -386,7 +414,11 @@ Linux 文件系统目录结构和熟知的 windows 系统有较大区别，没�
 
 首先设置虚拟机中 NAT 模式的选项，打开 VMware，点击编辑下的虚拟网络编辑器，设置 NAT 参数
 
+<img src=".assets/Tool/media/image16.jpeg" style="width:5.75in;height:2.75in" />
+
 **注意** ：VMware Network Adapter VMnet8 保证是启用状态
+
+<img src=".assets/Tool/media/image17.jpeg" style="width:5.75in;height:1in" />
 
 **静态IP**
 
@@ -442,11 +474,15 @@ ONBOOT设置为true在系统启动时是否激活网卡<br />
 
 【虚拟机】--【设置】--【添加】
 
+<img src=".assets/Tool/media/image18.jpeg" style="width:5.75in;height:5.40625in" />
+
 **远程登陆**
 
 **服务器维护工作** 都是在 远程 通过 SSH 客户端 来完成的， 并没有图形界面， 所有的维护工作都需要通过命令来完成，Linux 服务器需要安装 SSH 相关服务
 
 首先执行 sudo apt-get install openssh-server 指令，接下来用 xshell 连接
+
+<img src=".assets/Tool/media/image19.png" style="width:5.75in;height:1.53125in" />
 
 先用普通用户登录，然后转成 root
 
@@ -706,6 +742,8 @@ top：用于实时显示 process 的动态
 -H 表示线程模式
 
 top -Hp 进程 id ：分析该进程内各线程的 CPU 使用情况
+
+<img src=".assets/Tool/media/image20.png" style="width:5.75in;height:3.03125in" />
 
 **各进程（任务）的状态监控属性解释说明：**
 
@@ -1082,6 +1120,8 @@ mv [options] source... directory</td>
 
 Linux 系统是一种典型的多用户系统，不同的用户处于不同的地位，拥有不同的权限。为了保护系统的安全性，Linux系统对不同的用户访问同一文件（包括目录文件）的权限做了不同的规定
 
+<img src=".assets/Tool/media/image21.png" style="width:5.47917in;height:2.22917in" />
+
 在Linux中第一个字符代表这个文件是目录、文件或链接文件等等。
 
 当为 d 则是目录
@@ -1095,6 +1135,8 @@ Linux 系统是一种典型的多用户系统，不同的用户处于不同的�
 若是 c 则表示为装置文件里面的串行端口设备，例如键盘、鼠标(一次性读取装置)
 
 接下来的字符，以三个为一组，均为\[rwx\] 的三个参数组合。其中，\[ r \]代表可读(read)、\[ w \]代表可写(write)、\[ x \]代表可执行(execute)。 要注意的是，这三个权限的位置不会改变，如果没有权限，就会出现\[ - \]。
+
+<img src=".assets/Tool/media/image22.png" style="width:5.75in;height:2.95833in" />
 
 从左至右用 0-9 这些数字来表示：
 
@@ -1113,6 +1155,8 @@ Linux 系统是一种典型的多用户系统，不同的用户处于不同的�
 文件的【属主】有一套【读写执行权限rwx】
 
 文件的【属组】有一套【读写执行权限rwx】
+
+<img src=".assets/Tool/media/image23.png" style="width:5.75in;height:2.14583in" />
 
 ls -l 可以查看文件夹下文件的详细信息, 从左到右 依次是:
 
@@ -1167,6 +1211,8 @@ xyz : 就是刚刚提到的数字类型的权限属性，为 rwx 属性数值的
 
 文件的权限字符为：\[-rwxrwxrwx\]， 这九个权限是三三一组的，我们使用数字来代表各个权限
 
+<img src=".assets/Tool/media/image24.png" style="width:5.75in;height:2.20833in" />
+
 各权限的数字对照表：\[r\]:4、\[w\]:2、\[x\]:1、\[-\]:0
 
 每种身份（owner/group/others）的三个权限（r/w/x）分数是需要累加的，例如权限为：\[-rwxrwx---\] 分数是
@@ -1180,6 +1226,8 @@ others= --- = 0+0+0 = 0
 表示为： chmod -R 770 文件名
 
 **符号权限**
+
+<img src=".assets/Tool/media/image25.png" style="width:5.75in;height:1.42708in" />
 
 user 属主权限
 
@@ -1926,6 +1974,8 @@ R 命令可以进入替换模式，替换完成后，按下 ESC 可以回到命�
 
 下次再使用 vim 编辑文件时，会看到以下屏幕信息：
 
+<img src=".assets/Tool/media/image26.png" style="width:5.75in;height:2.76042in" />
+
 ls -a 一下，会看到隐藏的 .swp 文件，删除了此文件即可
 
 **链接**
@@ -1945,6 +1995,8 @@ ln [-sf] source_filename dist_filename</td>
 -s：默认是实体链接，加 -s 为符号链接
 
 -f：如果目标文件存在时，先删除目标文件
+
+<img src=".assets/Tool/media/image27.png" style="width:5.75in;height:2.69792in" />
 
 **实体链接** ：
 
@@ -2153,6 +2205,8 @@ ifconfig [网络设备][down up -allmulti -arp -promisc][add&lt;地址&gt;][del&
 
 ifconfig ：显示激活的网卡信息 ens
 
+<img src=".assets/Tool/media/image28.png" style="width:5.75in;height:2.80208in" />
+
 ens33（或 eth0）表示第一块网卡，IP地址是 192.168.0.137，广播地址 broadcast 192.168.0.255，掩码地址netmask 255.255.255.0 ，inet6 对应的是 ipv6
 
 lo 是表示主机的 **回坏地址** ，用来测试一个网络程序，但又不想让局域网或外网的用户能够查看，只能在此台主机上运行和查看所用的网络接口
@@ -2182,6 +2236,8 @@ ping [-dfnqrRv][-c&lt;完成次数&gt;][-i&lt;间隔秒数&gt;][-I&lt;网络界�
 -c\<完成次数\>：设置完成要求回应的次数；
 
 ping -c 2 www.baidu.com
+
+<img src=".assets/Tool/media/image29.png" style="width:5.75in;height:1.625in" />
 
 icmp_seq：ping 序列，从1开始
 
@@ -2253,6 +2309,8 @@ lsblk 命令的英文是 list block，即用于列出所有可用块设备的信
 
 lsblk ：以树状列出所有块设备
 
+<img src=".assets/Tool/media/image30.png" style="width:5.75in;height:2.54167in" />
+
 NAME：这是块设备名
 
 MAJ：MIN : 本栏显示主要和次要设备号
@@ -2268,6 +2326,8 @@ TYPE：本栏显示块设备是否是磁盘或磁盘上的一个分区。在本�
 MOUNTPOINT：本栏指出设备挂载的挂载点。
 
 lsblk -f ：不会列出所有空设备
+
+<img src=".assets/Tool/media/image31.png" style="width:5.75in;height:1.55208in" />
 
 NAME表示设备名称
 
@@ -2288,6 +2348,8 @@ df 命令用于显示目前在 Linux 系统上的文件系统的磁盘使用情�
 -h 使用人类可读的格式(预设值是不加这个选项的...)
 
 --total 计算所有的数据之和
+
+<img src=".assets/Tool/media/image32.png" style="width:5.75in;height:4.42708in" />
 
 第一列指定文件系统的名称；第二列指定一个特定的文件系统，1K 是 1024 字节为单位的总容量；已用和可用列分别指定的容量；最后一个已用列指定使用的容量的百分比；最后一栏指定的文件系统的挂载点
 
@@ -2323,6 +2385,8 @@ mount [-fnrsvw] [-t vfstype] [-o options] device dir</td>
 mkdir -p /mnt/cdrom ：切换到 root 下创建一个挂载点（其实就是创建一个目录）
 
 开始挂载 mount -t auto /dev/cdrom /mnt/cdrom ：通过挂载点的方式查看上面的【ISO文件内容】
+
+<img src=".assets/Tool/media/image33.png" style="width:5.75in;height:0.53125in" />
 
 查看挂载内容： ls -l -a ./mnt/cdrom/
 
@@ -2375,6 +2439,8 @@ Shell 被当成是一种脚本语言来设计，其运作方式与解释型语�
 Shell 编程跟 JavaScript、php 编程一样，只要有一个能编写代码的文本编辑器和一个能解释执行的脚本解释器就可以了。
 
 cat /etc/shells ：查看解释器
+
+<img src=".assets/Tool/media/image34.png" style="width:4.9375in;height:2in" />
 
 Linux 的 Shell 种类众多，常见的有：
 
@@ -3300,6 +3366,8 @@ Docker 架构：
 
 **仓库（Repository）** ：仓库可看成一个代码控制中心，用来保存镜像
 
+<img src=".assets/Tool/media/image35.png" style="width:5.75in;height:3.58333in" />
+
 安装步骤：
 
 <table>
@@ -3595,6 +3663,8 @@ docker inspect 容器名称</td>
 
 *Docker 容器删除后，在容器中产生的数据也会随之销毁 Docker 容器和外部机器可以直接交换文件吗？ 容器之间想要进行数据交互？*
 
+<img src=".assets/Tool/media/image36.png" style="width:5.75in;height:3.32292in" />
+
 **数据卷** ：数据卷是宿主机中的一个目录或文件，当容器目录和数据卷目录绑定后，对方的修改会立即同步
 
 一个数据卷可以被多个容器同时挂载
@@ -3640,6 +3710,8 @@ docker run -it --name=c1 -v /root(or~)/data:/root/data_container centos:7</td>
 
 数据卷容器
 
+<img src=".assets/Tool/media/image37.png" style="width:5.75in;height:2.79167in" />
+
 创建启动c3数据卷容器，使用 –v 参数设置数据卷
 
 <table>
@@ -3680,6 +3752,8 @@ docker run –it --name=c2 --volumes-from c3 centos:7 /bin/bash</td>
 容器内的网络服务和外部机器不能直接通信，外部机器和宿主机可以直接通信，宿主机和容器可以直接通信
 
 当容器中的网络服务需要被外部机器访问时，可以将容器中提供服务的端口映射到宿主机的端口上。外部机器访问宿主机的该端口，从而间接访问容器的服务。这种操作称为： **端口映射**
+
+<img src=".assets/Tool/media/image38.png" style="width:5.75in;height:2.17708in" />
 
 MySQL部署步骤：搜索mysql镜像，拉取mysql镜像，创建容器，操作容器中的mysql
 
@@ -3829,7 +3903,7 @@ cd ~/tomcat</td>
 <td>Bash<br />
 docker run -id --name=c_tomcat \<br />
 -p 8080:8080 \<br />
--v $PWD:[REDACTED] \<br />
+-v $PWD:/usr/local/tomcat/webapps \<br />
 tomcat</td>
 </tr>
 </tbody>
@@ -3839,7 +3913,7 @@ tomcat</td>
 
 -p 8080:8080 ：将容器的8080端口映射到主机的8080端口
 
--v \$PWD:[REDACTED] ：将主机中当前目录挂载到容器的webapps
+-v \$PWD:/usr/local/tomcat/webapps ：将主机中当前目录挂载到容器的webapps
 
 使用外部机器访问tomcat
 
@@ -4054,6 +4128,8 @@ Docker 中一个tomcat镜像为什么有500MB，而一个tomcat安装包只有70
 
 **镜像制作**
 
+<img src=".assets/Tool/media/image39.png" style="width:5.75in;height:2.70833in" />
+
 **Dockerfile**
 
 **基本概述**
@@ -4145,6 +4221,8 @@ Docker Compose是一个编排多容器分布式部署的工具，提供命令集
 使用 docker-compose.yml 定义组成应用的各服务
 
 运行 docker-compose up 启动应用
+
+<img src=".assets/Tool/media/image40.png" style="width:5.75in;height:1.375in" />
 
 **功能实现**
 
@@ -4340,6 +4418,8 @@ docker pull 私有仓库服务器ip:5000/centos:7</td>
 容器虚拟化的是操作系统，虚拟机虚拟化的是硬件。
 
 传统虚拟机可以运行不同的操作系统，容器只能运行同一类型操作系统
+
+<img src=".assets/Tool/media/image41.png" style="width:5.75in;height:2.29167in" />
 
 |            |                    |            |
 |------------|--------------------|------------|

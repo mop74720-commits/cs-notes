@@ -1,7 +1,5 @@
 # Frame
 
-> 原文图片保留在私有 `backend-study-notes`，本公开站当前同步文字内容；疑似凭据、令牌和密码示例在公开版本中已自动脱敏。
-
 *🔗 原文链接： [⁣⁢⁣⁣⁡Frame](https://my.feishu.cn/wiki/Mgeywy4oNiflaAkOfBdckZRRnwV)*
 
 *⏰ 剪存时间：2026-03-13 17:21:41*
@@ -26,6 +24,8 @@ pom.xml：Maven 需要一个 pom.xml 文件，Maven 通过加载这个配置文�
 
 管理资源的存储位置：本地仓库，私服，中央仓库
 
+<img src=".assets/Frame/media/image1.png" style="width:5.75in;height:2.59375in" />
+
 基本作用：
 
 项目构建：提供标准的，跨平台的自动化构建项目的方式
@@ -33,6 +33,8 @@ pom.xml：Maven 需要一个 pom.xml 文件，Maven 通过加载这个配置文�
 依赖管理：方便快捷的管理项目依赖的资源（jar 包），避免资源间的版本冲突等问题
 
 统一开发结构：提供标准的，统一的项目开发结构
+
+<img src=".assets/Frame/media/image2.png" style="width:2.6875in;height:2.47917in" />
 
 各目录存放资源类型说明：
 
@@ -105,6 +107,8 @@ conf：Maven 配置文件的存放目录
 lib：Maven运行所需库的存放目录
 
 配置 MAVEN_HOME：
+
+<img src=".assets/Frame/media/image3.png" style="width:5.75in;height:3.05208in" />
 
 Path 下配置： %MAVEN_HOME%\bin
 
@@ -304,6 +308,8 @@ mvn install ：安装到本地仓库
 
 在 IDEA 中配置 Maven，选择 maven3.6.1 防止依赖问题
 
+<img src=".assets/Frame/media/image4.png" style="width:5.75in;height:3.55208in" />
+
 创建 Maven，New Module → Maven → 不选中 Create from archetype
 
 填写项目的坐标
@@ -314,9 +320,15 @@ ArtifactId：project-java
 
 查看各目录颜色标记是否正确
 
+<img src=".assets/Frame/media/image5.png" style="width:5.75in;height:3.19792in" />
+
 IDEA 右侧侧栏有 Maven Project，打开后有 Lifecycle 生命周期
 
+<img src=".assets/Frame/media/image6.png" style="width:5.75in;height:3.89583in" />
+
 自定义 Maven 命令：Run → Edit Configurations → 左上角 + → Maven
+
+<img src=".assets/Frame/media/image7.png" style="width:5.75in;height:3.51042in" />
 
 **使用原型**
 
@@ -324,11 +336,15 @@ IDEA 右侧侧栏有 Maven Project，打开后有 Lifecycle 生命周期
 
 创建 Maven 项目的时候选择使用原型骨架
 
+<img src=".assets/Frame/media/image8.png" style="width:5.75in;height:3.8125in" />
+
 创建完成后发现通过这种方式缺少一些目录，需要手动去补全目录，并且要对补全的目录进行标记
 
 Web 工程：
 
 选择 Web 对应的原型骨架（选择 Maven 开头的是简化的）
+
+<img src=".assets/Frame/media/image9.png" style="width:5.75in;height:3.82292in" />
 
 通过原型创建 Web 项目得到的目录结构是不全的，因此需要我们自行补全，同时要标记正确
 
@@ -485,7 +501,11 @@ http://maven.apache.org/maven-v4_0_0.xsd"&gt;<br />
 
 scope 标签的取值有四种： compile,test,provided,runtime
 
+<img src=".assets/Frame/media/image10.png" style="width:5.75in;height:1.95833in" />
+
 **依赖范围的传递性：**
+
+<img src=".assets/Frame/media/image11.png" style="width:5.75in;height:2.3125in" />
 
 **生命周期**
 
@@ -504,6 +524,8 @@ clean：移除上一次构建产生的所有文件
 post-clean：执行一些在 clean 之后立刻完成的工作
 
 default：核心工作，例如编译，测试，打包，部署等，每个事件在执行之前都会 **将之前的所有事件依次执行一遍**
+
+<img src=".assets/Frame/media/image12.png" style="width:5.75in;height:3.6875in" />
 
 site：产生报告，发布站点等
 
@@ -564,6 +586,8 @@ Maven 默认在各个生命周期上都绑定了预先设定的插件来完成�
 **拆分**
 
 工程模块与模块划分：
+
+<img src=".assets/Frame/media/image13.png" style="width:5.75in;height:2.60417in" />
 
 ssm_pojo 拆分
 
@@ -929,6 +953,8 @@ reporting：包括项目的报告输出目录配置、报告插件配置等</td>
 
 版本统一的重要性：
 
+<img src=".assets/Frame/media/image14.png" style="width:5.75in;height:3.15625in" />
+
 属性类别：
 
 自定义属性
@@ -1176,7 +1202,7 @@ properties 文件中调用格式：
 <tr class="odd">
 <td>Plaintext<br />
 jdbc.driver=com.mysql.jdbc.Driverjdbc.url=${jdbc.url}<br />
-jdbc.username=rootjdbc.password=[REDACTED]</td>
+jdbc.username=rootjdbc.password=123456</td>
 </tr>
 </tbody>
 </table>
@@ -1269,6 +1295,8 @@ mvn 指令 –D skipTests</td>
 
 IEDA 界面：
 
+<img src=".assets/Frame/media/image15.png" style="width:4.23958in;height:3.55208in" />
+
 配置跳过：
 
 <table>
@@ -1342,6 +1370,8 @@ http://localhost:8081</td>
 
 **资源操作**
 
+<img src=".assets/Frame/media/image16.png" style="width:5.75in;height:2.61458in" />
+
 仓库分类：
 
 宿主仓库 hosted
@@ -1373,6 +1403,8 @@ http://localhost:8081</td>
 **IDEA操作**
 
 **上传下载**
+
+<img src=".assets/Frame/media/image17.png" style="width:5.75in;height:2.57292in" />
 
 **访问私服**
 
@@ -1477,6 +1509,8 @@ mvn deploy</td>
 
 Log4j 是 Apache 的一个开源项目。使用 Log4j，通过一个配置文件来灵活地进行配置，而不需要修改应用的代码。我们可以控制日志信息输送的目的地是控制台、文件等位置，也可以控制每一条日志的输出格式。
 
+<img src=".assets/Frame/media/image18.png" style="width:5.75in;height:2.61458in" />
+
 **配置文件**
 
 配置文件的三个核心：
@@ -1522,6 +1556,8 @@ org.apache.log4j.SimpleLayout（包含日志信息的级别和信息字符串）
 org.apache.log4j.TTCCLayout（包含日志产生的时间、线程、类别等信息）
 
 PatternLayout 常用的选项
+
+<img src=".assets/Frame/media/image19.png" style="width:5.75in;height:4.54167in" />
 
 **日志应用**
 
@@ -1616,11 +1652,15 @@ Netty 的功能特性：
 
 Core 核心：可扩展事件模型、通用通信 API、支持零拷贝的 ByteBuf 缓冲对象
 
+<img src=".assets/Frame/media/image20.png" style="width:5.75in;height:0.86458in" />
+
 **线程模型**
 
 **阻塞模型**
 
 传统阻塞型 I/O 模式，每个连接都需要独立的线程完成数据的输入，业务处理，数据返回
+
+<img src=".assets/Frame/media/image20.png" style="width:5.75in;height:0.86458in" />
 
 模型缺点：
 
@@ -1637,6 +1677,8 @@ Core 核心：可扩展事件模型、通用通信 API、支持零拷贝的 Byte
 Reactor 模式，通过一个或多个输入同时传递给服务处理器的 **事件驱动处理模式** 。 服务端程序处理传入的多路请求，并将它们同步分派给对应的处理线程，Reactor 模式也叫 Dispatcher 模式，即 I/O 多路复用统一监听事件，收到事件后分发（Dispatch 给某线程）
 
 **I/O 复用结合线程池** ，就是 Reactor 模式基本设计思想：
+
+<img src=".assets/Frame/media/image20.png" style="width:5.75in;height:0.86458in" />
 
 Reactor 模式关键组成：
 
@@ -1672,6 +1714,8 @@ Reactor 对象通过 select 监控客户端请求事件，收到事件后通过 
 
 说明： **Handler 和 Acceptor 属于同一个线程**
 
+<img src=".assets/Frame/media/image20.png" style="width:5.75in;height:0.86458in" />
+
 模型优点：模型简单，没有多线程、进程通信、竞争的问题，全部都在一个线程中完成
 
 模型缺点：
@@ -1689,6 +1733,8 @@ Reactor 对象通过 select 监控客户端请求事件，收到事件后通过 
 Handler 只负责响应事件，不做具体业务处理，通过 read 读取数据后，会分发给后面的 Worker 线程池进行业务处理
 
 Worker 线程池会分配独立的线程完成真正的业务处理，将响应结果发给 Handler 进行处理，最后由 Handler 收到响应结果后通过 send 将响应结果返回给 Client
+
+<img src=".assets/Frame/media/image20.png" style="width:5.75in;height:0.86458in" />
 
 模型优点：可以充分利用多核 CPU 的处理能力
 
@@ -1710,6 +1756,8 @@ Handler 通过 read 读取数据后，会分发给 Worker 线程池进行业务�
 
 Worker 线程池会分配独立的线程完成真正的业务处理，将响应结果发给 Handler 进行处理，最后由 Handler 收到响应结果后通过 send 将响应结果返回给 Client
 
+<img src=".assets/Frame/media/image20.png" style="width:5.75in;height:0.86458in" />
+
 模型优点
 
 **父线程与子线程** 的数据交互简单职责明确，父线程只需要接收新连接，子线程完成后续的业务处理
@@ -1723,6 +1771,8 @@ Worker 线程池会分配独立的线程完成真正的业务处理，将响应�
 Reactor 模式中，Reactor 等待某个事件的操作状态发生变化（文件描述符可读写，socket 可读写），然后把事件传递给事先注册的 Handler 来做实际的读写操作，其中的读写操作都需要应用程序同步操作，所以 **Reactor 是非阻塞同步网络模型（NIO）**
 
 把 I/O 操作改为异步，交给操作系统来完成就能进一步提升性能，这就是异步网络模型 Proactor（AIO）：
+
+<img src=".assets/Frame/media/image20.png" style="width:5.75in;height:0.86458in" />
 
 工作流程：
 
@@ -1747,6 +1797,8 @@ Proactor 根据不同的事件类型回调不同的 Handler 进行业务处理�
 **Netty**
 
 Netty 主要基于主从 Reactors 多线程模型做了一定的改进，Netty 的工作架构图：
+
+<img src=".assets/Frame/media/image20.png" style="width:5.75in;height:0.86458in" />
 
 工作流程：
 
@@ -1773,6 +1825,8 @@ NioEventLoop 表示一个 **循环处理任务的线程** ，每个 NioEventLoop
 处理任务队列的任务，即 runAllTasks
 
 每个 Worker NioEventLoop 处理业务时，会使用 Pipeline（管道），Pipeline 中包含了 Channel，即通过 Pipeline 可以获取到对应通道，管道中维护了很多的处理器 Handler
+
+<img src=".assets/Frame/media/image20.png" style="width:5.75in;height:0.86458in" />
 
 **基本实现**
 
@@ -2313,6 +2367,8 @@ super.write(ctx, msg, promise);<br />
 
 出站事件会从链表 tail 往前传递到最前一个出站的 handler
 
+<img src=".assets/Frame/media/image21.png" style="width:5.75in;height:1.45833in" />
+
 **ByteBuf**
 
 **基本介绍**
@@ -2408,6 +2464,8 @@ ByteBuf buffer = ctx.alloc().buffer();<br />
 **读写操作**
 
 ByteBuf 由四部分组成，最开始读写指针（ **双指针** ）都在 0 位置
+
+<img src=".assets/Frame/media/image22.png" style="width:5.75in;height:1.78125in" />
 
 写入方法：
 
@@ -3135,6 +3193,8 @@ private String password;<br />
 </tbody>
 </table>
 
+<img src=".assets/Frame/media/image23.png" style="width:5.75in;height:4.01042in" />
+
 **Sharable**
 
 @Sharable 注解的添加时机：
@@ -3393,6 +3453,8 @@ return array[type];<br />
 
 Codec（编解码器）的组成部分有两个：Decoder（解码器）和 Encoder（编码器）。Encoder 负责把业务数据转换成字节码数据，Decoder 负责把字节码数据转换成业务数据
 
+<img src=".assets/Frame/media/image24.png" style="width:5.75in;height:0.89583in" />
+
 Protobuf 是 Google 发布的开源项目，全称 Google Protocol Buffers ，是一种轻便高效的结构化数据存储格式，可以用于结构化数据串行化，或者说序列化。很适合做数据存储或 RPC（远程过程调用 remote procedure call）数据交换格式。目前很多公司从 HTTP + Json 转向 TCP + Protobuf ，效率会更高
 
 Protobuf 是以 message 的方式来管理数据，支持跨平台、跨语言（客户端和服务器端可以是不同的语言编写的），高性能、高可靠性
@@ -3420,6 +3482,8 @@ string name = 2;<br />
 </tr>
 </tbody>
 </table>
+
+<img src=".assets/Frame/media/image25.png" style="width:5.75in;height:1.36458in" />
 
 编译 protoc.exe --java_out=.Student.proto （cmd 窗口输入） 将生成的 StudentPOJO 放入到项目使用
 
@@ -3793,6 +3857,8 @@ sync queue：半连接队列，大小通过 /proc/sys/net/ipv4/tcp_max_syn_backl
 
 accept queue：全连接队列，大小通过 /proc/sys/net/core/somaxconn 指定，在使用 listen 函数时，内核会根据传入的 backlog 参数与系统参数，取二者的较小值。如果 accpet queue 队列满了，server 将 **发送一个拒绝连接的错误信息** 到 client
 
+<img src=".assets/Frame/media/image26.png" style="width:5.75in;height:5.72917in" />
+
 **其他参数**
 
 ALLOCATOR：属于 SocketChannal 参数，用来分配 ByteBuf， ctx.alloc()
@@ -3817,9 +3883,15 @@ RCVBUF_ALLOCATOR：属于 SocketChannal 参数
 
 实例：用户创建订单后，耦合调用库存系统、物流系统、支付系统，任何一个子系统出了故障都会造成下单异常，影响用户使用体验。使用消息队列解耦合，比如物流系统发生故障，需要几分钟恢复，将物流系统要处理的数据缓存到消息队列中，用户的下单操作正常完成。等待物流系统正常后处理存在消息队列中的订单消息即可，终端系统感知不到物流系统发生过几分钟故障
 
+<img src=".assets/Frame/media/image27.bmp" style="width:5.75in;height:1.52083in" />
+
 流量削峰：应用系统如果遇到系统请求流量的瞬间猛增，有可能会将系统压垮，使用消息队列可以将大量请求缓存起来，分散到很长一段时间处理，这样可以提高系统的稳定性和用户体验
 
+<img src=".assets/Frame/media/image28.png" style="width:5.75in;height:2.4375in" />
+
 数据分发：让数据在多个系统更加之间进行流通，数据的产生方不需要关心谁来使用数据，只需要将数据发送到消息队列，数据使用方直接在消息队列中直接获取数据
+
+<img src=".assets/Frame/media/image29.png" style="width:5.75in;height:3.21875in" />
 
 参考视频：https://www.bilibili.com/video/BV1L4411y7mn
 
@@ -4680,6 +4752,8 @@ RocketMQ 在 Producer 端写入消息和在 Consumer 端订阅消息采用 **分
 
 ConsumeQueue 的存储结构如下，有 8 个字节存储的 Message Tag 的哈希值，基于 Tag 的消息过滤就是基于这个字段
 
+<img src=".assets/Frame/media/image30.jpeg" style="width:4.63542in;height:0.79167in" />
+
 Tag 过滤：Consumer 端订阅消息时指定 Topic 和 TAG，然后将订阅请求构建成一个 SubscriptionData，发送一个 Pull 消息的请求给 Broker 端。Broker 端用这些数据先构建一个 MessageFilter，然后传给文件存储层 Store。Store 从 ConsumeQueue 读取到一条记录后，会用它记录的消息 tag hash 值去做过滤。因为在服务端只是根据 hashcode 进行判断，无法精确对 tag 原始字符串进行过滤，所以消费端拉取到消息后，还需要对消息的原始 tag 字符串进行比对，如果不同，则丢弃该消息，不进行消息消费
 
 SQL92 过滤：工作流程和 Tag 过滤大致一样，只是在 Store 层的具体过滤方式不一样。真正的 SQL expression 的构建和执行由 rocketmq-filter 模块负责，每次过滤都去执行 SQL 表达式会影响效率，所以 RocketMQ 使用了 BloomFilter 来避免了每次都去执行
@@ -4755,6 +4829,8 @@ consumer.start();<br />
 
 RocketMQ 支持分布式事务消息，采用了 2PC 的思想来实现了提交事务消息，同时增加一个 **补偿逻辑** 来处理二阶段超时或者失败的消息，如下图所示：
 
+<img src=".assets/Frame/media/image31.png" style="width:5.75in;height:2.46875in" />
+
 事务消息的大致方案分为两个流程：正常事务消息的发送及提交、事务消息的补偿流程
 
 事务消息发送及提交：
@@ -4766,6 +4842,8 @@ RocketMQ 支持分布式事务消息，采用了 2PC 的思想来实现了提交
 根据发送结果执行本地事务
 
 根据本地事务状态执行 Commit 或者 Rollback
+
+<img src=".assets/Frame/media/image32.png" style="width:5.75in;height:2.46875in" />
 
 补偿机制：用于解决消息 Commit 或者 Rollback 发生超时或者失败的情况，比如出现网络问题
 
@@ -4802,6 +4880,8 @@ RocketMQ 的具体实现策略：如果写入的是事务消息，对消息的 T
 **事务消息无论是 Commit 或者 Rollback 都会记录一个 Op 操作** ，两者的区别是 Commit 相对于 Rollback 在写入 Op 消息前将原消息的主题和队列恢复。如果一条事务消息没有对应的 Op 消息，说明这个事务的状态还无法确定（可能是二阶段失败了）
 
 RocketMQ 将 Op 消息写入到全局一个特定的 Topic 中，通过源码中的方法 TransactionalMessageUtil.buildOpTopic() ，这个主题是一个内部的 Topic（像 Half 消息的 Topic 一样），不会被用户消费。Op 消息的内容为对应的 Half 消息的存储的 Offset，这样 **通过 Op 消息能索引到 Half 消息**
+
+<img src=".assets/Frame/media/image33.png" style="width:5.75in;height:3.29167in" />
 
 **基本使用**
 
@@ -4959,6 +5039,8 @@ HA Service：高可用服务，提供 Master Broker 和 Slave Broker 之间的�
 
 Index Service：根据特定的 Message key 对投递到 Broker 的消息进行索引服务，以提供消息的快速查询
 
+<img src=".assets/Frame/media/image34.png" style="width:5.75in;height:2.85417in" />
+
 **总体流程**
 
 RocketMQ 的工作流程：
@@ -4995,6 +5077,8 @@ MQ push 消息给对应的消费者，然后等待消费者返回 ACK
 
 MQ 删除消息
 
+<img src=".assets/Frame/media/image35.png" style="width:5.75in;height:2.73958in" />
+
 **存储机制**
 
 **存储结构**
@@ -5004,6 +5088,8 @@ RocketMQ 中 Broker 负责存储消息转发消息，所以以下的结构是存
 RocketMQ 消息的存储是由 ConsumeQueue 和 CommitLog 配合完成 的，CommitLog 是消息真正的 **物理存储** 文件，ConsumeQueue 是消息的逻辑队列，类似数据库的 **索引节点** ，存储的是指向物理存储的地址。 **每个 Topic 下的每个 Message Queue 都有一个对应的 ConsumeQueue 文件**
 
 每条消息都会有对应的索引信息，Consumer 通过 ConsumeQueue 这个结构来读取消息实体内容
+
+<img src=".assets/Frame/media/image36.png" style="width:5.75in;height:2.8125in" />
 
 CommitLog：消息主体以及元数据的存储主体，存储 Producer 端写入的消息内容，消息内容不是定长的。消息主要是 **顺序写入** 日志文件，单个文件大小默认 1G，偏移量代表下一次写入的位置，当文件写满了就继续写入下一个文件
 
@@ -5022,6 +5108,8 @@ RocketMQ 采用的是混合型的存储结构，即为 Broker 单个实例下所
 read：读取本地文件内容
 
 write：将读取的内容通过网络发送出去
+
+<img src=".assets/Frame/media/image37.png" style="width:5.75in;height:0.76042in" />
 
 补充：Prog → NET → I/O → 零拷贝部分的笔记详解相关内容
 
@@ -5056,6 +5144,8 @@ RocketMQ 采用文件系统的方式，无论同步还是异步刷盘，都使�
 异步刷盘：利用 OS 的 PageCache，只要消息写入内存 PageCache 即可将成功的 ACK 返回给 Producer 端，降低了读写延迟，提高了 MQ 的性能和吞吐量。消息刷盘采用 **后台异步线程** 提交的方式进行，当内存里的消息量积累到一定程度时，触发写磁盘动作
 
 通过 Broker 配置文件里的 flushDiskType 参数设置采用什么方式，可以配置成 SYNC_FLUSH、ASYNC_FLUSH 中的一个
+
+<img src=".assets/Frame/media/image38.png" style="width:5.75in;height:5.23958in" />
 
 官方文档：https://github.com/apache/rocketmq/blob/master/docs/cn/design.md
 
@@ -5101,6 +5191,8 @@ Consumer 与 NameServer 集群中的其中一个节点（随机选择）建立�
 
 Consumer 既可以从 Master 订阅消息，也可以从 Slave 订阅消息，在向 Master 拉取消息时，Master 服务器会根据拉取偏移量与最大偏移量的距离（判断是否读老消息，产生读 I/O），以及从服务器是否可读等因素建议下一次是从 Master 还是 Slave 拉取
 
+<img src=".assets/Frame/media/image39.png" style="width:5.75in;height:2.69792in" />
+
 官方文档：https://github.com/apache/rocketmq/blob/master/docs/cn/architecture.md
 
 **高可用性**
@@ -5120,6 +5212,8 @@ Slave 只负责读，当 Master 不可用，对应的 Slave 仍能保证消息�
 生产端的高可用：在创建 Topic 的时候，把 Topic 的 **多个 Message Queue 创建在多个 Broker 组** 上（相同 Broker 名称，不同 brokerId 的机器），当一个 Broker 组的 Master 不可用后，其他组的 Master 仍然可用，Producer 仍然可以发送消息
 
 消费端的高可用：在 Consumer 的配置文件中，并不需要设置是从 Master Broker 读还是从 Slave 读，当 Master 不可用或者繁忙的时候，Consumer 会被自动切换到从 Slave 读。有了自动切换的机制，当一个 Master 机器出现故障后，Consumer 仍然可以从 Slave 读取消息，不影响 Consumer 程序，达到了消费端的高可用性
+
+<img src=".assets/Frame/media/image40.jpeg" style="width:5.75in;height:3.5625in" />
 
 **主从复制**
 
@@ -5163,6 +5257,8 @@ Producer 端在发送消息时，会先根据 Topic 找到指定的 TopicPublish
 
 默认会 **轮询所有的 Message Queue 发送** ，以让消息平均落在不同的 queue 上，而由于 queue可以散落在不同的 Broker，所以消息就发送到不同的 Broker 下，图中箭头线条上的标号代表顺序，发布方会把第一条消息发送至 Queue 0，然后第二条消息发送至 Queue 1，以此类推：
 
+<img src=".assets/Frame/media/image41.png" style="width:5.75in;height:2.79167in" />
+
 容错策略均在 MQFaultStrategy 这个类中定义，有一个 sendLatencyFaultEnable 开关变量：
 
 如果开启，会在 **随机（只有初始化索引变量时才随机，正常都是递增）递增取模** 的基础上，再过滤掉 not available 的 Broker
@@ -5183,7 +5279,11 @@ LatencyFaultTolerance 机制是实现消息发送高可用的核心关键所在�
 
 集群模式下，每当消费者实例的数量有变更，都会触发一次所有实例的负载均衡，这时候会按照 queue 的数量和实例的数量平均分配 queue 给每个实例。默认的分配算法是 AllocateMessageQueueAveragely：
 
+<img src=".assets/Frame/media/image42.png" style="width:5.75in;height:1.33333in" />
+
 还有一种平均的算法是 AllocateMessageQueueAveragelyByCircle，以环状轮流均分 queue 的形式：
+
+<img src=".assets/Frame/media/image43.png" style="width:5.75in;height:1.11458in" />
 
 集群模式下， **queue 都是只允许分配一个实例** ，如果多个实例同时消费一个 queue 的消息，由于拉取哪些消息是 Consumer 主动控制的，会导致同一个消息在不同的实例下被消费多次
 
@@ -5204,6 +5304,8 @@ Consumer 端实现负载均衡的核心类 **RebalanceImpl**
 先对 Topic 下的消息消费队列、消费者 ID 排序，然后用消息队列分配策略算法（默认是消息队列的平均分配算法），计算出待拉取的消息队列。平均分配算法类似于分页的算法，将所有 MessageQueue 排好序类似于记录，将所有消费端 Consumer 排好序类似页数，并求出每一页需要包含的平均 size 和每个页面记录的范围 range，最后遍历整个 range 而计算出当前 Consumer 端应该分配到的记录（这里即为 MessageQueue）
 
 调用 updateProcessQueueTableInRebalance() 方法，先将分配到的消息队列集合 mqSet 与 processQueueTable 做一个过滤比对
+
+<img src=".assets/Frame/media/image44.png" style="width:5.75in;height:2.36458in" />
 
 processQueueTable 标注的红色部分，表示与分配到的消息队列集合 mqSet 互不包含，将这些队列设置 Dropped 属性为 true，然后查看这些队列是否可以移除出 processQueueTable 缓存变量。具体执行 removeUnnecessaryMessageQueue() 方法，即每隔 1s 查看是否可以获取当前消费处理队列的锁，拿到的话返回 true；如果等待 1s 后，仍然拿不到当前消费处理队列的锁则返回 false。如果返回 true，则从 processQueueTable 缓存变量中移除对应的 Entry
 
@@ -5232,6 +5334,8 @@ RocketMQ 中的 MessageID 的长度总共有 16 字节，其中包含了消息�
 **索引机制**
 
 RocketMQ 的索引文件逻辑结构，类似 JDK 中 HashMap 的实现，具体结构如下：
+
+<img src=".assets/Frame/media/image45.jpeg" style="width:5.75in;height:3.76042in" />
 
 IndexFile 文件的存储在 \$HOME\store\index\${fileName} ，文件名 fileName 是以创建时的时间戳命名，文件大小是固定的，等于 40+500W\*4+2000W\*20= 420000040 个字节大小。如果消息的 properties 中设置了 UNIQ_KEY 这个属性，就用 topic + “#” + UNIQ_KEY 作为 key 来做写入操作；如果消息设置了 KEYS 属性（多个 KEY 以空格分隔），也会用 topic + “#” + KEY 来做索引
 
@@ -5704,6 +5808,8 @@ this.fileWatchService.start();<br />
 
 RocketMQ 的 RPC 通信采用 Netty 组件作为底层通信库，同样也遵循了 Reactor 多线程模型，NettyRemotingServer 类负责框架的通信服务，同时又在这之上做了一些扩展和优化
 
+<img src=".assets/Frame/media/image46.png" style="width:5.75in;height:2.6875in" />
+
 RocketMQ 基于 NettyRemotingServer 的 Reactor 多线程模型：
 
 一个 Reactor 主线程（eventLoopGroupBoss）负责监听 TCP 网络连接请求，建立好连接创建 SocketChannel（RocketMQ 会自动根据 OS 的类型选择 NIO 和 Epoll，也可以通过参数配置），并注册到 Selector 上，然后监听真正的网络数据
@@ -5723,6 +5829,8 @@ RocketMQ 基于 NettyRemotingServer 的 Reactor 多线程模型：
 | M2     | RemotingExecutorThread\_%d       | 业务 processor 处理线程池 |
 
 RocketMQ 的异步通信流程：
+
+<img src=".assets/Frame/media/image47.png" style="width:5.75in;height:4.5625in" />
 
 ==todo：后期对 Netty 有了更深的认知后会进行扩充，现在暂时 copy 官方文档==
 
@@ -6083,6 +6191,8 @@ boolean acquired = this.semaphoreOneway.tryAcquire(timeoutMillis, TimeUnit.MILLI
 | flag       | int                       | 区分是普通 RPC 还是 onewayRPC 的标志                                   | 区分是普通 RPC 还是 onewayRPC的标志         |
 | remark     | String                    | 传输自定义文本信息                                                     | 传输自定义文本信息                          |
 | extFields  | HashMap\<String, String\> | 请求自定义扩展信息                                                     | 响应自定义扩展信息                          |
+
+<img src=".assets/Frame/media/image48.png" style="width:5.75in;height:0.67708in" />
 
 传输内容主要可以分为以下四部分：
 
@@ -11816,7 +11926,11 @@ return result;<br />
 
 队列排序后：Q1 → Q2 → Q3，消费者排序后 C1 → C2 → C3
 
+<img src=".assets/Frame/media/image42.png" style="width:5.75in;height:1.33333in" />
+
 轮流分配：AllocateMessageQueueAveragelyByCircle
+
+<img src=".assets/Frame/media/image43.png" style="width:5.75in;height:1.11458in" />
 
 指定机房平均分配：AllocateMessageQueueByMachineRoom，前提是 Broker 的命名规则为 机房名@BrokerName
 
@@ -12945,6 +13059,8 @@ Zookeeper 是一个领导者（Leader），多个跟随者（Follower）组成�
 
 心跳检测，会定时向各个服务提供者发送一个请求（实际上建立的是一个 Socket 长连接）
 
+<img src=".assets/Frame/media/image49.png" style="width:5.75in;height:1.67708in" />
+
 参考视频：https://www.bilibili.com/video/BV1to4y1C7gw
 
 **应用场景**
@@ -13195,6 +13311,8 @@ EPHEMERAL_SEQUENTIAL：临时顺序节点
 
 注意：在分布式系统中，顺序号可以被用于为所有的事件进行全局排序，这样客户端可以通过顺序号推断事件的顺序
 
+<img src=".assets/Frame/media/image50.png" style="width:5.75in;height:1.80208in" />
+
 **代码实现**
 
 添加 Maven 依赖：
@@ -13285,6 +13403,8 @@ EPOCH 相同，事务 ID 大的胜出（事务 ID 越大，数据越新）
 
 服务器 5 启动，同 4 一样
 
+<img src=".assets/Frame/media/image51.png" style="width:5.75in;height:1.55208in" />
+
 **再次选举**
 
 ZooKeeper 集群中的一台服务器出现以下情况之一时，就会开始进入 Leader 选举：
@@ -13317,7 +13437,11 @@ ZooKeeper 集群中的一台服务器出现以下情况之一时，就会开始�
 
 写操作就是事务请求，写入请求直接发送给 Leader 节点：Leader 会先将数据写入自身，同时通知其他 Follower 写入， **当集群中有半数以上节点写入完成** ，Leader 节点就会响应客户端数据写入完成
 
+<img src=".assets/Frame/media/image52.png" style="width:5.75in;height:2.85417in" />
+
 写入请求直接发送给 Follower 节点：Follower 没有写入权限，会将写请求转发给 Leader，Leader 将数据写入自身，通知其他 Follower 写入，当集群中有半数以上节点写入完成，Leader 会通知 Follower 写入完成， **由 Follower 响应客户端数据写入完成**
+
+<img src=".assets/Frame/media/image53.png" style="width:5.75in;height:2.14583in" />
 
 **底层协议**
 
@@ -13351,6 +13475,8 @@ Leader 接收到超过半数以上 Follower 的 ACK 响应消息后，即认为�
 
 Leader 向所有 Follower 广播 commit 消息，同时自身也会完成事务提交，Follower 接收到 Commit 后，将上一条事务提交
 
+<img src=".assets/Frame/media/image54.png" style="width:5.75in;height:2.39583in" />
+
 两阶段提交模型可能因为 Leader 宕机带来数据不一致：
 
 Leader 发起一个事务 Proposal 后就宕机，Follower 都没有 Proposal
@@ -13372,6 +13498,8 @@ Zab 协议需要保证选举出来的 Leader 需要满足以下条件：
 新选举的 Leader 不能包含未提交的 Proposal，即新 Leader 必须都是已经提交了 Proposal 的 Follower 节点
 
 新选举的 Leader 节点含有 **最大的 ZXID** ，可以避免 Leader 服务器检查 Proposal 的提交和丢弃工作
+
+<img src=".assets/Frame/media/image55.png" style="width:5.75in;height:2.03125in" />
 
 数据恢复阶段：
 
@@ -13459,6 +13587,8 @@ TreeCache：可以监控整个树上的所有节点，类似于 PathChildrenCach
 **整体架构**
 
 客户端实时监听服务器动态上下线
+
+<img src=".assets/Frame/media/image56.png" style="width:5.75in;height:2.88542in" />
 
 **代码实现**
 
@@ -13589,6 +13719,8 @@ public void process(WatchedEvent event) {<br />
 反之客户端需要找到比自己小的节点， **对其注册事件监听器，监听删除事件**
 
 客户端的 Watcher 收到删除事件通知，就会重新判断当前节点是否是子节点中序号最小，如果是则获取到了锁， 如果不是则重复以上步骤继续获取到比自己小的一个节点并注册监听
+
+<img src=".assets/Frame/media/image57.png" style="width:5.75in;height:1.80208in" />
 
 **Curator**
 
@@ -13965,6 +14097,8 @@ FastLeaderElection 中有 WorkerReceiver 线程
 
 response = manager.pollRecvQueue() ：从 RecvQueue 中 **阻塞获取出选举投票消息** （其他服务器发送过来的）
 
+<img src=".assets/Frame/media/image58.png" style="width:5.75in;height:2.94792in" />
+
 **状态同步**
 
 选举结束后，每个节点都需要根据角色更新自己的状态，Leader 更新状态为 Leader，其他节点更新状态为 Follower，整体流程：
@@ -13982,6 +14116,8 @@ TRUNC：Follower 的 zxid 比leader 的 zxid 大，Follower 要进行回滚
 SNAP：Follower 没有任何数据，直接全量同步
 
 执行数据同步，当 Leader 接收到超过半数 Follower 的 Ack 之后，进入正常工作状态，集群启动完成
+
+<img src=".assets/Frame/media/image59.png" style="width:5.75in;height:2.76042in" />
 
 核心函数解析：
 
@@ -14008,6 +14144,8 @@ long newEpochZxid = registerWithLeader(Leader.FOLLOWERINFO) ：向 Leader 注册
 **主从工作**
 
 Leader：主服务的工作流程
+
+<img src=".assets/Frame/media/image60.png" style="width:5.75in;height:2.32292in" />
 
 Follower：从服务的工作流程，核心函数为 Follower#followLeader()
 
@@ -14047,3 +14185,5 @@ break;<br />
 </table>
 
 **客户端**
+
+<img src=".assets/Frame/media/image61.png" style="width:5.75in;height:3.04167in" />

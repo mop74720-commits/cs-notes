@@ -1,6 +1,4 @@
-# K8s&Docker
-
-> 疑似凭据、令牌和密码示例在公开版本中已自动脱敏。
+# 面试-K8s&Docker
 
 *🔗 原文链接： [⁣⁢⁣⁣⁡K8s&Docker](https://my.feishu.cn/wiki/ZROEw1zjJiNxutkbkxAccn0OnOh)*
 
